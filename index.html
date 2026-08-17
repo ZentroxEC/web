@@ -7,9 +7,10 @@
     <title>ZENTROXEC | Cables y Adaptadores para PC</title>
 
     <meta name="description"
-          content="Cables, adaptadores y accesorios para PC. Soluciones prácticas para conectar, ampliar y actualizar tus equipos.">
+          content="Cables y adaptadores para PC. Soluciones prácticas para conectar, ampliar y actualizar tus equipos.">
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -23,7 +24,7 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
             background: #080808;
-            color: #ffffff;
+            color: #fff;
             line-height: 1.6;
         }
 
@@ -41,7 +42,7 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(8, 8, 8, 0.92);
+            background: rgba(8, 8, 8, 0.94);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid #222;
         }
@@ -73,7 +74,7 @@
         nav a {
             color: #ccc;
             font-size: 14px;
-            transition: 0.3s;
+            transition: .3s;
         }
 
         nav a:hover {
@@ -87,10 +88,16 @@
         .hero {
             min-height: 100vh;
             padding: 150px 25px 80px;
+
             display: flex;
             align-items: center;
+
             background:
-                radial-gradient(circle at 80% 40%, rgba(230,0,0,0.20), transparent 35%),
+                radial-gradient(
+                    circle at 80% 40%,
+                    rgba(230, 0, 0, .20),
+                    transparent 35%
+                ),
                 linear-gradient(135deg, #080808, #111);
         }
 
@@ -98,21 +105,29 @@
             max-width: 1200px;
             width: 100%;
             margin: auto;
+
             display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
+            grid-template-columns: 1fr 1fr;
+
             gap: 60px;
             align-items: center;
         }
 
         .badge {
             display: inline-block;
+
             padding: 8px 15px;
+
             border: 1px solid #e60000;
             border-radius: 30px;
+
             color: #ff3333;
+
             font-size: 12px;
             font-weight: bold;
+
             margin-bottom: 20px;
+
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -143,9 +158,12 @@
         .btn {
             padding: 15px 25px;
             border-radius: 8px;
+
             font-weight: bold;
+
             display: inline-block;
-            transition: 0.3s;
+
+            transition: .3s;
         }
 
         .btn-primary {
@@ -168,60 +186,47 @@
             color: #e60000;
         }
 
-        /* PRODUCT VISUAL */
+        /* =========================
+           IMAGEN HERO
+        ========================= */
 
         .product-visual {
             min-height: 430px;
+
             border: 1px solid #292929;
             border-radius: 25px;
+
             background:
-                radial-gradient(circle, rgba(230,0,0,0.13), transparent 55%),
+                radial-gradient(
+                    circle,
+                    rgba(230,0,0,.12),
+                    transparent 60%
+                ),
                 #0d0d0d;
+
             display: flex;
             justify-content: center;
             align-items: center;
-            position: relative;
+
             overflow: hidden;
+            padding: 25px;
         }
 
-        .product-visual::before {
-            content: "";
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            border: 1px solid rgba(230,0,0,0.25);
-            border-radius: 50%;
-        }
+        .product-visual img {
+            width: 100%;
+            max-width: 520px;
 
-        .cable-icon {
-            font-size: 130px;
-            z-index: 2;
-            filter: drop-shadow(0 0 25px rgba(230,0,0,0.45));
-        }
+            border-radius: 15px;
 
-        .floating-card {
-            position: absolute;
-            bottom: 25px;
-            left: 25px;
-            right: 25px;
-            padding: 18px;
-            background: rgba(15,15,15,0.9);
-            border: 1px solid #333;
-            border-radius: 12px;
-            z-index: 3;
-        }
+            object-fit: contain;
 
-        .floating-card strong {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .floating-card small {
-            color: #999;
+            filter: drop-shadow(
+                0 15px 30px rgba(0,0,0,.6)
+            );
         }
 
         /* =========================
-           GENERAL
+           SECCIONES
         ========================= */
 
         section {
@@ -258,7 +263,7 @@
         }
 
         /* =========================
-           BENEFITS
+           BENEFICIOS
         ========================= */
 
         .benefits {
@@ -273,10 +278,13 @@
 
         .benefit {
             padding: 35px 28px;
+
             border: 1px solid #262626;
             border-radius: 15px;
+
             background: #111;
-            transition: 0.3s;
+
+            transition: .3s;
         }
 
         .benefit:hover {
@@ -298,7 +306,7 @@
         }
 
         /* =========================
-           PRODUCT
+           PRODUCTO
         ========================= */
 
         .product-section {
@@ -307,25 +315,44 @@
 
         .product-card {
             display: grid;
-            grid-template-columns: 0.9fr 1.1fr;
+
+            grid-template-columns: .9fr 1.1fr;
+
             gap: 60px;
+
             align-items: center;
+
             background: #101010;
+
             border: 1px solid #292929;
+
             border-radius: 22px;
+
             padding: 40px;
         }
 
         .product-image {
             min-height: 400px;
+
             border-radius: 15px;
-            background:
-                radial-gradient(circle, rgba(230,0,0,0.15), transparent 60%),
-                #080808;
+
+            background: #080808;
+
             display: flex;
+
             justify-content: center;
             align-items: center;
-            font-size: 120px;
+
+            padding: 20px;
+        }
+
+        .product-image img {
+            width: 100%;
+            max-width: 500px;
+
+            object-fit: contain;
+
+            border-radius: 12px;
         }
 
         .product-info h3 {
@@ -345,19 +372,24 @@
 
         .specs li {
             padding: 12px 0;
+
             border-bottom: 1px solid #242424;
+
             color: #ccc;
         }
 
         .specs li::before {
             content: "✓";
+
             color: #e60000;
+
             font-weight: bold;
+
             margin-right: 10px;
         }
 
         /* =========================
-           USES
+           USOS
         ========================= */
 
         .uses {
@@ -366,15 +398,21 @@
 
         .uses-grid {
             display: grid;
+
             grid-template-columns: repeat(4, 1fr);
+
             gap: 18px;
         }
 
         .use {
             padding: 30px 20px;
+
             background: #111;
+
             border: 1px solid #262626;
+
             border-radius: 15px;
+
             text-align: center;
         }
 
@@ -389,40 +427,68 @@
 
         .use p {
             color: #777;
+
             font-size: 14px;
+
             margin-top: 8px;
         }
 
         /* =========================
-           CATALOG
+           CATALOGO
         ========================= */
+
+        .catalog {
+            background: #080808;
+        }
 
         .catalog-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+
+            grid-template-columns: 1fr;
+
+            max-width: 500px;
+
+            margin: auto;
         }
 
         .catalog-card {
             background: #111;
+
             border: 1px solid #292929;
+
             border-radius: 15px;
+
             overflow: hidden;
-            transition: 0.3s;
+
+            transition: .3s;
         }
 
         .catalog-card:hover {
             transform: translateY(-5px);
+
             border-color: #e60000;
         }
 
         .catalog-image {
-            height: 220px;
+            height: 280px;
+
             display: flex;
+
             justify-content: center;
             align-items: center;
-            font-size: 70px;
+
             background: #090909;
+
+            padding: 20px;
+        }
+
+        .catalog-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+
+            border-radius: 10px;
         }
 
         .catalog-content {
@@ -431,11 +497,15 @@
 
         .catalog-content h3 {
             margin-bottom: 10px;
+
+            font-size: 24px;
         }
 
         .catalog-content p {
             color: #777;
+
             font-size: 14px;
+
             margin-bottom: 20px;
         }
 
@@ -454,19 +524,25 @@
 
         details {
             background: #111;
+
             border: 1px solid #282828;
+
             border-radius: 10px;
+
             margin-bottom: 12px;
+
             padding: 20px;
         }
 
         summary {
             cursor: pointer;
+
             font-weight: bold;
         }
 
         details p {
             color: #888;
+
             padding-top: 15px;
         }
 
@@ -476,9 +552,15 @@
 
         .cta {
             padding: 90px 25px;
+
             text-align: center;
+
             background:
-                radial-gradient(circle, rgba(230,0,0,0.20), transparent 55%),
+                radial-gradient(
+                    circle,
+                    rgba(230,0,0,.20),
+                    transparent 55%
+                ),
                 #090909;
         }
 
@@ -498,20 +580,27 @@
 
         footer {
             padding: 45px 25px;
+
             background: #050505;
+
             border-top: 1px solid #222;
         }
 
         .footer-container {
             max-width: 1200px;
+
             margin: auto;
+
             display: flex;
+
             justify-content: space-between;
+
             gap: 30px;
         }
 
         .footer-logo {
             font-size: 22px;
+
             font-weight: 900;
         }
 
@@ -521,16 +610,23 @@
 
         footer p {
             color: #666;
+
             font-size: 13px;
+
             margin-top: 8px;
         }
 
         .copyright {
             text-align: center;
+
             color: #555;
+
             font-size: 12px;
+
             margin-top: 35px;
+
             padding-top: 25px;
+
             border-top: 1px solid #181818;
         }
 
@@ -540,19 +636,30 @@
 
         .whatsapp {
             position: fixed;
+
             right: 22px;
             bottom: 22px;
+
             width: 58px;
             height: 58px;
+
             background: #25d366;
+
             border-radius: 50%;
+
             display: flex;
+
             justify-content: center;
             align-items: center;
+
             font-size: 27px;
+
             z-index: 999;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.5);
-            transition: 0.3s;
+
+            box-shadow:
+                0 5px 25px rgba(0,0,0,.5);
+
+            transition: .3s;
         }
 
         .whatsapp:hover {
@@ -580,10 +687,6 @@
 
             .uses-grid {
                 grid-template-columns: repeat(2, 1fr);
-            }
-
-            .catalog-grid {
-                grid-template-columns: 1fr;
             }
 
             .product-visual {
@@ -629,32 +732,57 @@
                 padding: 20px;
             }
         }
+
     </style>
 </head>
 
+
 <body>
 
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
+
     <div class="navbar">
 
-        <a href="#" class="logo">
+        <a href="#inicio" class="logo">
             ZENTROX<span>EC</span>
         </a>
 
         <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#producto">Producto</a>
-            <a href="#usos">Usos</a>
-            <a href="#catalogo">Catálogo</a>
-            <a href="#faq">FAQ</a>
+
+            <a href="#inicio">
+                Inicio
+            </a>
+
+            <a href="#producto">
+                Producto
+            </a>
+
+            <a href="#usos">
+                Usos
+            </a>
+
+            <a href="#catalogo">
+                Catálogo
+            </a>
+
+            <a href="#faq">
+                FAQ
+            </a>
+
         </nav>
 
     </div>
+
 </header>
 
 
 <!-- =========================
-     HERO
+     INICIO
 ========================= -->
 
 <section class="hero" id="inicio">
@@ -664,27 +792,43 @@
         <div>
 
             <div class="badge">
-                Soluciones para PC
+                Adaptadores para PC
             </div>
 
             <h1>
+
                 Conecta tu PC.<br>
-                <span>Sin complicaciones.</span>
+
+                <span>
+                    Sin complicaciones.
+                </span>
+
             </h1>
 
             <p>
-                Cables y adaptadores para computadora pensados para
-                resolver esas conexiones que necesitas en tus equipos.
+
+                Cables y adaptadores para computadora
+                pensados para resolver esas conexiones
+                que necesitas en tus equipos.
+
             </p>
+
 
             <div class="buttons">
 
-                <a href="#producto" class="btn btn-primary">
+                <a
+                    href="#producto"
+                    class="btn btn-primary"
+                >
                     Ver producto
                 </a>
 
-                <a href="#catalogo" class="btn btn-secondary">
-                    Ver catálogo
+
+                <a
+                    href="#catalogo"
+                    class="btn btn-secondary"
+                >
+                    Ver adaptador
                 </a>
 
             </div>
@@ -692,23 +836,14 @@
         </div>
 
 
+        <!-- IMAGEN DEL CABLE -->
+
         <div class="product-visual">
 
-            <div class="cable-icon">
-                🔌
-            </div>
-
-            <div class="floating-card">
-
-                <strong>
-                    Cable Delta → 2× SATA
-                </strong>
-
-                <small>
-                    Una solución práctica para conexiones de alimentación SATA compatibles.
-                </small>
-
-            </div>
+            <img
+                src="cable-delta-sata.png"
+                alt="Cable Delta macho a 2 SATA hembra"
+            >
 
         </div>
 
@@ -727,21 +862,27 @@
 
         <div class="section-title">
 
-            <span>¿Por qué elegirnos?</span>
+            <span>
+                ¿Por qué elegirnos?
+            </span>
 
             <h2>
-                Soluciones que facilitan tu trabajo
+                Soluciones para tu PC
             </h2>
 
             <p>
-                Encuentra cables y adaptadores para diferentes necesidades
-                de conexión en computadoras.
+
+                Encuentra adaptadores para resolver
+                necesidades específicas de conexión
+                en computadoras.
+
             </p>
 
         </div>
 
 
         <div class="benefit-grid">
+
 
             <div class="benefit">
 
@@ -754,8 +895,10 @@
                 </h3>
 
                 <p>
-                    Adaptadores pensados para solucionar necesidades
-                    específicas dentro de tu PC.
+
+                    Adaptadores pensados para solucionar
+                    necesidades específicas dentro de tu PC.
+
                 </p>
 
             </div>
@@ -772,8 +915,11 @@
                 </h3>
 
                 <p>
-                    Ideales para personas que realizan mantenimiento,
-                    actualización o reparación de computadoras.
+
+                    Productos dirigidos a personas que
+                    realizan mantenimiento, actualización
+                    o reparación de computadoras.
+
                 </p>
 
             </div>
@@ -790,11 +936,14 @@
                 </h3>
 
                 <p>
-                    Productos destinados a conexiones que no siempre
-                    encuentras fácilmente en tiendas convencionales.
+
+                    Adaptadores para conexiones que no
+                    siempre son fáciles de encontrar.
+
                 </p>
 
             </div>
+
 
         </div>
 
@@ -804,24 +953,32 @@
 
 
 <!-- =========================
-     PRODUCTO PRINCIPAL
+     PRODUCTO
 ========================= -->
 
-<section class="product-section" id="producto">
+<section
+    class="product-section"
+    id="producto"
+>
 
     <div class="container">
 
+
         <div class="section-title">
 
-            <span>Producto destacado</span>
+            <span>
+                Producto destacado
+            </span>
 
             <h2>
                 Cable Delta macho → 2× SATA hembra
             </h2>
 
             <p>
-                Una opción práctica para determinadas configuraciones
-                de alimentación SATA.
+
+                Adaptador de alimentación para
+                determinadas configuraciones de PC.
+
             </p>
 
         </div>
@@ -829,20 +986,33 @@
 
         <div class="product-card">
 
+
+            <!-- IMAGEN DEL PRODUCTO -->
+
             <div class="product-image">
-                🔌
+
+                <img
+                    src="cable-delta-sata.png"
+                    alt="Cable Delta macho a 2 SATA hembra"
+                >
+
             </div>
 
 
             <div class="product-info">
 
+
                 <h3>
                     Delta → 2× SATA
                 </h3>
 
+
                 <p>
-                    Cable adaptador de alimentación con conector Delta
-                    macho y dos conectores SATA hembra.
+
+                    Cable adaptador de alimentación
+                    con conector Delta macho y dos
+                    conectores SATA hembra.
+
                 </p>
 
 
@@ -857,11 +1027,13 @@
                     </li>
 
                     <li>
-                        Diseñado para determinadas configuraciones de PC
+                        Solución para determinadas
+                        configuraciones de PC
                     </li>
 
                     <li>
-                        Útil para mantenimiento y actualización de equipos
+                        Ideal para mantenimiento
+                        y actualización de equipos
                     </li>
 
                 </ul>
@@ -869,11 +1041,12 @@
 
                 <a
                     class="btn btn-primary"
-                    href="https://wa.me/593XXXXXXXXX?text=Hola%20ZentroxEc%2C%20quiero%20consultar%20por%20el%20cable%20Delta%20a%202%20SATA."
+                    href="https://wa.me/593960648763?text=Hola%20ZentroxEc%2C%20quiero%20consultar%20por%20el%20cable%20Delta%20macho%20a%202%20SATA%20hembra."
                     target="_blank"
                 >
-                    Consultar disponibilidad
+                    Consultar por WhatsApp
                 </a>
+
 
             </div>
 
@@ -888,27 +1061,37 @@
      USOS
 ========================= -->
 
-<section class="uses" id="usos">
+<section
+    class="uses"
+    id="usos"
+>
 
     <div class="container">
 
+
         <div class="section-title">
 
-            <span>Aplicaciones</span>
+            <span>
+                Aplicaciones
+            </span>
 
             <h2>
                 ¿Para qué puede servir?
             </h2>
 
             <p>
-                Algunas situaciones en las que pueden resultar útiles
-                los cables y adaptadores para PC.
+
+                Algunas situaciones en las que puede
+                ser útil un adaptador de alimentación
+                para PC.
+
             </p>
 
         </div>
 
 
         <div class="uses-grid">
+
 
             <div class="use">
 
@@ -921,7 +1104,8 @@
                 </h3>
 
                 <p>
-                    Para determinadas configuraciones de dispositivos SATA.
+                    Para determinadas configuraciones
+                    de dispositivos SATA.
                 </p>
 
             </div>
@@ -938,7 +1122,8 @@
                 </h3>
 
                 <p>
-                    Soluciones para configuraciones internas de PC.
+                    Soluciones para configuraciones
+                    internas de PC.
                 </p>
 
             </div>
@@ -955,7 +1140,8 @@
                 </h3>
 
                 <p>
-                    Útil para técnicos y personas que realizan mantenimiento.
+                    Útil para técnicos y personas que
+                    realizan mantenimiento.
                 </p>
 
             </div>
@@ -972,10 +1158,12 @@
                 </h3>
 
                 <p>
-                    Adaptadores destinados a determinadas conexiones de energía.
+                    Adaptador destinado a determinadas
+                    conexiones de energía.
                 </p>
 
             </div>
+
 
         </div>
 
@@ -988,21 +1176,29 @@
      CATALOGO
 ========================= -->
 
-<section id="catalogo">
+<section
+    class="catalog"
+    id="catalogo"
+>
 
     <div class="container">
 
+
         <div class="section-title">
 
-            <span>Catálogo</span>
+            <span>
+                Catálogo
+            </span>
 
             <h2>
-                Cables y adaptadores
+                Adaptadores SATA
             </h2>
 
             <p>
-                Amplía tu catálogo con soluciones para diferentes
-                necesidades de conectividad informática.
+
+                Soluciones de conexión para
+                diferentes necesidades de PC.
+
             </p>
 
         </div>
@@ -1010,82 +1206,52 @@
 
         <div class="catalog-grid">
 
+
             <div class="catalog-card">
 
+
                 <div class="catalog-image">
-                    🔌
+
+                    <img
+                        src="cable-delta-sata.png"
+                        alt="Adaptador SATA Delta a 2 SATA"
+                    >
+
                 </div>
+
 
                 <div class="catalog-content">
 
+
                     <h3>
-                        Adaptadores SATA
+                        Adaptador Delta → 2× SATA
                     </h3>
 
+
                     <p>
-                        Soluciones para diferentes configuraciones
-                        de almacenamiento y alimentación.
+
+                        Cable adaptador de alimentación
+                        con conector Delta macho y dos
+                        conectores SATA hembra.
+
                     </p>
 
-                    <a href="#producto" class="btn btn-secondary">
+
+                    <!-- WHATSAPP -->
+
+                    <a
+                        href="https://wa.me/593960648763?text=Hola%20ZentroxEc%2C%20estoy%20interesado%20en%20el%20Adaptador%20Delta%20a%202%20SATA."
+                        target="_blank"
+                        class="btn btn-primary"
+                    >
                         Consultar
                     </a>
+
 
                 </div>
 
             </div>
 
-
-            <div class="catalog-card">
-
-                <div class="catalog-image">
-                    🖥️
-                </div>
-
-                <div class="catalog-content">
-
-                    <h3>
-                        Cables para PC
-                    </h3>
-
-                    <p>
-                        Cables destinados a resolver conexiones
-                        específicas dentro de equipos.
-                    </p>
-
-                    <a href="#producto" class="btn btn-secondary">
-                        Consultar
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <div class="catalog-card">
-
-                <div class="catalog-image">
-                    ⚙️
-                </div>
-
-                <div class="catalog-content">
-
-                    <h3>
-                        Accesorios
-                    </h3>
-
-                    <p>
-                        Componentes y adaptadores para mantenimiento
-                        y actualización de computadoras.
-                    </p>
-
-                    <a href="#producto" class="btn btn-secondary">
-                        Consultar
-                    </a>
-
-                </div>
-
-            </div>
 
         </div>
 
@@ -1098,13 +1264,19 @@
      FAQ
 ========================= -->
 
-<section class="faq" id="faq">
+<section
+    class="faq"
+    id="faq"
+>
 
     <div class="container">
 
+
         <div class="section-title">
 
-            <span>Preguntas frecuentes</span>
+            <span>
+                Preguntas frecuentes
+            </span>
 
             <h2>
                 Antes de comprar
@@ -1115,6 +1287,7 @@
 
         <div class="faq-container">
 
+
             <details>
 
                 <summary>
@@ -1122,9 +1295,14 @@
                 </summary>
 
                 <p>
-                    No necesariamente. La compatibilidad depende de los
-                    conectores y de la configuración específica del equipo.
-                    Se recomienda verificar los conectores antes de comprar.
+
+                    No necesariamente. La compatibilidad
+                    depende de los conectores y de la
+                    configuración específica del equipo.
+
+                    Se recomienda verificar los conectores
+                    antes de comprar.
+
                 </p>
 
             </details>
@@ -1133,12 +1311,15 @@
             <details>
 
                 <summary>
-                    ¿Tiene dos conectores SATA?
+                    ¿Cuántos conectores SATA tiene?
                 </summary>
 
                 <p>
-                    Sí. El producto mostrado está configurado con un
-                    conector Delta macho y dos conectores SATA hembra.
+
+                    El producto mostrado cuenta con
+                    un conector Delta macho y dos
+                    conectores SATA hembra.
+
                 </p>
 
             </details>
@@ -1151,26 +1332,15 @@
                 </summary>
 
                 <p>
-                    Sí. Puedes escribirnos para verificar compatibilidad,
-                    disponibilidad y resolver tus dudas antes de realizar
-                    una compra.
+
+                    Sí. Puedes escribir directamente
+                    por WhatsApp para consultar sobre
+                    disponibilidad y compatibilidad.
+
                 </p>
 
             </details>
 
-
-            <details>
-
-                <summary>
-                    ¿Venden otros adaptadores?
-                </summary>
-
-                <p>
-                    Sí. ZENTROXEC está enfocado en cables, adaptadores
-                    y soluciones para computadoras.
-                </p>
-
-            </details>
 
         </div>
 
@@ -1187,22 +1357,30 @@
 
     <div class="container">
 
+
         <h2>
-            ¿Buscas un cable específico?
+            ¿Buscas este adaptador?
         </h2>
 
+
         <p>
-            Pregunta por disponibilidad y encuentra una solución
-            para tu computadora.
+
+            Escríbenos directamente por WhatsApp
+            para consultar disponibilidad.
+
         </p>
+
 
         <a
             class="btn btn-primary"
-            href="https://wa.me/593XXXXXXXXX?text=Hola%20ZentroxEc%2C%20estoy%20buscando%20un%20cable%20o%20adaptador%20para%20PC."
+            href="https://wa.me/593960648763?text=Hola%20ZentroxEc%2C%20quiero%20consultar%20por%20el%20adaptador%20Delta%20a%202%20SATA."
             target="_blank"
         >
+
             Hablar por WhatsApp
+
         </a>
+
 
     </div>
 
@@ -1217,6 +1395,7 @@
 
     <div class="footer-container">
 
+
         <div>
 
             <div class="footer-logo">
@@ -1224,7 +1403,7 @@
             </div>
 
             <p>
-                Cables • Adaptadores • Soluciones para PC
+                Adaptadores • Cables • Soluciones para PC
             </p>
 
         </div>
@@ -1242,12 +1421,14 @@
 
         </div>
 
+
     </div>
 
 
     <div class="copyright">
 
-        © 2026 ZENTROXEC. Todos los derechos reservados.
+        © 2026 ZENTROXEC.
+        Todos los derechos reservados.
 
     </div>
 
@@ -1255,12 +1436,12 @@
 
 
 <!-- =========================
-     WHATSAPP
+     BOTON FLOTANTE WHATSAPP
 ========================= -->
 
 <a
     class="whatsapp"
-    href="https://wa.me/593XXXXXXXXX?text=Hola%20ZentroxEc%2C%20quiero%20informacion%20sobre%20sus%20cables%20y%20adaptadores."
+    href="https://wa.me/593960648763?text=Hola%20ZentroxEc%2C%20quiero%20informacion%20sobre%20sus%20adaptadores%20para%20PC."
     target="_blank"
     aria-label="Contactar por WhatsApp"
 >
