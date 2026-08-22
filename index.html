@@ -2,23 +2,13 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <title>ZENTROXEC Tecnología | Catálogo</title>
 
-    <meta name="description"
-          content="ZENTROXEC - Cables, hubs USB y adaptadores para PC. Soluciones prácticas para conectar y ampliar tus dispositivos.">
-
-    <meta name="theme-color"
-          content="#090909">
-
-    <title>ZENTROXEC | Cables y Adaptadores para PC</title>
+    <meta name="description" content="Catálogo de cables, adaptadores, hubs USB y accesorios para PC.">
 
     <style>
-
-        /* =====================================================
-           RESET
-        ===================================================== */
 
         * {
             margin: 0;
@@ -31,1841 +21,1089 @@
         }
 
         body {
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
-
+            font-family: Arial, Helvetica, sans-serif;
             background: #080808;
             color: #ffffff;
-
-            line-height: 1.6;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-
-        /* =====================================================
-           VARIABLES
-        ===================================================== */
-
-        :root {
-            --black: #080808;
-            --black-2: #0e0e0e;
-            --black-3: #151515;
-
-            --red: #e60000;
-            --red-light: #ff2424;
-
-            --white: #ffffff;
-            --gray: #999999;
-            --gray-light: #cccccc;
-
-            --border: #292929;
-        }
-
-
-        /* =====================================================
+        /* =========================
            HEADER
-        ===================================================== */
+        ========================= */
 
         header {
-            position: fixed;
-
+            position: sticky;
             top: 0;
-            left: 0;
-
-            width: 100%;
-
             z-index: 1000;
 
-            background:
-                rgba(8, 8, 8, 0.94);
-
-            backdrop-filter:
-                blur(12px);
-
-            border-bottom:
-                1px solid #222;
+            background: rgba(5, 5, 5, 0.96);
+            border-bottom: 1px solid #292929;
+            backdrop-filter: blur(10px);
         }
 
-        .navbar {
-            width: 100%;
-            max-width: 1200px;
-
+        .header-container {
+            max-width: 1250px;
             margin: auto;
 
-            padding:
-                18px 25px;
+            min-height: 78px;
 
             display: flex;
-
             align-items: center;
             justify-content: space-between;
+
+            padding: 0 25px;
         }
 
         .logo {
-            font-size: 25px;
-
+            font-size: 27px;
             font-weight: 900;
-
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
 
         .logo span {
-            color: var(--red);
+            color: #e50914;
+        }
+
+        .logo-small {
+            display: block;
+            color: #888;
+            font-size: 9px;
+            letter-spacing: 4px;
+            margin-top: 2px;
         }
 
         nav {
             display: flex;
-
-            gap: 28px;
+            align-items: center;
+            gap: 30px;
         }
 
         nav a {
-            color: var(--gray-light);
-
+            color: #ddd;
+            text-decoration: none;
             font-size: 14px;
-
-            transition: .3s;
+            font-weight: bold;
+            transition: 0.2s;
         }
 
         nav a:hover {
-            color: var(--red);
+            color: #e50914;
         }
 
+        .whatsapp-header {
+            border: 1px solid #e50914;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
 
-        /* =====================================================
-           HERO / INICIO
-        ===================================================== */
+        .whatsapp-header:hover {
+            background: #e50914;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
-            min-height: 100vh;
-
-            padding:
-                150px 25px 80px;
+            min-height: 330px;
 
             display: flex;
-
             align-items: center;
 
             background:
-                radial-gradient(
-                    circle at 80% 40%,
-                    rgba(230, 0, 0, .18),
-                    transparent 35%
-                ),
+                radial-gradient(circle at 80% 50%, rgba(229, 9, 20, 0.18), transparent 35%),
+                linear-gradient(135deg, #090909, #121212);
 
-                linear-gradient(
-                    135deg,
-                    #080808,
-                    #111111
-                );
+            border-bottom: 1px solid #222;
         }
 
         .hero-container {
+            max-width: 1250px;
             width: 100%;
-            max-width: 1200px;
-
             margin: auto;
-
-            display: grid;
-
-            grid-template-columns:
-                1.05fr .95fr;
-
-            gap: 60px;
-
-            align-items: center;
-        }
-
-        .badge {
-            display: inline-block;
-
-            padding:
-                8px 15px;
-
-            border:
-                1px solid var(--red);
-
-            border-radius: 30px;
-
-            color: #ff3838;
-
-            font-size: 12px;
-
-            font-weight: bold;
-
-            letter-spacing: 1px;
-
-            text-transform: uppercase;
-
-            margin-bottom: 20px;
+            padding: 60px 25px;
         }
 
         .hero h1 {
-            font-size:
-                clamp(42px, 6vw, 70px);
+            max-width: 700px;
 
-            line-height: 1.05;
+            font-size: clamp(40px, 6vw, 70px);
+            line-height: 0.95;
 
-            margin-bottom: 25px;
+            text-transform: uppercase;
+            font-weight: 900;
         }
 
         .hero h1 span {
-            color: var(--red);
+            color: #e50914;
+        }
+
+        .hero-line {
+            width: 55px;
+            height: 4px;
+            background: #e50914;
+
+            margin: 25px 0;
         }
 
         .hero p {
-            color: #aaaaaa;
-
-            font-size: 18px;
-
-            max-width: 620px;
-
-            margin-bottom: 35px;
+            max-width: 550px;
+            color: #aaa;
+            font-size: 17px;
+            line-height: 1.7;
         }
 
-        .buttons {
+        /* =========================
+           CATALOGO
+        ========================= */
+
+        .catalogo {
+            max-width: 1250px;
+            margin: auto;
+
+            padding: 45px 25px 70px;
+        }
+
+        /* BUSCADOR */
+
+        .search-container {
             display: flex;
-
-            gap: 15px;
-
-            flex-wrap: wrap;
+            margin-bottom: 25px;
         }
 
-        .btn {
-            display: inline-block;
+        #buscador {
+            width: 100%;
 
-            padding:
-                15px 25px;
+            padding: 17px 20px;
 
-            border-radius: 8px;
+            background: #1b1b1b;
+            border: 1px solid #333;
+
+            border-radius: 8px 0 0 8px;
+
+            color: white;
+            font-size: 16px;
+
+            outline: none;
+        }
+
+        #buscador:focus {
+            border-color: #e50914;
+        }
+
+        .search-button {
+            width: 65px;
+
+            background: #e50914;
+            border: none;
+
+            color: white;
+            font-size: 20px;
+
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* CATEGORIAS */
+
+        .categorias {
+            display: flex;
+            gap: 10px;
+
+            overflow-x: auto;
+
+            padding-bottom: 20px;
+        }
+
+        .categoria {
+            flex-shrink: 0;
+
+            background: #101010;
+            color: #ddd;
+
+            border: 1px solid #444;
+
+            padding: 12px 20px;
+
+            border-radius: 7px;
+
+            cursor: pointer;
 
             font-weight: bold;
-
-            transition: .3s;
-        }
-
-        .btn-primary {
-            background: var(--red);
-
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: var(--red-light);
-
-            transform:
-                translateY(-3px);
-        }
-
-        .btn-secondary {
-            border:
-                1px solid #444;
-
-            color: white;
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--red);
-
-            color: var(--red);
-        }
-
-
-        /* =====================================================
-           HERO VISUAL
-        ===================================================== */
-
-        .hero-visual {
-            min-height: 430px;
-
-            border:
-                1px solid var(--border);
-
-            border-radius: 25px;
-
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(230,0,0,.14),
-                    transparent 60%
-                ),
-
-                #0d0d0d;
-
-            display: flex;
-
-            justify-content: center;
-            align-items: center;
-
-            padding: 30px;
-
-            position: relative;
-
-            overflow: hidden;
-        }
-
-        .hero-device {
-            width: 280px;
-
-            padding: 35px 25px;
-
-            border-radius: 20px;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    #202020,
-                    #090909
-                );
-
-            border:
-                1px solid #444;
-
-            box-shadow:
-                0 25px 60px
-                rgba(0,0,0,.65);
-
-            text-align: center;
-
-            transform:
-                rotate(-4deg);
-        }
-
-        .usb-icon {
-            font-size: 85px;
-
-            margin-bottom: 20px;
-        }
-
-        .hero-device h3 {
-            font-size: 23px;
-
-            margin-bottom: 8px;
-        }
-
-        .hero-device p {
-            color: #888;
-
-            font-size: 14px;
-
-            margin: 0;
-        }
-
-        .port {
-            width: 75px;
-            height: 18px;
-
-            margin: 18px auto 0;
-
-            background: #050505;
-
-            border:
-                2px solid #555;
-
-            border-radius: 5px;
-        }
-
-
-        /* =====================================================
-           SECTIONS
-        ===================================================== */
-
-        section {
-            padding:
-                100px 25px;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-
-            margin: auto;
-        }
-
-        .section-title {
-            text-align: center;
-
-            margin-bottom: 55px;
-        }
-
-        .section-title span {
-            color: var(--red);
-
             font-size: 13px;
 
-            font-weight: bold;
-
-            letter-spacing: 2px;
-
-            text-transform: uppercase;
+            transition: 0.2s;
         }
 
-        .section-title h2 {
-            font-size: 42px;
+        .categoria:hover,
+        .categoria.activa {
+            background: #e50914;
+            border-color: #e50914;
+            color: white;
+        }
+
+        /* PRODUCTOS */
+
+        .productos-grid {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 14px;
 
             margin-top: 10px;
         }
 
-        .section-title p {
-            max-width: 680px;
+        .producto {
+            background: #ffffff;
 
-            margin:
-                15px auto 0;
+            color: #111;
 
-            color: #888;
+            border-radius: 8px;
+
+            overflow: hidden;
+
+            display: flex;
+            flex-direction: column;
+
+            transition: transform 0.25s, box-shadow 0.25s;
         }
 
+        .producto:hover {
+            transform: translateY(-5px);
 
-        /* =====================================================
-           PRODUCTOS PRINCIPALES
-        ===================================================== */
-
-        .products-section {
-            background: var(--black-2);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
         }
 
-        .main-products {
+        .producto-imagen {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+
+            background: #f4f4f4;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+        }
+
+        .producto-imagen img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+
+            transition: 0.3s;
+        }
+
+        .producto:hover .producto-imagen img {
+            transform: scale(1.04);
+        }
+
+        .producto-info {
+            padding: 17px;
+
+            display: flex;
+            flex-direction: column;
+
+            flex: 1;
+        }
+
+        .producto-categoria {
+            color: #e50914;
+
+            font-size: 11px;
+
+            font-weight: 900;
+
+            text-transform: uppercase;
+
+            margin-bottom: 7px;
+        }
+
+        .producto-nombre {
+            font-size: 18px;
+            font-weight: 800;
+
+            margin-bottom: 9px;
+        }
+
+        .producto-descripcion {
+            color: #555;
+
+            font-size: 13px;
+
+            line-height: 1.5;
+
+            margin-bottom: 15px;
+        }
+
+        .producto-precio {
+            color: #e50914;
+
+            font-size: 22px;
+
+            font-weight: 900;
+
+            margin-top: auto;
+
+            margin-bottom: 13px;
+        }
+
+        .producto-whatsapp {
+            display: block;
+
+            width: 100%;
+
+            background: #080808;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 12px;
+
+            border-radius: 6px;
+
+            text-decoration: none;
+
+            font-size: 12px;
+
+            font-weight: 900;
+
+            transition: 0.2s;
+        }
+
+        .producto-whatsapp:hover {
+            background: #e50914;
+        }
+
+        /* SIN RESULTADOS */
+
+        .sin-resultados {
+            display: none;
+
+            text-align: center;
+
+            padding: 60px 20px;
+
+            color: #777;
+        }
+
+        .sin-resultados h3 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        /* =========================
+           INFORMACION
+        ========================= */
+
+        .beneficios {
+            border-top: 1px solid #222;
+
+            background: #0d0d0d;
+
             display: grid;
 
-            grid-template-columns:
-                repeat(2, 1fr);
+            grid-template-columns: repeat(4, 1fr);
+
+            padding: 35px max(25px, calc((100% - 1200px) / 2));
 
             gap: 25px;
         }
 
-        .main-product {
-            background: #111;
-
-            border:
-                1px solid var(--border);
-
-            border-radius: 18px;
-
-            overflow: hidden;
-
-            transition: .3s;
-        }
-
-        .main-product:hover {
-            transform:
-                translateY(-6px);
-
-            border-color:
-                var(--red);
-        }
-
-        .product-visual {
-            height: 280px;
-
+        .beneficio {
             display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(230,0,0,.10),
-                    transparent 65%
-                );
-
-            font-size: 90px;
+            gap: 15px;
         }
 
-        .hub-visual {
-            display: flex;
-
-            gap: 10px;
-
-            align-items: center;
+        .beneficio-icono {
+            color: #e50914;
+            font-size: 28px;
         }
 
-        .hub {
-            width: 150px;
-
-            padding: 20px;
-
-            border-radius: 15px;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    #222,
-                    #090909
-                );
-
-            border:
-                1px solid #444;
-
-            box-shadow:
-                0 20px 40px
-                rgba(0,0,0,.5);
+        .beneficio h3 {
+            font-size: 13px;
+            margin-bottom: 5px;
         }
 
-        .hub-title {
-            font-size: 16px;
-
-            font-weight: bold;
-
-            margin-bottom: 15px;
-        }
-
-        .usb-ports {
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
-            gap: 8px;
-        }
-
-        .usb-port {
-            height: 13px;
-
-            border:
-                2px solid #777;
-
-            border-radius: 3px;
-
-            background: #050505;
-        }
-
-        .product-content {
-            padding: 30px;
-        }
-
-        .product-content h3 {
-            font-size: 25px;
-
-            margin-bottom: 10px;
-        }
-
-        .product-content p {
-            color: #888;
-
-            font-size: 15px;
-
-            margin-bottom: 22px;
-        }
-
-
-        /* =====================================================
-           CARACTERISTICAS
-        ===================================================== */
-
-        .features {
-            background: var(--black);
-        }
-
-        .features-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 20px;
-        }
-
-        .feature {
-            padding: 35px 28px;
-
-            background: #111;
-
-            border:
-                1px solid var(--border);
-
-            border-radius: 15px;
-
-            transition: .3s;
-        }
-
-        .feature:hover {
-            border-color: var(--red);
-
-            transform:
-                translateY(-5px);
-        }
-
-        .feature-icon {
-            font-size: 38px;
-
-            margin-bottom: 20px;
-        }
-
-        .feature h3 {
-            margin-bottom: 10px;
-        }
-
-        .feature p {
-            color: #888;
-        }
-
-
-        /* =====================================================
-           APLICACIONES SATA
-        ===================================================== */
-
-        .applications {
-            background: var(--black-2);
-        }
-
-        .applications-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(4, 1fr);
-
-            gap: 18px;
-        }
-
-        .application {
-            text-align: center;
-
-            padding: 30px 20px;
-
-            background: #111;
-
-            border:
-                1px solid var(--border);
-
-            border-radius: 15px;
-        }
-
-        .application-icon {
-            font-size: 40px;
-
-            margin-bottom: 15px;
-        }
-
-        .application h3 {
-            font-size: 17px;
-        }
-
-        .application p {
+        .beneficio p {
             color: #777;
-
-            font-size: 14px;
-
-            margin-top: 8px;
+            font-size: 12px;
+            line-height: 1.5;
         }
 
-
-        /* =====================================================
-           CATALOGO
-        ===================================================== */
-
-        .catalog {
-            background: var(--black);
-        }
-
-        .catalog-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 20px;
-        }
-
-        .catalog-card {
-            background: #111;
-
-            border:
-                1px solid var(--border);
-
-            border-radius: 15px;
-
-            overflow: hidden;
-
-            transition: .3s;
-        }
-
-        .catalog-card:hover {
-            transform:
-                translateY(-5px);
-
-            border-color:
-                var(--red);
-        }
-
-        .catalog-image {
-            height: 220px;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            background: #090909;
-
-            font-size: 75px;
-        }
-
-        .catalog-content {
-            padding: 25px;
-        }
-
-        .catalog-content h3 {
-            font-size: 20px;
-
-            margin-bottom: 10px;
-        }
-
-        .catalog-content p {
-            color: #777;
-
-            font-size: 14px;
-
-            margin-bottom: 20px;
-        }
-
-
-        /* =====================================================
-           FAQ
-        ===================================================== */
-
-        .faq {
-            background: var(--black-2);
-        }
-
-        .faq-container {
-            max-width: 850px;
-
-            margin: auto;
-        }
-
-        details {
-            background: #111;
-
-            border:
-                1px solid var(--border);
-
-            border-radius: 10px;
-
-            padding: 20px;
-
-            margin-bottom: 12px;
-        }
-
-        summary {
-            cursor: pointer;
-
-            font-weight: bold;
-        }
-
-        details p {
-            color: #888;
-
-            padding-top: 15px;
-        }
-
-
-        /* =====================================================
-           CTA
-        ===================================================== */
-
-        .cta {
-            text-align: center;
-
-            padding:
-                90px 25px;
-
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(230,0,0,.20),
-                    transparent 55%
-                ),
-
-                #090909;
-        }
-
-        .cta h2 {
-            font-size: 45px;
-
-            margin-bottom: 15px;
-        }
-
-        .cta p {
-            color: #999;
-
-            margin-bottom: 30px;
-        }
-
-
-        /* =====================================================
+        /* =========================
            FOOTER
-        ===================================================== */
+        ========================= */
 
         footer {
             background: #050505;
 
-            border-top:
-                1px solid #222;
+            border-top: 1px solid #222;
 
-            padding:
-                45px 25px;
+            padding: 35px 25px;
+
+            text-align: center;
         }
 
-        .footer-container {
-            width: 100%;
-            max-width: 1200px;
-
-            margin: auto;
-
-            display: flex;
-
-            justify-content:
-                space-between;
-
-            gap: 30px;
-        }
-
-        .footer-logo {
-            font-size: 22px;
-
-            font-weight: 900;
-        }
-
-        .footer-logo span {
-            color: var(--red);
+        footer .logo {
+            margin-bottom: 15px;
         }
 
         footer p {
             color: #666;
-
-            font-size: 13px;
-
-            margin-top: 8px;
-        }
-
-        .copyright {
-            text-align: center;
-
-            color: #555;
-
             font-size: 12px;
-
-            margin-top: 35px;
-
-            padding-top: 25px;
-
-            border-top:
-                1px solid #181818;
         }
 
-
-        /* =====================================================
-           WHATSAPP
-        ===================================================== */
-
-        .whatsapp {
-            position: fixed;
-
-            right: 22px;
-            bottom: 22px;
-
-            width: 60px;
-            height: 60px;
-
-            border-radius: 50%;
-
-            background: #25d366;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            font-size: 28px;
-
-            z-index: 999;
-
-            box-shadow:
-                0 6px 25px
-                rgba(0,0,0,.5);
-
-            transition: .3s;
-        }
-
-        .whatsapp:hover {
-            transform:
-                scale(1.1);
-        }
-
-
-        /* =====================================================
+        /* =========================
            RESPONSIVE
-        ===================================================== */
+        ========================= */
 
-        @media (max-width: 900px) {
+        @media (max-width: 1000px) {
+
+            .productos-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            .whatsapp-header {
+                display: none;
+            }
+
+            .beneficios {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            .header-container {
+                min-height: 65px;
+            }
 
             nav {
                 display: none;
             }
 
-            .hero-container {
-                grid-template-columns: 1fr;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .applications-grid {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
-            .catalog-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .main-products {
-                grid-template-columns: 1fr;
+            .logo {
+                font-size: 23px;
             }
 
             .hero {
-                padding-top: 130px;
+                min-height: 300px;
             }
-        }
 
-
-        @media (max-width: 600px) {
-
-            section {
-                padding:
-                    75px 20px;
+            .hero-container {
+                padding: 50px 20px;
             }
 
             .hero h1 {
-                font-size: 43px;
+                font-size: 42px;
             }
 
-            .hero p {
-                font-size: 16px;
+            .catalogo {
+                padding: 30px 15px 50px;
             }
 
-            .hero-visual {
-                min-height: 330px;
+            .productos-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
             }
 
-            .section-title h2 {
-                font-size: 32px;
+            .producto-info {
+                padding: 12px;
             }
 
-            .applications-grid {
+            .producto-nombre {
+                font-size: 15px;
+            }
+
+            .producto-descripcion {
+                font-size: 12px;
+            }
+
+            .producto-precio {
+                font-size: 18px;
+            }
+
+            .producto-whatsapp {
+                font-size: 10px;
+                padding: 11px 5px;
+            }
+
+            .beneficios {
                 grid-template-columns: 1fr;
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 420px) {
+
+            .productos-grid {
+                grid-template-columns: 1fr 1fr;
             }
 
-            .cta h2 {
-                font-size: 34px;
+            .producto-nombre {
+                font-size: 14px;
             }
 
-            .footer-container {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-
-                text-align: center;
-            }
-
-            .hub {
-                width: 135px;
+            .producto-descripcion {
+                font-size: 11px;
             }
         }
 
     </style>
 </head>
 
-
 <body>
 
-
-<!-- =====================================================
+<!-- =========================
      HEADER
-===================================================== -->
+========================= -->
 
 <header>
 
-    <div class="navbar">
+    <div class="header-container">
 
-        <a href="#inicio" class="logo">
-            ZENTROX<span>EC</span>
-        </a>
+        <div class="logo">
+            ZENTRO<span>X</span>EC
+            <span class="logo-small">TECNOLOGÍA</span>
+        </div>
 
         <nav>
-
-            <a href="#inicio">
-                Inicio
-            </a>
-
-            <a href="#productos">
-                Productos
-            </a>
-
-            <a href="#caracteristicas">
-                Características
-            </a>
-
-            <a href="#aplicaciones">
-                Aplicaciones
-            </a>
-
-            <a href="#catalogo">
-                Catálogo
-            </a>
-
-            <a href="#faq">
-                FAQ
-            </a>
-
+            <a href="#catalogo">CATÁLOGO</a>
+            <a href="#beneficios">SERVICIOS</a>
         </nav>
+
+        <a
+            class="whatsapp-header"
+            id="whatsappHeader"
+            target="_blank"
+        >
+            ☎ CONSULTAR DISPONIBILIDAD
+        </a>
 
     </div>
 
 </header>
 
 
-<!-- =====================================================
-     INICIO
-===================================================== -->
+<!-- =========================
+     HERO
+========================= -->
 
-<section
-    class="hero"
-    id="inicio"
->
+<section class="hero">
 
     <div class="hero-container">
 
-
-        <div>
-
-            <div class="badge">
-                Tecnología para PC
-            </div>
-
-
-            <h1>
-
-                Cables y adaptadores
-                <span>
-                    para PC que sí necesitas.
-                </span>
-
-            </h1>
-
-
-            <p>
-
-                Encuentra cables, hubs USB y adaptadores
-                para conectar, ampliar y solucionar las
-                necesidades de tus equipos.
-
-            </p>
-
-
-            <div class="buttons">
-
-                <a
-                    href="#productos"
-                    class="btn btn-primary"
-                >
-                    Ver productos
-                </a>
-
-
-                <a
-                    href="https://wa.me/593960648763?text=Hola%20ZentroxEc%2C%20quiero%20consultar%20por%20un%20cable%20o%20adaptador%20para%20PC."
-                    target="_blank"
-                    class="btn btn-secondary"
-                >
-                    Consultar disponibilidad
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- VISUAL USB -->
-
-        <div class="hero-visual">
-
-            <div class="hero-device">
-
-                <div class="usb-icon">
-                    🔌
-                </div>
-
-                <h3>
-                    USB & Adaptadores
-                </h3>
-
-                <p>
-                    Conecta más dispositivos
-                    a tu PC.
-                </p>
-
-                <div class="port"></div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     PRODUCTO PRINCIPAL
-===================================================== -->
-
-<section
-    class="products-section"
-    id="productos"
->
-
-    <div class="container">
-
-
-        <div class="section-title">
-
-            <span>
-                Producto principal
-            </span>
-
-            <h2>
-                Cables y Hubs USB
-            </h2>
-
-            <p>
-
-                Soluciones prácticas para conectar
-                periféricos y ampliar las posibilidades
-                de tu computadora.
-
-            </p>
-
-        </div>
-
-
-        <div class="main-products">
-
-
-            <!-- CABLE USB -->
-
-            <div class="main-product">
-
-                <div class="product-visual">
-
-                    🔌
-
-                </div>
-
-
-                <div class="product-content">
-
-                    <h3>
-                        Cables USB
-                    </h3>
-
-                    <p>
-
-                        Cables para diferentes necesidades
-                        de conexión entre computadoras,
-                        periféricos y dispositivos.
-
-                    </p>
-
-
-                    <a
-                        href="https://wa.me/593960648763?text=Hola%20ZentroxEc%2C%20quiero%20consultar%20por%20los%20cables%20USB."
-                        target="_blank"
-                        class="btn btn-primary"
-                    >
-                        Consultar disponibilidad
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- HUB USB -->
-
-            <div class="main-product">
-
-                <div class="product-visual">
-
-                    <div class="hub">
-
-                        <div class="hub-title">
-                            USB HUB
-                        </div>
-
-                        <div class="usb-ports">
-
-                            <div class="usb-port"></div>
-                            <div class="usb-port"></div>
-                            <div class="usb-port"></div>
-                            <div class="usb-port"></div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="product-content">
-
-                    <h3>
-                        Hubs USB
-                    </h3>
-
-                    <p>
-
-                        Amplía las conexiones USB disponibles
-                        para utilizar diferentes dispositivos
-                        desde tu computadora.
-
-                    </p>
-
-
-                    <a
-                        href="https://wa.me/593960648763?text=Hola%20ZentroxEc%2C%20quiero%20consultar%20por%20los%20Hubs%20USB."
-                        target="_blank"
-                        class="btn btn-primary"
-                    >
-                        Consultar disponibilidad
-                    </a>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     CARACTERISTICAS
-===================================================== -->
-
-<section
-    class="features"
-    id="caracteristicas"
->
-
-    <div class="container">
-
-
-        <div class="section-title">
-
-            <span>
-                Características
-            </span>
-
-            <h2>
-                Pensados para tus conexiones
-            </h2>
-
-            <p>
-
-                Antes de comprar un adaptador o cable,
-                revisa siempre la conexión que necesitas.
-
-            </p>
-
-        </div>
-
-
-        <div class="features-grid">
-
-
-            <div class="feature">
-
-                <div class="feature-icon">
-                    🔌
-                </div>
-
-                <h3>
-                    Conexión
-                </h3>
-
-                <p>
-
-                    Diferentes cables y adaptadores
-                    permiten conectar dispositivos
-                    con distintos tipos de puertos.
-
-                </p>
-
-            </div>
-
-
-            <div class="feature">
-
-                <div class="feature-icon">
-                    💻
-                </div>
-
-                <h3>
-                    Compatibilidad
-                </h3>
-
-                <p>
-
-                    Verifica el tipo de puerto y las
-                    características de tu equipo antes
-                    de realizar una compra.
-
-                </p>
-
-            </div>
-
-
-            <div class="feature">
-
-                <div class="feature-icon">
-                    ⚙️
-                </div>
-
-                <h3>
-                    Usos
-                </h3>
-
-                <p>
-
-                    Ideales para mantenimiento,
-                    actualización, conexión de periféricos
-                    y diferentes configuraciones de PC.
-
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     APLICACIONES
-===================================================== -->
-
-<section
-    class="applications"
-    id="aplicaciones"
->
-
-    <div class="container">
-
-
-        <div class="section-title">
-
-            <span>
-                Aplicaciones
-            </span>
-
-            <h2>
-                HDD, SSD y dispositivos SATA
-            </h2>
-
-            <p>
-
-                Los adaptadores adecuados pueden facilitar
-                diferentes configuraciones de almacenamiento
-                y mantenimiento de computadoras.
-
-            </p>
-
-        </div>
-
-
-        <div class="applications-grid">
-
-
-            <div class="application">
-
-                <div class="application-icon">
-                    💾
-                </div>
-
-                <h3>
-                    HDD
-                </h3>
-
-                <p>
-                    Discos duros compatibles con
-                    las conexiones correspondientes.
-                </p>
-
-            </div>
-
-
-            <div class="application">
-
-                <div class="application-icon">
-                    ⚡
-                </div>
-
-                <h3>
-                    SSD
-                </h3>
-
-                <p>
-                    Soluciones para determinadas
-                    configuraciones de almacenamiento.
-                </p>
-
-            </div>
-
-
-            <div class="application">
-
-                <div class="application-icon">
-                    🔧
-                </div>
-
-                <h3>
-                    Mantenimiento
-                </h3>
-
-                <p>
-                    Herramientas y adaptadores para
-                    técnicos y usuarios de PC.
-                </p>
-
-            </div>
-
-
-            <div class="application">
-
-                <div class="application-icon">
-                    🖥️
-                </div>
-
-                <h3>
-                    PC
-                </h3>
-
-                <p>
-                    Diferentes configuraciones y
-                    actualizaciones de equipos.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     CATALOGO
-===================================================== -->
-
-<section
-    class="catalog"
-    id="catalogo"
->
-
-    <div class="container">
-
-
-        <div class="section-title">
-
-            <span>
-                Catálogo
-            </span>
-
-            <h2>
-                Otros cables y adaptadores
-            </h2>
-
-            <p>
-
-                Encuentra otras soluciones de conectividad
-                para diferentes necesidades informáticas.
-
-            </p>
-
-        </div>
-
-
-        <div class="catalog-grid">
-
-
-            <!-- OTRO CABLE -->
-
-            <div class="catalog-card">
-
-                <div class="catalog-image">
-                    🔌
-                </div>
-
-
-                <div class="catalog-content">
-
-                    <h3>
-                        Cables de conexión
-                    </h3>
-
-                    <p>
-
-                        Diferentes opciones de cables
-                        para conectar equipos y periféricos.
-
-                    </p>
-
-
-                    <a
-                        href="https://wa.me/593960648763?text=Hola%20ZentroxEc%2C%20quiero%20consultar%20por%20otros%20cables%20de%20conexi%C3%B3n."
-                        target="_blank"
-                        class="btn btn-primary"
-                    >
-                        Consultar
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- ADAPTADOR -->
-
-            <div class="catalog-card">
-
-                <div class="catalog-image">
-                    🔄
-                </div>
-
-
-                <div class="catalog-content">
-
-                    <h3>
-                        Adaptadores para PC
-                    </h3>
-
-                    <p>
-
-                        Adaptadores para resolver diferentes
-                        necesidades de conexión.
-
-                    </p>
-
-
-                    <a
-                        href="https://wa.me/593960648763?text=Hola%20ZentroxEc%2C%20quiero%20consultar%20por%20otros%20adaptadores%20para%20PC."
-                        target="_blank"
-                        class="btn btn-primary"
-                    >
-                        Consultar
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- CONVERSORES -->
-
-            <div class="catalog-card">
-
-                <div class="catalog-image">
-                    ⚙️
-                </div>
-
-
-                <div class="catalog-content">
-
-                    <h3>
-                        Conversores
-                    </h3>
-
-                    <p>
-
-                        Soluciones para determinadas
-                        conversiones y conexiones informáticas.
-
-                    </p>
-
-
-                    <a
-                        href="https://wa.me/593960648763?text=Hola%20ZentroxEc%2C%20quiero%20consultar%20por%20otros%20conversores."
-                        target="_blank"
-                        class="btn btn-primary"
-                    >
-                        Consultar
-                    </a>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     FAQ
-===================================================== -->
-
-<section
-    class="faq"
-    id="faq"
->
-
-    <div class="container">
-
-
-        <div class="section-title">
-
-            <span>
-                Preguntas frecuentes
-            </span>
-
-            <h2>
-                ¿Tienes alguna duda?
-            </h2>
-
-            <p>
-                Aquí encontrarás respuestas a algunas
-                de las preguntas más comunes.
-            </p>
-
-        </div>
-
-
-        <div class="faq-container">
-
-
-            <details>
-
-                <summary>
-                    ¿Qué productos venden?
-                </summary>
-
-                <p>
-
-                    Nos enfocamos principalmente en cables,
-                    hubs USB, adaptadores y otros accesorios
-                    para PC.
-
-                </p>
-
-            </details>
-
-
-            <details>
-
-                <summary>
-                    ¿Cómo sé si un adaptador es compatible?
-                </summary>
-
-                <p>
-
-                    Lo importante es verificar los conectores
-                    de tu equipo y del dispositivo que deseas
-                    conectar. Si tienes dudas, puedes escribirnos
-                    por WhatsApp.
-
-                </p>
-
-            </details>
-
-
-            <details>
-
-                <summary>
-                    ¿Tienen productos para HDD y SSD?
-                </summary>
-
-                <p>
-
-                    Disponemos de soluciones y adaptadores
-                    destinados a diferentes configuraciones.
-                    Consulta disponibilidad antes de comprar.
-
-                </p>
-
-            </details>
-
-
-            <details>
-
-                <summary>
-                    ¿Cómo puedo consultar disponibilidad?
-                </summary>
-
-                <p>
-
-                    Puedes utilizar cualquiera de los botones
-                    de WhatsApp de esta página para comunicarte
-                    directamente con nosotros.
-
-                </p>
-
-            </details>
-
-
-            <details>
-
-                <summary>
-                    ¿Puedo preguntar antes de comprar?
-                </summary>
-
-                <p>
-
-                    Sí. Recomendamos consultar la compatibilidad
-                    del producto con tu equipo antes de realizar
-                    la compra.
-
-                </p>
-
-            </details>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     CTA
-===================================================== -->
-
-<section class="cta">
-
-    <div class="container">
-
-
-        <h2>
-            ¿Buscas un cable o adaptador?
-        </h2>
-
+        <h1>
+            CATÁLOGO DE
+            <span>PRODUCTOS</span>
+        </h1>
+
+        <div class="hero-line"></div>
 
         <p>
-
-            Consulta disponibilidad directamente
-            por WhatsApp.
-
+            Cables, adaptadores, hubs USB y accesorios
+            para conectar y potenciar tus dispositivos.
         </p>
-
-
-        <a
-            href="https://wa.me/593960648763?text=Hola%20ZentroxEc%2C%20quiero%20consultar%20por%20un%20producto%20para%20PC."
-            target="_blank"
-            class="btn btn-primary"
-        >
-
-            Consultar disponibilidad
-
-        </a>
-
 
     </div>
 
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
+     CATALOGO
+========================= -->
+
+<section class="catalogo" id="catalogo">
+
+    <!-- BUSCADOR -->
+
+    <div class="search-container">
+
+        <input
+            type="text"
+            id="buscador"
+            placeholder="Buscar productos..."
+        >
+
+        <button class="search-button">
+            🔎
+        </button>
+
+    </div>
+
+
+    <!-- CATEGORIAS -->
+
+    <div class="categorias" id="categorias"></div>
+
+
+    <!-- PRODUCTOS -->
+
+    <div
+        class="productos-grid"
+        id="productos"
+    ></div>
+
+
+    <div
+        class="sin-resultados"
+        id="sinResultados"
+    >
+
+        <h3>No encontramos productos</h3>
+
+        <p>
+            Intenta buscar otro producto o categoría.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     BENEFICIOS
+========================= -->
+
+<section class="beneficios" id="beneficios">
+
+    <div class="beneficio">
+
+        <div class="beneficio-icono">
+            ✓
+        </div>
+
+        <div>
+            <h3>PRODUCTOS SELECCIONADOS</h3>
+
+            <p>
+                Accesorios útiles para equipos tecnológicos.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="beneficio">
+
+        <div class="beneficio-icono">
+            ⚡
+        </div>
+
+        <div>
+            <h3>ATENCIÓN DIRECTA</h3>
+
+            <p>
+                Consulta disponibilidad directamente por WhatsApp.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="beneficio">
+
+        <div class="beneficio-icono">
+            📦
+        </div>
+
+        <div>
+            <h3>ENVÍOS</h3>
+
+            <p>
+                Consulta opciones de entrega disponibles.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="beneficio">
+
+        <div class="beneficio-icono">
+            🔧
+        </div>
+
+        <div>
+            <h3>SOLUCIONES TECNOLÓGICAS</h3>
+
+            <p>
+                Encuentra cables y adaptadores difíciles de conseguir.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
      FOOTER
-===================================================== -->
+========================= -->
 
 <footer>
 
-    <div class="footer-container">
-
-
-        <div>
-
-            <div class="footer-logo">
-
-                ZENTROX<span>EC</span>
-
-            </div>
-
-            <p>
-                Cables • Hubs USB • Adaptadores • Tecnología
-            </p>
-
-        </div>
-
-
-        <div>
-
-            <p>
-                Ecuador
-            </p>
-
-            <p>
-                Soluciones para tus equipos.
-            </p>
-
-        </div>
-
-
+    <div class="logo">
+        ZENTRO<span>X</span>EC
+        <span class="logo-small">TECNOLOGÍA</span>
     </div>
 
-
-    <div class="copyright">
-
-        © 2026 ZENTROXEC.
-        Todos los derechos reservados.
-
-    </div>
+    <p>
+        © 2026 ZENTROXEC Tecnología. Todos los derechos reservados.
+    </p>
 
 </footer>
 
 
-<!-- =====================================================
-     WHATSAPP FLOTANTE
-===================================================== -->
+<script>
 
-<a
-    href="https://wa.me/593960648763?text=Hola%20ZentroxEc%2C%20quiero%20consultar%20por%20sus%20productos."
-    target="_blank"
-    class="whatsapp"
-    aria-label="Contactar por WhatsApp"
->
+/* =====================================================
+   CONFIGURACIÓN
+   ===================================================== */
 
-    💬
 
-</a>
+/*
+   IMPORTANTE:
 
+   Cambia este número por tu número de WhatsApp.
+
+   Debes colocar el código de país de Ecuador:
+
+   593 + número
+
+   Ejemplo:
+
+   593999999999
+*/
+
+const WHATSAPP = "593999999999";
+
+
+/* =====================================================
+   PRODUCTOS
+   =====================================================
+
+   AQUÍ ES DONDE VAS A AGREGAR TUS PRODUCTOS.
+
+   No necesitas modificar el HTML.
+
+   Solo agrega nuevos productos dentro de esta lista.
+
+*/
+
+
+const PRODUCTOS = [
+
+    {
+        nombre: "Cable Delta a 2 SATA",
+        precio: "$2.50",
+        categoria: "Cables",
+        imagen: "img/cable-delta-sata.jpg",
+        descripcion: "Cable para conectar dos dispositivos SATA mediante una conexión de alimentación compatible."
+    },
+
+    {
+        nombre: "Cable USB 3.0",
+        precio: "$3.00",
+        categoria: "Cables",
+        imagen: "img/cable-usb-30.jpg",
+        descripcion: "Cable USB 3.0 para transferencia de datos y conexión de dispositivos."
+    },
+
+    {
+        nombre: "Adaptador SATA a USB",
+        precio: "$6.50",
+        categoria: "Adaptadores",
+        imagen: "img/adaptador-sata-usb.jpg",
+        descripcion: "Permite conectar un dispositivo SATA mediante USB."
+    },
+
+    {
+        nombre: "Hub USB 3.0 de 4 Puertos",
+        precio: "$7.00",
+        categoria: "Hubs USB",
+        imagen: "img/hub-usb-4-puertos.jpg",
+        descripcion: "Amplía la cantidad de puertos USB disponibles en tu computadora."
+    },
+
+    {
+        nombre: "Adaptador SATA a USB 2.0",
+        precio: "$4.50",
+        categoria: "Adaptadores",
+        imagen: "img/adaptador-sata-usb-20.jpg",
+        descripcion: "Adaptador para conectar dispositivos SATA mediante USB."
+    },
+
+    {
+        nombre: "Cable de Poder SATA Y",
+        precio: "$2.00",
+        categoria: "Cables",
+        imagen: "img/cable-sata-y.jpg",
+        descripcion: "Permite distribuir alimentación SATA para conectar dispositivos adicionales."
+    },
+
+    {
+        nombre: "Hub USB Tipo C 5 en 1",
+        precio: "$15.00",
+        categoria: "Hubs USB",
+        imagen: "img/hub-usb-c.jpg",
+        descripcion: "Hub multipuerto para ampliar las conexiones de equipos compatibles."
+    },
+
+    {
+        nombre: "Cable SATA III",
+        precio: "$1.50",
+        categoria: "Cables",
+        imagen: "img/cable-sata-iii.jpg",
+        descripcion: "Cable SATA para conexión de discos duros y unidades SSD."
+    }
+
+];
+
+
+/* =====================================================
+   ELEMENTOS
+   ===================================================== */
+
+const contenedorProductos =
+    document.getElementById("productos");
+
+const contenedorCategorias =
+    document.getElementById("categorias");
+
+const buscador =
+    document.getElementById("buscador");
+
+const sinResultados =
+    document.getElementById("sinResultados");
+
+const whatsappHeader =
+    document.getElementById("whatsappHeader");
+
+
+/* =====================================================
+   WHATSAPP
+   ===================================================== */
+
+whatsappHeader.href =
+    `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
+        "Hola, quisiera consultar la disponibilidad de los productos."
+    )}`;
+
+
+/* =====================================================
+   CATEGORIAS
+   ===================================================== */
+
+let categoriaActual = "Todos";
+
+
+function crearCategorias() {
+
+    const categorias = [
+        "Todos",
+        ...new Set(
+            PRODUCTOS.map(producto => producto.categoria)
+        )
+    ];
+
+
+    contenedorCategorias.innerHTML = "";
+
+
+    categorias.forEach(categoria => {
+
+        const boton =
+            document.createElement("button");
+
+        boton.className =
+            "categoria";
+
+        if (categoria === categoriaActual) {
+            boton.classList.add("activa");
+        }
+
+        boton.textContent = categoria;
+
+
+        boton.addEventListener("click", () => {
+
+            categoriaActual = categoria;
+
+            crearCategorias();
+
+            mostrarProductos();
+
+        });
+
+
+        contenedorCategorias.appendChild(boton);
+
+    });
+
+}
+
+
+/* =====================================================
+   MOSTRAR PRODUCTOS
+   ===================================================== */
+
+function mostrarProductos() {
+
+    const texto =
+        buscador.value
+        .toLowerCase()
+        .trim();
+
+
+    const productosFiltrados =
+        PRODUCTOS.filter(producto => {
+
+            const coincideCategoria =
+                categoriaActual === "Todos" ||
+                producto.categoria === categoriaActual;
+
+
+            const coincideBusqueda =
+                producto.nombre
+                    .toLowerCase()
+                    .includes(texto) ||
+
+                producto.descripcion
+                    .toLowerCase()
+                    .includes(texto) ||
+
+                producto.categoria
+                    .toLowerCase()
+                    .includes(texto);
+
+
+            return coincideCategoria &&
+                   coincideBusqueda;
+
+        });
+
+
+    contenedorProductos.innerHTML = "";
+
+
+    if (productosFiltrados.length === 0) {
+
+        sinResultados.style.display = "block";
+
+        return;
+
+    }
+
+
+    sinResultados.style.display = "none";
+
+
+    productosFiltrados.forEach(producto => {
+
+        const tarjeta =
+            document.createElement("article");
+
+        tarjeta.className = "producto";
+
+
+        const mensaje =
+            `Hola, quisiera consultar la disponibilidad de: ${producto.nombre}`;
+
+
+        const enlaceWhatsApp =
+            `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensaje)}`;
+
+
+        tarjeta.innerHTML = `
+
+            <div class="producto-imagen">
+
+                <img
+                    src="${producto.imagen}"
+                    alt="${producto.nombre}"
+                    loading="lazy"
+                    onerror="this.src='https://placehold.co/600x600/eeeeee/222222?text=Imagen+del+producto'"
+                >
+
+            </div>
+
+
+            <div class="producto-info">
+
+                <div class="producto-categoria">
+                    ${producto.categoria}
+                </div>
+
+
+                <h2 class="producto-nombre">
+                    ${producto.nombre}
+                </h2>
+
+
+                <p class="producto-descripcion">
+                    ${producto.descripcion}
+                </p>
+
+
+                <div class="producto-precio">
+                    ${producto.precio}
+                </div>
+
+
+                <a
+                    class="producto-whatsapp"
+                    href="${enlaceWhatsApp}"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    ☎ CONSULTAR DISPONIBILIDAD
+                </a>
+
+            </div>
+
+        `;
+
+
+        contenedorProductos.appendChild(tarjeta);
+
+    });
+
+}
+
+
+/* =====================================================
+   BUSCADOR
+   ===================================================== */
+
+buscador.addEventListener(
+    "input",
+    mostrarProductos
+);
+
+
+/* =====================================================
+   INICIAR
+   ===================================================== */
+
+crearCategorias();
+
+mostrarProductos();
+
+</script>
 
 </body>
 </html>
