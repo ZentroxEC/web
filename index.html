@@ -13,6 +13,10 @@
 
     <style>
 
+        /* =====================================================
+           RESET
+        ===================================================== */
+
         * {
             margin: 0;
             padding: 0;
@@ -82,7 +86,6 @@
         nav {
             display: flex;
             align-items: center;
-
             gap: 30px;
         }
 
@@ -234,6 +237,10 @@
             outline: none;
         }
 
+        #buscador::placeholder {
+            color: #777;
+        }
+
         #buscador:focus {
             border-color: #e50914;
         }
@@ -250,6 +257,8 @@
             font-size: 20px;
 
             border-radius: 0 8px 8px 0;
+
+            cursor: pointer;
         }
 
 
@@ -512,7 +521,7 @@
 
 
         /* =====================================================
-           MODAL - DETALLES DEL PRODUCTO
+           MODAL
         ===================================================== */
 
         .modal {
@@ -564,7 +573,9 @@
         }
 
 
-        /* BOTON CERRAR */
+        /* =====================================================
+           BOTON CERRAR
+        ===================================================== */
 
         .cerrar-modal {
             position: absolute;
@@ -601,7 +612,9 @@
         }
 
 
-        /* IMAGEN GRANDE */
+        /* =====================================================
+           IMAGEN GRANDE
+        ===================================================== */
 
         .modal-imagen {
             background: #f4f4f4;
@@ -626,7 +639,9 @@
         }
 
 
-        /* INFORMACION */
+        /* =====================================================
+           INFORMACION DEL MODAL
+        ===================================================== */
 
         .modal-info {
             padding: 45px 35px;
@@ -673,7 +688,9 @@
         }
 
 
-        /* SECCIONES */
+        /* =====================================================
+           SECCIONES DEL MODAL
+        ===================================================== */
 
         .modal-seccion {
             border-top: 1px solid #292929;
@@ -709,7 +726,9 @@
         }
 
 
-        /* WHATSAPP DEL MODAL */
+        /* =====================================================
+           WHATSAPP DEL MODAL
+        ===================================================== */
 
         .modal-whatsapp {
             display: block;
@@ -815,7 +834,7 @@
 
 
         /* =====================================================
-           RESPONSIVE - TABLET
+           TABLET
         ===================================================== */
 
         @media (max-width: 1000px) {
@@ -835,12 +854,11 @@
             .beneficios {
                 grid-template-columns: repeat(2, 1fr);
             }
-
         }
 
 
         /* =====================================================
-           RESPONSIVE - CELULAR
+           CELULAR
         ===================================================== */
 
         @media (max-width: 700px) {
@@ -938,7 +956,6 @@
             .modal-info h2 {
                 font-size: 24px;
             }
-
         }
 
 
@@ -959,7 +976,6 @@
             .producto-descripcion {
                 font-size: 11px;
             }
-
         }
 
     </style>
@@ -969,13 +985,401 @@
 <body>
 
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+    <!-- =====================================================
+         HEADER
+    ===================================================== -->
 
-<header>
+    <header>
 
-    <div class="header-container">
+        <div class="header-container">
+
+            <div class="logo">
+
+                ZENTRO<span>X</span>EC
+
+                <span class="logo-small">
+                    TECNOLOGÍA
+                </span>
+
+            </div>
+
+
+            <nav>
+
+                <a href="#catalogo">
+                    CATÁLOGO
+                </a>
+
+                <a href="#beneficios">
+                    SERVICIOS
+                </a>
+
+            </nav>
+
+
+            <a
+                class="whatsapp-header"
+                id="whatsappHeader"
+                target="_blank"
+                rel="noopener"
+            >
+                💬 WhatsApp
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <section class="hero">
+
+        <div class="hero-container">
+
+            <h1>
+
+                CATÁLOGO DE
+
+                <span>
+                    PRODUCTOS
+                </span>
+
+            </h1>
+
+
+            <div class="hero-line"></div>
+
+
+            <p>
+
+                Construye tu PC desde cero con cables,
+                accesorios de computadoras y adaptadores
+                difíciles de conseguir.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CATALOGO
+    ===================================================== -->
+
+    <section
+        class="catalogo"
+        id="catalogo"
+    >
+
+
+        <!-- BUSCADOR -->
+
+        <div class="search-container">
+
+            <input
+                type="text"
+                id="buscador"
+                placeholder="Buscar productos..."
+            >
+
+            <button
+                class="search-button"
+                type="button"
+                aria-label="Buscar"
+            >
+                🔎
+            </button>
+
+        </div>
+
+
+
+        <!-- CATEGORIAS -->
+
+        <div
+            class="categorias"
+            id="categorias"
+        ></div>
+
+
+
+        <!-- PRODUCTOS -->
+
+        <div
+            class="productos-grid"
+            id="productos"
+        ></div>
+
+
+
+        <!-- SIN RESULTADOS -->
+
+        <div
+            class="sin-resultados"
+            id="sinResultados"
+        >
+
+            <h3>
+                No encontramos productos
+            </h3>
+
+            <p>
+                Intenta buscar otro producto o categoría.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         MODAL DE DETALLES
+    ===================================================== -->
+
+    <div
+        class="modal"
+        id="modalProducto"
+    >
+
+        <div class="modal-contenido">
+
+
+            <!-- CERRAR -->
+
+            <button
+                class="cerrar-modal"
+                type="button"
+                onclick="cerrarDetalles()"
+                aria-label="Cerrar"
+            >
+                ×
+            </button>
+
+
+
+            <!-- IMAGEN -->
+
+            <div class="modal-imagen">
+
+                <img
+                    id="modalImagen"
+                    src=""
+                    alt=""
+                >
+
+            </div>
+
+
+
+            <!-- INFORMACION -->
+
+            <div class="modal-info">
+
+
+                <div
+                    class="modal-categoria"
+                    id="modalCategoria"
+                ></div>
+
+
+                <h2
+                    id="modalNombre"
+                ></h2>
+
+
+                <div
+                    class="modal-precio"
+                    id="modalPrecio"
+                ></div>
+
+
+                <p
+                    class="modal-descripcion"
+                    id="modalDescripcion"
+                ></p>
+
+
+
+                <!-- CARACTERISTICAS -->
+
+                <div class="modal-seccion">
+
+                    <h3>
+                        CARACTERÍSTICAS
+                    </h3>
+
+                    <ul
+                        id="modalCaracteristicas"
+                    ></ul>
+
+                </div>
+
+
+
+                <!-- COMPATIBILIDAD -->
+
+                <div class="modal-seccion">
+
+                    <h3>
+                        COMPATIBILIDAD
+                    </h3>
+
+                    <p
+                        id="modalCompatibilidad"
+                    ></p>
+
+                </div>
+
+
+
+                <!-- CONTENIDO -->
+
+                <div class="modal-seccion">
+
+                    <h3>
+                        CONTENIDO
+                    </h3>
+
+                    <p
+                        id="modalContenido"
+                    ></p>
+
+                </div>
+
+
+
+                <!-- WHATSAPP -->
+
+                <a
+                    id="modalWhatsapp"
+                    class="modal-whatsapp"
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    💬 CONSULTAR POR WHATSAPP
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         BENEFICIOS
+    ===================================================== -->
+
+    <section
+        class="beneficios"
+        id="beneficios"
+    >
+
+
+        <div class="beneficio">
+
+            <div class="beneficio-icono">
+                ✓
+            </div>
+
+            <div>
+
+                <h3>
+                    PRODUCTOS SELECCIONADOS
+                </h3>
+
+                <p>
+                    Accesorios útiles para equipos tecnológicos.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="beneficio">
+
+            <div class="beneficio-icono">
+                ⚡
+            </div>
+
+            <div>
+
+                <h3>
+                    ATENCIÓN DIRECTA
+                </h3>
+
+                <p>
+                    Consulta disponibilidad directamente por WhatsApp.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="beneficio">
+
+            <div class="beneficio-icono">
+                📦
+            </div>
+
+            <div>
+
+                <h3>
+                    ENVÍOS
+                </h3>
+
+                <p>
+                    Consulta opciones de entrega disponibles.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="beneficio">
+
+            <div class="beneficio-icono">
+                🔧
+            </div>
+
+            <div>
+
+                <h3>
+                    SOLUCIONES TECNOLÓGICAS
+                </h3>
+
+                <p>
+                    Encuentra cables y adaptadores difíciles de conseguir.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer>
 
         <div class="logo">
 
@@ -988,399 +1392,12 @@
         </div>
 
 
-        <nav>
-
-            <a href="#catalogo">
-                CATÁLOGO
-            </a>
-
-            <a href="#beneficios">
-                SERVICIOS
-            </a>
-
-        </nav>
-
-
-        <a
-            class="whatsapp-header"
-            id="whatsappHeader"
-            target="_blank"
-            rel="noopener"
-        >
-            💬 WhatsApp
-        </a>
-
-    </div>
-
-</header>
-
-
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<section class="hero">
-
-    <div class="hero-container">
-
-        <h1>
-
-            CATÁLOGO DE
-
-            <span>
-                PRODUCTOS
-            </span>
-
-        </h1>
-
-
-        <div class="hero-line"></div>
-
-
         <p>
-
-            Construye tu PC desde cero con cables,
-            accesorios de computadoras y adaptadores
-            difíciles de conseguir.
-
+            © 2026 ZENTROXEC Tecnología.
+            Todos los derechos reservados.
         </p>
 
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     CATALOGO
-===================================================== -->
-
-<section
-    class="catalogo"
-    id="catalogo"
->
-
-
-    <!-- BUSCADOR -->
-
-    <div class="search-container">
-
-        <input
-            type="text"
-            id="buscador"
-            placeholder="Buscar productos..."
-        >
-
-        <button
-            class="search-button"
-            type="button"
-        >
-            🔎
-        </button>
-
-    </div>
-
-
-
-    <!-- CATEGORIAS -->
-
-    <div
-        class="categorias"
-        id="categorias"
-    ></div>
-
-
-
-    <!-- PRODUCTOS -->
-
-    <div
-        class="productos-grid"
-        id="productos"
-    ></div>
-
-
-
-    <!-- SIN RESULTADOS -->
-
-    <div
-        class="sin-resultados"
-        id="sinResultados"
-    >
-
-        <h3>
-            No encontramos productos
-        </h3>
-
-        <p>
-            Intenta buscar otro producto o categoría.
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     MODAL DE DETALLES
-===================================================== -->
-
-<div
-    class="modal"
-    id="modalProducto"
->
-
-    <div class="modal-contenido">
-
-
-        <!-- CERRAR -->
-
-        <button
-            class="cerrar-modal"
-            type="button"
-            onclick="cerrarDetalles()"
-            aria-label="Cerrar"
-        >
-            ×
-        </button>
-
-
-
-        <!-- IMAGEN -->
-
-        <div class="modal-imagen">
-
-            <img
-                id="modalImagen"
-                src=""
-                alt=""
-            >
-
-        </div>
-
-
-
-        <!-- INFORMACION -->
-
-        <div class="modal-info">
-
-
-            <div
-                class="modal-categoria"
-                id="modalCategoria"
-            ></div>
-
-
-            <h2
-                id="modalNombre"
-            ></h2>
-
-
-            <div
-                class="modal-precio"
-                id="modalPrecio"
-            ></div>
-
-
-            <p
-                class="modal-descripcion"
-                id="modalDescripcion"
-            ></p>
-
-
-
-            <!-- CARACTERISTICAS -->
-
-            <div class="modal-seccion">
-
-                <h3>
-                    CARACTERÍSTICAS
-                </h3>
-
-                <ul
-                    id="modalCaracteristicas"
-                ></ul>
-
-            </div>
-
-
-
-            <!-- COMPATIBILIDAD -->
-
-            <div class="modal-seccion">
-
-                <h3>
-                    COMPATIBILIDAD
-                </h3>
-
-                <p
-                    id="modalCompatibilidad"
-                ></p>
-
-            </div>
-
-
-
-            <!-- CONTENIDO -->
-
-            <div class="modal-seccion">
-
-                <h3>
-                    CONTENIDO
-                </h3>
-
-                <p
-                    id="modalContenido"
-                ></p>
-
-            </div>
-
-
-
-            <!-- WHATSAPP -->
-
-            <a
-                id="modalWhatsapp"
-                class="modal-whatsapp"
-                href="#"
-                target="_blank"
-                rel="noopener"
-            >
-                💬 WHATSAPP
-            </a>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-
-<!-- =====================================================
-     BENEFICIOS
-===================================================== -->
-
-<section
-    class="beneficios"
-    id="beneficios"
->
-
-
-    <div class="beneficio">
-
-        <div class="beneficio-icono">
-            ✓
-        </div>
-
-        <div>
-
-            <h3>
-                PRODUCTOS SELECCIONADOS
-            </h3>
-
-            <p>
-                Accesorios útiles para equipos tecnológicos.
-            </p>
-
-        </div>
-
-    </div>
-
-
-
-    <div class="beneficio">
-
-        <div class="beneficio-icono">
-            ⚡
-        </div>
-
-        <div>
-
-            <h3>
-                ATENCIÓN DIRECTA
-            </h3>
-
-            <p>
-                Consulta disponibilidad directamente por WhatsApp.
-            </p>
-
-        </div>
-
-    </div>
-
-
-
-    <div class="beneficio">
-
-        <div class="beneficio-icono">
-            📦
-        </div>
-
-        <div>
-
-            <h3>
-                ENVÍOS
-            </h3>
-
-            <p>
-                Consulta opciones de entrega disponibles.
-            </p>
-
-        </div>
-
-    </div>
-
-
-
-    <div class="beneficio">
-
-        <div class="beneficio-icono">
-            🔧
-        </div>
-
-        <div>
-
-            <h3>
-                SOLUCIONES TECNOLÓGICAS
-            </h3>
-
-            <p>
-                Encuentra cables y adaptadores difíciles de conseguir.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer>
-
-    <div class="logo">
-
-        ZENTRO<span>X</span>EC
-
-        <span class="logo-small">
-            TECNOLOGÍA
-        </span>
-
-    </div>
-
-
-    <p>
-        © 2026 ZENTROXEC Tecnología.
-        Todos los derechos reservados.
-    </p>
-
-</footer>
+    </footer>
 
 
 
@@ -1414,23 +1431,39 @@ const WHATSAPP = "593960648763";
    PRODUCTOS
 =====================================================
 
-   AQUÍ VAS A AGREGAR TODOS TUS PRODUCTOS.
+   ESTA ES LA PARTE MÁS IMPORTANTE PARA EDITAR.
 
-   Cada producto puede tener:
+   Para agregar productos simplemente copia un producto
+   y cambia sus datos.
 
-   nombre
-   precio
-   categoria
-   imagen
-   descripcion
+   ---------------------------------------------
 
-   Y además:
+   nombre:
+   Nombre que aparece en la tarjeta y en el modal.
 
-   detalles
-      descripcionCompleta
-      caracteristicas
-      compatibilidad
-      contenido
+   precio:
+   Precio que aparece en la tarjeta y modal.
+
+   categoria:
+   Categoría del producto.
+
+   imagen:
+   Ubicación de la imagen.
+
+   descripcion:
+   ESTE TEXTO APARECE EN LA TARJETA PRINCIPAL.
+
+   detalles.descripcionCompleta:
+   ESTE TEXTO APARECE AL ABRIR "VER MÁS DETALLES".
+
+   detalles.caracteristicas:
+   Características que aparecen en el modal.
+
+   detalles.compatibilidad:
+   Compatibilidad del producto.
+
+   detalles.contenido:
+   Qué incluye el producto.
 
 ===================================================== */
 
@@ -1446,35 +1479,40 @@ const PRODUCTOS = [
 
         nombre: "Cable Delta a 2 SATA",
 
-        precio: "$10",
+        precio: "$10.00",
 
         categoria: "Cables",
 
         imagen: "img/delta.png",
 
+
+        /* TEXTO DE LA TARJETA PRINCIPAL */
+
         descripcion:
-            "Duplica tu capacidad de conexión sin complicaciones con el cable de poder Delta SATA macho a 2xSATA hembra",
+            "Duplica tu capacidad de conexión sin complicaciones con el cable de poder Delta SATA macho a 2x SATA hembra.",
+
+
+        /* INFORMACIÓN DE VER MÁS DETALLES */
 
         detalles: {
 
             descripcionCompleta:
-                "Ideal para alimentar dos discos duros o SSDs desde una sola fuente, es la solución práctica, segura y eficiente para actualizar",
-                "o expandir tu almacenamiento Mas energia mas posibilidades",
+                "Ideal para alimentar dos discos duros o SSD desde una sola fuente. Una solución práctica para ampliar las opciones de alimentación de dispositivos SATA compatibles.",
 
 
             caracteristicas: [
 
-                "Marca                Delta",
+                "Marca: Delta",
 
-                "Modelo               CA-SATA-M-HH",
+                "Modelo: CA-SATA-M-HH",
 
-                "Color                Negro",
+                "Color: Negro",
 
-                "Voltaje              5V",
-                
-                "Cantidad de pines    15",
+                "Voltaje: 5V",
 
-                "Tipo de conector     SATA",
+                "Cantidad de pines: 15",
+
+                "Tipo de conector: SATA"
 
             ],
 
@@ -1484,11 +1522,12 @@ const PRODUCTOS = [
 
 
             contenido:
-                "Cable Delta a 2 SATA",
+                "1 Cable Delta a 2 SATA"
 
         }
 
     },
+
 
 
     /* =================================================
@@ -1505,14 +1544,19 @@ const PRODUCTOS = [
 
         imagen: "img/cable-usb-30.jpg",
 
+
+        /* TEXTO DE LA TARJETA */
+
         descripcion:
             "Cable USB 3.0 para transferencia de datos y conexión de dispositivos.",
 
 
+        /* INFORMACIÓN DEL MODAL */
+
         detalles: {
 
             descripcionCompleta:
-                "Cable USB 3.0 diseñado para conectar dispositivos compatibles y realizar transferencia de datos.",
+                "Cable USB 3.0 diseñado para conectar dispositivos compatibles y realizar transferencia de datos de forma práctica.",
 
 
             caracteristicas: [
@@ -1538,7 +1582,6 @@ const PRODUCTOS = [
         }
 
     }
-
 
 ];
 
@@ -1573,10 +1616,11 @@ const whatsappHeader =
    WHATSAPP HEADER
 ===================================================== */
 
+const mensajeHeader =
+    "Hola, quisiera consultar la disponibilidad de los productos.";
+
 whatsappHeader.href =
-    `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
-        "Hola, quisiera consultar la disponibilidad de los productos."
-    )}`;
+    `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensajeHeader)}`;
 
 
 
@@ -1588,7 +1632,6 @@ let categoriaActual = "Todos";
 
 
 function crearCategorias() {
-
 
     const categorias = [
 
@@ -1609,7 +1652,6 @@ function crearCategorias() {
 
 
     categorias.forEach(categoria => {
-
 
         const boton =
             document.createElement("button");
@@ -1664,7 +1706,6 @@ function crearCategorias() {
 
 function mostrarProductos() {
 
-
     const texto =
         buscador.value
             .toLowerCase()
@@ -1689,13 +1730,11 @@ function mostrarProductos() {
                     .toLowerCase()
                     .includes(texto)
 
-
                 ||
 
                 producto.descripcion
                     .toLowerCase()
                     .includes(texto)
-
 
                 ||
 
@@ -1747,51 +1786,41 @@ function mostrarProductos() {
                 "producto";
 
 
-            /* =========================
-               WHATSAPP
-            ========================= */
+            /* =================================================
+               WHATSAPP DEL PRODUCTO
+            ================================================= */
 
             const mensaje =
-
                 `Hola, deseo consultar la disponibilidad de: ${producto.nombre}`;
 
 
             const enlaceWhatsApp =
-
-                `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
-                    mensaje
-                )}`;
+                `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensaje)}`;
 
 
 
-            /* =========================
+            /* =================================================
                INDICE DEL PRODUCTO
-            ========================= */
+            ================================================= */
 
             const indice =
                 PRODUCTOS.indexOf(producto);
 
 
 
-            /* =========================
+            /* =================================================
                TARJETA
-            ========================= */
+            ================================================= */
 
             tarjeta.innerHTML = `
-
 
                 <div class="producto-imagen">
 
                     <img
-
                         src="${producto.imagen}"
-
                         alt="${producto.nombre}"
-
                         loading="lazy"
-
                         onerror="this.src='https://placehold.co/600x600/eeeeee/222222?text=Imagen+del+producto'"
-
                     >
 
                 </div>
@@ -1839,15 +1868,10 @@ function mostrarProductos() {
                         <!-- WHATSAPP -->
 
                         <a
-
                             class="producto-whatsapp"
-
                             href="${enlaceWhatsApp}"
-
                             target="_blank"
-
                             rel="noopener"
-
                         >
 
                             💬 CONSULTAR
@@ -1859,13 +1883,9 @@ function mostrarProductos() {
                         <!-- DETALLES -->
 
                         <button
-
                             class="producto-detalles"
-
                             type="button"
-
                             onclick="verDetalles(${indice})"
-
                         >
 
                             VER MÁS DETALLES
@@ -1903,6 +1923,11 @@ function verDetalles(indice) {
         PRODUCTOS[indice];
 
 
+    if (!producto) {
+        return;
+    }
+
+
     const modal =
         document.getElementById(
             "modalProducto"
@@ -1910,9 +1935,9 @@ function verDetalles(indice) {
 
 
 
-    /* =========================
+    /* =================================================
        IMAGEN
-    ========================= */
+    ================================================= */
 
     const modalImagen =
         document.getElementById(
@@ -1929,9 +1954,9 @@ function verDetalles(indice) {
 
 
 
-    /* =========================
+    /* =================================================
        DATOS PRINCIPALES
-    ========================= */
+    ================================================= */
 
     document.getElementById(
         "modalCategoria"
@@ -1968,9 +1993,9 @@ function verDetalles(indice) {
 
 
 
-    /* =========================
+    /* =================================================
        CARACTERISTICAS
-    ========================= */
+    ================================================= */
 
     const lista =
         document.getElementById(
@@ -2031,9 +2056,9 @@ function verDetalles(indice) {
 
 
 
-    /* =========================
+    /* =================================================
        COMPATIBILIDAD
-    ========================= */
+    ================================================= */
 
     document.getElementById(
         "modalCompatibilidad"
@@ -2052,9 +2077,9 @@ function verDetalles(indice) {
 
 
 
-    /* =========================
+    /* =================================================
        CONTENIDO
-    ========================= */
+    ================================================= */
 
     document.getElementById(
         "modalContenido"
@@ -2073,12 +2098,11 @@ function verDetalles(indice) {
 
 
 
-    /* =========================
-       WHATSAPP DEL PRODUCTO
-    ========================= */
+    /* =================================================
+       WHATSAPP DEL MODAL
+    ================================================= */
 
     const mensaje =
-
         `Hola, deseo consultar la disponibilidad de: ${producto.nombre}`;
 
 
@@ -2086,15 +2110,13 @@ function verDetalles(indice) {
         "modalWhatsapp"
     ).href =
 
-        `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
-            mensaje
-        )}`;
+        `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensaje)}`;
 
 
 
-    /* =========================
+    /* =================================================
        ABRIR MODAL
-    ========================= */
+    ================================================= */
 
     modal.classList.add(
         "activo"
