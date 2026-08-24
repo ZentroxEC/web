@@ -1,1 +1,2087 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>ZENTROXEC Tecnología | Productos</title>
+
+    <meta
+        name="description"
+        content="Catálogo ZENTROXEC Tecnología: cables, adaptadores y accesorios para PC."
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080808;
+            color: #fff;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(5, 5, 5, 0.96);
+            border-bottom: 1px solid #292929;
+
+            backdrop-filter: blur(10px);
+        }
+
+        .header-container {
+            max-width: 1250px;
+            min-height: 78px;
+
+            margin: auto;
+            padding: 0 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #e50914;
+        }
+
+        .logo-small {
+            display: block;
+
+            color: #888;
+
+            font-size: 9px;
+            letter-spacing: 4px;
+
+            margin-top: 2px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+
+            font-size: 13px;
+            font-weight: bold;
+
+            transition: 0.2s;
+        }
+
+        nav a:hover,
+        nav a.activo {
+            color: #e50914;
+        }
+
+        .whatsapp-header {
+            padding: 11px 17px;
+
+            border: 1px solid #e50914;
+            border-radius: 7px;
+
+            color: #fff;
+            text-decoration: none;
+
+            font-size: 12px;
+            font-weight: bold;
+
+            transition: 0.2s;
+        }
+
+        .whatsapp-header:hover {
+            background: #e50914;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 330px;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                radial-gradient(
+                    circle at 80% 50%,
+                    rgba(229, 9, 20, 0.18),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #090909,
+                    #121212
+                );
+
+            border-bottom: 1px solid #222;
+        }
+
+        .hero-container {
+            max-width: 1250px;
+            width: 100%;
+
+            margin: auto;
+
+            padding: 60px 25px;
+        }
+
+        .hero-label {
+            color: #e50914;
+
+            font-size: 11px;
+            font-weight: 900;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            max-width: 800px;
+
+            font-size: clamp(40px, 6vw, 70px);
+
+            line-height: 0.95;
+
+            text-transform: uppercase;
+
+            font-weight: 900;
+        }
+
+        .hero h1 span {
+            color: #e50914;
+        }
+
+        .hero-line {
+            width: 55px;
+            height: 4px;
+
+            background: #e50914;
+
+            margin: 25px 0;
+        }
+
+        .hero p {
+            max-width: 600px;
+
+            color: #aaa;
+
+            font-size: 16px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           CATALOGO
+        ========================= */
+
+        .catalogo {
+            max-width: 1250px;
+
+            margin: auto;
+
+            padding: 45px 25px 80px;
+        }
+
+
+        /* =========================
+           BUSCADOR
+        ========================= */
+
+        .search-container {
+            display: flex;
+
+            margin-bottom: 25px;
+        }
+
+        #buscador {
+            width: 100%;
+
+            padding: 17px 20px;
+
+            background: #1b1b1b;
+
+            border: 1px solid #333;
+
+            border-radius: 8px 0 0 8px;
+
+            color: white;
+
+            font-size: 16px;
+
+            outline: none;
+        }
+
+        #buscador:focus {
+            border-color: #e50914;
+        }
+
+        #buscador::placeholder {
+            color: #777;
+        }
+
+        .search-button {
+            width: 65px;
+
+            background: #e50914;
+
+            border: none;
+
+            color: white;
+
+            font-size: 20px;
+
+            border-radius: 0 8px 8px 0;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           CATEGORIAS
+        ========================= */
+
+        .categorias {
+            display: flex;
+
+            gap: 10px;
+
+            overflow-x: auto;
+
+            padding-bottom: 20px;
+
+            scrollbar-width: thin;
+        }
+
+        .categoria {
+            flex-shrink: 0;
+
+            background: #101010;
+
+            color: #ddd;
+
+            border: 1px solid #444;
+
+            padding: 12px 20px;
+
+            border-radius: 7px;
+
+            cursor: pointer;
+
+            font-weight: bold;
+
+            font-size: 13px;
+
+            transition: 0.2s;
+        }
+
+        .categoria:hover,
+        .categoria.activa {
+            background: #e50914;
+
+            border-color: #e50914;
+
+            color: white;
+        }
+
+
+        /* =========================
+           GRID PRODUCTOS
+        ========================= */
+
+        .productos-grid {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 14px;
+
+            margin-top: 10px;
+        }
+
+
+        /* =========================
+           TARJETA
+        ========================= */
+
+        .producto {
+            background: #fff;
+
+            color: #111;
+
+            border-radius: 8px;
+
+            overflow: hidden;
+
+            display: flex;
+
+            flex-direction: column;
+
+            transition:
+                transform 0.25s,
+                box-shadow 0.25s;
+        }
+
+        .producto:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+
+
+        /* =========================
+           IMAGEN
+        ========================= */
+
+        .producto-imagen {
+            width: 100%;
+
+            aspect-ratio: 1 / 1;
+
+            background: #f4f4f4;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+        }
+
+        .producto-imagen img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+
+            transition: 0.3s;
+        }
+
+        .producto:hover .producto-imagen img {
+            transform: scale(1.04);
+        }
+
+
+        /* =========================
+           INFORMACION
+        ========================= */
+
+        .producto-info {
+            padding: 17px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            flex: 1;
+        }
+
+        .producto-categoria {
+            color: #e50914;
+
+            font-size: 11px;
+
+            font-weight: 900;
+
+            text-transform: uppercase;
+
+            margin-bottom: 7px;
+        }
+
+        .producto-nombre {
+            font-size: 18px;
+
+            font-weight: 800;
+
+            margin-bottom: 9px;
+        }
+
+        .producto-descripcion {
+            color: #555;
+
+            font-size: 13px;
+
+            line-height: 1.5;
+
+            margin-bottom: 15px;
+        }
+
+        .producto-precio {
+            color: #e50914;
+
+            font-size: 22px;
+
+            font-weight: 900;
+
+            margin-top: auto;
+
+            margin-bottom: 13px;
+        }
+
+
+        /* =========================
+           BOTONES
+        ========================= */
+
+        .botones-producto {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 7px;
+        }
+
+        .producto-comprar,
+        .producto-detalles,
+        .producto-whatsapp {
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            min-height: 42px;
+
+            border-radius: 6px;
+
+            font-size: 10px;
+
+            font-weight: 900;
+
+            cursor: pointer;
+
+            text-decoration: none;
+
+            transition: 0.2s;
+        }
+
+
+        /* COMPRAR */
+
+        .producto-comprar {
+            background: #e50914;
+
+            color: white;
+
+            border: 1px solid #e50914;
+        }
+
+        .producto-comprar:hover {
+            background: #b80710;
+
+            border-color: #b80710;
+        }
+
+
+        /* DETALLES */
+
+        .producto-detalles {
+            background: white;
+
+            color: #111;
+
+            border: 1px solid #222;
+        }
+
+        .producto-detalles:hover {
+            background: #e50914;
+
+            color: white;
+
+            border-color: #e50914;
+        }
+
+
+        /* WHATSAPP
+           MÁS PEQUEÑO */
+
+        .producto-whatsapp {
+
+            grid-column: 1 / -1;
+
+            min-height: 34px;
+
+            font-size: 9px;
+
+            background: #080808;
+
+            color: white;
+
+            border: 1px solid #080808;
+        }
+
+        .producto-whatsapp:hover {
+            background: #e50914;
+
+            border-color: #e50914;
+        }
+
+
+        /* =========================
+           SIN RESULTADOS
+        ========================= */
+
+        .sin-resultados {
+            display: none;
+
+            text-align: center;
+
+            padding: 70px 20px;
+
+            color: #777;
+        }
+
+        .sin-resultados h3 {
+            color: white;
+
+            margin-bottom: 10px;
+        }
+
+
+        /* =========================
+           MODAL
+        ========================= */
+
+        .modal {
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 5000;
+
+            background: rgba(0, 0, 0, 0.82);
+
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+
+            overflow-y: auto;
+        }
+
+        .modal.activo {
+            display: flex;
+        }
+
+        .modal-contenido {
+            position: relative;
+
+            width: 100%;
+
+            max-width: 900px;
+
+            max-height: 90vh;
+
+            overflow-y: auto;
+
+            background: #111;
+
+            border: 1px solid #333;
+
+            border-radius: 12px;
+
+            display: grid;
+
+            grid-template-columns: 45% 55%;
+
+            box-shadow:
+                0 25px 80px rgba(0, 0, 0, 0.7);
+        }
+
+
+        /* CERRAR */
+
+        .cerrar-modal {
+            position: absolute;
+
+            right: 15px;
+            top: 15px;
+
+            z-index: 10;
+
+            width: 40px;
+            height: 40px;
+
+            border-radius: 50%;
+
+            border: 1px solid #444;
+
+            background: #080808;
+
+            color: white;
+
+            font-size: 25px;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .cerrar-modal:hover {
+            background: #e50914;
+
+            border-color: #e50914;
+        }
+
+
+        /* IMAGEN MODAL */
+
+        .modal-imagen {
+            background: #f4f4f4;
+
+            min-height: 500px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-imagen img {
+            width: 100%;
+            height: 100%;
+
+            max-height: 600px;
+
+            object-fit: contain;
+        }
+
+
+        /* INFORMACION MODAL */
+
+        .modal-info {
+            padding: 45px 35px;
+        }
+
+        .modal-categoria {
+            color: #e50914;
+
+            font-size: 12px;
+
+            font-weight: 900;
+
+            text-transform: uppercase;
+
+            margin-bottom: 10px;
+        }
+
+        .modal-info h2 {
+            color: white;
+
+            font-size: 30px;
+
+            margin-bottom: 10px;
+        }
+
+        .modal-precio {
+            color: #e50914;
+
+            font-size: 27px;
+
+            font-weight: 900;
+
+            margin-bottom: 20px;
+        }
+
+        .modal-descripcion {
+            color: #aaa;
+
+            font-size: 15px;
+
+            line-height: 1.7;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* SECCIONES */
+
+        .modal-seccion {
+            border-top: 1px solid #292929;
+
+            padding: 18px 0;
+        }
+
+        .modal-seccion h3 {
+            color: white;
+
+            font-size: 12px;
+
+            margin-bottom: 10px;
+
+            letter-spacing: 1px;
+        }
+
+        .modal-seccion p,
+        .modal-seccion li {
+            color: #999;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+        }
+
+        .modal-seccion ul {
+            padding-left: 18px;
+        }
+
+        .modal-seccion li::marker {
+            color: #e50914;
+        }
+
+
+        /* WHATSAPP MODAL */
+
+        .modal-whatsapp {
+            display: block;
+
+            width: 100%;
+
+            text-align: center;
+
+            background: #e50914;
+
+            color: white;
+
+            padding: 15px;
+
+            border-radius: 7px;
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            font-weight: 900;
+
+            margin-top: 15px;
+
+            transition: 0.2s;
+        }
+
+        .modal-whatsapp:hover {
+            background: #b80710;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #050505;
+
+            border-top: 1px solid #222;
+
+            padding: 35px 25px;
+
+            text-align: center;
+        }
+
+        footer .logo {
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            color: #666;
+
+            font-size: 12px;
+        }
+
+        .footer-links {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 18px;
+        }
+
+        .footer-links a {
+            color: #777;
+
+            font-size: 12px;
+
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #e50914;
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 1000px) {
+
+            .productos-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            .whatsapp-header {
+                display: none;
+            }
+        }
+
+
+        /* =========================
+           CELULAR
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .header-container {
+                min-height: 65px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .logo {
+                font-size: 23px;
+            }
+
+            .hero {
+                min-height: 300px;
+            }
+
+            .hero-container {
+                padding: 50px 20px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .catalogo {
+                padding: 30px 15px 50px;
+            }
+
+            .productos-grid {
+                grid-template-columns: repeat(2, 1fr);
+
+                gap: 10px;
+            }
+
+            .producto-info {
+                padding: 12px;
+            }
+
+            .producto-nombre {
+                font-size: 15px;
+            }
+
+            .producto-descripcion {
+                font-size: 12px;
+            }
+
+            .producto-precio {
+                font-size: 18px;
+            }
+
+            .botones-producto {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .producto-comprar,
+            .producto-detalles {
+                font-size: 9px;
+
+                min-height: 40px;
+            }
+
+            .producto-whatsapp {
+                min-height: 32px;
+
+                font-size: 8px;
+            }
+
+
+            /* MODAL */
+
+            .modal {
+                padding: 10px;
+            }
+
+            .modal-contenido {
+                grid-template-columns: 1fr;
+
+                max-height: 95vh;
+            }
+
+            .modal-imagen {
+                min-height: 280px;
+
+                max-height: 320px;
+            }
+
+            .modal-info {
+                padding: 30px 20px;
+            }
+
+            .modal-info h2 {
+                font-size: 24px;
+            }
+        }
+
+
+        @media (max-width: 420px) {
+
+            .productos-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .producto-nombre {
+                font-size: 14px;
+            }
+
+            .producto-descripcion {
+                font-size: 11px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <div class="header-container">
+
+        <a
+            href="index.html"
+            style="text-decoration:none;color:white;"
+        >
+            <div class="logo">
+
+                ZENTRO<span>X</span>EC
+
+                <span class="logo-small">
+                    TECNOLOGÍA
+                </span>
+
+            </div>
+        </a>
+
+
+        <nav>
+
+            <a href="index.html">
+                INICIO
+            </a>
+
+            <a
+                href="productos.html"
+                class="activo"
+            >
+                PRODUCTOS
+            </a>
+
+            <a href="acerca.html">
+                ACERCA DE
+            </a>
+
+            <a href="contacto.html">
+                CONTACTO
+            </a>
+
+        </nav>
+
+
+        <a
+            class="whatsapp-header"
+            id="whatsappHeader"
+            target="_blank"
+            rel="noopener"
+        >
+            💬 WhatsApp
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-container">
+
+        <div class="hero-label">
+            ZENTROXEC TECNOLOGÍA
+        </div>
+
+        <h1>
+            CATÁLOGO DE
+            <span>
+                PRODUCTOS
+            </span>
+        </h1>
+
+        <div class="hero-line"></div>
+
+        <p>
+            Encuentra cables, adaptadores y accesorios
+            para conectar, actualizar y ampliar tus
+            equipos tecnológicos.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CATALOGO
+========================= -->
+
+<section
+    class="catalogo"
+    id="catalogo"
+>
+
+
+    <!-- BUSCADOR -->
+
+    <div class="search-container">
+
+        <input
+            type="text"
+            id="buscador"
+            placeholder="Buscar productos..."
+            autocomplete="off"
+        >
+
+        <button
+            class="search-button"
+            type="button"
+            aria-label="Buscar"
+        >
+            🔎
+        </button>
+
+    </div>
+
+
+    <!-- CATEGORIAS -->
+
+    <div
+        class="categorias"
+        id="categorias"
+    ></div>
+
+
+    <!-- PRODUCTOS -->
+
+    <div
+        class="productos-grid"
+        id="productos"
+    ></div>
+
+
+    <!-- SIN RESULTADOS -->
+
+    <div
+        class="sin-resultados"
+        id="sinResultados"
+    >
+
+        <h3>
+            No encontramos productos
+        </h3>
+
+        <p>
+            Intenta buscar otro producto o categoría.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MODAL DETALLES
+========================= -->
+
+<div
+    class="modal"
+    id="modalProducto"
+>
+
+
+    <div class="modal-contenido">
+
+
+        <!-- CERRAR -->
+
+        <button
+            class="cerrar-modal"
+            type="button"
+            onclick="cerrarDetalles()"
+            aria-label="Cerrar"
+        >
+            ×
+        </button>
+
+
+        <!-- IMAGEN -->
+
+        <div class="modal-imagen">
+
+            <img
+                id="modalImagen"
+                src=""
+                alt=""
+            >
+
+        </div>
+
+
+        <!-- INFORMACION -->
+
+        <div class="modal-info">
+
+
+            <div
+                class="modal-categoria"
+                id="modalCategoria"
+            ></div>
+
+
+            <h2
+                id="modalNombre"
+            ></h2>
+
+
+            <div
+                class="modal-precio"
+                id="modalPrecio"
+            ></div>
+
+
+            <p
+                class="modal-descripcion"
+                id="modalDescripcion"
+            ></p>
+
+
+            <!-- CARACTERISTICAS -->
+
+            <div class="modal-seccion">
+
+                <h3>
+                    CARACTERÍSTICAS
+                </h3>
+
+                <ul
+                    id="modalCaracteristicas"
+                ></ul>
+
+            </div>
+
+
+            <!-- COMPATIBILIDAD -->
+
+            <div class="modal-seccion">
+
+                <h3>
+                    COMPATIBILIDAD
+                </h3>
+
+                <p
+                    id="modalCompatibilidad"
+                ></p>
+
+            </div>
+
+
+            <!-- CONTENIDO -->
+
+            <div class="modal-seccion">
+
+                <h3>
+                    CONTENIDO
+                </h3>
+
+                <p
+                    id="modalContenido"
+                ></p>
+
+            </div>
+
+
+            <!-- WHATSAPP -->
+
+            <a
+                id="modalWhatsapp"
+                class="modal-whatsapp"
+                href="#"
+                target="_blank"
+                rel="noopener"
+            >
+                💬 CONSULTAR POR WHATSAPP
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="logo">
+
+        ZENTRO<span>X</span>EC
+
+        <span class="logo-small">
+            TECNOLOGÍA
+        </span>
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <a href="index.html">
+            Inicio
+        </a>
+
+        <a href="productos.html">
+            Productos
+        </a>
+
+        <a href="acerca.html">
+            Acerca de
+        </a>
+
+        <a href="contacto.html">
+            Contacto
+        </a>
+
+    </div>
+
+
+    <p>
+        © 2026 ZENTROXEC Tecnología.
+        Todos los derechos reservados.
+    </p>
+
+</footer>
+
+
+<script>
+
+
+/* =====================================================
+   CONFIGURACIÓN
+===================================================== */
+
+const WHATSAPP = "593960648763";
+
+
+/*
+   MENSAJES
+
+   Puedes cambiar estos textos directamente aquí.
+*/
+
+const MENSAJE_GENERAL =
+    "Hola, quisiera consultar la disponibilidad de los productos de ZENTROXEC Tecnología.";
+
+const MENSAJE_COMPRA =
+    "Hola, quiero comprar este producto:";
+
+
+/* =====================================================
+   PRODUCTOS
+
+   AQUÍ PUEDES AGREGAR O MODIFICAR PRODUCTOS.
+===================================================== */
+
+const PRODUCTOS = [
+
+
+    /* =================================================
+       PRODUCTO 1
+    ================================================= */
+
+    {
+
+        nombre: "Cable Delta a 2 SATA",
+
+        precio: "$10.00",
+
+        categoria: "Cables",
+
+        imagen: "img/delta.png",
+
+        descripcion:
+            "Cable de poder Delta macho a 2 SATA hembra para alimentar dos dispositivos SATA desde una conexión compatible.",
+
+        detalles: {
+
+            descripcionCompleta:
+                "Solución práctica para ampliar las conexiones de alimentación de almacenamiento SATA cuando necesitas conectar más de un dispositivo compatible.",
+
+            caracteristicas: [
+
+                "Marca: Delta",
+
+                "Modelo: CA-SATA-M-HH",
+
+                "Color: Negro",
+
+                "Voltaje: 5V",
+
+                "Cantidad de pines: 15",
+
+                "Tipo de conector: SATA"
+
+            ],
+
+            compatibilidad:
+                "Dispositivos SATA compatibles con este tipo de alimentación. Verifica siempre el conector y las especificaciones de tu equipo antes de instalarlo.",
+
+            contenido:
+                "1 cable Delta a 2 SATA"
+
+        }
+
+    },
+
+
+    /* =================================================
+       PRODUCTO 2
+    ================================================= */
+
+    {
+
+        nombre: "Cable USB 3.0",
+
+        precio: "$3.00",
+
+        categoria: "Cables",
+
+        imagen: "img/cable-usb-30.jpg",
+
+        descripcion:
+            "Cable USB 3.0 para transferencia de datos y conexión de dispositivos compatibles.",
+
+        detalles: {
+
+            descripcionCompleta:
+                "Cable USB 3.0 diseñado para conectar dispositivos compatibles y realizar transferencia de datos de forma práctica.",
+
+            caracteristicas: [
+
+                "Conexión USB 3.0",
+
+                "Transferencia de datos",
+
+                "Diseño práctico",
+
+                "Conexión para dispositivos compatibles"
+
+            ],
+
+            compatibilidad:
+                "Computadoras y dispositivos compatibles con USB 3.0.",
+
+            contenido:
+                "1 cable USB 3.0"
+
+        }
+
+    }
+
+
+];
+
+
+/* =====================================================
+   ELEMENTOS
+===================================================== */
+
+const contenedorProductos =
+    document.getElementById("productos");
+
+const contenedorCategorias =
+    document.getElementById("categorias");
+
+const buscador =
+    document.getElementById("buscador");
+
+const sinResultados =
+    document.getElementById("sinResultados");
+
+const whatsappHeader =
+    document.getElementById("whatsappHeader");
+
+
+/* =====================================================
+   WHATSAPP GENERAL
+===================================================== */
+
+const enlaceWhatsAppGeneral =
+    `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(MENSAJE_GENERAL)}`;
+
+whatsappHeader.href =
+    enlaceWhatsAppGeneral;
+
+
+/* =====================================================
+   CATEGORIAS
+===================================================== */
+
+let categoriaActual = "Todos";
+
+
+function crearCategorias() {
+
+    const categorias = [
+
+        "Todos",
+
+        ...new Set(
+
+            PRODUCTOS.map(
+                producto => producto.categoria
+            )
+
+        )
+
+    ];
+
+
+    contenedorCategorias.innerHTML = "";
+
+
+    categorias.forEach(categoria => {
+
+        const boton =
+            document.createElement("button");
+
+
+        boton.className =
+            "categoria";
+
+
+        if (
+            categoria === categoriaActual
+        ) {
+
+            boton.classList.add("activa");
+
+        }
+
+
+        boton.textContent =
+            categoria;
+
+
+        boton.addEventListener(
+            "click",
+            () => {
+
+                categoriaActual =
+                    categoria;
+
+                crearCategorias();
+
+                mostrarProductos();
+
+            }
+        );
+
+
+        contenedorCategorias.appendChild(
+            boton
+        );
+
+    });
+
+}
+
+
+/* =====================================================
+   MOSTRAR PRODUCTOS
+===================================================== */
+
+function mostrarProductos() {
+
+
+    const texto =
+        buscador.value
+            .toLowerCase()
+            .trim();
+
+
+    const productosFiltrados =
+        PRODUCTOS.filter(producto => {
+
+
+            const coincideCategoria =
+
+                categoriaActual === "Todos" ||
+
+                producto.categoria ===
+                    categoriaActual;
+
+
+            const coincideBusqueda =
+
+                producto.nombre
+                    .toLowerCase()
+                    .includes(texto)
+
+                ||
+
+                producto.descripcion
+                    .toLowerCase()
+                    .includes(texto)
+
+                ||
+
+                producto.categoria
+                    .toLowerCase()
+                    .includes(texto);
+
+
+            return (
+
+                coincideCategoria &&
+
+                coincideBusqueda
+
+            );
+
+        });
+
+
+    contenedorProductos.innerHTML = "";
+
+
+    if (
+        productosFiltrados.length === 0
+    ) {
+
+        sinResultados.style.display =
+            "block";
+
+        return;
+
+    }
+
+
+    sinResultados.style.display =
+        "none";
+
+
+    productosFiltrados.forEach(
+        producto => {
+
+
+            const tarjeta =
+                document.createElement("article");
+
+
+            tarjeta.className =
+                "producto";
+
+
+            /* =========================
+               INDICE
+            ========================= */
+
+            const indice =
+                PRODUCTOS.indexOf(producto);
+
+
+            /* =========================
+               WHATSAPP
+            ========================= */
+
+            const mensajeWhatsApp =
+                `Hola, deseo consultar la disponibilidad de: ${producto.nombre}`;
+
+            const enlaceWhatsApp =
+                `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensajeWhatsApp)}`;
+
+
+            /* =========================
+               COMPRAR
+            ========================= */
+
+            const mensajeCompra =
+                `${MENSAJE_COMPRA} ${producto.nombre}.`;
+
+            const enlaceCompra =
+                `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensajeCompra)}`;
+
+
+            /* =========================
+               TARJETA
+            ========================= */
+
+            tarjeta.innerHTML = `
+
+                <div class="producto-imagen">
+
+                    <img
+                        src="${producto.imagen}"
+                        alt="${producto.nombre}"
+                        loading="lazy"
+                        onerror="this.src='https://placehold.co/600x600/eeeeee/222222?text=Imagen+del+producto'"
+                    >
+
+                </div>
+
+
+                <div class="producto-info">
+
+
+                    <div class="producto-categoria">
+
+                        ${producto.categoria}
+
+                    </div>
+
+
+                    <h2 class="producto-nombre">
+
+                        ${producto.nombre}
+
+                    </h2>
+
+
+                    <p class="producto-descripcion">
+
+                        ${producto.descripcion}
+
+                    </p>
+
+
+                    <div class="producto-precio">
+
+                        ${producto.precio}
+
+                    </div>
+
+
+                    <div class="botones-producto">
+
+
+                        <!-- COMPRAR -->
+
+                        <a
+                            class="producto-comprar"
+                            href="${enlaceCompra}"
+                            target="_blank"
+                            rel="noopener"
+                        >
+
+                            🛒 COMPRAR
+
+                        </a>
+
+
+                        <!-- DETALLES -->
+
+                        <button
+                            class="producto-detalles"
+                            type="button"
+                            onclick="verDetalles(${indice})"
+                        >
+
+                            📋 DETALLES
+
+                        </button>
+
+
+                        <!-- WHATSAPP -->
+
+                        <a
+                            class="producto-whatsapp"
+                            href="${enlaceWhatsApp}"
+                            target="_blank"
+                            rel="noopener"
+                        >
+
+                            💬 CONSULTAR POR WHATSAPP
+
+                        </a>
+
+
+                    </div>
+
+
+                </div>
+
+            `;
+
+
+            contenedorProductos.appendChild(
+                tarjeta
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   VER DETALLES
+===================================================== */
+
+function verDetalles(indice) {
+
+
+    const producto =
+        PRODUCTOS[indice];
+
+
+    if (!producto) {
+        return;
+    }
+
+
+    const modal =
+        document.getElementById(
+            "modalProducto"
+        );
+
+
+    /* =========================
+       IMAGEN
+    ========================= */
+
+    const modalImagen =
+        document.getElementById(
+            "modalImagen"
+        );
+
+
+    modalImagen.src =
+        producto.imagen;
+
+
+    modalImagen.alt =
+        producto.nombre;
+
+
+    /* =========================
+       DATOS
+    ========================= */
+
+    document.getElementById(
+        "modalCategoria"
+    ).textContent =
+        producto.categoria;
+
+
+    document.getElementById(
+        "modalNombre"
+    ).textContent =
+        producto.nombre;
+
+
+    document.getElementById(
+        "modalPrecio"
+    ).textContent =
+        producto.precio;
+
+
+    document.getElementById(
+        "modalDescripcion"
+    ).textContent =
+
+        producto.detalles &&
+        producto.detalles.descripcionCompleta
+
+            ?
+
+        producto.detalles.descripcionCompleta
+
+            :
+
+        producto.descripcion;
+
+
+    /* =========================
+       CARACTERISTICAS
+    ========================= */
+
+    const lista =
+        document.getElementById(
+            "modalCaracteristicas"
+        );
+
+
+    lista.innerHTML = "";
+
+
+    if (
+
+        producto.detalles &&
+
+        producto.detalles.caracteristicas &&
+
+        producto.detalles.caracteristicas.length
+
+    ) {
+
+
+        producto.detalles.caracteristicas.forEach(
+            caracteristica => {
+
+
+                const li =
+                    document.createElement(
+                        "li"
+                    );
+
+
+                li.textContent =
+                    caracteristica;
+
+
+                lista.appendChild(li);
+
+            }
+        );
+
+
+    } else {
+
+
+        const li =
+            document.createElement(
+                "li"
+            );
+
+
+        li.textContent =
+            "Consultar características del producto.";
+
+
+        lista.appendChild(li);
+
+    }
+
+
+    /* =========================
+       COMPATIBILIDAD
+    ========================= */
+
+    document.getElementById(
+        "modalCompatibilidad"
+    ).textContent =
+
+        producto.detalles &&
+        producto.detalles.compatibilidad
+
+            ?
+
+        producto.detalles.compatibilidad
+
+            :
+
+        "Consultar compatibilidad.";
+
+
+    /* =========================
+       CONTENIDO
+    ========================= */
+
+    document.getElementById(
+        "modalContenido"
+    ).textContent =
+
+        producto.detalles &&
+        producto.detalles.contenido
+
+            ?
+
+        producto.detalles.contenido
+
+            :
+
+        "Consultar contenido.";
+
+
+    /* =========================
+       WHATSAPP MODAL
+    ========================= */
+
+    const mensaje =
+        `Hola, deseo consultar la disponibilidad de: ${producto.nombre}`;
+
+    document.getElementById(
+        "modalWhatsapp"
+    ).href =
+
+        `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensaje)}`;
+
+
+    /* =========================
+       ABRIR
+    ========================= */
+
+    modal.classList.add(
+        "activo"
+    );
+
+
+    document.body.style.overflow =
+        "hidden";
+
+}
+
+
+/* =====================================================
+   CERRAR MODAL
+===================================================== */
+
+function cerrarDetalles() {
+
+    document
+        .getElementById(
+            "modalProducto"
+        )
+        .classList.remove(
+            "activo"
+        );
+
+
+    document.body.style.overflow =
+        "";
+
+}
+
+
+/* =====================================================
+   CLICK FUERA
+===================================================== */
+
+document
+    .getElementById(
+        "modalProducto"
+    )
+    .addEventListener(
+        "click",
+        function(event) {
+
+            if (
+                event.target === this
+            ) {
+
+                cerrarDetalles();
+
+            }
+
+        }
+    );
+
+
+/* =====================================================
+   ESC
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            cerrarDetalles();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   BUSCADOR
+===================================================== */
+
+buscador.addEventListener(
+    "input",
+    mostrarProductos
+);
+
+
+/* =====================================================
+   INICIAR
+===================================================== */
+
+crearCategorias();
+
+mostrarProductos();
+
+</script>
+
+
+</body>
+</html>
