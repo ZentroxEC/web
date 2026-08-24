@@ -1,1 +1,881 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Contacto | ZENTROXEC Tecnología</title>
+
+    <meta
+        name="description"
+        content="Contacta con ZENTROXEC Tecnología para consultar productos, disponibilidad, cables y adaptadores."
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080808;
+            color: #fff;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(5,5,5,.96);
+            border-bottom: 1px solid #292929;
+
+            backdrop-filter: blur(10px);
+        }
+
+        .header-container {
+            max-width: 1250px;
+            min-height: 78px;
+
+            margin: auto;
+            padding: 0 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #e50914;
+        }
+
+        .logo-small {
+            display: block;
+            color: #888;
+
+            font-size: 9px;
+            letter-spacing: 4px;
+
+            margin-top: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+
+            font-size: 14px;
+            font-weight: bold;
+
+            transition: .2s;
+        }
+
+        nav a:hover,
+        nav a.activo {
+            color: #e50914;
+        }
+
+        .whatsapp-header {
+            background: #e50914;
+            color: #fff;
+
+            padding: 12px 18px;
+
+            border-radius: 7px;
+
+            text-decoration: none;
+
+            font-size: 13px;
+            font-weight: bold;
+
+            transition: .2s;
+        }
+
+        .whatsapp-header:hover {
+            background: #b80710;
+        }
+
+        .hero {
+            min-height: 340px;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                radial-gradient(
+                    circle at 80% 50%,
+                    rgba(229,9,20,.18),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #090909,
+                    #121212
+                );
+
+            border-bottom: 1px solid #222;
+        }
+
+        .hero-container {
+            width: 100%;
+            max-width: 1250px;
+
+            margin: auto;
+
+            padding: 65px 25px;
+        }
+
+        .hero h1 {
+            max-width: 700px;
+
+            font-size: clamp(42px,6vw,70px);
+
+            line-height: .95;
+
+            text-transform: uppercase;
+
+            font-weight: 900;
+        }
+
+        .hero h1 span {
+            color: #e50914;
+        }
+
+        .hero-line {
+            width: 55px;
+            height: 4px;
+
+            background: #e50914;
+
+            margin: 25px 0;
+        }
+
+        .hero p {
+            max-width: 650px;
+
+            color: #aaa;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+        }
+
+        .contacto {
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding: 70px 25px;
+        }
+
+        .contacto-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 25px;
+        }
+
+        .panel {
+            background: #111;
+
+            border: 1px solid #292929;
+
+            border-radius: 10px;
+
+            padding: 30px;
+        }
+
+        .panel h2 {
+            font-size: 25px;
+
+            margin-bottom: 12px;
+        }
+
+        .panel > p {
+            color: #888;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            margin-bottom: 25px;
+        }
+
+        .contacto-item {
+            display: flex;
+
+            gap: 15px;
+
+            padding: 18px 0;
+
+            border-top: 1px solid #292929;
+        }
+
+        .contacto-icono {
+            font-size: 25px;
+        }
+
+        .contacto-item h3 {
+            font-size: 14px;
+
+            margin-bottom: 5px;
+        }
+
+        .contacto-item p {
+            color: #888;
+
+            font-size: 13px;
+        }
+
+        .whatsapp-grande {
+            display: block;
+
+            width: 100%;
+
+            background: #e50914;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 15px;
+
+            border-radius: 7px;
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            font-weight: 900;
+
+            margin-top: 20px;
+
+            transition: .2s;
+        }
+
+        .whatsapp-grande:hover {
+            background: #b80710;
+        }
+
+        form {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 15px;
+        }
+
+        label {
+            color: #ddd;
+
+            font-size: 12px;
+
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+
+            margin-top: 7px;
+
+            padding: 14px;
+
+            background: #080808;
+
+            border: 1px solid #333;
+
+            border-radius: 6px;
+
+            color: white;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            outline: none;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #e50914;
+        }
+
+        textarea {
+            min-height: 130px;
+
+            resize: vertical;
+        }
+
+        .boton-formulario {
+            border: none;
+
+            background: #e50914;
+
+            color: white;
+
+            padding: 15px;
+
+            border-radius: 7px;
+
+            font-size: 13px;
+
+            font-weight: 900;
+
+            cursor: pointer;
+
+            transition: .2s;
+        }
+
+        .boton-formulario:hover {
+            background: #b80710;
+        }
+
+        .nota {
+            margin-top: 15px;
+
+            color: #666;
+
+            font-size: 11px;
+
+            line-height: 1.5;
+        }
+
+        .enlaces {
+            max-width: 1100px;
+
+            margin: 0 auto 70px;
+
+            padding: 0 25px;
+        }
+
+        .enlaces h2 {
+            margin-bottom: 20px;
+        }
+
+        .enlaces-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3,1fr);
+
+            gap: 15px;
+        }
+
+        .enlace {
+            background: #111;
+
+            border: 1px solid #292929;
+
+            border-radius: 8px;
+
+            padding: 20px;
+
+            color: white;
+
+            text-decoration: none;
+
+            transition: .2s;
+        }
+
+        .enlace:hover {
+            border-color: #e50914;
+
+            transform: translateY(-3px);
+        }
+
+        .enlace strong {
+            display: block;
+
+            margin-bottom: 5px;
+        }
+
+        .enlace span {
+            color: #777;
+
+            font-size: 12px;
+        }
+
+        footer {
+            background: #050505;
+
+            border-top: 1px solid #222;
+
+            padding: 35px 25px;
+
+            text-align: center;
+        }
+
+        footer p {
+            color: #666;
+
+            font-size: 12px;
+        }
+
+        @media (max-width: 850px) {
+
+            nav {
+                gap: 14px;
+            }
+
+            .whatsapp-header {
+                display: none;
+            }
+
+            .contacto-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .enlaces-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .header-container {
+                min-height: 65px;
+            }
+
+            nav a {
+                font-size: 11px;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+
+            .hero-container {
+                padding: 55px 20px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .contacto {
+                padding: 50px 20px;
+            }
+
+            .panel {
+                padding: 23px;
+            }
+
+            .enlaces {
+                padding: 0 20px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-container">
+
+        <div class="logo">
+
+            ZENTRO<span>X</span>EC
+
+            <span class="logo-small">
+                TECNOLOGÍA
+            </span>
+
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                INICIO
+            </a>
+
+            <a href="productos.html">
+                PRODUCTOS
+            </a>
+
+            <a href="acerca.html">
+                ACERCA
+            </a>
+
+            <a href="contacto.html" class="activo">
+                CONTACTO
+            </a>
+
+        </nav>
+
+        <a
+            id="whatsappHeader"
+            class="whatsapp-header"
+            target="_blank"
+            rel="noopener"
+        >
+            💬 WhatsApp
+        </a>
+
+    </div>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-container">
+
+        <h1>
+
+            <span>CONTACTA</span>
+            CON NOSOTROS
+
+        </h1>
+
+        <div class="hero-line"></div>
+
+        <p>
+            ¿Necesitas un producto, quieres consultar disponibilidad
+            o tienes dudas sobre compatibilidad? Estamos disponibles
+            para atender tu consulta.
+        </p>
+
+    </div>
+
+</section>
+
+
+<main class="contacto">
+
+    <div class="contacto-grid">
+
+
+        <!-- INFORMACIÓN -->
+
+        <section class="panel">
+
+            <h2>
+                Atención directa
+            </h2>
+
+            <p>
+                Puedes comunicarte directamente con ZENTROXEC
+                Tecnología para consultar productos,
+                disponibilidad y características.
+            </p>
+
+
+            <div class="contacto-item">
+
+                <div class="contacto-icono">
+                    💬
+                </div>
+
+                <div>
+
+                    <h3>
+                        WhatsApp
+                    </h3>
+
+                    <p>
+                        Consulta rápida y directa.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="contacto-item">
+
+                <div class="contacto-icono">
+                    📦
+                </div>
+
+                <div>
+
+                    <h3>
+                        Disponibilidad
+                    </h3>
+
+                    <p>
+                        Consulta antes de realizar tu pedido.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="contacto-item">
+
+                <div class="contacto-icono">
+                    🔧
+                </div>
+
+                <div>
+
+                    <h3>
+                        Compatibilidad
+                    </h3>
+
+                    <p>
+                        Podemos ayudarte a revisar qué producto
+                        necesitas.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <a
+                id="whatsappGrande"
+                class="whatsapp-grande"
+                target="_blank"
+                rel="noopener"
+            >
+                💬 CONSULTAR POR WHATSAPP
+            </a>
+
+        </section>
+
+
+        <!-- FORMULARIO -->
+
+        <section class="panel">
+
+            <h2>
+                Envíanos una consulta
+            </h2>
+
+            <p>
+                Completa los datos y prepara tu mensaje.
+                El formulario abrirá WhatsApp para que puedas
+                enviarlo directamente.
+            </p>
+
+
+            <form id="formularioContacto">
+
+                <label>
+
+                    Nombre
+
+                    <input
+                        type="text"
+                        id="nombre"
+                        placeholder="Tu nombre"
+                        required
+                    >
+
+                </label>
+
+
+                <label>
+
+                    Producto o consulta
+
+                    <input
+                        type="text"
+                        id="producto"
+                        placeholder="Ej: Cable Delta a 2 SATA"
+                        required
+                    >
+
+                </label>
+
+
+                <label>
+
+                    Mensaje
+
+                    <textarea
+                        id="mensaje"
+                        placeholder="Escribe tu consulta..."
+                        required
+                    ></textarea>
+
+                </label>
+
+
+                <button
+                    class="boton-formulario"
+                    type="submit"
+                >
+                    💬 ENVIAR CONSULTA
+                </button>
+
+            </form>
+
+
+            <p class="nota">
+
+                Al enviar el formulario se abrirá WhatsApp
+                con la información que ingresaste.
+
+            </p>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<section class="enlaces">
+
+    <h2>
+        También puedes visitar
+    </h2>
+
+    <div class="enlaces-grid">
+
+
+        <a
+            href="index.html"
+            class="enlace"
+        >
+
+            <strong>
+                🏠 Inicio
+            </strong>
+
+            <span>
+                Conoce nuestra propuesta.
+            </span>
+
+        </a>
+
+
+        <a
+            href="productos.html"
+            class="enlace"
+        >
+
+            <strong>
+                🛒 Productos
+            </strong>
+
+            <span>
+                Explora nuestro catálogo.
+            </span>
+
+        </a>
+
+
+        <a
+            href="acerca.html"
+            class="enlace"
+        >
+
+            <strong>
+                ℹ️ Acerca de
+            </strong>
+
+            <span>
+                Conoce más sobre ZENTROXEC.
+            </span>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <div class="logo">
+
+        ZENTRO<span>X</span>EC
+
+        <span class="logo-small">
+            TECNOLOGÍA
+        </span>
+
+    </div>
+
+    <p>
+        © 2026 ZENTROXEC Tecnología.
+        Todos los derechos reservados.
+    </p>
+
+</footer>
+
+
+<script>
+
+const WHATSAPP = "593960648763";
+
+
+/* WhatsApp general */
+
+const mensajeGeneral =
+    "Hola, quisiera consultar sobre un producto de ZENTROXEC Tecnología.";
+
+const enlaceGeneral =
+    `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensajeGeneral)}`;
+
+document.getElementById("whatsappHeader").href =
+    enlaceGeneral;
+
+document.getElementById("whatsappGrande").href =
+    enlaceGeneral;
+
+
+/* Formulario */
+
+document
+    .getElementById("formularioContacto")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const nombre =
+            document.getElementById("nombre").value.trim();
+
+        const producto =
+            document.getElementById("producto").value.trim();
+
+        const mensaje =
+            document.getElementById("mensaje").value.trim();
+
+
+        const texto =
+            `Hola, soy ${nombre}.%0A%0A` +
+            `Producto o consulta: ${producto}%0A%0A` +
+            `Mensaje: ${mensaje}`;
+
+
+        const url =
+            `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
+                `Hola, soy ${nombre}.\n\nProducto o consulta: ${producto}\n\nMensaje: ${mensaje}`
+            )}`;
+
+
+        window.open(
+            url,
+            "_blank"
+        );
+
+    });
+
+</script>
+
+</body>
+</html>
