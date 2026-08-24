@@ -1,31 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <!-- =====================================================
-         EDITAR: TÍTULO DE LA PÁGINA
-    ====================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Finalizar compra | ZENTROXEC</title>
 
     <meta
         name="description"
-        content="Completa tus datos de entrega y continúa con el pago de tu compra en ZENTROXEC."
+        content="Completa tus datos de envío y continúa con el pago de tu compra en ZENTROXEC."
     >
 
     <style>
-
-        /* =====================================================
-           RESET
-        ====================================================== */
 
         * {
             margin: 0;
@@ -44,10 +30,9 @@
             line-height: 1.6;
         }
 
-
-        /* =====================================================
+        /* ==============================
            HEADER
-        ====================================================== */
+        ============================== */
 
         header {
             width: 100%;
@@ -65,18 +50,15 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-
             gap: 30px;
         }
 
         .logo {
             flex-shrink: 0;
-
             color: #ffffff;
             font-size: 27px;
             font-weight: 900;
             letter-spacing: 1px;
-
             text-decoration: none;
         }
 
@@ -88,18 +70,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-
             gap: 30px;
         }
 
         nav a {
             color: #dddddd;
             text-decoration: none;
-
             font-size: 13px;
             font-weight: 800;
-
-            transition: color 0.2s ease;
         }
 
         nav a:hover,
@@ -107,24 +85,16 @@
             color: #e50914;
         }
 
-
-        /* =====================================================
-           CONTENEDOR PRINCIPAL
-        ====================================================== */
+        /* ==============================
+           CONTENEDOR
+        ============================== */
 
         .checkout {
             width: 100%;
             max-width: 1050px;
-
             margin: 0 auto;
-
             padding: 55px 20px 80px;
         }
-
-
-        /* =====================================================
-           TÍTULO
-        ====================================================== */
 
         .titulo {
             text-align: center;
@@ -134,7 +104,6 @@
         .titulo h1 {
             font-size: clamp(32px, 5vw, 50px);
             line-height: 1.1;
-
             margin-bottom: 12px;
         }
 
@@ -147,55 +116,43 @@
             font-size: 15px;
         }
 
-
-        /* =====================================================
+        /* ==============================
            GRID
-        ====================================================== */
+        ============================== */
 
         .checkout-grid {
             display: grid;
-
             grid-template-columns: 1.15fr 0.85fr;
-
             gap: 25px;
-
             align-items: start;
         }
 
-
-        /* =====================================================
-           TARJETAS DE SECCIÓN
-        ====================================================== */
+        /* ==============================
+           SECCIONES
+        ============================== */
 
         .seccion {
             background: #101010;
-
             border: 1px solid #252525;
             border-radius: 14px;
-
             padding: 28px;
-
             margin-bottom: 25px;
         }
 
         .seccion h2 {
             font-size: 22px;
-
             margin-bottom: 6px;
         }
 
         .seccion-subtitulo {
             color: #888888;
-
             font-size: 13px;
-
             margin-bottom: 25px;
         }
 
-
-        /* =====================================================
+        /* ==============================
            FORMULARIO
-        ====================================================== */
+        ============================== */
 
         .campo {
             margin-bottom: 18px;
@@ -203,124 +160,85 @@
 
         .campo label {
             display: block;
-
             color: #eeeeee;
-
             font-size: 14px;
             font-weight: 700;
-
             margin-bottom: 7px;
         }
 
         .campo input,
         .campo select,
         .campo textarea {
-
             width: 100%;
-
             min-height: 48px;
-
             padding: 12px 14px;
 
             border-radius: 8px;
-
             border: 1px solid #3a3a3a;
 
             background: #080808;
-
             color: #ffffff;
 
             outline: none;
 
             font-family: Arial, Helvetica, sans-serif;
-
             font-size: 14px;
         }
 
         .campo textarea {
-
             min-height: 110px;
-
             resize: vertical;
         }
 
         .campo input:focus,
         .campo select:focus,
         .campo textarea:focus {
-
             border-color: #e50914;
         }
 
         .fila {
-
             display: grid;
-
             grid-template-columns: 1fr 1fr;
-
             gap: 15px;
         }
 
         .check-line {
-
             display: flex;
-
             align-items: center;
-
             gap: 10px;
 
             color: #aaaaaa;
-
             font-size: 13px;
 
             margin: 5px 0 20px;
         }
 
         .check-line input {
-
             width: 18px;
             height: 18px;
-
             accent-color: #e50914;
         }
 
+        /* ==============================
+           OTRA PROVINCIA
+        ============================== */
 
-        /* =====================================================
-           BUSCADOR DE PROVINCIA
-        ====================================================== */
-
-        #buscarProvincia {
-
-            margin-bottom: 4px;
+        #otraProvinciaCampo {
+            display: none;
         }
 
-        .ayuda-provincia {
-
-            color: #666666;
-
-            font-size: 11px;
-
-            margin-top: -10px;
-
-            margin-bottom: 18px;
-        }
-
-
-        /* =====================================================
-           RESUMEN DEL PRODUCTO
-        ====================================================== */
+        /* ==============================
+           PRODUCTO
+        ============================== */
 
         .producto-resumen {
-
             display: flex;
-
             gap: 15px;
-
             align-items: center;
 
             padding: 16px;
 
             border: 1px solid #292929;
-
             border-radius: 10px;
 
             background: #080808;
@@ -329,81 +247,89 @@
         }
 
         .producto-resumen-imagen {
-
             width: 75px;
             height: 75px;
 
             background: #ffffff;
-
             border-radius: 8px;
 
             display: flex;
-
             align-items: center;
             justify-content: center;
 
             overflow: hidden;
-
             flex-shrink: 0;
         }
 
         .producto-resumen-imagen img {
-
             width: 100%;
             height: 100%;
-
             object-fit: contain;
-
             padding: 5px;
         }
 
         .producto-resumen-info {
-
             flex: 1;
         }
 
         .producto-resumen-info h3 {
-
             font-size: 15px;
-
             margin-bottom: 4px;
         }
 
         .producto-resumen-info p {
-
             color: #888888;
-
             font-size: 12px;
         }
 
         .producto-resumen-precio {
-
             font-size: 20px;
-
             font-weight: 900;
         }
 
+        /* ==============================
+           RESUMEN DEL PEDIDO
+        ============================== */
 
-        /* =====================================================
-           BOTÓN CONTINUAR AL PAGO
-        ====================================================== */
+        .resumen-linea {
+            display: flex;
+            justify-content: space-between;
 
-        .btn-pagar {
+            gap: 15px;
 
-            width: 100%;
+            color: #999999;
+            font-size: 14px;
 
-            min-height: 50px;
+            margin-bottom: 12px;
+        }
 
-            border: 1px solid #e50914;
+        .resumen-linea.total {
+            border-top: 1px solid #292929;
 
-            border-radius: 8px;
-
-            background: #e50914;
+            padding-top: 16px;
+            margin-top: 16px;
 
             color: #ffffff;
 
-            font-size: 14px;
+            font-size: 20px;
+            font-weight: 900;
+        }
 
+        /* ==============================
+           BOTÓN DE PAGO
+        ============================== */
+
+        .btn-pagar {
+            width: 100%;
+            min-height: 50px;
+
+            border: 1px solid #e50914;
+            border-radius: 8px;
+
+            background: #e50914;
+            color: #ffffff;
+
+            font-size: 14px;
             font-weight: 900;
 
             cursor: pointer;
@@ -412,75 +338,25 @@
         }
 
         .btn-pagar:hover {
-
             background: #b80710;
-
             border-color: #b80710;
         }
 
-        .btn-pagar:active {
-
-            transform: scale(0.99);
-        }
-
-
         .seguridad {
-
             text-align: center;
-
             color: #666666;
-
             font-size: 11px;
-
             margin-top: 12px;
         }
 
-
-        /* =====================================================
-           RESUMEN DEL PEDIDO
-        ====================================================== */
-
-        .resumen-linea {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            gap: 15px;
-
-            color: #999999;
-
-            font-size: 14px;
-
-            margin-bottom: 12px;
-        }
-
-        .resumen-linea.total {
-
-            border-top: 1px solid #292929;
-
-            padding-top: 16px;
-
-            margin-top: 16px;
-
-            color: #ffffff;
-
-            font-size: 20px;
-
-            font-weight: 900;
-        }
-
-
-        /* =====================================================
-           MENSAJE DE ERROR
-        ====================================================== */
+        /* ==============================
+           ERROR
+        ============================== */
 
         .mensaje-error {
-
             display: none;
 
             background: rgba(229, 9, 20, 0.10);
-
             border: 1px solid #e50914;
 
             color: #ff8b91;
@@ -495,17 +371,14 @@
         }
 
         .mensaje-error.mostrar {
-
             display: block;
         }
 
-
-        /* =====================================================
+        /* ==============================
            FOOTER
-        ====================================================== */
+        ============================== */
 
         footer {
-
             padding: 30px 20px;
 
             text-align: center;
@@ -516,35 +389,29 @@
         }
 
         footer p {
-
             color: #666666;
-
             font-size: 12px;
         }
 
         footer strong {
-
             color: #ffffff;
         }
 
-
-        /* =====================================================
+        /* ==============================
            CELULAR
-        ====================================================== */
+        ============================== */
 
         @media (max-width: 800px) {
 
             .checkout-grid {
-
                 grid-template-columns: 1fr;
             }
-        }
 
+        }
 
         @media (max-width: 600px) {
 
             .header-container {
-
                 padding: 22px 18px;
 
                 flex-direction: column;
@@ -553,7 +420,6 @@
             }
 
             nav {
-
                 width: 100%;
 
                 justify-content: space-between;
@@ -562,56 +428,44 @@
             }
 
             nav a {
-
                 font-size: 10px;
             }
 
             .checkout {
-
                 padding: 35px 14px 60px;
             }
 
             .seccion {
-
                 padding: 20px;
             }
 
             .fila {
-
                 grid-template-columns: 1fr;
-
                 gap: 0;
             }
 
             .producto-resumen-precio {
-
                 font-size: 17px;
             }
+
         }
 
     </style>
-
 </head>
-
 
 <body>
 
-
-    <!-- =====================================================
+    <!-- ==========================================
          HEADER
-    ====================================================== -->
+    =========================================== -->
 
     <header>
 
         <div class="header-container">
 
-            <a
-                href="index.html"
-                class="logo"
-            >
+            <a href="index.html" class="logo">
                 ZENTRO<span>X</span>EC
             </a>
-
 
             <nav>
 
@@ -619,10 +473,7 @@
                     INICIO
                 </a>
 
-                <a
-                    href="productos.html"
-                    class="activo"
-                >
+                <a href="productos.html" class="activo">
                     PRODUCTOS
                 </a>
 
@@ -641,17 +492,11 @@
     </header>
 
 
-
-    <!-- =====================================================
-         PÁGINA DE COMPRA
-    ====================================================== -->
+    <!-- ==========================================
+         CONTENIDO PRINCIPAL
+    =========================================== -->
 
     <main class="checkout">
-
-
-        <!-- =================================================
-             TÍTULO PRINCIPAL
-        ================================================== -->
 
         <section class="titulo">
 
@@ -660,71 +505,50 @@
             </h1>
 
             <p>
-                Completa los datos de entrega antes de continuar con el pago.
+                Completa los datos de envío antes de continuar con el pago.
             </p>
 
         </section>
 
 
-
         <div class="checkout-grid">
 
 
-
-            <!-- =================================================
+            <!-- ==========================================
                  COLUMNA IZQUIERDA
                  FORMULARIO DE ENVÍO
-            ================================================== -->
+            =========================================== -->
 
             <div>
 
-
                 <section class="seccion">
 
-
-                    <!-- =================================================
-                         CAMBIO REALIZADO:
-
-                         ANTES:
-                         Dirección o lugar
-
-                         AHORA:
-                         Envío
-                    ================================================== -->
+                    <!-- CAMBIADO:
+                         Antes decía "Dirección o lugar".
+                         Ahora solamente dice "Envío".
+                    -->
 
                     <h2>
                         Envío
                     </h2>
 
-
                     <p class="seccion-subtitulo">
-
                         Ingresa los datos necesarios para realizar la entrega.
-
                     </p>
 
-
-
-                    <!-- =================================================
-                         FORMULARIO
-                    ================================================== -->
 
                     <form id="formCompra">
 
 
-
-                        <!-- =========================================
+                        <!-- ======================================
                              DIRECCIÓN
-                        ========================================== -->
+                        ======================================= -->
 
                         <div class="campo">
 
                             <label for="direccion">
-
                                 Dirección o lugar
-
                             </label>
-
 
                             <input
                                 type="text"
@@ -737,10 +561,9 @@
                         </div>
 
 
-
-                        <!-- =========================================
-                             SIN NÚMERO
-                        ========================================== -->
+                        <!-- ======================================
+                             CALLE SIN NÚMERO
+                        ======================================= -->
 
                         <label class="check-line">
 
@@ -756,50 +579,18 @@
                         </label>
 
 
-
-                        <!-- =================================================
-                             BUSCAR PROVINCIA
-                        ================================================== -->
-
-                        <div class="campo">
-
-                            <label for="buscarProvincia">
-
-                                Buscar provincia
-
-                            </label>
-
-
-                            <input
-                                type="text"
-                                id="buscarProvincia"
-                                placeholder="Escribe el nombre de la provincia"
-                                autocomplete="off"
-                            >
-
-                        </div>
-
-
-                        <p class="ayuda-provincia">
-
-                            Escribe para encontrar rápidamente tu provincia.
-
-                        </p>
-
-
-
-                        <!-- =================================================
-                             PROVINCIAS DEL ECUADOR
-                        ================================================== -->
+                        <!-- ======================================
+                             PROVINCIA
+                             
+                             SE ELIMINÓ COMPLETAMENTE EL CAMPO
+                             "BUSCAR PROVINCIA".
+                        ======================================= -->
 
                         <div class="campo">
 
                             <label for="provincia">
-
                                 Provincia
-
                             </label>
-
 
                             <select
                                 id="provincia"
@@ -808,11 +599,8 @@
                             >
 
                                 <option value="">
-
                                     Selecciona una provincia
-
                                 </option>
-
 
                                 <option value="Azuay">
                                     Azuay
@@ -910,12 +698,12 @@
                                     Zamora Chinchipe
                                 </option>
 
+                                <!--
+                                    OPCIÓN PARA UNA PROVINCIA
+                                    QUE NO ESTÉ EN LA LISTA.
+                                -->
 
-                                <!-- =====================================
-                                     OTRA PROVINCIA
-                                ====================================== -->
-
-                                <option value="otra">
+                                <option value="Otra provincia">
                                     Otra provincia
                                 </option>
 
@@ -924,28 +712,22 @@
                         </div>
 
 
-
-                        <!-- =================================================
+                        <!-- ======================================
                              OTRA PROVINCIA
-
-                             ESTE CAMPO ESTÁ OCULTO AL PRINCIPIO.
-
-                             APARECE CUANDO SELECCIONAN:
-                             "Otra provincia"
-                        ================================================== -->
+                             
+                             ESTE CAMPO APARECE SOLAMENTE
+                             CUANDO SE SELECCIONA
+                             "Otra provincia".
+                        ======================================= -->
 
                         <div
                             class="campo"
                             id="otraProvinciaCampo"
-                            style="display: none;"
                         >
 
                             <label for="otraProvincia">
-
                                 Escribe la provincia
-
                             </label>
-
 
                             <input
                                 type="text"
@@ -957,19 +739,15 @@
                         </div>
 
 
-
-                        <!-- =================================================
+                        <!-- ======================================
                              CANTÓN
-                        ================================================== -->
+                        ======================================= -->
 
                         <div class="campo">
 
                             <label for="canton">
-
                                 Cantón
-
                             </label>
-
 
                             <input
                                 type="text"
@@ -982,19 +760,15 @@
                         </div>
 
 
-
-                        <!-- =================================================
+                        <!-- ======================================
                              PARROQUIA
-                        ================================================== -->
+                        ======================================= -->
 
                         <div class="campo">
 
                             <label for="parroquia">
-
                                 Parroquia
-
                             </label>
-
 
                             <input
                                 type="text"
@@ -1007,19 +781,15 @@
                         </div>
 
 
-
-                        <!-- =================================================
+                        <!-- ======================================
                              CALLE SECUNDARIA
-                        ================================================== -->
+                        ======================================= -->
 
                         <div class="campo">
 
                             <label for="calleSecundaria">
-
                                 Calle secundaria
-
                             </label>
-
 
                             <input
                                 type="text"
@@ -1032,19 +802,15 @@
                         </div>
 
 
-
-                        <!-- =================================================
+                        <!-- ======================================
                              DEPARTAMENTO
-                        ================================================== -->
+                        ======================================= -->
 
                         <div class="campo">
 
                             <label for="departamento">
-
                                 Departamento (opcional)
-
                             </label>
-
 
                             <input
                                 type="text"
@@ -1056,19 +822,15 @@
                         </div>
 
 
-
-                        <!-- =================================================
+                        <!-- ======================================
                              INDICACIONES
-                        ================================================== -->
+                        ======================================= -->
 
                         <div class="campo">
 
                             <label for="indicaciones">
-
                                 Indicaciones para la entrega (opcional)
-
                             </label>
-
 
                             <textarea
                                 id="indicaciones"
@@ -1080,38 +842,24 @@
                         </div>
 
 
-
-                        <!-- =================================================
+                        <!-- ======================================
                              DATOS DE QUIEN RECIBE
-                        ================================================== -->
+                        ======================================= -->
 
                         <h2 style="margin-top:35px;">
-
                             Datos de quien recibe
-
                         </h2>
 
-
                         <p class="seccion-subtitulo">
-
                             Llamaremos si hay un problema con la entrega.
-
                         </p>
 
-
-
-                        <!-- =================================================
-                             NOMBRE
-                        ================================================== -->
 
                         <div class="campo">
 
                             <label for="nombre">
-
                                 Nombre y apellido
-
                             </label>
-
 
                             <input
                                 type="text"
@@ -1124,19 +872,15 @@
                         </div>
 
 
-
-                        <!-- =================================================
+                        <!-- ======================================
                              TELÉFONO
-                        ================================================== -->
+                        ======================================= -->
 
                         <div class="campo">
 
                             <label for="telefono">
-
                                 Teléfono
-
                             </label>
-
 
                             <input
                                 type="tel"
@@ -1150,18 +894,15 @@
                         </div>
 
 
-
-                        <!-- =================================================
+                        <!-- ======================================
                              MENSAJE DE ERROR
-                        ================================================== -->
+                        ======================================= -->
 
                         <div
                             id="mensajeError"
                             class="mensaje-error"
                         >
-
                             Completa todos los campos obligatorios antes de continuar.
-
                         </div>
 
 
@@ -1172,53 +913,37 @@
             </div>
 
 
-
-
-            <!-- =================================================
+            <!-- ==========================================
                  COLUMNA DERECHA
                  RESUMEN DE COMPRA
-            ================================================== -->
+            =========================================== -->
 
             <div>
 
-
                 <section class="seccion">
 
-
                     <h2>
-
                         Resumen de compra
-
                     </h2>
 
-
                     <p class="seccion-subtitulo">
-
                         Revisa el producto antes de continuar.
-
                     </p>
 
 
-
-                    <!-- =================================================
+                    <!-- ======================================
                          PRODUCTO
-                    ================================================== -->
+                         
+                         EDITA AQUÍ:
+                         IMAGEN
+                         NOMBRE
+                         CANTIDAD
+                         PRECIO
+                    ======================================= -->
 
                     <div class="producto-resumen">
 
-
                         <div class="producto-resumen-imagen">
-
-
-                            <!-- =================================================
-                                 EDITAR: IMAGEN DEL PRODUCTO
-
-                                 Cambia:
-
-                                 img/delta.png
-
-                                 por la imagen que quieras utilizar.
-                            ================================================== -->
 
                             <img
                                 src="img/delta.png"
@@ -1228,53 +953,31 @@
                         </div>
 
 
-
                         <div class="producto-resumen-info">
 
-
-                            <!-- =================================================
-                                 EDITAR: NOMBRE DEL PRODUCTO
-                            ================================================== -->
-
                             <h3>
-
                                 Cable Delta macho a 2 SATA hembra
-
                             </h3>
 
-
-                            <!-- =================================================
-                                 EDITAR: CANTIDAD
-                            ================================================== -->
-
                             <p>
-
                                 Cantidad: 1
-
                             </p>
 
                         </div>
 
 
-
-                        <!-- =================================================
-                             EDITAR: PRECIO
-                        ================================================== -->
-
                         <div class="producto-resumen-precio">
-
                             $10.00
-
                         </div>
-
 
                     </div>
 
 
-
-                    <!-- =================================================
+                    <!-- ======================================
                          PRECIO DEL PRODUCTO
-                    ================================================== -->
+                         
+                         EDITA $10.00 SI CAMBIAS EL PRECIO.
+                    ======================================= -->
 
                     <div class="resumen-linea">
 
@@ -1289,28 +992,16 @@
                     </div>
 
 
-
-                    <!-- =================================================
+                    <!-- ======================================
                          ENVÍO
-
-                         SI ES GRATIS:
-
-                         Cambia:
-
+                         
+                         PUEDES CAMBIAR:
+                         
                          Se coordina
-
-                         por:
-
                          Gratis
-
-                         SI CUESTA $3:
-
                          $3.00
-
-                         IMPORTANTE:
-                         El total debe coincidir con el valor
-                         que se cobra en PayPhone.
-                    ================================================== -->
+                         $5.00
+                    ======================================= -->
 
                     <div class="resumen-linea">
 
@@ -1325,22 +1016,11 @@
                     </div>
 
 
-
-                    <!-- =================================================
+                    <!-- ======================================
                          TOTAL
-
-                         EJEMPLO ENVÍO GRATIS:
-
-                         Producto = $10
-                         Envío = Gratis
-                         Total = $10
-
-                         EJEMPLO ENVÍO $3:
-
-                         Producto = $10
-                         Envío = $3
-                         Total = $13
-                    ================================================== -->
+                         
+                         EDITA EL TOTAL FINAL.
+                    ======================================= -->
 
                     <div class="resumen-linea total">
 
@@ -1355,38 +1035,26 @@
                     </div>
 
 
-
-                    <!-- =================================================
-                         BOTÓN DE PAGO
-
-                         IMPORTANTE:
-
-                         Este botón primero revisa que el cliente
-                         haya llenado los campos obligatorios.
-
-                         Después lo lleva al enlace de PayPhone.
-                    ================================================== -->
+                    <!-- ======================================
+                         BOTÓN CONTINUAR AL PAGO
+                         
+                         ESTE BOTÓN ABRE EL LINK DE PAYPHONE.
+                    ======================================= -->
 
                     <button
                         type="button"
                         class="btn-pagar"
                         onclick="continuarAlPago()"
                     >
-
                         Continuar al pago
-
                     </button>
 
 
                     <p class="seguridad">
-
-                        🔒 El pago se realiza de forma segura mediante PayPhone.
-
+                        Serás redirigido a PayPhone para completar el pago.
                     </p>
 
-
                 </section>
-
 
             </div>
 
@@ -1395,350 +1063,130 @@
     </main>
 
 
-
-
-    <!-- =====================================================
+    <!-- ==========================================
          FOOTER
-    ====================================================== -->
+    =========================================== -->
 
     <footer>
 
         <p>
-
             © 2026
-
-            <strong>
-                ZENTROXEC
-            </strong>.
-
+            <strong>ZENTROXEC</strong>.
             Todos los derechos reservados.
-
         </p>
 
     </footer>
 
 
-
-
-    <!-- =====================================================
+    <!-- ==========================================
          JAVASCRIPT
-    ====================================================== -->
+    =========================================== -->
 
     <script>
 
+        /* ==================================================
+           LINK DE PAYPHONE
 
-        /* =====================================================
-           🔴 ENLACE DE PAGO
+           PRODUCTO:
+           Cable Delta macho a 2 SATA hembra
 
-           EDITAR AQUÍ SI CAMBIAS EL PRODUCTO O EL ENLACE.
-
-           ESTE ES EL ENLACE ACTUAL:
-        ====================================================== */
+           SI CAMBIAS EL LINK DE PAGO EN EL FUTURO,
+           MODIFICA SOLAMENTE ESTA URL.
+        ================================================== */
 
         const PAYPHONE_URL =
             "https://ppls.me/KT8CHtyeUHxwBmYlg5NIyA";
 
 
+        /* ==================================================
+           MOSTRAR "OTRA PROVINCIA"
 
-        /* =====================================================
-           BUSCADOR DE PROVINCIAS
-
-           El cliente escribe, por ejemplo:
-
-           Gua
-
-           y se muestra:
-
-           Guayas
-
-        ====================================================== */
-
-        const buscarProvincia =
-            document.getElementById("buscarProvincia");
-
+           Cuando el cliente selecciona "Otra provincia",
+           aparece automáticamente el campo para escribir
+           el nombre de la provincia.
+        ================================================== */
 
         const provincia =
             document.getElementById("provincia");
 
-
         const otraProvinciaCampo =
             document.getElementById("otraProvinciaCampo");
-
 
         const otraProvincia =
             document.getElementById("otraProvincia");
 
 
+        provincia.addEventListener("change", function () {
 
-        /* =====================================================
-           GUARDAR LAS PROVINCIAS ORIGINALES
-        ====================================================== */
+            if (this.value === "Otra provincia") {
 
-        const opcionesOriginales =
-            Array.from(provincia.options);
+                otraProvinciaCampo.style.display = "block";
 
+                otraProvincia.required = true;
 
+            } else {
 
-        /* =====================================================
-           FILTRAR PROVINCIAS
-        ====================================================== */
+                otraProvinciaCampo.style.display = "none";
 
-        buscarProvincia.addEventListener(
-            "input",
-            function () {
+                otraProvincia.required = false;
 
-
-                const texto =
-                    this.value
-                        .toLowerCase()
-                        .normalize("NFD")
-                        .replace(/[\u0300-\u036f]/g, "");
-
-
-                const valorActual =
-                    provincia.value;
-
-
-                provincia.innerHTML = "";
-
-
-
-                /* =============================================
-                   OPCIÓN INICIAL
-                ============================================= */
-
-                const opcionInicial =
-                    document.createElement("option");
-
-                opcionInicial.value = "";
-
-                opcionInicial.textContent =
-                    "Selecciona una provincia";
-
-                provincia.appendChild(
-                    opcionInicial
-                );
-
-
-
-                /* =============================================
-                   FILTRAR LAS PROVINCIAS
-                ============================================= */
-
-                opcionesOriginales.forEach(
-                    function (opcion) {
-
-
-                        if (
-                            opcion.value === "" ||
-                            opcion.value === "otra"
-                        ) {
-
-                            return;
-
-                        }
-
-
-                        const nombre =
-                            opcion.textContent
-                                .toLowerCase()
-                                .normalize("NFD")
-                                .replace(
-                                    /[\u0300-\u036f]/g,
-                                    ""
-                                );
-
-
-                        if (
-                            texto === "" ||
-                            nombre.includes(texto)
-                        ) {
-
-
-                            const nuevaOpcion =
-                                document.createElement("option");
-
-
-                            nuevaOpcion.value =
-                                opcion.value;
-
-
-                            nuevaOpcion.textContent =
-                                opcion.textContent;
-
-
-                            provincia.appendChild(
-                                nuevaOpcion
-                            );
-
-                        }
-
-                    }
-                );
-
-
-
-                /* =============================================
-                   AGREGAR OTRA PROVINCIA SIEMPRE
-                ============================================= */
-
-                const otra =
-                    document.createElement("option");
-
-
-                otra.value = "otra";
-
-                otra.textContent =
-                    "Otra provincia";
-
-
-                provincia.appendChild(otra);
-
-
-
-                /* =============================================
-                   RESTAURAR SELECCIÓN SI EXISTE
-                ============================================= */
-
-                if (
-                    valorActual &&
-                    Array.from(
-                        provincia.options
-                    ).some(
-                        opcion =>
-                            opcion.value === valorActual
-                    )
-                ) {
-
-                    provincia.value =
-                        valorActual;
-
-                }
-
+                otraProvincia.value = "";
 
             }
-        );
+
+        });
 
 
-
-        /* =====================================================
-           OTRA PROVINCIA
-
-           Cuando el cliente selecciona:
-
-           Otra provincia
-
-           aparece un campo adicional.
-        ====================================================== */
-
-        provincia.addEventListener(
-            "change",
-            function () {
-
-
-                if (
-                    this.value === "otra"
-                ) {
-
-
-                    otraProvinciaCampo.style.display =
-                        "block";
-
-
-                    otraProvincia.required =
-                        true;
-
-
-                } else {
-
-
-                    otraProvinciaCampo.style.display =
-                        "none";
-
-
-                    otraProvincia.required =
-                        false;
-
-
-                    otraProvincia.value =
-                        "";
-
-                }
-
-            }
-        );
-
-
-
-        /* =====================================================
+        /* ==================================================
            CONTINUAR AL PAGO
-        ====================================================== */
+        ================================================== */
 
         function continuarAlPago() {
 
-
             const formulario =
-                document.getElementById(
-                    "formCompra"
-                );
-
+                document.getElementById("formCompra");
 
             const mensajeError =
-                document.getElementById(
-                    "mensajeError"
-                );
+                document.getElementById("mensajeError");
 
 
+            /* Comprobar campos obligatorios */
 
-            /* =============================================
-               COMPROBAR CAMPOS OBLIGATORIOS
-            ============================================= */
+            if (!formulario.checkValidity()) {
 
-            if (
-                !formulario.checkValidity()
-            ) {
-
-
-                mensajeError.classList.add(
-                    "mostrar"
-                );
-
+                mensajeError.classList.add("mostrar");
 
                 formulario.reportValidity();
-
 
                 return;
 
             }
 
 
+            /* Ocultar mensaje de error */
 
-            /* =============================================
-               OCULTAR ERROR
-            ============================================= */
-
-            mensajeError.classList.remove(
-                "mostrar"
-            );
+            mensajeError.classList.remove("mostrar");
 
 
-
-            /* =============================================
+            /* ==================================================
                REDIRECCIÓN A PAYPHONE
 
-               Se abre el enlace de pago.
-            ============================================= */
+               IMPORTANTE:
+               El checkout de PayPhone se abre en una nueva
+               pestaña/ventana.
 
-            window.location.href =
-                PAYPHONE_URL;
+               Los datos de tarjeta NO se solicitan en esta página.
+            ================================================== */
 
+            window.open(
+                PAYPHONE_URL,
+                "_blank",
+                "noopener,noreferrer"
+            );
 
         }
 
-
     </script>
 
-
 </body>
-
 </html>
