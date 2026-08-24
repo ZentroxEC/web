@@ -10,7 +10,6 @@
 
     <!-- =====================================================
          EDITAR: TÍTULO DE LA PÁGINA
-         Aparece en la pestaña del navegador
     ====================================================== -->
 
     <title>Productos | ZENTROXEC</title>
@@ -29,8 +28,8 @@
     <style>
 
         /* =====================================================
-           NO NECESITAS EDITAR ESTA PARTE
-           CSS / DISEÑO GENERAL
+           RESET
+           NO NECESITAS EDITAR
         ====================================================== */
 
         * {
@@ -89,7 +88,11 @@
         }
 
 
-        /* LOGO */
+        /* =====================================================
+           LOGO
+           
+           EDITAR: CAMBIA ZENTROXEC AQUÍ
+        ====================================================== */
 
         .logo {
             flex-shrink: 0;
@@ -110,7 +113,9 @@
         }
 
 
-        /* MENU */
+        /* =====================================================
+           MENÚ
+        ====================================================== */
 
         nav {
             display: flex;
@@ -266,6 +271,8 @@
 
         /* =====================================================
            IMAGEN DEL PRODUCTO
+
+           EDITAR: CAMBIA LA RUTA DE LA IMAGEN
         ====================================================== */
 
         .producto-imagen {
@@ -392,6 +399,8 @@
 
             text-decoration: none;
 
+            font-family: Arial, Helvetica, sans-serif;
+
             font-size: 13px;
 
             font-weight: 800;
@@ -403,6 +412,9 @@
                 color 0.2s ease,
                 border-color 0.2s ease;
         }
+
+
+        /* COMPRAR */
 
         .btn-comprar {
             background: #e50914;
@@ -417,6 +429,9 @@
 
             border-color: #b80710;
         }
+
+
+        /* DETALLES */
 
         .btn-detalles {
             background: transparent;
@@ -433,6 +448,9 @@
 
             color: #050505;
         }
+
+
+        /* WHATSAPP */
 
         .btn-whatsapp {
             width: 82%;
@@ -460,10 +478,15 @@
 
 
         /* =====================================================
-           VENTANA EMERGENTE DE DETALLES
+           =====================================================
+           VENTANA EMERGENTE
+           =====================================================
         ====================================================== */
 
         .modal {
+
+            /* IMPORTANTE:
+               Oculta la ventana inicialmente */
             display: none;
 
             position: fixed;
@@ -471,34 +494,82 @@
             z-index: 2000;
 
             left: 0;
+
             top: 0;
 
             width: 100%;
+
             height: 100%;
 
-            background: rgba(0, 0, 0, 0.82);
+            /* Fondo oscuro */
+            background: rgba(0, 0, 0, 0.84);
 
-            padding: 30px 20px;
+            /*
+                IMPORTANTE:
+
+                Estos valores crean separación
+                entre la ventana y los bordes
+                de la pantalla.
+            */
+
+            padding: 55px 20px;
+
+            /*
+                Permite desplazarse si el contenido
+                es demasiado largo.
+            */
 
             overflow-y: auto;
-        }
 
-        .modal.activo {
-            display: flex;
+            /*
+                Centra la ventana.
+            */
 
-            align-items: center;
+            align-items: flex-start;
 
             justify-content: center;
         }
 
+
+        /* =====================================================
+           CUANDO LA VENTANA ESTÁ ACTIVA
+        ====================================================== */
+
+        .modal.activo {
+
+            display: flex;
+
+        }
+
+
+        /* =====================================================
+           CONTENIDO DE LA VENTANA
+
+           AQUÍ ESTÁ LA CORRECCIÓN PRINCIPAL
+        ====================================================== */
+
         .modal-contenido {
+
             width: 100%;
 
             max-width: 750px;
 
+            /*
+                IMPORTANTE:
+
+                La ventana nunca tocará
+                directamente la parte superior.
+            */
+
+            margin: 10px auto 40px;
+
             background: #101010;
 
-            border: 1px solid #292929;
+            /*
+                Borde completo de la ventana.
+            */
+
+            border: 1px solid #3a3a3a;
 
             border-radius: 14px;
 
@@ -506,48 +577,139 @@
 
             position: relative;
 
+            /*
+                Limita la altura.
+            */
+
+            max-height: calc(100vh - 130px);
+
+            /*
+                Si hay mucho contenido,
+                aparece desplazamiento dentro
+                de la ventana.
+            */
+
+            overflow-y: auto;
+
             box-shadow:
-                0 20px 60px rgba(0,0,0,.7);
+                0 20px 60px rgba(0, 0, 0, 0.75);
         }
 
+
+        /*
+            BARRA DE DESPLAZAMIENTO
+            DE LA VENTANA
+        */
+
+        .modal-contenido::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        .modal-contenido::-webkit-scrollbar-track {
+            background: #0b0b0b;
+        }
+
+        .modal-contenido::-webkit-scrollbar-thumb {
+            background: #444444;
+
+            border-radius: 10px;
+        }
+
+        .modal-contenido::-webkit-scrollbar-thumb:hover {
+            background: #666666;
+        }
+
+
+        /* =====================================================
+           BOTÓN CERRAR
+        ====================================================== */
+
         .modal-cerrar {
-            position: absolute;
 
-            top: 15px;
-            right: 18px;
+            position: sticky;
 
-            background: transparent;
+            top: 0;
 
-            border: none;
+            float: right;
 
-            color: #888;
+            z-index: 10;
 
-            font-size: 28px;
+            width: 38px;
+
+            height: 38px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #151515;
+
+            border: 1px solid #333333;
+
+            border-radius: 8px;
+
+            color: #aaaaaa;
+
+            font-size: 27px;
 
             cursor: pointer;
 
             line-height: 1;
+
+            transition:
+                background 0.2s ease,
+                color 0.2s ease,
+                border-color 0.2s ease;
         }
 
         .modal-cerrar:hover {
+
             color: #ffffff;
+
+            background: #e50914;
+
+            border-color: #e50914;
+
         }
 
+
+        /* =====================================================
+           TÍTULO DE LA VENTANA
+        ====================================================== */
+
         .modal-titulo {
+
+            clear: both;
+
             color: #ffffff;
 
             font-size: 28px;
 
             margin-bottom: 25px;
 
-            padding-right: 35px;
+            padding-top: 15px;
+
+            padding-right: 10px;
+
+            line-height: 1.25;
         }
 
+
+        /* =====================================================
+           BLOQUES DE DETALLES
+        ====================================================== */
+
         .detalle-bloque {
+
             margin-bottom: 28px;
+
+            padding-bottom: 5px;
         }
 
         .detalle-bloque h3 {
+
             color: #ffffff;
 
             font-size: 18px;
@@ -556,16 +718,19 @@
         }
 
         .detalle-bloque h3 span {
+
             color: #e50914;
 
             margin-right: 8px;
         }
 
         .detalle-bloque ul {
+
             padding-left: 20px;
         }
 
         .detalle-bloque li {
+
             color: #999999;
 
             font-size: 14px;
@@ -574,11 +739,14 @@
         }
 
         .detalle-bloque p {
+
             color: #999999;
 
             font-size: 14px;
 
             line-height: 1.7;
+
+            white-space: pre-line;
         }
 
 
@@ -587,6 +755,7 @@
         ====================================================== */
 
         .info-section {
+
             width: 100%;
 
             border-top: 1px solid #1c1c1c;
@@ -597,6 +766,7 @@
         }
 
         .info-container {
+
             max-width: 1100px;
 
             margin: 0 auto;
@@ -605,12 +775,14 @@
         }
 
         .info-container h2 {
+
             font-size: 30px;
 
             margin-bottom: 15px;
         }
 
         .info-container > p {
+
             max-width: 700px;
 
             margin: 0 auto 40px;
@@ -621,6 +793,7 @@
         }
 
         .info-grid {
+
             display: grid;
 
             grid-template-columns:
@@ -630,6 +803,7 @@
         }
 
         .info-box {
+
             padding: 25px;
 
             background: #101010;
@@ -640,6 +814,7 @@
         }
 
         .info-box h3 {
+
             color: #ffffff;
 
             font-size: 17px;
@@ -648,6 +823,7 @@
         }
 
         .info-box p {
+
             color: #888888;
 
             font-size: 13px;
@@ -659,6 +835,7 @@
         ====================================================== */
 
         footer {
+
             padding: 30px 20px;
 
             text-align: center;
@@ -669,12 +846,14 @@
         }
 
         footer p {
+
             color: #666666;
 
             font-size: 12px;
         }
 
         footer strong {
+
             color: #ffffff;
         }
 
@@ -686,13 +865,17 @@
         @media (max-width: 950px) {
 
             .productos-grid {
+
                 grid-template-columns:
                     repeat(2, minmax(0, 1fr));
+
             }
 
             .info-grid {
+
                 grid-template-columns:
                     repeat(3, 1fr);
+
             }
 
         }
@@ -705,10 +888,13 @@
         @media (max-width: 700px) {
 
             header {
+
                 position: relative;
+
             }
 
             .header-container {
+
                 min-height: auto;
 
                 padding: 25px 20px 20px;
@@ -719,12 +905,14 @@
             }
 
             .logo {
+
                 font-size: 27px;
 
                 text-align: center;
             }
 
             nav {
+
                 width: 100%;
 
                 display: flex;
@@ -737,6 +925,7 @@
             }
 
             nav a {
+
                 min-height: auto;
 
                 padding: 5px 3px;
@@ -754,43 +943,97 @@
                 border-radius: 0;
             }
 
+
             .hero {
+
                 padding: 60px 20px 45px;
+
             }
 
             .hero p {
+
                 font-size: 15px;
+
             }
+
 
             .catalogo {
+
                 padding:
                     15px 18px 65px;
+
             }
 
+
             .productos-grid {
+
                 grid-template-columns: 1fr;
 
                 gap: 20px;
+
             }
+
 
             .producto-imagen {
+
                 height: 260px;
+
             }
 
+
             .info-section {
+
                 padding: 55px 18px;
+
             }
 
             .info-grid {
+
                 grid-template-columns: 1fr;
+
+            }
+
+
+            /* =================================================
+               VENTANA EMERGENTE EN CELULAR
+            ================================================== */
+
+            .modal {
+
+                padding: 25px 12px;
+
+                align-items: flex-start;
+
             }
 
             .modal-contenido {
+
+                margin-top: 20px;
+
+                margin-bottom: 25px;
+
+                max-height: calc(100vh - 70px);
+
                 padding: 25px 20px;
+
+                border-radius: 12px;
+
             }
 
             .modal-titulo {
+
                 font-size: 23px;
+
+                padding-top: 15px;
+
+            }
+
+            .modal-cerrar {
+
+                width: 36px;
+
+                height: 36px;
+
             }
 
         }
@@ -803,28 +1046,54 @@
         @media (max-width: 380px) {
 
             .header-container {
+
                 padding:
                     22px 14px 18px;
+
             }
 
             .logo {
+
                 font-size: 24px;
+
             }
 
             nav {
+
                 gap: 4px;
+
             }
 
             nav a {
+
                 font-size: 9px;
+
             }
 
             .producto-info {
+
                 padding: 18px;
+
             }
 
             .producto-imagen {
+
                 height: 230px;
+
+            }
+
+            .modal {
+
+                padding: 18px 8px;
+
+            }
+
+            .modal-contenido {
+
+                margin-top: 15px;
+
+                padding: 22px 17px;
+
             }
 
         }
@@ -837,586 +1106,527 @@
 <body>
 
 
-<!-- =====================================================
-     HEADER
-====================================================== -->
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
 
-<header>
+    <header>
 
-    <div class="header-container">
-
-
-        <!-- EDITAR: LOGO -->
-
-        <a href="index.html" class="logo">
-
-            ZENTRO<span>X</span>EC
-
-        </a>
+        <div class="header-container">
 
 
-        <!-- MENÚ -->
+            <!-- EDITAR: LOGO -->
 
-        <nav>
+            <a href="index.html" class="logo">
 
-            <a href="index.html">
-                INICIO
+                ZENTRO<span>X</span>EC
+
             </a>
 
-            <a href="productos.html" class="activo">
-                PRODUCTOS
-            </a>
 
-            <a href="acerca.html">
-                ACERCA DE
-            </a>
+            <!-- MENÚ -->
 
-            <a href="contacto.html">
-                CONTACTO
-            </a>
+            <nav>
 
-        </nav>
+                <a href="index.html">
+                    INICIO
+                </a>
 
-    </div>
+                <a href="productos.html" class="activo">
+                    PRODUCTOS
+                </a>
 
-</header>
+                <a href="acerca.html">
+                    ACERCA DE
+                </a>
 
+                <a href="contacto.html">
+                    CONTACTO
+                </a>
 
-<!-- =====================================================
-     HERO
-====================================================== -->
+            </nav>
 
-<section class="hero">
+        </div>
 
-
-    <!-- EDITAR: TÍTULO PRINCIPAL -->
-
-    <h1>
-
-        Productos que
-        <span>sí necesitas</span>
-
-    </h1>
+    </header>
 
 
-    <!-- EDITAR: DESCRIPCIÓN PRINCIPAL -->
 
-    <p>
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
 
-        Cables, adaptadores y soluciones para PC seleccionados
-        para resolver problemas reales de conexión y compatibilidad.
-
-    </p>
-
-</section>
+    <section class="hero">
 
 
-<!-- =====================================================
-     CATÁLOGO
-====================================================== -->
+        <!-- EDITAR: TÍTULO PRINCIPAL -->
 
-<main class="catalogo">
+        <h1>
 
+            Productos que
+            <span>sí necesitas</span>
 
-    <div class="catalogo-titulo">
-
-
-        <!-- EDITAR: TÍTULO DEL CATÁLOGO -->
-
-        <h2>
-            Catálogo
-        </h2>
+        </h1>
 
 
-        <!-- EDITAR: TEXTO DEL CATÁLOGO -->
+        <!-- EDITAR: DESCRIPCIÓN PRINCIPAL -->
 
         <p>
-            Encuentra la solución que necesitas.
+
+            Cables, adaptadores y soluciones para PC seleccionados
+            para resolver problemas reales de conexión y compatibilidad.
+
         </p>
 
-    </div>
+    </section>
 
 
-    <div class="productos-grid">
 
+    <!-- =====================================================
+         CATÁLOGO
+    ====================================================== -->
 
-        <!-- =================================================
-             PRODUCTO 1
-        ================================================== -->
+    <main class="catalogo">
 
-        <article class="producto-card">
 
+        <div class="catalogo-titulo">
 
-            <!-- =================================================
-                 EDITAR: IMAGEN DEL PRODUCTO
 
-                 Cambia:
-                 img/delta.png
+            <!-- EDITAR: TÍTULO DEL CATÁLOGO -->
 
-                 por el nombre/ruta de tu imagen.
-            ================================================== -->
+            <h2>
+                Catálogo
+            </h2>
 
-            <div class="producto-imagen">
 
-                <img
-                    src="img/delta.png"
-                    alt="Cable Delta macho a 2 SATA hembra"
-                >
-
-            </div>
-
-
-            <div class="producto-info">
-
-
-                <!-- =================================================
-                     EDITAR: NOMBRE DEL PRODUCTO
-                ================================================== -->
-
-                <h3>
-                    Cable Delta macho a 2 SATA hembra
-                </h3>
-
-
-                <!-- =================================================
-                     EDITAR: DESCRIPCIÓN CORTA DEL PRODUCTO
-
-                     Esta descripción aparece en la tarjeta.
-                ================================================== -->
-
-                <p>
-
-                    Ideal para alimentar dos discos duros o SSDs
-                    desde una sola fuente. Una solución práctica
-                    para actualizar o expandir el almacenamiento.
-
-                </p>
-
-
-                <!-- =================================================
-                     PRECIO Y DISPONIBILIDAD
-                ================================================== -->
-
-                <div class="producto-precio">
-
-
-                    <!-- EDITAR: PRECIO -->
-
-                    <span class="precio">
-                        $10.00
-                    </span>
-
-
-                    <!-- EDITAR: ESTADO -->
-
-                    <span class="disponible">
-                        Disponible
-                    </span>
-
-                </div>
-
-
-                <!-- =================================================
-                     BOTONES
-                ================================================== -->
-
-                <div class="producto-botones">
-
-
-                    <!-- =================================================
-                         EDITAR: BOTÓN COMPRAR
-
-                         Puedes cambiar contacto.html por otra página.
-                    ================================================== -->
-
-                    <a
-                        href="contacto.html"
-                        class="btn btn-comprar"
-                    >
-
-                        COMPRAR
-
-                    </a>
-
-
-                    <!-- =================================================
-                         BOTÓN DETALLES
-
-                         NO CAMBIAR.
-
-                         Este botón abre la ventana emergente.
-                    ================================================== -->
-
-                    <button
-                        type="button"
-                        class="btn btn-detalles"
-                        onclick="abrirDetalles()"
-                    >
-
-                        DETALLES DEL PRODUCTO
-
-                    </button>
-
-
-                    <!-- =================================================
-                         BOTÓN WHATSAPP
-
-                         El número está configurado abajo en JavaScript.
-                    ================================================== -->
-
-                    <a
-                        id="whatsappProducto"
-                        class="btn btn-whatsapp"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-
-                        CONSULTAR POR WHATSAPP
-
-                    </a>
-
-
-                </div>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</main>
-
-
-<!-- =====================================================
-     VENTANA EMERGENTE
-     DETALLES DEL PRODUCTO
-====================================================== -->
-
-<div
-    id="modalDetalles"
-    class="modal"
-    onclick="cerrarModalFondo(event)"
->
-
-
-    <div
-        class="modal-contenido"
-    >
-
-
-        <!-- =================================================
-             BOTÓN CERRAR
-        ================================================== -->
-
-        <button
-            class="modal-cerrar"
-            onclick="cerrarDetalles()"
-            aria-label="Cerrar"
-        >
-
-            ×
-
-        </button>
-
-
-        <!-- =================================================
-             EDITAR: TÍTULO DEL PRODUCTO EN LA VENTANA
-        ================================================== -->
-
-        <h2 class="modal-titulo">
-
-            Cable Delta macho a 2 SATA hembra
-
-        </h2>
-
-
-        <!-- =================================================
-             01. CARACTERÍSTICAS PRINCIPALES
-             
-             EDITA LOS <li>
-        ================================================== -->
-
-        <div class="detalle-bloque">
-
-            <h3>
-
-                <span>01.</span>
-                Características principales
-
-            </h3>
-
-
-            <ul>
-
-
-                <!-- EDITAR CARACTERÍSTICA 1 -->
-
-                <li>
-                    Marca: Delta
-                </li>
-
-
-                <!-- EDITAR CARACTERÍSTICA 2 -->
-
-                <li>
-                    Modelo: CA-SATA-M-HH
-                </li>
-
-
-                <!-- EDITAR CARACTERÍSTICA 3 -->
-
-                <li>
-                    Color: Negro
-                </li>
-
-                <!-- EDITAR CARACTERÍSTICA 4 -->
-                <li>
-                    Voltaje: 5V
-                </li>
-
-                <!-- PUEDES AGREGAR MÁS -->
-
-                <!--
-                <li>
-                    Escribe aquí otra característica.
-                </li>
-                -->
-
-
-            </ul>
-
-        </div>
-
-
-        <!-- =================================================
-             02. OTROS
-
-             EDITA LOS <li>
-        ================================================== -->
-
-        <div class="detalle-bloque">
-
-            <h3>
-
-                <span>02.</span>
-                Otros
-
-            </h3>
-
-
-            <ul>
-
-
-                <!-- EDITAR OTRO 1 -->
-
-                <li>
-                    Cantidad de pines: 15
-                </li>
-
-
-                <!-- EDITAR OTRO 2 -->
-
-                <li>
-                    Tipo de conector: SATA
-                </li>
-
-                <!-- PUEDES AGREGAR MÁS -->
-
-                <!--
-                <li>
-                    Escribe aquí otro dato.
-                </li>
-                -->
-
-
-            </ul>
-
-        </div>
-
-
-        <!-- =================================================
-             03. ESPECIFICACIONES
-
-             EDITA LOS <li>
-        ================================================== -->
-
-        <div class="detalle-bloque">
-
-            <h3>
-
-                <span>03.</span>
-                Especificaciones
-
-            </h3>
-
-
-            <ul>
-
-
-                <!-- EDITAR ESPECIFICACIÓN 1 -->
-
-                <li>
-                    Conecta los 3 voltajes de alimentación (3,3V, 5V, 12V)
-                </li>
-
-
-                <!-- EDITAR ESPECIFICACIÓN 2 -->
-
-                <li>
-                    Permite la conexión de dos unidades a un conector de fuente de alimentación
-                </li>
-
-
-                <!-- EDITAR ESPECIFICACIÓN 3 -->
-
-                <li>
-                    fácil de usar e Instalar
-                </li>
-
-
-                <!-- EDITAR ESPECIFICACIÓN 4 -->
-
-                <li>
-                    1 enchufe de alimentación en 2 receptáculos de alimentación
-                </li>
-
-
-                <!-- EDITAR ESPECIFICACIÓN 5 -->
-
-                <li>
-                    Longitud: 15cm
-                </li>
-                
-
-                <!-- PUEDES AGREGAR MÁS -->
-
-                <!--
-                <li>
-                    Longitud: XX cm.
-                </li>
-
-                <li>
-                    Color: Negro.
-                </li>
-                -->
-
-
-            </ul>
-
-        </div>
-
-
-        <!-- =================================================
-             04. PROPÓSITO
-
-             EDITA EL TEXTO DEL <p>
-        ================================================== -->
-
-        <div class="detalle-bloque">
-
-            <h3>
-
-                <span>04.</span>
-                Propósito
-
-            </h3>
-
-
-            <!-- EDITAR TODO ESTE TEXTO -->
+            <!-- EDITAR: TEXTO DEL CATÁLOGO -->
 
             <p>
-
-                Somos una tienda online comprometida con ofrecerte
-                productos de calidad y un servicio confiable
-
-                Nos distinguimos por nuestra atención profesional
-                y amable, asegurándonos de que tu experiencia de 
-                compra sea rápida, segura y sin preocupaciones
-
-                Garantia de fábrica: 12 meses
-
+                Encuentra la solución que necesitas.
             </p>
 
         </div>
 
 
-    </div>
 
-</div>
-
-
-<!-- =====================================================
-     INFORMACIÓN
-====================================================== -->
-
-<section class="info-section">
+        <div class="productos-grid">
 
 
-    <div class="info-container">
+            <!-- =================================================
+                 PRODUCTO 1
+            ================================================== -->
+
+            <article class="producto-card">
 
 
-        <!-- EDITAR -->
+                <!-- =================================================
+                     EDITAR: IMAGEN DEL PRODUCTO
 
-        <h2>
-            Compra con confianza
-        </h2>
+                     Cambia:
+                     img/delta.png
+
+                     por la ruta de tu imagen.
+                ================================================== -->
+
+                <div class="producto-imagen">
+
+                    <img
+                        src="img/delta.png"
+                        alt="Cable Delta macho a 2 SATA hembra"
+                    >
+
+                </div>
 
 
-        <!-- EDITAR -->
 
-        <p>
-
-            En ZENTROXEC buscamos ofrecer productos específicos
-            que solucionen necesidades reales de nuestros clientes.
-
-        </p>
+                <div class="producto-info">
 
 
-        <div class="info-grid">
+                    <!-- =================================================
+                         EDITAR: NOMBRE DEL PRODUCTO
+                    ================================================== -->
+
+                    <h3>
+
+                        Cable Delta macho a 2 SATA hembra
+
+                    </h3>
 
 
-            <div class="info-box">
+
+                    <!-- =================================================
+                         EDITAR: DESCRIPCIÓN CORTA
+                    ================================================== -->
+
+                    <p>
+
+                        Ideal para alimentar dos discos duros o SSDs
+                        desde una sola fuente. Una solución práctica
+                        para actualizar o expandir el almacenamiento.
+
+                    </p>
+
+
+
+                    <!-- =================================================
+                         PRECIO
+                    ================================================== -->
+
+                    <div class="producto-precio">
+
+
+                        <!-- EDITAR: PRECIO -->
+
+                        <span class="precio">
+
+                            $10.00
+
+                        </span>
+
+
+                        <!-- EDITAR: DISPONIBILIDAD -->
+
+                        <span class="disponible">
+
+                            Disponible
+
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         BOTONES
+                    ================================================== -->
+
+                    <div class="producto-botones">
+
+
+                        <!-- EDITAR: BOTÓN COMPRAR -->
+
+                        <a
+                            href="contacto.html"
+                            class="btn btn-comprar"
+                        >
+
+                            COMPRAR
+
+                        </a>
+
+
+
+                        <!-- =================================================
+                             BOTÓN DETALLES
+
+                             NO CAMBIAR.
+
+                             Abre la ventana emergente.
+                        ================================================== -->
+
+                        <button
+                            type="button"
+                            class="btn btn-detalles"
+                            onclick="abrirDetalles()"
+                        >
+
+                            DETALLES DEL PRODUCTO
+
+                        </button>
+
+
+
+                        <!-- =================================================
+                             BOTÓN WHATSAPP
+
+                             El número se modifica en JavaScript.
+                        ================================================== -->
+
+                        <a
+                            id="whatsappProducto"
+                            class="btn btn-whatsapp"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+
+                            CONSULTAR POR WHATSAPP
+
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         =====================================================
+         VENTANA EMERGENTE DE DETALLES
+         =====================================================
+    ====================================================== -->
+
+    <div
+        id="modalDetalles"
+        class="modal"
+        onclick="cerrarModalFondo(event)"
+    >
+
+
+        <div class="modal-contenido">
+
+
+            <!-- =================================================
+                 BOTÓN CERRAR
+            ================================================== -->
+
+            <button
+                type="button"
+                class="modal-cerrar"
+                onclick="cerrarDetalles()"
+                aria-label="Cerrar ventana"
+            >
+
+                ×
+
+            </button>
+
+
+
+            <!-- =================================================
+                 EDITAR: TÍTULO DEL PRODUCTO
+            ================================================== -->
+
+            <h2 class="modal-titulo">
+
+                Cable Delta macho a 2 SATA hembra
+
+            </h2>
+
+
+
+            <!-- =================================================
+                 01. CARACTERÍSTICAS PRINCIPALES
+
+                 EDITA LOS <li>
+            ================================================== -->
+
+            <div class="detalle-bloque">
 
                 <h3>
-                    Compatibilidad
+
+                    <span>01.</span>
+                    Características principales
+
                 </h3>
 
-                <p>
 
-                    Consulta las características del producto
-                    antes de realizar tu compra.
+                <ul>
 
-                </p>
+
+                    <!-- EDITAR CARACTERÍSTICA 1 -->
+
+                    <li>
+                        Marca: Delta
+                    </li>
+
+
+                    <!-- EDITAR CARACTERÍSTICA 2 -->
+
+                    <li>
+                        Modelo: CA-SATA-M-HH
+                    </li>
+
+
+                    <!-- EDITAR CARACTERÍSTICA 3 -->
+
+                    <li>
+                        Color: Negro
+                    </li>
+
+
+                    <!-- EDITAR CARACTERÍSTICA 4 -->
+
+                    <li>
+                        Voltaje: 5V
+                    </li>
+
+
+                    <!-- AGREGAR MÁS CARACTERÍSTICAS -->
+
+                    <!--
+
+                    <li>
+                        Escribe aquí otra característica.
+                    </li>
+
+                    -->
+
+
+                </ul>
 
             </div>
 
 
-            <div class="info-box">
+
+            <!-- =================================================
+                 02. OTROS
+            ================================================== -->
+
+            <div class="detalle-bloque">
 
                 <h3>
-                    Atención
+
+                    <span>02.</span>
+                    Otros
+
                 </h3>
 
-                <p>
 
-                    Puedes consultar disponibilidad y obtener
-                    información antes de comprar.
+                <ul>
 
-                </p>
+
+                    <!-- EDITAR OTRO 1 -->
+
+                    <li>
+                        Cantidad de pines: 15
+                    </li>
+
+
+                    <!-- EDITAR OTRO 2 -->
+
+                    <li>
+                        Tipo de conector: SATA
+                    </li>
+
+
+                    <!-- AGREGAR MÁS DATOS -->
+
+                    <!--
+
+                    <li>
+                        Escribe aquí otro dato.
+                    </li>
+
+                    -->
+
+
+                </ul>
 
             </div>
 
 
-            <div class="info-box">
+
+            <!-- =================================================
+                 03. ESPECIFICACIONES
+            ================================================== -->
+
+            <div class="detalle-bloque">
 
                 <h3>
-                    Soluciones
+
+                    <span>03.</span>
+                    Especificaciones
+
                 </h3>
+
+
+                <ul>
+
+
+                    <!-- EDITAR ESPECIFICACIÓN 1 -->
+
+                    <li>
+                        Conecta los 3 voltajes de alimentación (3,3V, 5V, 12V)
+                    </li>
+
+
+                    <!-- EDITAR ESPECIFICACIÓN 2 -->
+
+                    <li>
+                        Permite la conexión de dos unidades a un conector de fuente de alimentación
+                    </li>
+
+
+                    <!-- EDITAR ESPECIFICACIÓN 3 -->
+
+                    <li>
+                        Fácil de usar e instalar
+                    </li>
+
+
+                    <!-- EDITAR ESPECIFICACIÓN 4 -->
+
+                    <li>
+                        1 enchufe de alimentación en 2 receptáculos de alimentación
+                    </li>
+
+
+                    <!-- EDITAR ESPECIFICACIÓN 5 -->
+
+                    <li>
+                        Longitud: 15 cm
+                    </li>
+
+
+                    <!-- AGREGAR MÁS -->
+
+                    <!--
+
+                    <li>
+                        Longitud: XX cm.
+                    </li>
+
+                    <li>
+                        Color: Negro.
+                    </li>
+
+                    -->
+
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 04. PROPÓSITO
+            ================================================== -->
+
+            <div class="detalle-bloque">
+
+                <h3>
+
+                    <span>04.</span>
+                    Propósito
+
+                </h3>
+
+
+                <!-- EDITAR: TODO ESTE TEXTO -->
 
                 <p>
 
-                    Productos pensados para resolver problemas
-                    concretos de conexión y tecnología.
+                    Este producto está diseñado para facilitar
+                    la conexión de dos unidades de almacenamiento
+                    desde una fuente de alimentación compatible.
+
+                    Es una solución práctica para equipos que
+                    necesitan ampliar o reorganizar sus conexiones
+                    de alimentación.
+
+                    Antes de comprar, verifica la compatibilidad
+                    del conector con tu fuente de alimentación.
+
+                    Garantía de fábrica: 12 meses.
 
                 </p>
 
@@ -1427,155 +1637,281 @@
 
     </div>
 
-</section>
 
 
-<!-- =====================================================
-     FOOTER
-====================================================== -->
+    <!-- =====================================================
+         INFORMACIÓN
+    ====================================================== -->
 
-<footer>
-
-    <p>
-
-        © 2026
-        <strong>ZENTROXEC</strong>.
-        Todos los derechos reservados.
-
-    </p>
-
-</footer>
+    <section class="info-section">
 
 
-<!-- =====================================================
-     JAVASCRIPT
-====================================================== -->
-
-<script>
+        <div class="info-container">
 
 
-/* =====================================================
-   WHATSAPP
-====================================================== */
+            <!-- EDITAR -->
+
+            <h2>
+                Compra con confianza
+            </h2>
 
 
-/*
-   ======================================================
-   EDITAR AQUÍ EL NÚMERO DE WHATSAPP
+            <!-- EDITAR -->
 
-   IMPORTANTE:
-   - Escribir código de país
-   - Sin +
-   - Sin espacios
-   - Sin guiones
+            <p>
 
-   Ecuador:
-   593960648763
-   ======================================================
-*/
+                En ZENTROXEC buscamos ofrecer productos específicos
+                que solucionen necesidades reales de nuestros clientes.
 
-const WHATSAPP = "593960648763";
+            </p>
 
 
-/*
-   ======================================================
-   EDITAR AQUÍ EL MENSAJE QUE RECIBIRÁS EN WHATSAPP
-   ======================================================
-*/
 
-const mensajeWhatsApp =
-    "Hola ZENTROXEC, quiero consultar la disponibilidad del Cable Delta macho a 2 SATA hembra.";
+            <div class="info-grid">
 
 
-/*
-   CREA EL ENLACE DE WHATSAPP
-*/
+                <div class="info-box">
 
-const enlaceWhatsApp =
-    `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensajeWhatsApp)}`;
+                    <h3>
+                        Compatibilidad
+                    </h3>
 
+                    <p>
 
-/*
-   ASIGNA EL ENLACE AL BOTÓN
-*/
+                        Consulta las características del producto
+                        antes de realizar tu compra.
 
-document.getElementById("whatsappProducto").href =
-    enlaceWhatsApp;
+                    </p>
 
-
-/* =====================================================
-   VENTANA EMERGENTE
-====================================================== */
+                </div>
 
 
-/*
-   ABRIR VENTANA
-*/
 
-function abrirDetalles() {
+                <div class="info-box">
 
-    document
-        .getElementById("modalDetalles")
-        .classList.add("activo");
+                    <h3>
+                        Atención
+                    </h3>
 
-    document.body.style.overflow = "hidden";
+                    <p>
 
-}
+                        Puedes consultar disponibilidad y obtener
+                        información antes de comprar.
 
+                    </p>
 
-/*
-   CERRAR VENTANA
-*/
-
-function cerrarDetalles() {
-
-    document
-        .getElementById("modalDetalles")
-        .classList.remove("activo");
-
-    document.body.style.overflow = "";
-
-}
+                </div>
 
 
-/*
-   CERRAR AL HACER CLIC FUERA DE LA VENTANA
-*/
 
-function cerrarModalFondo(event) {
+                <div class="info-box">
 
-    if (
-        event.target ===
-        document.getElementById("modalDetalles")
-    ) {
+                    <h3>
+                        Soluciones
+                    </h3>
 
-        cerrarDetalles();
+                    <p>
 
-    }
+                        Productos pensados para resolver problemas
+                        concretos de conexión y tecnología.
 
-}
+                    </p>
+
+                </div>
 
 
-/*
-   CERRAR CON LA TECLA ESC
-*/
+            </div>
 
-document.addEventListener(
-    "keydown",
-    function(event) {
+        </div>
 
-        if (event.key === "Escape") {
+    </section>
 
-            cerrarDetalles();
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <p>
+
+            © 2026
+
+            <strong>ZENTROXEC</strong>.
+
+            Todos los derechos reservados.
+
+        </p>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+
+        /* =====================================================
+           =====================================================
+           WHATSAPP
+           =====================================================
+        ====================================================== */
+
+
+        /*
+         * =====================================================
+         * EDITAR AQUÍ EL NÚMERO DE WHATSAPP
+         *
+         * Ecuador:
+         * 593960648763
+         *
+         * SIN +
+         * SIN ESPACIOS
+         * SIN GUIONES
+         * =====================================================
+        */
+
+        const WHATSAPP = "593960648763";
+
+
+        /*
+         * =====================================================
+         * EDITAR AQUÍ EL MENSAJE DE WHATSAPP
+         * =====================================================
+        */
+
+        const mensajeWhatsApp =
+            "Hola ZENTROXEC, quiero consultar la disponibilidad del Cable Delta macho a 2 SATA hembra.";
+
+
+        /*
+         * =====================================================
+         * CREAR ENLACE DE WHATSAPP
+         * =====================================================
+        */
+
+        const enlaceWhatsApp =
+            `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensajeWhatsApp)}`;
+
+
+        /*
+         * =====================================================
+         * ASIGNAR ENLACE AL BOTÓN
+         * =====================================================
+        */
+
+        document.getElementById("whatsappProducto").href =
+            enlaceWhatsApp;
+
+
+
+        /* =====================================================
+           =====================================================
+           VENTANA EMERGENTE
+           =====================================================
+        ====================================================== */
+
+
+        /*
+         * =====================================================
+         * ABRIR VENTANA
+         * =====================================================
+        */
+
+        function abrirDetalles() {
+
+            const modal =
+                document.getElementById("modalDetalles");
+
+            modal.classList.add("activo");
+
+            /*
+             * Evita que la página de atrás
+             * se desplace mientras la ventana
+             * está abierta.
+            */
+
+            document.body.style.overflow = "hidden";
 
         }
 
-    }
-);
 
 
-</script>
+        /*
+         * =====================================================
+         * CERRAR VENTANA
+         * =====================================================
+        */
+
+        function cerrarDetalles() {
+
+            const modal =
+                document.getElementById("modalDetalles");
+
+            modal.classList.remove("activo");
+
+            /*
+             * Devuelve el desplazamiento
+             * normal de la página.
+            */
+
+            document.body.style.overflow = "";
+
+        }
+
+
+
+        /*
+         * =====================================================
+         * CERRAR AL HACER CLIC EN EL FONDO OSCURO
+         *
+         * Solo se cierra si haces clic fuera
+         * del cuadro de detalles.
+         * =====================================================
+        */
+
+        function cerrarModalFondo(event) {
+
+            if (
+                event.target ===
+                document.getElementById("modalDetalles")
+            ) {
+
+                cerrarDetalles();
+
+            }
+
+        }
+
+
+
+        /*
+         * =====================================================
+         * CERRAR CON LA TECLA ESC
+         * =====================================================
+        */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (event.key === "Escape") {
+
+                    cerrarDetalles();
+
+                }
+
+            }
+        );
+
+
+    </script>
 
 
 </body>
+
 </html>
