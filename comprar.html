@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <!-- =====================================================
          EDITAR: TÍTULO DE LA PÁGINA
@@ -15,9 +21,11 @@
     >
 
     <style>
+
         /* =====================================================
            RESET
         ====================================================== */
+
         * {
             margin: 0;
             padding: 0;
@@ -35,9 +43,11 @@
             line-height: 1.6;
         }
 
+
         /* =====================================================
            HEADER
         ====================================================== */
+
         header {
             width: 100%;
             background: rgba(5, 5, 5, 0.97);
@@ -50,18 +60,23 @@
             min-height: 76px;
             margin: 0 auto;
             padding: 0 25px;
+
             display: flex;
             align-items: center;
             justify-content: space-between;
+
             gap: 30px;
         }
 
         .logo {
             flex-shrink: 0;
             color: #ffffff;
+
             font-size: 27px;
             font-weight: 900;
+
             letter-spacing: 1px;
+
             text-decoration: none;
         }
 
@@ -73,14 +88,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
             gap: 30px;
         }
 
         nav a {
             color: #dddddd;
+
             text-decoration: none;
+
             font-size: 13px;
             font-weight: 800;
+
             transition: color 0.2s ease;
         }
 
@@ -89,24 +108,36 @@
             color: #e50914;
         }
 
+
         /* =====================================================
            CONTENEDOR PRINCIPAL
         ====================================================== */
+
         .checkout {
             width: 100%;
             max-width: 1050px;
+
             margin: 0 auto;
+
             padding: 55px 20px 80px;
         }
 
+
+        /* =====================================================
+           TÍTULO
+        ====================================================== */
+
         .titulo {
             text-align: center;
+
             margin-bottom: 40px;
         }
 
         .titulo h1 {
             font-size: clamp(32px, 5vw, 50px);
+
             line-height: 1.1;
+
             margin-bottom: 12px;
         }
 
@@ -116,50 +147,68 @@
 
         .titulo p {
             color: #999999;
+
             font-size: 15px;
         }
+
 
         /* =====================================================
            TARJETAS DE SECCIÓN
         ====================================================== */
+
         .checkout-grid {
             display: grid;
+
             grid-template-columns: 1.15fr 0.85fr;
+
             gap: 25px;
+
             align-items: start;
         }
 
         .seccion {
             background: #101010;
+
             border: 1px solid #252525;
+
             border-radius: 14px;
+
             padding: 28px;
+
             margin-bottom: 25px;
         }
 
         .seccion h2 {
             font-size: 22px;
+
             margin-bottom: 6px;
         }
 
         .seccion-subtitulo {
             color: #888888;
+
             font-size: 13px;
+
             margin-bottom: 25px;
         }
+
 
         /* =====================================================
            FORMULARIO
         ====================================================== */
+
         .campo {
             margin-bottom: 18px;
         }
 
         .campo label {
             display: block;
+
             color: #eeeeee;
+
             font-size: 14px;
             font-weight: 700;
+
             margin-bottom: 7px;
         }
 
@@ -167,19 +216,29 @@
         .campo select,
         .campo textarea {
             width: 100%;
+
             min-height: 48px;
+
             padding: 12px 14px;
+
             border-radius: 8px;
+
             border: 1px solid #3a3a3a;
+
             background: #080808;
+
             color: #ffffff;
+
             outline: none;
+
             font-family: Arial, Helvetica, sans-serif;
+
             font-size: 14px;
         }
 
         .campo textarea {
             min-height: 110px;
+
             resize: vertical;
         }
 
@@ -191,55 +250,81 @@
 
         .fila {
             display: grid;
+
             grid-template-columns: 1fr 1fr;
+
             gap: 15px;
         }
 
         .check-line {
             display: flex;
+
             align-items: center;
+
             gap: 10px;
+
             color: #aaaaaa;
+
             font-size: 13px;
+
             margin: 5px 0 20px;
         }
 
         .check-line input {
             width: 18px;
             height: 18px;
+
             accent-color: #e50914;
         }
+
 
         /* =====================================================
            RESUMEN DEL PRODUCTO
         ====================================================== */
+
         .producto-resumen {
             display: flex;
+
             gap: 15px;
+
             align-items: center;
+
             padding: 16px;
+
             border: 1px solid #292929;
+
             border-radius: 10px;
+
             background: #080808;
+
             margin-bottom: 20px;
         }
 
         .producto-resumen-imagen {
             width: 75px;
             height: 75px;
+
             background: #ffffff;
+
             border-radius: 8px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             overflow: hidden;
+
             flex-shrink: 0;
         }
 
         .producto-resumen-imagen img {
             width: 100%;
             height: 100%;
+
             object-fit: contain;
+
             padding: 5px;
         }
 
@@ -249,102 +334,147 @@
 
         .producto-resumen-info h3 {
             font-size: 15px;
+
             margin-bottom: 4px;
         }
 
         .producto-resumen-info p {
             color: #888888;
+
             font-size: 12px;
         }
 
         .producto-resumen-precio {
             font-size: 20px;
+
             font-weight: 900;
         }
 
-        /* =====================================================
-           BOTÓN CONTINUAR AL PAGO
-
-           EDITAR AQUÍ EN EL FUTURO:
-           Si cambias de proveedor de pago, modifica solamente
-           la constante PAYPHONE_URL en JavaScript.
-        ====================================================== */
-        .btn-pagar {
-            width: 100%;
-            min-height: 50px;
-            border: 1px solid #e50914;
-            border-radius: 8px;
-            background: #e50914;
-            color: #ffffff;
-            font-size: 14px;
-            font-weight: 900;
-            cursor: pointer;
-            transition: 0.2s ease;
-        }
-
-        .btn-pagar:hover {
-            background: #b80710;
-            border-color: #b80710;
-        }
-
-        .seguridad {
-            text-align: center;
-            color: #666666;
-            font-size: 11px;
-            margin-top: 12px;
-        }
 
         /* =====================================================
            RESUMEN DEL PEDIDO
         ====================================================== */
+
         .resumen-linea {
             display: flex;
+
             justify-content: space-between;
+
             gap: 15px;
+
             color: #999999;
+
             font-size: 14px;
+
             margin-bottom: 12px;
         }
 
         .resumen-linea.total {
             border-top: 1px solid #292929;
+
             padding-top: 16px;
+
             margin-top: 16px;
+
             color: #ffffff;
+
             font-size: 20px;
+
             font-weight: 900;
         }
+
+
+        /* =====================================================
+           BOTÓN CONTINUAR AL PAGO
+
+           ESTE ES EL BOTÓN QUE REDIRIGE A PAYPHONE.
+        ====================================================== */
+
+        .btn-pagar {
+            width: 100%;
+
+            min-height: 50px;
+
+            margin-top: 22px;
+
+            border: 1px solid #e50914;
+
+            border-radius: 8px;
+
+            background: #e50914;
+
+            color: #ffffff;
+
+            font-size: 14px;
+
+            font-weight: 900;
+
+            cursor: pointer;
+
+            transition: 0.2s ease;
+        }
+
+        .btn-pagar:hover {
+            background: #b80710;
+
+            border-color: #b80710;
+        }
+
+        .seguridad {
+            text-align: center;
+
+            color: #666666;
+
+            font-size: 11px;
+
+            margin-top: 12px;
+        }
+
 
         /* =====================================================
            MENSAJE DE ERROR
         ====================================================== */
+
         .mensaje-error {
             display: none;
+
             background: rgba(229, 9, 20, 0.10);
+
             border: 1px solid #e50914;
+
             color: #ff8b91;
+
             padding: 12px;
+
             border-radius: 8px;
+
             font-size: 13px;
-            margin-bottom: 15px;
+
+            margin-top: 15px;
         }
 
         .mensaje-error.mostrar {
             display: block;
         }
 
+
         /* =====================================================
            FOOTER
         ====================================================== */
+
         footer {
             padding: 30px 20px;
+
             text-align: center;
+
             background: #050505;
+
             border-top: 1px solid #1c1c1c;
         }
 
         footer p {
             color: #666666;
+
             font-size: 12px;
         }
 
@@ -352,25 +482,34 @@
             color: #ffffff;
         }
 
+
         /* =====================================================
            CELULAR
         ====================================================== */
+
         @media (max-width: 800px) {
+
             .checkout-grid {
                 grid-template-columns: 1fr;
             }
+
         }
 
         @media (max-width: 600px) {
+
             .header-container {
                 padding: 22px 18px;
+
                 flex-direction: column;
+
                 gap: 16px;
             }
 
             nav {
                 width: 100%;
+
                 justify-content: space-between;
+
                 gap: 8px;
             }
 
@@ -388,22 +527,30 @@
 
             .fila {
                 grid-template-columns: 1fr;
+
                 gap: 0;
             }
 
             .producto-resumen-precio {
                 font-size: 17px;
             }
+
         }
+
     </style>
+
 </head>
 
+
 <body>
+
 
     <!-- =====================================================
          HEADER
     ====================================================== -->
+
     <header>
+
         <div class="header-container">
 
             <a href="index.html" class="logo">
@@ -411,20 +558,41 @@
             </a>
 
             <nav>
-                <a href="index.html">INICIO</a>
-                <a href="productos.html" class="activo">PRODUCTOS</a>
-                <a href="acerca.html">ACERCA DE</a>
-                <a href="contacto.html">CONTACTO</a>
+
+                <a href="index.html">
+                    INICIO
+                </a>
+
+                <a href="productos.html" class="activo">
+                    PRODUCTOS
+                </a>
+
+                <a href="acerca.html">
+                    ACERCA DE
+                </a>
+
+                <a href="contacto.html">
+                    CONTACTO
+                </a>
+
             </nav>
 
         </div>
+
     </header>
+
 
 
     <!-- =====================================================
          PÁGINA DE COMPRA
     ====================================================== -->
+
     <main class="checkout">
+
+
+        <!-- =================================================
+             TÍTULO
+        ================================================== -->
 
         <section class="titulo">
 
@@ -439,15 +607,19 @@
         </section>
 
 
+
         <div class="checkout-grid">
+
 
             <!-- =================================================
                  COLUMNA IZQUIERDA
                  DATOS DE ENTREGA
             ================================================== -->
+
             <div>
 
                 <section class="seccion">
+
 
                     <h2>
                         Dirección o lugar
@@ -458,18 +630,18 @@
                     </p>
 
 
+
+                    <!-- =================================================
+                         FORMULARIO
+                    ================================================== -->
+
                     <form id="formCompra">
 
-                        <!-- =========================================
-                             DIRECCIÓN
-                             ========================================= -->
 
                         <!-- =================================================
-                             🔴 EDITAR: DIRECCIÓN O LUGAR
-
-                             Puedes cambiar el texto del título y el ejemplo
-                             del campo si lo necesitas.
+                             EDITAR: DIRECCIÓN O LUGAR
                         ================================================== -->
+
                         <div class="campo">
 
                             <label for="direccion">
@@ -487,6 +659,11 @@
                         </div>
 
 
+
+                        <!-- =================================================
+                             CALLE SIN NÚMERO
+                        ================================================== -->
+
                         <label class="check-line">
 
                             <input
@@ -501,11 +678,13 @@
                         </label>
 
 
-                        <!-- =========================================
+
+                        <!-- =================================================
                              PROVINCIA / CANTÓN
-                             ========================================= -->
+                        ================================================== -->
 
                         <div class="fila">
+
 
                             <div class="campo">
 
@@ -518,9 +697,11 @@
                                     name="provincia"
                                     required
                                 >
+
                                     <option value="">
                                         Selecciona una provincia
                                     </option>
+
                                     <option>Guayas</option>
                                     <option>Pichincha</option>
                                     <option>Azuay</option>
@@ -530,9 +711,11 @@
                                     <option>Los Ríos</option>
                                     <option>Esmeraldas</option>
                                     <option>Otra provincia</option>
+
                                 </select>
 
                             </div>
+
 
 
                             <div class="campo">
@@ -551,14 +734,17 @@
 
                             </div>
 
+
                         </div>
 
 
-                        <!-- =========================================
+
+                        <!-- =================================================
                              PARROQUIA / CALLE SECUNDARIA
-                             ========================================= -->
+                        ================================================== -->
 
                         <div class="fila">
+
 
                             <div class="campo">
 
@@ -577,6 +763,7 @@
                             </div>
 
 
+
                             <div class="campo">
 
                                 <label for="calleSecundaria">
@@ -593,12 +780,14 @@
 
                             </div>
 
+
                         </div>
 
 
-                        <!-- =========================================
+
+                        <!-- =================================================
                              DEPARTAMENTO
-                             ========================================= -->
+                        ================================================== -->
 
                         <div class="campo">
 
@@ -616,9 +805,10 @@
                         </div>
 
 
-                        <!-- =========================================
+
+                        <!-- =================================================
                              INDICACIONES
-                             ========================================= -->
+                        ================================================== -->
 
                         <div class="campo">
 
@@ -636,9 +826,10 @@
                         </div>
 
 
-                        <!-- =========================================
+
+                        <!-- =================================================
                              DATOS DE QUIEN RECIBE
-                        ========================================== -->
+                        ================================================== -->
 
                         <h2 style="margin-top:35px;">
                             Datos de quien recibe
@@ -647,6 +838,7 @@
                         <p class="seccion-subtitulo">
                             Llamaremos si hay un problema con la entrega.
                         </p>
+
 
 
                         <div class="campo">
@@ -666,12 +858,11 @@
                         </div>
 
 
-                        <!-- =================================================
-                             🔴 EDITAR: TELÉFONO
 
-                             Puedes cambiar el ejemplo mostrado al cliente.
-                             El campo sigue siendo obligatorio.
+                        <!-- =================================================
+                             EDITAR: TELÉFONO
                         ================================================== -->
+
                         <div class="campo">
 
                             <label for="telefono">
@@ -690,6 +881,14 @@
                         </div>
 
 
+
+                        <!-- =================================================
+                             MENSAJE DE ERROR
+
+                             IMPORTANTE:
+                             Este ID aparece UNA SOLA VEZ en todo el HTML.
+                        ================================================== -->
+
                         <div
                             id="mensajeError"
                             class="mensaje-error"
@@ -697,23 +896,30 @@
                             Completa todos los campos obligatorios antes de continuar.
                         </div>
 
+
                     </form>
+
 
                 </section>
 
             </div>
 
 
+
             <!-- =================================================
                  COLUMNA DERECHA
                  PRODUCTO + PAGO
             ================================================== -->
+
             <div>
 
-                <!-- =============================================
-                     RESUMEN DEL PRODUCTO
-                ============================================== -->
+
+                <!-- =================================================
+                     RESUMEN DE COMPRA
+                ================================================== -->
+
                 <section class="seccion">
+
 
                     <h2>
                         Resumen de compra
@@ -724,33 +930,22 @@
                     </p>
 
 
+
                     <!-- =================================================
-                         🔴 RESUMEN DE COMPRA
+                         EDITAR: IMAGEN DEL PRODUCTO
 
-                         ESTA SECCIÓN ES LA QUE VE EL CLIENTE ANTES
-                         DE IR AL CHECKOUT DE PAYPHONE.
+                         Cambia:
 
-                         AQUÍ PUEDES CAMBIAR:
-                         - Imagen
-                         - Nombre del producto
-                         - Cantidad
-                         - Precio
-                         - Envío
-                         - Total
+                         img/delta.png
+
+                         por la ruta de tu imagen.
                     ================================================== -->
 
                     <div class="producto-resumen">
 
+
                         <div class="producto-resumen-imagen">
 
-                            <!-- =================================================
-                                 EDITAR: IMAGEN DEL PRODUCTO
-
-                                 Cambia:
-                                 img/delta.png
-
-                                 por la ruta de la imagen del producto.
-                            ================================================== -->
                             <img
                                 src="img/delta.png"
                                 alt="Cable Delta macho a 2 SATA hembra"
@@ -759,221 +954,302 @@
                         </div>
 
 
+
                         <div class="producto-resumen-info">
+
 
                             <!-- =================================================
                                  EDITAR: NOMBRE DEL PRODUCTO
-
-                                 Cambia solamente el texto que está dentro de <h3>.
                             ================================================== -->
+
                             <h3>
                                 Cable Delta macho a 2 SATA hembra
                             </h3>
 
+
+
                             <!-- =================================================
                                  EDITAR: CANTIDAD
 
-                                 Si vendes 1 unidad:
-                                 Cantidad: 1
+                                 Ejemplo:
 
-                                 Si vendes otra cantidad:
+                                 Cantidad: 1
                                  Cantidad: 2
                                  Cantidad: 3
-                                 etc.
                             ================================================== -->
+
                             <p>
                                 Cantidad: 1
                             </p>
 
+
                         </div>
 
 
+
                         <!-- =================================================
-                             🔴 EDITAR: PRECIO PRINCIPAL
+                             EDITAR: PRECIO PRINCIPAL
 
-                             Cambia "$10.00" por el precio del producto.
-
-                             EJEMPLOS:
-                             $10.00
-                             $15.00
-                             $25.00
-
-                             IMPORTANTE:
-                             Si cambias el precio, también debes cambiar
-                             el precio que aparece más abajo en:
-                             "Producto" y "Total".
+                             Cambia $10.00 por el precio del producto.
                         ================================================== -->
+
                         <div class="producto-resumen-precio">
                             $10.00
                         </div>
 
+
                     </div>
 
 
-                    <!-- =================================================
-                         🔴 PRECIO DEL PRODUCTO EN EL RESUMEN
 
-                         EDITAR:
-                         Cambia "$10.00" por el mismo precio del producto.
+                    <!-- =================================================
+                         EDITAR: PRECIO DEL PRODUCTO
                     ================================================== -->
+
                     <div class="resumen-linea">
-                        <span>Producto</span>
-                        <span>$10.00</span>
+
+                        <span>
+                            Producto
+                        </span>
+
+                        <span>
+                            $10.00
+                        </span>
+
                     </div>
 
 
+
                     <!-- =================================================
-                         🔴 ENVÍO
+                         EDITAR: ENVÍO
 
-                         ESTA ES LA PARTE QUE ME PREGUNTASTE.
+                         ENVÍO GRATIS:
+                         Cambia "Se coordina" por "Gratis".
 
-                         SI EL ENVÍO ES GRATIS:
-                         Cambia:
-                         <span>Se coordina</span>
+                         ENVÍO CON PRECIO:
+                         Cambia por "$3.00".
 
-                         por:
-                         <span>Gratis</span>
-
-                         SI QUIERES COBRAR UN PRECIO:
-                         Cambia por ejemplo a:
-                         <span>$3.00</span>
-
-                         SI EL PRECIO DEPENDE DE LA CIUDAD:
-                         Puedes poner:
-                         <span>Se calcula según destino</span>
-
-                         SI TODAVÍA NO HAS DEFINIDO EL ENVÍO:
-                         Puedes dejar:
-                         <span>Se coordina</span>
+                         ENVÍO SEGÚN DESTINO:
+                         Puedes poner "Se calcula según destino".
 
                          IMPORTANTE:
-                         El "Total" que aparece debajo debe coincidir
-                         con el importe que realmente cobrarás en PayPhone.
+                         Si cambias el precio del envío,
+                         también debes actualizar el TOTAL.
                     ================================================== -->
+
                     <div class="resumen-linea">
-                        <span>Envío</span>
-                        <span>Se coordina</span>
+
+                        <span>
+                            Envío
+                        </span>
+
+                        <span>
+                            Se coordina
+                        </span>
+
                     </div>
 
 
+
                     <!-- =================================================
-                         🔴 TOTAL DE LA COMPRA
+                         EDITAR: TOTAL
 
-                         EDITAR:
-                         Cambia "$10.00" por el total final que quieres
-                         mostrar al cliente.
+                         Ejemplo:
 
-                         EJEMPLO CON ENVÍO GRATIS:
                          Producto = $10.00
                          Envío = Gratis
                          Total = $10.00
 
-                         EJEMPLO CON ENVÍO DE $3.00:
+                         O:
+
                          Producto = $10.00
                          Envío = $3.00
                          Total = $13.00
                     ================================================== -->
+
                     <div class="resumen-linea total">
-                        <span>Total</span>
-                        <span>$10.00</span>
+
+                        <span>
+                            Total
+                        </span>
+
+                        <span>
+                            $10.00
+                        </span>
+
                     </div>
+
+
+
+                    <!-- =================================================
+                         BOTÓN CONTINUAR AL PAGO
+
+                         Este botón llama a:
+
+                         continuarAlPago()
+
+                         La función está al final del documento.
+
+                         Primero comprueba el formulario y después
+                         abre el enlace de PayPhone.
+                    ================================================== -->
+
+                    <button
+                        type="button"
+                        class="btn-pagar"
+                        onclick="continuarAlPago()"
+                    >
+                        Continuar al pago
+                    </button>
+
+
+
+                    <!-- =================================================
+                         MENSAJE DE SEGURIDAD
+                    ================================================== -->
+
+                    <p class="seguridad">
+                        Serás dirigido a PayPhone para completar el pago de forma segura.
+                    </p>
+
 
                 </section>
 
 
-
-
             </div>
+
 
         </div>
 
+
     </main>
+
 
 
     <!-- =====================================================
          FOOTER
     ====================================================== -->
+
     <footer>
 
         <p>
+
             © 2026
-            <strong>ZENTROXEC</strong>.
+
+            <strong>
+                ZENTROXEC
+            </strong>.
+
             Todos los derechos reservados.
+
         </p>
 
     </footer>
 
 
+
     <!-- =====================================================
          JAVASCRIPT
     ====================================================== -->
+
     <script>
 
-        /* =====================================================
-           🔴 ENLACE DE PAGO
-
-           EDITAR AQUÍ EN EL FUTURO SI CAMBIAS DE LINK.
-
-           Actualmente:
-           PayPhone
-        ====================================================== */
 
         /* =====================================================
            🔴 ENLACE DE PAGO DE ESTE PRODUCTO
 
-           EDITAR AQUÍ EN EL FUTURO:
-           Si este producto tiene otro enlace de PayPhone,
-           cambia solamente la URL que aparece abajo.
+           ESTE ES EL LINK ACTUAL DE PAYPHONE.
 
-           NO necesitas modificar la función continuarAlPago().
+           Si posteriormente cambias el enlace de cobro,
+           SOLO cambia la URL que está dentro de las comillas.
+
+           NO pongas corchetes.
+           NO pongas formato Markdown.
+
+           CORRECTO:
+
+           "https://ppls.me/..."
+
         ====================================================== */
 
         const PAYPHONE_URL =
             "https://ppls.me/KT8CHtyeUHxwBmYlg5NIyA";
 
 
+
         /* =====================================================
            CONTINUAR AL PAGO
 
-           Esta función revisa primero el formulario de entrega.
+           Esta función:
 
-           IMPORTANTE:
-           Esta página NO solicita ni guarda datos de tarjeta.
-           El cliente introduce los datos reales directamente
-           en el checkout de PayPhone.
+           1. Busca el formulario.
+           2. Comprueba los campos obligatorios.
+           3. Si falta información, muestra un error.
+           4. Si todo está correcto, abre PayPhone.
         ====================================================== */
 
         function continuarAlPago() {
 
+
+            /* =================================================
+               OBTENER FORMULARIO
+            ================================================== */
+
             const formulario =
                 document.getElementById("formCompra");
+
+
+
+            /* =================================================
+               OBTENER MENSAJE DE ERROR
+            ================================================== */
 
             const mensajeError =
                 document.getElementById("mensajeError");
 
 
-            /* Comprobar datos obligatorios */
+
+            /* =================================================
+               COMPROBAR CAMPOS OBLIGATORIOS
+            ================================================== */
 
             if (!formulario.checkValidity()) {
 
+
+                /* Mostrar mensaje */
+
                 mensajeError.classList.add("mostrar");
+
+
+                /* Llevar al navegador al campo que falta */
 
                 formulario.reportValidity();
 
+
+                /* Detener la función */
+
                 return;
+
             }
 
+
+
+            /* =================================================
+               OCULTAR MENSAJE DE ERROR
+            ================================================== */
 
             mensajeError.classList.remove("mostrar");
 
 
+
             /* =================================================
-               PAGO
+               ABRIR PAYPHONE
 
-               Aquí se abre el checkout del proveedor.
+               Aquí se utiliza el enlace:
 
-               Si en el futuro utilizas otro proveedor,
-               solamente cambia PAYPHONE_URL.
+               PAYPHONE_URL
+
+               que está definido arriba.
             ================================================== */
 
             window.open(
@@ -982,9 +1258,13 @@
                 "noopener,noreferrer"
             );
 
+
         }
+
 
     </script>
 
+
 </body>
+
 </html>
