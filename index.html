@@ -1,1 +1,969 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>ZENTROXEC Tecnología | Inicio</title>
+
+    <meta
+        name="description"
+        content="ZENTROXEC Tecnología. Cables, adaptadores, accesorios y soluciones para computadoras."
+    >
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080808;
+            color: #fff;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(5, 5, 5, 0.96);
+            border-bottom: 1px solid #292929;
+
+            backdrop-filter: blur(10px);
+        }
+
+        .header-container {
+            max-width: 1250px;
+            min-height: 78px;
+
+            margin: auto;
+            padding: 0 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #e50914;
+        }
+
+        .logo-small {
+            display: block;
+
+            color: #888;
+
+            font-size: 9px;
+            letter-spacing: 4px;
+
+            margin-top: 2px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+
+            font-size: 13px;
+            font-weight: bold;
+
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            color: #e50914;
+        }
+
+        .whatsapp-header {
+            padding: 11px 17px;
+
+            border: 1px solid #e50914;
+            border-radius: 7px;
+
+            color: #fff;
+            text-decoration: none;
+
+            font-size: 12px;
+            font-weight: bold;
+
+            transition: 0.2s;
+        }
+
+        .whatsapp-header:hover {
+            background: #e50914;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 650px;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                radial-gradient(
+                    circle at 80% 50%,
+                    rgba(229, 9, 20, 0.22),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #090909,
+                    #151515
+                );
+
+            border-bottom: 1px solid #222;
+        }
+
+        .hero-container {
+            width: 100%;
+            max-width: 1250px;
+
+            margin: auto;
+            padding: 70px 25px;
+        }
+
+        .hero-label {
+            color: #e50914;
+
+            font-size: 12px;
+            font-weight: 900;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            max-width: 850px;
+
+            font-size: clamp(45px, 7vw, 82px);
+
+            line-height: 0.95;
+
+            text-transform: uppercase;
+
+            font-weight: 900;
+        }
+
+        .hero h1 span {
+            color: #e50914;
+        }
+
+        .hero-line {
+            width: 65px;
+            height: 4px;
+
+            background: #e50914;
+
+            margin: 30px 0;
+        }
+
+        .hero p {
+            max-width: 650px;
+
+            color: #aaa;
+
+            font-size: 18px;
+            line-height: 1.7;
+
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            min-height: 48px;
+
+            padding: 0 23px;
+
+            border-radius: 7px;
+
+            text-decoration: none;
+
+            font-size: 13px;
+            font-weight: 900;
+
+            transition: 0.2s;
+        }
+
+        .btn-primary {
+            background: #e50914;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #b80710;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+
+            border: 1px solid #444;
+        }
+
+        .btn-secondary:hover {
+            border-color: #e50914;
+            color: #e50914;
+        }
+
+        /* =========================
+           SECCION PRODUCTOS
+        ========================= */
+
+        .seccion {
+            max-width: 1250px;
+
+            margin: auto;
+
+            padding: 80px 25px;
+        }
+
+        .seccion-header {
+            margin-bottom: 40px;
+        }
+
+        .seccion-label {
+            color: #e50914;
+
+            font-size: 11px;
+            font-weight: 900;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 10px;
+        }
+
+        .seccion h2 {
+            font-size: clamp(30px, 5vw, 48px);
+            font-weight: 900;
+        }
+
+        .seccion-header p {
+            max-width: 600px;
+
+            color: #888;
+
+            line-height: 1.7;
+
+            margin-top: 12px;
+        }
+
+        /* =========================
+           DESTACADOS
+        ========================= */
+
+        .destacados {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 16px;
+        }
+
+        .destacado {
+            background: #111;
+
+            border: 1px solid #292929;
+            border-radius: 10px;
+
+            padding: 30px;
+
+            transition: 0.25s;
+        }
+
+        .destacado:hover {
+            transform: translateY(-5px);
+
+            border-color: #e50914;
+
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .destacado-icono {
+            font-size: 35px;
+
+            margin-bottom: 20px;
+        }
+
+        .destacado h3 {
+            font-size: 19px;
+
+            margin-bottom: 10px;
+        }
+
+        .destacado p {
+            color: #888;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+        /* =========================
+           POR QUE ZENTROXEC
+        ========================= */
+
+        .confianza {
+            background: #0d0d0d;
+
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+
+        .confianza-grid {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .confianza-item {
+            padding: 25px;
+
+            background: #111;
+
+            border: 1px solid #242424;
+            border-radius: 9px;
+        }
+
+        .confianza-numero {
+            color: #e50914;
+
+            font-size: 30px;
+            font-weight: 900;
+
+            margin-bottom: 15px;
+        }
+
+        .confianza-item h3 {
+            font-size: 15px;
+
+            margin-bottom: 8px;
+        }
+
+        .confianza-item p {
+            color: #777;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(229, 9, 20, 0.12),
+                    transparent 50%
+                );
+        }
+
+        .cta h2 {
+            max-width: 700px;
+
+            margin: auto;
+
+            font-size: clamp(30px, 5vw, 50px);
+        }
+
+        .cta p {
+            max-width: 600px;
+
+            margin: 18px auto 28px;
+
+            color: #888;
+
+            line-height: 1.7;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #050505;
+
+            border-top: 1px solid #222;
+
+            padding: 40px 25px;
+
+            text-align: center;
+        }
+
+        footer .logo {
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            color: #666;
+
+            font-size: 12px;
+        }
+
+        .footer-links {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 20px;
+
+            margin-bottom: 20px;
+
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #888;
+
+            text-decoration: none;
+
+            font-size: 12px;
+        }
+
+        .footer-links a:hover {
+            color: #e50914;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            nav {
+                gap: 14px;
+            }
+
+            .whatsapp-header {
+                display: none;
+            }
+
+            .destacados {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .confianza-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .header-container {
+                min-height: 65px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .logo {
+                font-size: 23px;
+            }
+
+            .hero {
+                min-height: 600px;
+            }
+
+            .hero-container {
+                padding: 60px 20px;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .seccion {
+                padding: 60px 20px;
+            }
+
+            .destacados {
+                grid-template-columns: 1fr;
+            }
+
+            .confianza-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-container">
+
+        <a
+            href="index.html"
+            style="text-decoration:none;color:white;"
+        >
+            <div class="logo">
+                ZENTRO<span>X</span>EC
+
+                <span class="logo-small">
+                    TECNOLOGÍA
+                </span>
+            </div>
+        </a>
+
+        <nav>
+
+            <a href="index.html">
+                INICIO
+            </a>
+
+            <a href="productos.html">
+                PRODUCTOS
+            </a>
+
+            <a href="acerca.html">
+                ACERCA DE
+            </a>
+
+            <a href="contacto.html">
+                CONTACTO
+            </a>
+
+        </nav>
+
+        <a
+            class="whatsapp-header"
+            id="whatsappHeader"
+            target="_blank"
+            rel="noopener"
+        >
+            💬 WhatsApp
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-container">
+
+        <div class="hero-label">
+            ZENTROXEC TECNOLOGÍA
+        </div>
+
+        <h1>
+            Cables y
+            <span>
+                adaptadores
+            </span>
+            para tu PC
+        </h1>
+
+        <div class="hero-line"></div>
+
+        <p>
+            Encuentra cables, adaptadores y accesorios
+            tecnológicos para conectar, actualizar y
+            ampliar tus equipos. Soluciones prácticas
+            para componentes que no siempre son fáciles
+            de conseguir.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                href="productos.html"
+                class="btn btn-primary"
+            >
+                VER CATÁLOGO
+            </a>
+
+            <a
+                id="heroWhatsapp"
+                class="btn btn-secondary"
+                target="_blank"
+                rel="noopener"
+            >
+                💬 CONSULTAR
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DESTACADOS -->
+
+<section class="seccion">
+
+    <div class="seccion-header">
+
+        <div class="seccion-label">
+            QUÉ ENCONTRARÁS
+        </div>
+
+        <h2>
+            Soluciones para tu equipo
+        </h2>
+
+        <p>
+            Seleccionamos accesorios y componentes
+            pensados para resolver necesidades reales
+            de conexión, almacenamiento y compatibilidad.
+        </p>
+
+    </div>
+
+
+    <div class="destacados">
+
+        <article class="destacado">
+
+            <div class="destacado-icono">
+                🔌
+            </div>
+
+            <h3>
+                Cables
+            </h3>
+
+            <p>
+                Cables de alimentación, datos y conexión
+                para diferentes dispositivos y componentes.
+            </p>
+
+        </article>
+
+
+        <article class="destacado">
+
+            <div class="destacado-icono">
+                🔧
+            </div>
+
+            <h3>
+                Adaptadores
+            </h3>
+
+            <p>
+                Soluciones para conectar componentes que
+                utilizan diferentes tipos de conexiones.
+            </p>
+
+        </article>
+
+
+        <article class="destacado">
+
+            <div class="destacado-icono">
+                💻
+            </div>
+
+            <h3>
+                Accesorios PC
+            </h3>
+
+            <p>
+                Accesorios útiles para actualizar,
+                ampliar o mejorar la configuración de
+                tu computadora.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- CONFIANZA -->
+
+<section class="confianza">
+
+    <div class="seccion">
+
+        <div class="seccion-header">
+
+            <div class="seccion-label">
+                ZENTROXEC
+            </div>
+
+            <h2>
+                Compra con más claridad
+            </h2>
+
+            <p>
+                Antes de comprar puedes revisar las
+                características del producto y consultar
+                directamente su disponibilidad.
+            </p>
+
+        </div>
+
+
+        <div class="confianza-grid">
+
+            <article class="confianza-item">
+
+                <div class="confianza-numero">
+                    01
+                </div>
+
+                <h3>
+                    Información clara
+                </h3>
+
+                <p>
+                    Consulta características,
+                    compatibilidad y contenido de cada
+                    producto.
+                </p>
+
+            </article>
+
+
+            <article class="confianza-item">
+
+                <div class="confianza-numero">
+                    02
+                </div>
+
+                <h3>
+                    Atención directa
+                </h3>
+
+                <p>
+                    Puedes contactarnos directamente
+                    mediante WhatsApp antes de realizar
+                    tu compra.
+                </p>
+
+            </article>
+
+
+            <article class="confianza-item">
+
+                <div class="confianza-numero">
+                    03
+                </div>
+
+                <h3>
+                    Productos seleccionados
+                </h3>
+
+                <p>
+                    Nuestro catálogo está orientado a
+                    cables, adaptadores y accesorios
+                    tecnológicos.
+                </p>
+
+            </article>
+
+
+            <article class="confianza-item">
+
+                <div class="confianza-numero">
+                    04
+                </div>
+
+                <h3>
+                    Soporte
+                </h3>
+
+                <p>
+                    Si tienes dudas sobre un producto,
+                    puedes consultarnos antes de realizar
+                    tu pedido.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="seccion cta">
+
+    <h2>
+        ¿Buscas un cable o adaptador específico?
+    </h2>
+
+    <p>
+        Revisa nuestro catálogo o escríbenos
+        directamente para consultar disponibilidad.
+    </p>
+
+    <div class="hero-buttons">
+
+        <a
+            href="productos.html"
+            class="btn btn-primary"
+        >
+            VER PRODUCTOS
+        </a>
+
+        <a
+            id="ctaWhatsapp"
+            class="btn btn-secondary"
+            target="_blank"
+            rel="noopener"
+        >
+            💬 WHATSAPP
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="logo">
+
+        ZENTRO<span>X</span>EC
+
+        <span class="logo-small">
+            TECNOLOGÍA
+        </span>
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <a href="index.html">
+            Inicio
+        </a>
+
+        <a href="productos.html">
+            Productos
+        </a>
+
+        <a href="acerca.html">
+            Acerca de
+        </a>
+
+        <a href="contacto.html">
+            Contacto
+        </a>
+
+    </div>
+
+
+    <p>
+        © 2026 ZENTROXEC Tecnología.
+        Todos los derechos reservados.
+    </p>
+
+</footer>
+
+
+<script>
+
+    /* =========================
+       CONFIGURACIÓN WHATSAPP
+    ========================= */
+
+    const WHATSAPP = "593960648763";
+
+
+    /* =========================
+       MENSAJE GENERAL
+    ========================= */
+
+    const mensaje =
+        "Hola, quisiera consultar la disponibilidad de los productos de ZENTROXEC Tecnología.";
+
+
+    const enlaceWhatsApp =
+        `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensaje)}`;
+
+
+    /* =========================
+       BOTONES WHATSAPP
+    ========================= */
+
+    document.getElementById(
+        "whatsappHeader"
+    ).href = enlaceWhatsApp;
+
+
+    document.getElementById(
+        "heroWhatsapp"
+    ).href = enlaceWhatsApp;
+
+
+    document.getElementById(
+        "ctaWhatsapp"
+    ).href = enlaceWhatsApp;
+
+</script>
+
+</body>
+</html>
