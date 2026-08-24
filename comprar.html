@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- =====================================================
+         EDITAR: TÍTULO DE LA PÁGINA
+    ====================================================== -->
+    <title>Finalizar compra | ZENTROXEC</title>
+
+    <meta
+        name="description"
+        content="Completa tus datos de entrega y continúa con el pago de tu compra en ZENTROXEC."
+    >
+
+    <style>
+        /* =====================================================
+           RESET
+        ====================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #050505;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* =====================================================
+           HEADER
+        ====================================================== */
+        header {
+            width: 100%;
+            background: rgba(5, 5, 5, 0.97);
+            border-bottom: 1px solid #222222;
+        }
+
+        .header-container {
+            width: 100%;
+            max-width: 1250px;
+            min-height: 76px;
+            margin: 0 auto;
+            padding: 0 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            flex-shrink: 0;
+            color: #ffffff;
+            font-size: 27px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #e50914;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #dddddd;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 800;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover,
+        nav a.activo {
+            color: #e50914;
+        }
+
+        /* =====================================================
+           CONTENEDOR PRINCIPAL
+        ====================================================== */
+        .checkout {
+            width: 100%;
+            max-width: 1050px;
+            margin: 0 auto;
+            padding: 55px 20px 80px;
+        }
+
+        .titulo {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .titulo h1 {
+            font-size: clamp(32px, 5vw, 50px);
+            line-height: 1.1;
+            margin-bottom: 12px;
+        }
+
+        .titulo h1 span {
+            color: #e50914;
+        }
+
+        .titulo p {
+            color: #999999;
+            font-size: 15px;
+        }
+
+        /* =====================================================
+           TARJETAS DE SECCIÓN
+        ====================================================== */
+        .checkout-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 25px;
+            align-items: start;
+        }
+
+        .seccion {
+            background: #101010;
+            border: 1px solid #252525;
+            border-radius: 14px;
+            padding: 28px;
+            margin-bottom: 25px;
+        }
+
+        .seccion h2 {
+            font-size: 22px;
+            margin-bottom: 6px;
+        }
+
+        .seccion-subtitulo {
+            color: #888888;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        /* =====================================================
+           FORMULARIO
+        ====================================================== */
+        .campo {
+            margin-bottom: 18px;
+        }
+
+        .campo label {
+            display: block;
+            color: #eeeeee;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 7px;
+        }
+
+        .campo input,
+        .campo select,
+        .campo textarea {
+            width: 100%;
+            min-height: 48px;
+            padding: 12px 14px;
+            border-radius: 8px;
+            border: 1px solid #3a3a3a;
+            background: #080808;
+            color: #ffffff;
+            outline: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+        }
+
+        .campo textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .campo input:focus,
+        .campo select:focus,
+        .campo textarea:focus {
+            border-color: #e50914;
+        }
+
+        .fila {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .check-line {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #aaaaaa;
+            font-size: 13px;
+            margin: 5px 0 20px;
+        }
+
+        .check-line input {
+            width: 18px;
+            height: 18px;
+            accent-color: #e50914;
+        }
+
+        /* =====================================================
+           RESUMEN DEL PRODUCTO
+        ====================================================== */
+        .producto-resumen {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            padding: 16px;
+            border: 1px solid #292929;
+            border-radius: 10px;
+            background: #080808;
+            margin-bottom: 20px;
+        }
+
+        .producto-resumen-imagen {
+            width: 75px;
+            height: 75px;
+            background: #ffffff;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .producto-resumen-imagen img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 5px;
+        }
+
+        .producto-resumen-info {
+            flex: 1;
+        }
+
+        .producto-resumen-info h3 {
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+
+        .producto-resumen-info p {
+            color: #888888;
+            font-size: 12px;
+        }
+
+        .producto-resumen-precio {
+            font-size: 20px;
+            font-weight: 900;
+        }
+
+        /* =====================================================
+           MÉTODO DE PAGO
+
+           IMPORTANTE:
+           Los datos reales de tarjeta NO se procesan ni
+           se almacenan en esta página.
+
+           El pago con tarjeta debe realizarse en el checkout
+           seguro del proveedor de pagos.
+        ====================================================== */
+        .pago-seguro {
+            border: 1px solid #292929;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #080808;
+        }
+
+        .pago-cabecera {
+            padding: 18px;
+            border-bottom: 1px solid #292929;
+        }
+
+        .pago-cabecera h3 {
+            font-size: 17px;
+            margin-bottom: 5px;
+        }
+
+        .pago-cabecera p {
+            color: #888888;
+            font-size: 12px;
+        }
+
+        /* =====================================================
+           RECUADRO VISUAL DE TARJETA
+
+           Este bloque imita el aspecto del formulario de la
+           imagen enviada, pero NO solicita ni guarda números
+           reales de tarjeta.
+
+           El cliente ingresará los datos reales solamente en
+           el checkout seguro de PayPhone.
+        ====================================================== */
+        .tarjeta-visual {
+            padding: 20px;
+        }
+
+        .tarjeta-campo {
+            margin-bottom: 16px;
+        }
+
+        .tarjeta-campo label {
+            display: block;
+            font-size: 13px;
+            color: #dddddd;
+            margin-bottom: 7px;
+        }
+
+        .tarjeta-campo input {
+            width: 100%;
+            height: 48px;
+            border-radius: 8px;
+            border: 1px solid #333333;
+            background: #151515;
+            color: #666666;
+            padding: 0 13px;
+            font-size: 14px;
+        }
+
+        .tarjeta-campo input:disabled {
+            opacity: 0.75;
+            cursor: not-allowed;
+        }
+
+        .tarjeta-fila {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .aviso-pago {
+            margin: 0 20px 20px;
+            padding: 14px;
+            border-radius: 8px;
+            background: #151515;
+            border: 1px solid #292929;
+            color: #999999;
+            font-size: 12px;
+        }
+
+        .aviso-pago strong {
+            color: #ffffff;
+        }
+
+        /* =====================================================
+           BOTÓN CONTINUAR AL PAGO
+
+           EDITAR AQUÍ EN EL FUTURO:
+           Si cambias de proveedor de pago, modifica solamente
+           la constante PAYPHONE_URL en JavaScript.
+        ====================================================== */
+        .btn-pagar {
+            width: 100%;
+            min-height: 50px;
+            border: 1px solid #e50914;
+            border-radius: 8px;
+            background: #e50914;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 900;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .btn-pagar:hover {
+            background: #b80710;
+            border-color: #b80710;
+        }
+
+        .seguridad {
+            text-align: center;
+            color: #666666;
+            font-size: 11px;
+            margin-top: 12px;
+        }
+
+        /* =====================================================
+           RESUMEN DEL PEDIDO
+        ====================================================== */
+        .resumen-linea {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            color: #999999;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .resumen-linea.total {
+            border-top: 1px solid #292929;
+            padding-top: 16px;
+            margin-top: 16px;
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 900;
+        }
+
+        /* =====================================================
+           MENSAJE DE ERROR
+        ====================================================== */
+        .mensaje-error {
+            display: none;
+            background: rgba(229, 9, 20, 0.10);
+            border: 1px solid #e50914;
+            color: #ff8b91;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .mensaje-error.mostrar {
+            display: block;
+        }
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+        footer {
+            padding: 30px 20px;
+            text-align: center;
+            background: #050505;
+            border-top: 1px solid #1c1c1c;
+        }
+
+        footer p {
+            color: #666666;
+            font-size: 12px;
+        }
+
+        footer strong {
+            color: #ffffff;
+        }
+
+        /* =====================================================
+           CELULAR
+        ====================================================== */
+        @media (max-width: 800px) {
+            .checkout-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header-container {
+                padding: 22px 18px;
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: space-between;
+                gap: 8px;
+            }
+
+            nav a {
+                font-size: 10px;
+            }
+
+            .checkout {
+                padding: 35px 14px 60px;
+            }
+
+            .seccion {
+                padding: 20px;
+            }
+
+            .fila {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .producto-resumen-precio {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+    <header>
+        <div class="header-container">
+
+            <a href="index.html" class="logo">
+                ZENTRO<span>X</span>EC
+            </a>
+
+            <nav>
+                <a href="index.html">INICIO</a>
+                <a href="productos.html" class="activo">PRODUCTOS</a>
+                <a href="acerca.html">ACERCA DE</a>
+                <a href="contacto.html">CONTACTO</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- =====================================================
+         PÁGINA DE COMPRA
+    ====================================================== -->
+    <main class="checkout">
+
+        <section class="titulo">
+
+            <h1>
+                Finaliza tu <span>compra</span>
+            </h1>
+
+            <p>
+                Completa los datos de entrega antes de continuar con el pago.
+            </p>
+
+        </section>
+
+
+        <div class="checkout-grid">
+
+            <!-- =================================================
+                 COLUMNA IZQUIERDA
+                 DATOS DE ENTREGA
+            ================================================== -->
+            <div>
+
+                <section class="seccion">
+
+                    <h2>
+                        Dirección o lugar
+                    </h2>
+
+                    <p class="seccion-subtitulo">
+                        Ingresa los datos necesarios para realizar la entrega.
+                    </p>
+
+
+                    <form id="formCompra">
+
+                        <!-- =========================================
+                             DIRECCIÓN
+                             ========================================= -->
+
+                        <div class="campo">
+
+                            <label for="direccion">
+                                Dirección o lugar
+                            </label>
+
+                            <input
+                                type="text"
+                                id="direccion"
+                                name="direccion"
+                                placeholder="Ej: Avenida los Leones 4563"
+                                required
+                            >
+
+                        </div>
+
+
+                        <label class="check-line">
+
+                            <input
+                                type="checkbox"
+                                id="sinNumero"
+                            >
+
+                            <span>
+                                La calle no tiene número
+                            </span>
+
+                        </label>
+
+
+                        <!-- =========================================
+                             PROVINCIA / CANTÓN
+                             ========================================= -->
+
+                        <div class="fila">
+
+                            <div class="campo">
+
+                                <label for="provincia">
+                                    Provincia
+                                </label>
+
+                                <select
+                                    id="provincia"
+                                    name="provincia"
+                                    required
+                                >
+                                    <option value="">
+                                        Selecciona una provincia
+                                    </option>
+                                    <option>Guayas</option>
+                                    <option>Pichincha</option>
+                                    <option>Azuay</option>
+                                    <option>Manabí</option>
+                                    <option>Santa Elena</option>
+                                    <option>El Oro</option>
+                                    <option>Los Ríos</option>
+                                    <option>Esmeraldas</option>
+                                    <option>Otra provincia</option>
+                                </select>
+
+                            </div>
+
+
+                            <div class="campo">
+
+                                <label for="canton">
+                                    Cantón
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="canton"
+                                    name="canton"
+                                    placeholder="Ej: Guayaquil"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- =========================================
+                             PARROQUIA / CALLE SECUNDARIA
+                             ========================================= -->
+
+                        <div class="fila">
+
+                            <div class="campo">
+
+                                <label for="parroquia">
+                                    Parroquia
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="parroquia"
+                                    name="parroquia"
+                                    placeholder="Ingresa la parroquia"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="campo">
+
+                                <label for="calleSecundaria">
+                                    Calle secundaria
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="calleSecundaria"
+                                    name="calleSecundaria"
+                                    placeholder="Ingresa una calle"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- =========================================
+                             DEPARTAMENTO
+                             ========================================= -->
+
+                        <div class="campo">
+
+                            <label for="departamento">
+                                Departamento (opcional)
+                            </label>
+
+                            <input
+                                type="text"
+                                id="departamento"
+                                name="departamento"
+                                placeholder="Ej: 10B"
+                            >
+
+                        </div>
+
+
+                        <!-- =========================================
+                             INDICACIONES
+                             ========================================= -->
+
+                        <div class="campo">
+
+                            <label for="indicaciones">
+                                Indicaciones para la entrega (opcional)
+                            </label>
+
+                            <textarea
+                                id="indicaciones"
+                                name="indicaciones"
+                                maxlength="128"
+                                placeholder="Ej.: Entre calles, color del edificio, no tiene timbre."
+                            ></textarea>
+
+                        </div>
+
+
+                        <!-- =========================================
+                             DATOS DE QUIEN RECIBE
+                        ========================================== -->
+
+                        <h2 style="margin-top:35px;">
+                            Datos de quien recibe
+                        </h2>
+
+                        <p class="seccion-subtitulo">
+                            Llamaremos si hay un problema con la entrega.
+                        </p>
+
+
+                        <div class="campo">
+
+                            <label for="nombre">
+                                Nombre y apellido
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nombre"
+                                name="nombre"
+                                placeholder="Nombre y apellido"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="telefono">
+                                Teléfono
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="telefono"
+                                name="telefono"
+                                placeholder="0999999999"
+                                inputmode="tel"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div
+                            id="mensajeError"
+                            class="mensaje-error"
+                        >
+                            Completa todos los campos obligatorios antes de continuar.
+                        </div>
+
+                    </form>
+
+                </section>
+
+            </div>
+
+
+            <!-- =================================================
+                 COLUMNA DERECHA
+                 PRODUCTO + PAGO
+            ================================================== -->
+            <div>
+
+                <!-- =============================================
+                     RESUMEN DEL PRODUCTO
+                ============================================== -->
+                <section class="seccion">
+
+                    <h2>
+                        Resumen de compra
+                    </h2>
+
+                    <p class="seccion-subtitulo">
+                        Revisa el producto antes de continuar.
+                    </p>
+
+
+                    <div class="producto-resumen">
+
+                        <div class="producto-resumen-imagen">
+
+                            <!-- EDITAR: imagen del producto -->
+                            <img
+                                src="img/delta.png"
+                                alt="Cable Delta macho a 2 SATA hembra"
+                            >
+
+                        </div>
+
+
+                        <div class="producto-resumen-info">
+
+                            <!-- EDITAR: nombre del producto -->
+                            <h3>
+                                Cable Delta macho a 2 SATA hembra
+                            </h3>
+
+                            <p>
+                                Cantidad: 1
+                            </p>
+
+                        </div>
+
+
+                        <!-- EDITAR: precio -->
+                        <div class="producto-resumen-precio">
+                            $10.00
+                        </div>
+
+                    </div>
+
+
+                    <div class="resumen-linea">
+                        <span>Producto</span>
+                        <span>$10.00</span>
+                    </div>
+
+                    <div class="resumen-linea">
+                        <span>Envío</span>
+                        <span>Se coordina</span>
+                    </div>
+
+                    <div class="resumen-linea total">
+                        <span>Total</span>
+                        <span>$10.00</span>
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     MÉTODO DE PAGO
+                ============================================== -->
+                <section class="seccion">
+
+                    <h2>
+                        Método de pago
+                    </h2>
+
+                    <p class="seccion-subtitulo">
+                        Continúa al pago seguro.
+                    </p>
+
+
+                    <div class="pago-seguro">
+
+                        <div class="pago-cabecera">
+
+                            <h3>
+                                Pago con tarjeta
+                            </h3>
+
+                            <p>
+                                Visa, Mastercard y otras tarjetas disponibles según el checkout.
+                            </p>
+
+                        </div>
+
+
+                        <!-- =================================================
+                             RECUADRO SIMILAR AL DE LA IMAGEN
+
+                             IMPORTANTE:
+                             NO introduzcas aquí datos reales de tarjeta.
+
+                             Los campos son solamente una representación
+                             visual del formulario de pago.
+
+                             Los datos reales se ingresan directamente
+                             en el checkout seguro de PayPhone.
+                        ================================================== -->
+
+                        <div class="tarjeta-visual">
+
+                            <div class="tarjeta-campo">
+
+                                <label>
+                                    Nombre en la tarjeta
+                                </label>
+
+                                <input
+                                    type="text"
+                                    placeholder="Nombre del titular de la tarjeta"
+                                    disabled
+                                >
+
+                            </div>
+
+
+                            <div class="tarjeta-campo">
+
+                                <label>
+                                    Datos de la tarjeta
+                                </label>
+
+                                <input
+                                    type="text"
+                                    placeholder="XXXX XXXX XXXX XXXX"
+                                    disabled
+                                >
+
+                            </div>
+
+
+                            <div class="tarjeta-fila">
+
+                                <div class="tarjeta-campo">
+
+                                    <label>
+                                        MM/AA
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        placeholder="MM/AA"
+                                        disabled
+                                    >
+
+                                </div>
+
+
+                                <div class="tarjeta-campo">
+
+                                    <label>
+                                        CVV
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        placeholder="CVV"
+                                        disabled
+                                    >
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="aviso-pago">
+
+                            <strong>Pago seguro:</strong>
+                            por seguridad, los datos reales de tu tarjeta
+                            se ingresan directamente en la plataforma de pago.
+                            Esta página no almacena números de tarjeta ni CVV.
+
+                        </div>
+
+
+                        <!-- =================================================
+                             BOTÓN PARA CONTINUAR AL PAGO
+
+                             ESTE BOTÓN:
+                             1. Comprueba que los datos de entrega estén completos.
+                             2. Abre el checkout de PayPhone.
+
+                             PARA CAMBIAR EL MÉTODO DE PAGO EN EL FUTURO:
+                             modifica solamente PAYPHONE_URL en JavaScript.
+                        ================================================== -->
+
+                        <button
+                            type="button"
+                            class="btn-pagar"
+                            onclick="continuarAlPago()"
+                        >
+                            CONTINUAR AL PAGO
+                        </button>
+
+
+                        <p class="seguridad">
+                            Serás dirigido al checkout seguro para completar el pago.
+                        </p>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+    <footer>
+
+        <p>
+            © 2026
+            <strong>ZENTROXEC</strong>.
+            Todos los derechos reservados.
+        </p>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+    <script>
+
+        /* =====================================================
+           🔴 ENLACE DE PAGO
+
+           EDITAR AQUÍ EN EL FUTURO SI CAMBIAS DE LINK.
+
+           Actualmente:
+           PayPhone
+        ====================================================== */
+
+        const PAYPHONE_URL =
+            "https://ppls.me/0MLcuDumFehLhRkMvkJsg";
+
+
+        /* =====================================================
+           CONTINUAR AL PAGO
+
+           Esta función revisa primero el formulario de entrega.
+
+           IMPORTANTE:
+           Los datos de tarjeta NO se leen ni se guardan aquí.
+        ====================================================== */
+
+        function continuarAlPago() {
+
+            const formulario =
+                document.getElementById("formCompra");
+
+            const mensajeError =
+                document.getElementById("mensajeError");
+
+
+            /* Comprobar datos obligatorios */
+
+            if (!formulario.checkValidity()) {
+
+                mensajeError.classList.add("mostrar");
+
+                formulario.reportValidity();
+
+                return;
+            }
+
+
+            mensajeError.classList.remove("mostrar");
+
+
+            /* =================================================
+               PAGO
+
+               Aquí se abre el checkout del proveedor.
+
+               Si en el futuro utilizas otro proveedor,
+               solamente cambia PAYPHONE_URL.
+            ================================================== */
+
+            window.open(
+                PAYPHONE_URL,
+                "_blank",
+                "noopener,noreferrer"
+            );
+
+        }
+
+    </script>
+
+</body>
+</html>
