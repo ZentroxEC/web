@@ -2,13 +2,16 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Productos | ZENTROXEC</title>
 
-    <meta name="description"
-        content="Catálogo de productos ZENTROXEC. Cables, adaptadores y soluciones para PC.">
+    <meta
+        name="description"
+        content="Catálogo de productos ZENTROXEC. Cables, adaptadores y soluciones para PC."
+    >
 
     <style>
 
@@ -72,7 +75,9 @@
         }
 
 
-        /* LOGO */
+        /* =====================================================
+           LOGO
+        ===================================================== */
 
         .logo {
             flex-shrink: 0;
@@ -93,7 +98,9 @@
         }
 
 
-        /* MENU */
+        /* =====================================================
+           MENU
+        ===================================================== */
 
         nav {
             display: flex;
@@ -247,7 +254,9 @@
         }
 
 
-        /* IMAGEN */
+        /* =====================================================
+           IMAGEN
+        ===================================================== */
 
         .producto-imagen {
             width: 100%;
@@ -282,7 +291,9 @@
         }
 
 
-        /* INFORMACIÓN */
+        /* =====================================================
+           INFORMACIÓN
+        ===================================================== */
 
         .producto-info {
             padding: 22px;
@@ -309,7 +320,9 @@
         }
 
 
-        /* PRECIO */
+        /* =====================================================
+           PRECIO
+        ===================================================== */
 
         .producto-precio {
             display: flex;
@@ -382,7 +395,9 @@
         }
 
 
-        /* COMPRAR */
+        /* =====================================================
+           COMPRAR
+        ===================================================== */
 
         .btn-comprar {
             background: #e50914;
@@ -399,7 +414,9 @@
         }
 
 
-        /* DETALLES */
+        /* =====================================================
+           DETALLES
+        ===================================================== */
 
         .btn-detalles {
             background: transparent;
@@ -418,7 +435,9 @@
         }
 
 
-        /* WHATSAPP */
+        /* =====================================================
+           WHATSAPP
+        ===================================================== */
 
         .btn-whatsapp {
             width: 82%;
@@ -442,6 +461,100 @@
             border-color: #555555;
 
             background: #1c1c1c;
+        }
+
+
+        /* =====================================================
+           DETALLES DEL PRODUCTO
+        ===================================================== */
+
+        .detalles-producto {
+            max-width: 1100px;
+
+            margin: 0 auto 70px;
+
+            padding: 0 25px;
+
+            scroll-margin-top: 30px;
+        }
+
+        .detalles-contenido {
+            background: #101010;
+
+            border: 1px solid #292929;
+
+            border-radius: 14px;
+
+            padding: 35px;
+        }
+
+        .detalles-contenido h2 {
+            font-size: 30px;
+
+            margin-bottom: 10px;
+        }
+
+        .detalles-subtitulo {
+            color: #888888;
+
+            font-size: 14px;
+
+            margin-bottom: 30px;
+        }
+
+        .detalles-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 18px;
+        }
+
+        .detalle-box {
+            background: #080808;
+
+            border: 1px solid #222222;
+
+            border-radius: 10px;
+
+            padding: 24px;
+        }
+
+        .detalle-box h3 {
+            color: #ffffff;
+
+            font-size: 17px;
+
+            margin-bottom: 12px;
+        }
+
+        .detalle-box h3 span {
+            color: #e50914;
+        }
+
+        .detalle-box ul {
+            list-style: none;
+
+            padding: 0;
+        }
+
+        .detalle-box li {
+            color: #999999;
+
+            font-size: 14px;
+
+            padding: 7px 0;
+
+            border-bottom: 1px solid #1c1c1c;
+        }
+
+        .detalle-box li:last-child {
+            border-bottom: none;
+        }
+
+        .detalle-box li strong {
+            color: #dddddd;
         }
 
 
@@ -645,6 +758,25 @@
             }
 
 
+            .detalles-producto {
+                padding: 0 18px;
+
+                margin-bottom: 55px;
+            }
+
+            .detalles-contenido {
+                padding: 25px 20px;
+            }
+
+            .detalles-contenido h2 {
+                font-size: 25px;
+            }
+
+            .detalles-grid {
+                grid-template-columns: 1fr;
+            }
+
+
             .info-section {
                 padding: 55px 18px;
             }
@@ -741,7 +873,8 @@
     <section class="hero">
 
         <h1>
-            Productos que <span>sí necesitas</span>
+            Productos que
+            <span>sí necesitas</span>
         </h1>
 
         <p>
@@ -797,9 +930,10 @@
                     </h3>
 
                     <p>
-                        Ideal para alimentar dos discos duros o SSDs desde una sola fuente,
-                        es la solución práctica, segura y eficiente para actualizar o expandir tu 
-                        almacenamiento.
+                        Ideal para alimentar dos discos duros o SSDs
+                        desde una conexión compatible. Una solución
+                        práctica para actualizar o expandir el
+                        almacenamiento de tu computadora.
                     </p>
 
 
@@ -818,6 +952,9 @@
 
                     <div class="producto-botones">
 
+
+                        <!-- COMPRAR -->
+
                         <a
                             href="contacto.html"
                             class="btn btn-comprar"
@@ -825,12 +962,18 @@
                             COMPRAR
                         </a>
 
+
+                        <!-- DETALLES -->
+
                         <a
                             href="#producto-delta"
                             class="btn btn-detalles"
                         >
                             DETALLES DEL PRODUCTO
                         </a>
+
+
+                        <!-- WHATSAPP -->
 
                         <a
                             href="https://wa.me/593960648763?text=Hola%20ZENTROXEC,%20quiero%20consultar%20la%20disponibilidad%20del%20Cable%20Delta%20macho%20a%202%20SATA%20hembra."
@@ -847,9 +990,199 @@
 
             </article>
 
+
         </div>
 
     </main>
+
+
+    <!-- =====================================================
+         DETALLES DEL PRODUCTO
+    ===================================================== -->
+
+    <section
+        id="producto-delta"
+        class="detalles-producto"
+    >
+
+        <div class="detalles-contenido">
+
+            <h2>
+                Cable Delta macho a 2 SATA hembra
+            </h2>
+
+            <p class="detalles-subtitulo">
+                Información detallada del producto
+            </p>
+
+
+            <div class="detalles-grid">
+
+
+                <!-- CARACTERÍSTICAS PRINCIPALES -->
+
+                <div class="detalle-box">
+
+                    <h3>
+                        <span>01.</span>
+                        Características principales
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            <strong>Conexión:</strong>
+                            Delta macho a 2 SATA hembra
+                        </li>
+
+                        <li>
+                            <strong>Salidas:</strong>
+                            2 conectores SATA hembra
+                        </li>
+
+                        <li>
+                            <strong>Diseño:</strong>
+                            Solución práctica para ampliar conexiones de alimentación
+                        </li>
+
+                        <li>
+                            <strong>Uso:</strong>
+                            Computadoras y sistemas compatibles
+                        </li>
+
+                        <li>
+                            <strong>Aplicación:</strong>
+                            Alimentación de dispositivos de almacenamiento
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- OTROS -->
+
+                <div class="detalle-box">
+
+                    <h3>
+                        <span>02.</span>
+                        Otros
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            <strong>Instalación:</strong>
+                            Conexión directa entre los conectores compatibles
+                        </li>
+
+                        <li>
+                            <strong>Practicidad:</strong>
+                            Permite aprovechar una conexión de alimentación disponible
+                        </li>
+
+                        <li>
+                            <strong>Compatibilidad:</strong>
+                            Verificar previamente el conector y la fuente del equipo
+                        </li>
+
+                        <li>
+                            <strong>Ideal para:</strong>
+                            Actualizaciones y ampliaciones de almacenamiento
+                        </li>
+
+                        <li>
+                            <strong>Uso recomendado:</strong>
+                            Equipos compatibles con conexión Delta y SATA
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- ESPECIFICACIONES -->
+
+                <div class="detalle-box">
+
+                    <h3>
+                        <span>03.</span>
+                        Especificaciones
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            <strong>Entrada:</strong>
+                            Conector Delta macho
+                        </li>
+
+                        <li>
+                            <strong>Salida:</strong>
+                            2 × SATA hembra
+                        </li>
+
+                        <li>
+                            <strong>Tipo:</strong>
+                            Cable divisor de alimentación
+                        </li>
+
+                        <li>
+                            <strong>Categoría:</strong>
+                            Cable y adaptador para PC
+                        </li>
+
+                        <li>
+                            <strong>Color:</strong>
+                            Negro
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- PROPÓSITO -->
+
+                <div class="detalle-box">
+
+                    <h3>
+                        <span>04.</span>
+                        Propósito
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            <strong>Objetivo:</strong>
+                            Facilitar la alimentación de dispositivos SATA.
+                        </li>
+
+                        <li>
+                            <strong>Almacenamiento:</strong>
+                            Permite conectar dispositivos de almacenamiento compatibles.
+                        </li>
+
+                        <li>
+                            <strong>Expansión:</strong>
+                            Útil para ampliar la capacidad de almacenamiento del equipo.
+                        </li>
+
+                        <li>
+                            <strong>Solución:</strong>
+                            Ayuda cuando se necesita disponer de dos conexiones SATA desde una conexión compatible.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
 
 
     <!-- =====================================================
@@ -927,7 +1260,8 @@
     <footer>
 
         <p>
-            © 2026 <strong>ZENTROXEC</strong>.
+            © 2026
+            <strong>ZENTROXEC</strong>.
             Todos los derechos reservados.
         </p>
 
