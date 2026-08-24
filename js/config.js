@@ -1,1 +1,0 @@
-const WHATSAPP="593960648763";function wa(t){return "https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(t)}const h=document.getElementById("whatsappHeader");if(h)h.href=wa("Hola, quisiera consultar sobre los productos de ZENTROXEC Tecnología.");
