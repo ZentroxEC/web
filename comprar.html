@@ -13,7 +13,6 @@
     <!-- =====================================================
          EDITAR: TÍTULO DE LA PÁGINA
     ====================================================== -->
-
     <title>Finalizar compra | ZENTROXEC</title>
 
     <meta
@@ -71,12 +70,12 @@
 
         .logo {
             flex-shrink: 0;
-            color: #ffffff;
 
+            color: #ffffff;
             font-size: 27px;
             font-weight: 900;
-
             letter-spacing: 1px;
+
             text-decoration: none;
         }
 
@@ -94,7 +93,6 @@
 
         nav a {
             color: #dddddd;
-
             text-decoration: none;
 
             font-size: 13px;
@@ -205,7 +203,6 @@
             color: #eeeeee;
 
             font-size: 14px;
-
             font-weight: 700;
 
             margin-bottom: 7px;
@@ -237,6 +234,7 @@
         }
 
         .campo textarea {
+
             min-height: 110px;
 
             resize: vertical;
@@ -245,6 +243,7 @@
         .campo input:focus,
         .campo select:focus,
         .campo textarea:focus {
+
             border-color: #e50914;
         }
 
@@ -282,11 +281,15 @@
 
 
         /* =====================================================
-           OTRA PROVINCIA
+           CAMPO OTRA PROVINCIA
         ====================================================== */
 
         #campoOtraProvincia {
             display: none;
+        }
+
+        #campoOtraProvincia.mostrar {
+            display: block;
         }
 
 
@@ -343,6 +346,7 @@
         }
 
         .producto-resumen-info {
+
             flex: 1;
         }
 
@@ -404,57 +408,7 @@
 
 
         /* =====================================================
-           MENSAJE DE ERROR
-        ====================================================== */
-
-        .mensaje-error {
-
-            display: none;
-
-            background: rgba(229, 9, 20, 0.10);
-
-            border: 1px solid #e50914;
-
-            color: #ff8b91;
-
-            padding: 12px;
-
-            border-radius: 8px;
-
-            font-size: 13px;
-
-            margin-bottom: 15px;
-        }
-
-        .mensaje-error.mostrar {
-            display: block;
-        }
-
-
-        /* =====================================================
-           MENSAJE DE PROCESAMIENTO
-        ====================================================== */
-
-        .mensaje-proceso {
-
-            display: none;
-
-            color: #aaaaaa;
-
-            text-align: center;
-
-            font-size: 12px;
-
-            margin-top: 10px;
-        }
-
-        .mensaje-proceso.mostrar {
-            display: block;
-        }
-
-
-        /* =====================================================
-           BOTÓN CONTINUAR AL PAGO
+           BOTÓN DE PAGO
         ====================================================== */
 
         .btn-pagar {
@@ -491,7 +445,7 @@
 
             opacity: 0.6;
 
-            cursor: wait;
+            cursor: not-allowed;
         }
 
         .seguridad {
@@ -503,6 +457,66 @@
             font-size: 11px;
 
             margin-top: 12px;
+        }
+
+
+        /* =====================================================
+           MENSAJE DE ERROR
+        ====================================================== */
+
+        .mensaje-error {
+
+            display: none;
+
+            background: rgba(229, 9, 20, 0.10);
+
+            border: 1px solid #e50914;
+
+            color: #ff8b91;
+
+            padding: 12px;
+
+            border-radius: 8px;
+
+            font-size: 13px;
+
+            margin-bottom: 15px;
+        }
+
+        .mensaje-error.mostrar {
+
+            display: block;
+        }
+
+
+        /* =====================================================
+           MENSAJE DE PROCESANDO
+        ====================================================== */
+
+        .mensaje-proceso {
+
+            display: none;
+
+            background: rgba(255,255,255,0.05);
+
+            border: 1px solid #333333;
+
+            color: #cccccc;
+
+            padding: 12px;
+
+            border-radius: 8px;
+
+            font-size: 13px;
+
+            margin-bottom: 15px;
+
+            text-align: center;
+        }
+
+        .mensaje-proceso.mostrar {
+
+            display: block;
         }
 
 
@@ -529,6 +543,7 @@
         }
 
         footer strong {
+
             color: #ffffff;
         }
 
@@ -540,9 +555,11 @@
         @media (max-width: 800px) {
 
             .checkout-grid {
+
                 grid-template-columns: 1fr;
             }
         }
+
 
         @media (max-width: 600px) {
 
@@ -565,6 +582,7 @@
             }
 
             nav a {
+
                 font-size: 10px;
             }
 
@@ -574,6 +592,7 @@
             }
 
             .seccion {
+
                 padding: 20px;
             }
 
@@ -585,6 +604,7 @@
             }
 
             .producto-resumen-precio {
+
                 font-size: 17px;
             }
         }
@@ -642,7 +662,7 @@
 
 
     <!-- =====================================================
-         PÁGINA DE COMPRA
+         CONTENIDO
     ====================================================== -->
 
     <main class="checkout">
@@ -686,9 +706,9 @@
                     <form id="formCompra">
 
 
-                        <!-- =========================================
+                        <!-- =================================================
                              DIRECCIÓN
-                        ========================================== -->
+                        ================================================== -->
 
                         <div class="campo">
 
@@ -708,10 +728,6 @@
 
 
 
-                        <!-- =========================================
-                             SIN NÚMERO
-                        ========================================== -->
-
                         <label class="check-line">
 
                             <input
@@ -728,9 +744,9 @@
 
 
 
-                        <!-- =========================================
+                        <!-- =================================================
                              PROVINCIA / CANTÓN
-                        ========================================== -->
+                        ================================================== -->
 
                         <div class="fila">
 
@@ -877,12 +893,12 @@
 
 
 
-                        <!-- =========================================
-                             CAMPO OTRA PROVINCIA
+                        <!-- =================================================
+                             OTRA PROVINCIA
 
                              APARECE SOLAMENTE CUANDO EL CLIENTE
                              SELECCIONA "OTRA PROVINCIA".
-                        ========================================== -->
+                        ================================================== -->
 
                         <div
                             class="campo"
@@ -897,16 +913,16 @@
                                 type="text"
                                 id="otraProvincia"
                                 name="otraProvincia"
-                                placeholder="Escribe el nombre de la provincia"
+                                placeholder="Ingresa el nombre de la provincia"
                             >
 
                         </div>
 
 
 
-                        <!-- =========================================
+                        <!-- =================================================
                              PARROQUIA / CALLE SECUNDARIA
-                        ========================================== -->
+                        ================================================== -->
 
                         <div class="fila">
 
@@ -949,9 +965,9 @@
 
 
 
-                        <!-- =========================================
+                        <!-- =================================================
                              DEPARTAMENTO
-                        ========================================== -->
+                        ================================================== -->
 
                         <div class="campo">
 
@@ -970,9 +986,9 @@
 
 
 
-                        <!-- =========================================
+                        <!-- =================================================
                              INDICACIONES
-                        ========================================== -->
+                        ================================================== -->
 
                         <div class="campo">
 
@@ -991,9 +1007,9 @@
 
 
 
-                        <!-- =========================================
+                        <!-- =================================================
                              DATOS DE QUIEN RECIBE
-                        ========================================== -->
+                        ================================================== -->
 
                         <h2 style="margin-top:35px;">
                             Datos de quien recibe
@@ -1042,15 +1058,28 @@
 
 
 
-                        <!-- =========================================
+                        <!-- =================================================
                              MENSAJE DE ERROR
-                        ========================================== -->
+                        ================================================== -->
 
                         <div
                             id="mensajeError"
                             class="mensaje-error"
                         >
                             Completa todos los campos obligatorios antes de continuar.
+                        </div>
+
+
+
+                        <!-- =================================================
+                             MENSAJE DE PROCESO
+                        ================================================== -->
+
+                        <div
+                            id="mensajeProceso"
+                            class="mensaje-proceso"
+                        >
+                            Registrando tu pedido...
                         </div>
 
 
@@ -1064,13 +1093,14 @@
 
             <!-- =================================================
                  COLUMNA DERECHA
-                 RESUMEN DE COMPRA
+                 RESUMEN
             ================================================== -->
 
             <div>
 
 
                 <section class="seccion">
+
 
                     <h2>
                         Resumen de compra
@@ -1082,28 +1112,23 @@
 
 
 
-                    <!-- =============================================
-                         PRODUCTO
+                    <!-- =================================================
+                         EDITAR PRODUCTO
 
-                         EDITAR AQUÍ:
+                         CAMBIA AQUÍ:
 
-                         IMAGEN:
-                         img/delta.png
-
-                         NOMBRE:
-                         Cable Delta macho a 2 SATA hembra
-
-                         CANTIDAD:
-                         Cantidad: 1
-
-                         PRECIO:
-                         $10.00
-                    ============================================== -->
+                         1. Imagen
+                         2. Nombre
+                         3. Cantidad
+                         4. Precio
+                    ================================================== -->
 
                     <div class="producto-resumen">
 
 
                         <div class="producto-resumen-imagen">
+
+                            <!-- EDITAR: RUTA DE LA IMAGEN -->
 
                             <img
                                 src="img/delta.png"
@@ -1116,9 +1141,14 @@
 
                         <div class="producto-resumen-info">
 
+                            <!-- EDITAR: NOMBRE DEL PRODUCTO -->
+
                             <h3>
                                 Cable Delta macho a 2 SATA hembra
                             </h3>
+
+
+                            <!-- EDITAR: CANTIDAD -->
 
                             <p>
                                 Cantidad: 1
@@ -1128,21 +1158,19 @@
 
 
 
+                        <!-- EDITAR: PRECIO -->
+
                         <div class="producto-resumen-precio">
                             $10.00
                         </div>
-
 
                     </div>
 
 
 
-                    <!-- =============================================
-                         PRECIO DEL PRODUCTO
-
-                         EDITAR:
-                         $10.00
-                    ============================================== -->
+                    <!-- =================================================
+                         EDITAR: PRECIO DEL PRODUCTO
+                    ================================================== -->
 
                     <div class="resumen-linea">
 
@@ -1158,18 +1186,18 @@
 
 
 
-                    <!-- =============================================
-                         ENVÍO
+                    <!-- =================================================
+                         EDITAR: ENVÍO
 
-                         GRATIS:
-                         cambia "Se coordina" por "Gratis"
+                         ENVÍO GRATIS:
+                         Gratis
 
-                         CON PRECIO:
-                         cambia por "$3.00"
+                         ENVÍO DE $3:
+                         $3.00
 
-                         SEGÚN DESTINO:
-                         "Se calcula según destino"
-                    ============================================== -->
+                         ENVÍO COORDINADO:
+                         Se coordina
+                    ================================================== -->
 
                     <div class="resumen-linea">
 
@@ -1185,15 +1213,14 @@
 
 
 
-                    <!-- =============================================
-                         TOTAL
+                    <!-- =================================================
+                         EDITAR: TOTAL
 
-                         SI PRODUCTO = $10 Y ENVÍO GRATIS:
-                         Total = $10.00
+                         IMPORTANTE:
 
-                         SI PRODUCTO = $10 Y ENVÍO $3:
-                         Total = $13.00
-                    ============================================== -->
+                         El total mostrado aquí debe coincidir
+                         con el importe que cobrarás mediante PayPhone.
+                    ================================================== -->
 
                     <div class="resumen-linea total">
 
@@ -1209,19 +1236,32 @@
 
 
 
-                    <!-- =============================================
-                         BOTÓN DE PAGO
+                    <!-- =================================================
+                         MENSAJE DE ERROR
+                    ================================================== -->
+
+                    <div
+                        id="mensajeErrorPago"
+                        class="mensaje-error"
+                    >
+                    </div>
+
+
+
+                    <!-- =================================================
+                         BOTÓN PRINCIPAL
 
                          ESTE ES EL BOTÓN QUE:
 
-                         1. REVISA EL FORMULARIO.
-                         2. ENVÍA LOS DATOS A GOOGLE SHEETS.
-                         3. ABRE PAYPHONE.
-                    ============================================== -->
+                         1. Valida el formulario.
+                         2. Envía los datos al Apps Script.
+                         3. Registra el pedido en Google Sheets.
+                         4. Abre PayPhone.
+                    ================================================== -->
 
                     <button
                         type="button"
-                        id="btnPagar"
+                        id="btnContinuar"
                         class="btn-pagar"
                         onclick="continuarAlPago()"
                     >
@@ -1229,25 +1269,14 @@
                     </button>
 
 
-
-                    <div
-                        id="mensajeProceso"
-                        class="mensaje-proceso"
-                    >
-                        Registrando tu pedido...
-                    </div>
-
-
-
                     <p class="seguridad">
-                        Serás redirigido a PayPhone para completar el pago.
+                        Serás dirigido a PayPhone para completar el pago de forma segura.
                     </p>
+
 
                 </section>
 
-
             </div>
-
 
         </div>
 
@@ -1285,15 +1314,15 @@
 
 
         /* =====================================================
-           🔴 GOOGLE APPS SCRIPT
+           🔴 APPS SCRIPT
 
-           ESTE ES EL ENLACE QUE ME PROPORCIONASTE.
+           ESTE ES TU NUEVO ENLACE.
 
-           NO CAMBIES ESTA URL A MENOS QUE CREES
-           OTRO GOOGLE APPS SCRIPT.
+           NO LO CAMBIES SI SIGUES UTILIZANDO
+           ESTA IMPLEMENTACIÓN DE GOOGLE APPS SCRIPT.
         ====================================================== */
 
-        const GOOGLE_SCRIPT_URL =
+        const APPS_SCRIPT_URL =
             "https://script.google.com/macros/s/AKfycbzfVmHhyISYruGRZk3R30fBiCvOM5Gv5rQODIsxlMqCIiIsBF_8T6AFvhQTVUf7cMfb/exec";
 
 
@@ -1301,9 +1330,9 @@
         /* =====================================================
            🔴 PAYPHONE
 
-           ESTE ES EL ENLACE DE COBRO DE ESTE PRODUCTO.
+           ESTE ES EL LINK DE COBRO DE ESTE PRODUCTO.
 
-           Si posteriormente tienes otro enlace de PayPhone,
+           Si algún producto tiene otro enlace PayPhone,
            solamente cambia esta URL.
         ====================================================== */
 
@@ -1330,13 +1359,13 @@
 
             if (this.value === "Otra provincia") {
 
-                campoOtraProvincia.style.display = "block";
+                campoOtraProvincia.classList.add("mostrar");
 
                 otraProvincia.required = true;
 
             } else {
 
-                campoOtraProvincia.style.display = "none";
+                campoOtraProvincia.classList.remove("mostrar");
 
                 otraProvincia.required = false;
 
@@ -1348,21 +1377,11 @@
 
 
         /* =====================================================
-           CONTINUAR AL PAGO
+           FUNCIÓN PRINCIPAL
 
-           FUNCIONAMIENTO:
+           SE EJECUTA AL PRESIONAR:
 
-           1. Comprueba que el formulario esté completo.
-           2. Recoge los datos.
-           3. Los envía a Google Apps Script.
-           4. Google Apps Script los registra en Google Sheets.
-           5. Abre PayPhone.
-
-           IMPORTANTE:
-
-           El cliente NO introduce aquí los datos de tarjeta.
-
-           El pago se realiza directamente en PayPhone.
+           "CONTINUAR AL PAGO"
         ====================================================== */
 
         async function continuarAlPago() {
@@ -1371,17 +1390,29 @@
             const formulario =
                 document.getElementById("formCompra");
 
-
             const mensajeError =
                 document.getElementById("mensajeError");
 
+            const mensajeErrorPago =
+                document.getElementById("mensajeErrorPago");
 
             const mensajeProceso =
                 document.getElementById("mensajeProceso");
 
-
             const boton =
-                document.getElementById("btnPagar");
+                document.getElementById("btnContinuar");
+
+
+
+            /* =================================================
+               LIMPIAR MENSAJES
+            ================================================== */
+
+            mensajeError.classList.remove("mostrar");
+
+            mensajeErrorPago.classList.remove("mostrar");
+
+            mensajeErrorPago.textContent = "";
 
 
 
@@ -1399,121 +1430,138 @@
             }
 
 
-            mensajeError.classList.remove("mostrar");
-
-
-
-            /* =================================================
-               OBTENER PROVINCIA
-
-               Si seleccionó "Otra provincia", utilizamos
-               el nombre escrito por el cliente.
-            ================================================== */
-
-            let provinciaFinal =
-                provincia.value;
-
-
-            if (provincia.value === "Otra provincia") {
-
-                provinciaFinal =
-                    otraProvincia.value.trim();
-            }
-
-
-
-            /* =================================================
-               RECOPILAR DATOS
-            ================================================== */
-
-            const datosPedido = {
-
-                fecha:
-                    new Date().toLocaleString("es-EC"),
-
-                producto:
-                    "Cable Delta macho a 2 SATA hembra",
-
-                cantidad:
-                    "1",
-
-                precio:
-                    "$10.00",
-
-                envio:
-                    "Se coordina",
-
-                total:
-                    "$10.00",
-
-                direccion:
-                    document.getElementById("direccion").value,
-
-                sinNumero:
-                    document.getElementById("sinNumero").checked
-                    ? "Sí"
-                    : "No",
-
-                provincia:
-                    provinciaFinal,
-
-                canton:
-                    document.getElementById("canton").value,
-
-                parroquia:
-                    document.getElementById("parroquia").value,
-
-                calleSecundaria:
-                    document.getElementById("calleSecundaria").value,
-
-                departamento:
-                    document.getElementById("departamento").value,
-
-                indicaciones:
-                    document.getElementById("indicaciones").value,
-
-                nombre:
-                    document.getElementById("nombre").value,
-
-                telefono:
-                    document.getElementById("telefono").value
-
-            };
-
-
 
             /* =================================================
                DESACTIVAR BOTÓN
+
+               Evita que el cliente haga varios clics.
             ================================================== */
 
             boton.disabled = true;
 
-            boton.textContent =
-                "Registrando pedido...";
+            boton.textContent = "Registrando pedido...";
 
             mensajeProceso.classList.add("mostrar");
 
 
 
             /* =================================================
-               ENVIAR A GOOGLE APPS SCRIPT
+               OBTENER DATOS
+            ================================================== */
 
-               mode: "no-cors"
+            const datosFormulario =
+                new FormData(formulario);
 
-               Esto permite enviar la información al Apps Script
-               aunque tu página esté alojada en GitHub Pages.
 
-               IMPORTANTE:
 
-               Google Apps Script debe estar publicado como
-               aplicación web.
+            /* =================================================
+               CREAR OBJETO DEL PEDIDO
+            ================================================== */
+
+            const pedido = {
+
+                nombre:
+                    datosFormulario.get("nombre"),
+
+                telefono:
+                    datosFormulario.get("telefono"),
+
+                direccion:
+                    datosFormulario.get("direccion"),
+
+                sinNumero:
+                    document.getElementById("sinNumero").checked
+                        ? "Sí"
+                        : "No",
+
+                provincia:
+                    datosFormulario.get("provincia"),
+
+                otraProvincia:
+                    datosFormulario.get("otraProvincia"),
+
+                canton:
+                    datosFormulario.get("canton"),
+
+                parroquia:
+                    datosFormulario.get("parroquia"),
+
+                calleSecundaria:
+                    datosFormulario.get("calleSecundaria"),
+
+                departamento:
+                    datosFormulario.get("departamento"),
+
+                indicaciones:
+                    datosFormulario.get("indicaciones"),
+
+
+                /* =============================================
+                   PRODUCTO
+
+                   EDITAR AQUÍ SI CAMBIAS DE PRODUCTO.
+                ============================================== */
+
+                producto:
+                    "Cable Delta macho a 2 SATA hembra",
+
+
+                /* =============================================
+                   CANTIDAD
+                ============================================== */
+
+                cantidad:
+                    "1",
+
+
+                /* =============================================
+                   PRECIO
+
+                   EDITAR AQUÍ SI CAMBIAS EL PRECIO.
+                ============================================== */
+
+                precio:
+                    "$10.00",
+
+
+                /* =============================================
+                   ENVÍO
+                ============================================== */
+
+                envio:
+                    "Se coordina",
+
+
+                /* =============================================
+                   TOTAL
+
+                   DEBE COINCIDIR CON EL TOTAL DEL RESUMEN.
+                ============================================== */
+
+                total:
+                    "$10.00",
+
+
+                /* =============================================
+                   FECHA Y HORA
+                ============================================== */
+
+                fecha:
+                    new Date().toLocaleString("es-EC")
+
+            };
+
+
+
+            /* =================================================
+               ENVIAR PEDIDO A GOOGLE APPS SCRIPT
             ================================================== */
 
             try {
 
 
                 await fetch(
-                    GOOGLE_SCRIPT_URL,
+                    APPS_SCRIPT_URL,
                     {
 
                         method: "POST",
@@ -1521,73 +1569,71 @@
                         mode: "no-cors",
 
                         headers: {
-                            "Content-Type":
-                                "text/plain;charset=utf-8"
+                            "Content-Type": "text/plain;charset=utf-8"
                         },
 
-                        body:
-                            JSON.stringify(datosPedido)
+                        body: JSON.stringify(pedido)
 
                     }
                 );
 
 
-                /* =================================================
-                   GUARDAR TAMBIÉN UNA COPIA LOCAL
 
-                   Esto permite conservar temporalmente los datos
-                   en el navegador en caso de que el usuario
-                   vuelva atrás.
+                /* =================================================
+                   IMPORTANTE
+
+                   Debido a las restricciones del navegador con
+                   Google Apps Script, "no-cors" no permite leer
+                   la respuesta del servidor.
+
+                   Por eso, después de enviar los datos,
+                   procedemos a PayPhone.
                 ================================================== */
 
-                try {
 
-                    localStorage.setItem(
-                        "ultimoPedidoZentroxEc",
-                        JSON.stringify(datosPedido)
-                    );
 
-                } catch (errorLocal) {
-
-                    console.log(
-                        "No se pudo guardar copia local.",
-                        errorLocal
-                    );
-
-                }
+                mensajeProceso.textContent =
+                    "Pedido registrado. Redirigiendo al pago...";
 
 
 
                 /* =================================================
-                   ABRIR PAYPHONE
+                   PEQUEÑA ESPERA
 
-                   Después de enviar el pedido a Google Sheets,
-                   se abre el enlace de cobro.
+                   Permite que la solicitud salga antes
+                   de cambiar de página.
                 ================================================== */
 
-                window.location.href =
-                    PAYPHONE_URL;
+                setTimeout(function () {
+
+                    window.location.href =
+                        PAYPHONE_URL;
+
+                }, 700);
+
 
 
             } catch (error) {
 
 
                 console.error(
-                    "Error al registrar el pedido:",
+                    "Error al registrar pedido:",
                     error
                 );
 
 
-                /* =================================================
-                   AUNQUE HAYA UN PROBLEMA CON GOOGLE SHEETS,
-                   SE PERMITE CONTINUAR A PAYPHONE.
+                mensajeProceso.classList.remove("mostrar");
 
-                   Esto evita bloquear la venta si el servicio
-                   de registro presenta un problema temporal.
-                ================================================== */
+                mensajeErrorPago.textContent =
+                    "No se pudo registrar el pedido. Revisa tu conexión e inténtalo nuevamente.";
 
-                window.location.href =
-                    PAYPHONE_URL;
+                mensajeErrorPago.classList.add("mostrar");
+
+
+                boton.disabled = false;
+
+                boton.textContent =
+                    "Continuar al pago";
 
             }
 
