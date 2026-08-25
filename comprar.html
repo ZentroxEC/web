@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <!-- =====================================================
+         EDITAR: TÍTULO DE LA PÁGINA
+    ====================================================== -->
 
     <title>Finalizar compra | ZENTROXEC</title>
 
     <meta
         name="description"
-        content="Completa tus datos de envío y continúa con el pago de tu compra en ZENTROXEC."
+        content="Completa tus datos de entrega y continúa con el pago de tu compra en ZENTROXEC."
     >
 
     <style>
+
+        /* =====================================================
+           RESET
+        ====================================================== */
 
         * {
             margin: 0;
@@ -30,9 +44,10 @@
             line-height: 1.6;
         }
 
-        /* ==============================
+
+        /* =====================================================
            HEADER
-        ============================== */
+        ====================================================== */
 
         header {
             width: 100%;
@@ -50,14 +65,17 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+
             gap: 30px;
         }
 
         .logo {
             flex-shrink: 0;
             color: #ffffff;
+
             font-size: 27px;
             font-weight: 900;
+
             letter-spacing: 1px;
             text-decoration: none;
         }
@@ -70,14 +88,19 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
             gap: 30px;
         }
 
         nav a {
             color: #dddddd;
+
             text-decoration: none;
+
             font-size: 13px;
             font-weight: 800;
+
+            transition: color 0.2s ease;
         }
 
         nav a:hover,
@@ -85,14 +108,17 @@
             color: #e50914;
         }
 
-        /* ==============================
-           CONTENEDOR
-        ============================== */
+
+        /* =====================================================
+           CONTENEDOR PRINCIPAL
+        ====================================================== */
 
         .checkout {
             width: 100%;
             max-width: 1050px;
+
             margin: 0 auto;
+
             padding: 55px 20px 80px;
         }
 
@@ -103,7 +129,9 @@
 
         .titulo h1 {
             font-size: clamp(32px, 5vw, 50px);
+
             line-height: 1.1;
+
             margin-bottom: 12px;
         }
 
@@ -116,43 +144,56 @@
             font-size: 15px;
         }
 
-        /* ==============================
+
+        /* =====================================================
            GRID
-        ============================== */
+        ====================================================== */
 
         .checkout-grid {
             display: grid;
+
             grid-template-columns: 1.15fr 0.85fr;
+
             gap: 25px;
+
             align-items: start;
         }
 
-        /* ==============================
-           SECCIONES
-        ============================== */
+
+        /* =====================================================
+           TARJETAS
+        ====================================================== */
 
         .seccion {
             background: #101010;
+
             border: 1px solid #252525;
+
             border-radius: 14px;
+
             padding: 28px;
+
             margin-bottom: 25px;
         }
 
         .seccion h2 {
             font-size: 22px;
+
             margin-bottom: 6px;
         }
 
         .seccion-subtitulo {
             color: #888888;
+
             font-size: 13px;
+
             margin-bottom: 25px;
         }
 
-        /* ==============================
+
+        /* =====================================================
            FORMULARIO
-        ============================== */
+        ====================================================== */
 
         .campo {
             margin-bottom: 18px;
@@ -160,33 +201,44 @@
 
         .campo label {
             display: block;
+
             color: #eeeeee;
+
             font-size: 14px;
+
             font-weight: 700;
+
             margin-bottom: 7px;
         }
 
         .campo input,
         .campo select,
         .campo textarea {
+
             width: 100%;
+
             min-height: 48px;
+
             padding: 12px 14px;
 
             border-radius: 8px;
+
             border: 1px solid #3a3a3a;
 
             background: #080808;
+
             color: #ffffff;
 
             outline: none;
 
             font-family: Arial, Helvetica, sans-serif;
+
             font-size: 14px;
         }
 
         .campo textarea {
             min-height: 110px;
+
             resize: vertical;
         }
 
@@ -197,48 +249,63 @@
         }
 
         .fila {
+
             display: grid;
+
             grid-template-columns: 1fr 1fr;
+
             gap: 15px;
         }
 
         .check-line {
+
             display: flex;
+
             align-items: center;
+
             gap: 10px;
 
             color: #aaaaaa;
+
             font-size: 13px;
 
             margin: 5px 0 20px;
         }
 
         .check-line input {
+
             width: 18px;
             height: 18px;
+
             accent-color: #e50914;
         }
 
-        /* ==============================
-           OTRA PROVINCIA
-        ============================== */
 
-        #otraProvinciaCampo {
+        /* =====================================================
+           OTRA PROVINCIA
+        ====================================================== */
+
+        #campoOtraProvincia {
             display: none;
         }
 
-        /* ==============================
+
+        /* =====================================================
            PRODUCTO
-        ============================== */
+        ====================================================== */
 
         .producto-resumen {
+
             display: flex;
+
             gap: 15px;
+
             align-items: center;
 
             padding: 16px;
 
             border: 1px solid #292929;
+
             border-radius: 10px;
 
             background: #080808;
@@ -247,24 +314,31 @@
         }
 
         .producto-resumen-imagen {
+
             width: 75px;
             height: 75px;
 
             background: #ffffff;
+
             border-radius: 8px;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
 
             overflow: hidden;
+
             flex-shrink: 0;
         }
 
         .producto-resumen-imagen img {
+
             width: 100%;
             height: 100%;
+
             object-fit: contain;
+
             padding: 5px;
         }
 
@@ -273,90 +347,72 @@
         }
 
         .producto-resumen-info h3 {
+
             font-size: 15px;
+
             margin-bottom: 4px;
         }
 
         .producto-resumen-info p {
+
             color: #888888;
+
             font-size: 12px;
         }
 
         .producto-resumen-precio {
+
             font-size: 20px;
+
             font-weight: 900;
         }
 
-        /* ==============================
+
+        /* =====================================================
            RESUMEN DEL PEDIDO
-        ============================== */
+        ====================================================== */
 
         .resumen-linea {
+
             display: flex;
+
             justify-content: space-between;
 
             gap: 15px;
 
             color: #999999;
+
             font-size: 14px;
 
             margin-bottom: 12px;
         }
 
         .resumen-linea.total {
+
             border-top: 1px solid #292929;
 
             padding-top: 16px;
+
             margin-top: 16px;
 
             color: #ffffff;
 
             font-size: 20px;
+
             font-weight: 900;
         }
 
-        /* ==============================
-           BOTÓN DE PAGO
-        ============================== */
 
-        .btn-pagar {
-            width: 100%;
-            min-height: 50px;
-
-            border: 1px solid #e50914;
-            border-radius: 8px;
-
-            background: #e50914;
-            color: #ffffff;
-
-            font-size: 14px;
-            font-weight: 900;
-
-            cursor: pointer;
-
-            transition: 0.2s ease;
-        }
-
-        .btn-pagar:hover {
-            background: #b80710;
-            border-color: #b80710;
-        }
-
-        .seguridad {
-            text-align: center;
-            color: #666666;
-            font-size: 11px;
-            margin-top: 12px;
-        }
-
-        /* ==============================
-           ERROR
-        ============================== */
+        /* =====================================================
+           MENSAJE DE ERROR
+        ====================================================== */
 
         .mensaje-error {
+
             display: none;
 
             background: rgba(229, 9, 20, 0.10);
+
             border: 1px solid #e50914;
 
             color: #ff8b91;
@@ -374,11 +430,88 @@
             display: block;
         }
 
-        /* ==============================
+
+        /* =====================================================
+           MENSAJE DE PROCESAMIENTO
+        ====================================================== */
+
+        .mensaje-proceso {
+
+            display: none;
+
+            color: #aaaaaa;
+
+            text-align: center;
+
+            font-size: 12px;
+
+            margin-top: 10px;
+        }
+
+        .mensaje-proceso.mostrar {
+            display: block;
+        }
+
+
+        /* =====================================================
+           BOTÓN CONTINUAR AL PAGO
+        ====================================================== */
+
+        .btn-pagar {
+
+            width: 100%;
+
+            min-height: 50px;
+
+            border: 1px solid #e50914;
+
+            border-radius: 8px;
+
+            background: #e50914;
+
+            color: #ffffff;
+
+            font-size: 14px;
+
+            font-weight: 900;
+
+            cursor: pointer;
+
+            transition: 0.2s ease;
+        }
+
+        .btn-pagar:hover {
+
+            background: #b80710;
+
+            border-color: #b80710;
+        }
+
+        .btn-pagar:disabled {
+
+            opacity: 0.6;
+
+            cursor: wait;
+        }
+
+        .seguridad {
+
+            text-align: center;
+
+            color: #666666;
+
+            font-size: 11px;
+
+            margin-top: 12px;
+        }
+
+
+        /* =====================================================
            FOOTER
-        ============================== */
+        ====================================================== */
 
         footer {
+
             padding: 30px 20px;
 
             text-align: center;
@@ -389,7 +522,9 @@
         }
 
         footer p {
+
             color: #666666;
+
             font-size: 12px;
         }
 
@@ -397,21 +532,22 @@
             color: #ffffff;
         }
 
-        /* ==============================
+
+        /* =====================================================
            CELULAR
-        ============================== */
+        ====================================================== */
 
         @media (max-width: 800px) {
 
             .checkout-grid {
                 grid-template-columns: 1fr;
             }
-
         }
 
         @media (max-width: 600px) {
 
             .header-container {
+
                 padding: 22px 18px;
 
                 flex-direction: column;
@@ -420,6 +556,7 @@
             }
 
             nav {
+
                 width: 100%;
 
                 justify-content: space-between;
@@ -432,6 +569,7 @@
             }
 
             .checkout {
+
                 padding: 35px 14px 60px;
             }
 
@@ -440,30 +578,37 @@
             }
 
             .fila {
+
                 grid-template-columns: 1fr;
+
                 gap: 0;
             }
 
             .producto-resumen-precio {
                 font-size: 17px;
             }
-
         }
 
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- ==========================================
+
+    <!-- =====================================================
          HEADER
-    =========================================== -->
+    ====================================================== -->
 
     <header>
 
         <div class="header-container">
 
-            <a href="index.html" class="logo">
+            <a
+                href="index.html"
+                class="logo"
+            >
                 ZENTRO<span>X</span>EC
             </a>
 
@@ -473,7 +618,10 @@
                     INICIO
                 </a>
 
-                <a href="productos.html" class="activo">
+                <a
+                    href="productos.html"
+                    class="activo"
+                >
                     PRODUCTOS
                 </a>
 
@@ -492,11 +640,13 @@
     </header>
 
 
-    <!-- ==========================================
-         CONTENIDO PRINCIPAL
-    =========================================== -->
+
+    <!-- =====================================================
+         PÁGINA DE COMPRA
+    ====================================================== -->
 
     <main class="checkout">
+
 
         <section class="titulo">
 
@@ -511,22 +661,18 @@
         </section>
 
 
+
         <div class="checkout-grid">
 
 
-            <!-- ==========================================
+            <!-- =================================================
                  COLUMNA IZQUIERDA
                  FORMULARIO DE ENVÍO
-            =========================================== -->
+            ================================================== -->
 
             <div>
 
                 <section class="seccion">
-
-                    <!-- CAMBIADO:
-                         Antes decía "Dirección o lugar".
-                         Ahora solamente dice "Envío".
-                    -->
 
                     <h2>
                         Envío
@@ -540,9 +686,9 @@
                     <form id="formCompra">
 
 
-                        <!-- ======================================
+                        <!-- =========================================
                              DIRECCIÓN
-                        ======================================= -->
+                        ========================================== -->
 
                         <div class="campo">
 
@@ -561,15 +707,17 @@
                         </div>
 
 
-                        <!-- ======================================
-                             CALLE SIN NÚMERO
-                        ======================================= -->
+
+                        <!-- =========================================
+                             SIN NÚMERO
+                        ========================================== -->
 
                         <label class="check-line">
 
                             <input
                                 type="checkbox"
                                 id="sinNumero"
+                                name="sinNumero"
                             >
 
                             <span>
@@ -579,232 +727,231 @@
                         </label>
 
 
-                        <!-- ======================================
-                             PROVINCIA
-                             
-                             SE ELIMINÓ COMPLETAMENTE EL CAMPO
-                             "BUSCAR PROVINCIA".
-                        ======================================= -->
 
-                        <div class="campo">
+                        <!-- =========================================
+                             PROVINCIA / CANTÓN
+                        ========================================== -->
 
-                            <label for="provincia">
-                                Provincia
-                            </label>
+                        <div class="fila">
 
-                            <select
-                                id="provincia"
-                                name="provincia"
-                                required
-                            >
 
-                                <option value="">
-                                    Selecciona una provincia
-                                </option>
+                            <div class="campo">
 
-                                <option value="Azuay">
-                                    Azuay
-                                </option>
+                                <label for="provincia">
+                                    Provincia
+                                </label>
 
-                                <option value="Bolívar">
-                                    Bolívar
-                                </option>
+                                <select
+                                    id="provincia"
+                                    name="provincia"
+                                    required
+                                >
 
-                                <option value="Cañar">
-                                    Cañar
-                                </option>
+                                    <option value="">
+                                        Selecciona una provincia
+                                    </option>
 
-                                <option value="Carchi">
-                                    Carchi
-                                </option>
+                                    <option value="Azuay">
+                                        Azuay
+                                    </option>
 
-                                <option value="Chimborazo">
-                                    Chimborazo
-                                </option>
+                                    <option value="Bolívar">
+                                        Bolívar
+                                    </option>
 
-                                <option value="Cotopaxi">
-                                    Cotopaxi
-                                </option>
+                                    <option value="Cañar">
+                                        Cañar
+                                    </option>
 
-                                <option value="El Oro">
-                                    El Oro
-                                </option>
+                                    <option value="Carchi">
+                                        Carchi
+                                    </option>
 
-                                <option value="Esmeraldas">
-                                    Esmeraldas
-                                </option>
+                                    <option value="Chimborazo">
+                                        Chimborazo
+                                    </option>
 
-                                <option value="Galápagos">
-                                    Galápagos
-                                </option>
+                                    <option value="Cotopaxi">
+                                        Cotopaxi
+                                    </option>
 
-                                <option value="Guayas">
-                                    Guayas
-                                </option>
+                                    <option value="El Oro">
+                                        El Oro
+                                    </option>
 
-                                <option value="Imbabura">
-                                    Imbabura
-                                </option>
+                                    <option value="Esmeraldas">
+                                        Esmeraldas
+                                    </option>
 
-                                <option value="Loja">
-                                    Loja
-                                </option>
+                                    <option value="Galápagos">
+                                        Galápagos
+                                    </option>
 
-                                <option value="Los Ríos">
-                                    Los Ríos
-                                </option>
+                                    <option value="Guayas">
+                                        Guayas
+                                    </option>
 
-                                <option value="Manabí">
-                                    Manabí
-                                </option>
+                                    <option value="Imbabura">
+                                        Imbabura
+                                    </option>
 
-                                <option value="Morona Santiago">
-                                    Morona Santiago
-                                </option>
+                                    <option value="Loja">
+                                        Loja
+                                    </option>
 
-                                <option value="Napo">
-                                    Napo
-                                </option>
+                                    <option value="Los Ríos">
+                                        Los Ríos
+                                    </option>
 
-                                <option value="Orellana">
-                                    Orellana
-                                </option>
+                                    <option value="Manabí">
+                                        Manabí
+                                    </option>
 
-                                <option value="Pastaza">
-                                    Pastaza
-                                </option>
+                                    <option value="Morona Santiago">
+                                        Morona Santiago
+                                    </option>
 
-                                <option value="Pichincha">
-                                    Pichincha
-                                </option>
+                                    <option value="Napo">
+                                        Napo
+                                    </option>
 
-                                <option value="Santa Elena">
-                                    Santa Elena
-                                </option>
+                                    <option value="Orellana">
+                                        Orellana
+                                    </option>
 
-                                <option value="Santo Domingo de los Tsáchilas">
-                                    Santo Domingo de los Tsáchilas
-                                </option>
+                                    <option value="Pastaza">
+                                        Pastaza
+                                    </option>
 
-                                <option value="Sucumbíos">
-                                    Sucumbíos
-                                </option>
+                                    <option value="Pichincha">
+                                        Pichincha
+                                    </option>
 
-                                <option value="Tungurahua">
-                                    Tungurahua
-                                </option>
+                                    <option value="Santa Elena">
+                                        Santa Elena
+                                    </option>
 
-                                <option value="Zamora Chinchipe">
-                                    Zamora Chinchipe
-                                </option>
+                                    <option value="Santo Domingo de los Tsáchilas">
+                                        Santo Domingo de los Tsáchilas
+                                    </option>
 
-                                <!--
-                                    OPCIÓN PARA UNA PROVINCIA
-                                    QUE NO ESTÉ EN LA LISTA.
-                                -->
+                                    <option value="Sucumbíos">
+                                        Sucumbíos
+                                    </option>
 
-                                <option value="Otra provincia">
-                                    Otra provincia
-                                </option>
+                                    <option value="Tungurahua">
+                                        Tungurahua
+                                    </option>
 
-                            </select>
+                                    <option value="Zamora Chinchipe">
+                                        Zamora Chinchipe
+                                    </option>
+
+                                    <option value="Otra provincia">
+                                        Otra provincia
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+
+                            <div class="campo">
+
+                                <label for="canton">
+                                    Cantón
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="canton"
+                                    name="canton"
+                                    placeholder="Ej: Guayaquil"
+                                    required
+                                >
+
+                            </div>
 
                         </div>
 
 
-                        <!-- ======================================
-                             OTRA PROVINCIA
-                             
-                             ESTE CAMPO APARECE SOLAMENTE
-                             CUANDO SE SELECCIONA
-                             "Otra provincia".
-                        ======================================= -->
+
+                        <!-- =========================================
+                             CAMPO OTRA PROVINCIA
+
+                             APARECE SOLAMENTE CUANDO EL CLIENTE
+                             SELECCIONA "OTRA PROVINCIA".
+                        ========================================== -->
 
                         <div
                             class="campo"
-                            id="otraProvinciaCampo"
+                            id="campoOtraProvincia"
                         >
 
                             <label for="otraProvincia">
-                                Escribe la provincia
+                                Escribe tu provincia
                             </label>
 
                             <input
                                 type="text"
                                 id="otraProvincia"
                                 name="otraProvincia"
-                                placeholder="Ingresa el nombre de la provincia"
+                                placeholder="Escribe el nombre de la provincia"
                             >
 
                         </div>
 
 
-                        <!-- ======================================
-                             CANTÓN
-                        ======================================= -->
 
-                        <div class="campo">
+                        <!-- =========================================
+                             PARROQUIA / CALLE SECUNDARIA
+                        ========================================== -->
 
-                            <label for="canton">
-                                Cantón
-                            </label>
-
-                            <input
-                                type="text"
-                                id="canton"
-                                name="canton"
-                                placeholder="Ej: Guayaquil"
-                                required
-                            >
-
-                        </div>
+                        <div class="fila">
 
 
-                        <!-- ======================================
-                             PARROQUIA
-                        ======================================= -->
+                            <div class="campo">
 
-                        <div class="campo">
+                                <label for="parroquia">
+                                    Parroquia
+                                </label>
 
-                            <label for="parroquia">
-                                Parroquia
-                            </label>
+                                <input
+                                    type="text"
+                                    id="parroquia"
+                                    name="parroquia"
+                                    placeholder="Ingresa la parroquia"
+                                    required
+                                >
 
-                            <input
-                                type="text"
-                                id="parroquia"
-                                name="parroquia"
-                                placeholder="Ingresa la parroquia"
-                                required
-                            >
-
-                        </div>
+                            </div>
 
 
-                        <!-- ======================================
-                             CALLE SECUNDARIA
-                        ======================================= -->
 
-                        <div class="campo">
+                            <div class="campo">
 
-                            <label for="calleSecundaria">
-                                Calle secundaria
-                            </label>
+                                <label for="calleSecundaria">
+                                    Calle secundaria
+                                </label>
 
-                            <input
-                                type="text"
-                                id="calleSecundaria"
-                                name="calleSecundaria"
-                                placeholder="Ingresa una calle"
-                                required
-                            >
+                                <input
+                                    type="text"
+                                    id="calleSecundaria"
+                                    name="calleSecundaria"
+                                    placeholder="Ingresa una calle"
+                                    required
+                                >
+
+                            </div>
 
                         </div>
 
 
-                        <!-- ======================================
+
+                        <!-- =========================================
                              DEPARTAMENTO
-                        ======================================= -->
+                        ========================================== -->
 
                         <div class="campo">
 
@@ -822,9 +969,10 @@
                         </div>
 
 
-                        <!-- ======================================
+
+                        <!-- =========================================
                              INDICACIONES
-                        ======================================= -->
+                        ========================================== -->
 
                         <div class="campo">
 
@@ -842,9 +990,10 @@
                         </div>
 
 
-                        <!-- ======================================
+
+                        <!-- =========================================
                              DATOS DE QUIEN RECIBE
-                        ======================================= -->
+                        ========================================== -->
 
                         <h2 style="margin-top:35px;">
                             Datos de quien recibe
@@ -853,6 +1002,7 @@
                         <p class="seccion-subtitulo">
                             Llamaremos si hay un problema con la entrega.
                         </p>
+
 
 
                         <div class="campo">
@@ -872,9 +1022,6 @@
                         </div>
 
 
-                        <!-- ======================================
-                             TELÉFONO
-                        ======================================= -->
 
                         <div class="campo">
 
@@ -894,9 +1041,10 @@
                         </div>
 
 
-                        <!-- ======================================
+
+                        <!-- =========================================
                              MENSAJE DE ERROR
-                        ======================================= -->
+                        ========================================== -->
 
                         <div
                             id="mensajeError"
@@ -913,12 +1061,14 @@
             </div>
 
 
-            <!-- ==========================================
+
+            <!-- =================================================
                  COLUMNA DERECHA
                  RESUMEN DE COMPRA
-            =========================================== -->
+            ================================================== -->
 
             <div>
+
 
                 <section class="seccion">
 
@@ -931,17 +1081,27 @@
                     </p>
 
 
-                    <!-- ======================================
+
+                    <!-- =============================================
                          PRODUCTO
-                         
-                         EDITA AQUÍ:
-                         IMAGEN
-                         NOMBRE
-                         CANTIDAD
-                         PRECIO
-                    ======================================= -->
+
+                         EDITAR AQUÍ:
+
+                         IMAGEN:
+                         img/delta.png
+
+                         NOMBRE:
+                         Cable Delta macho a 2 SATA hembra
+
+                         CANTIDAD:
+                         Cantidad: 1
+
+                         PRECIO:
+                         $10.00
+                    ============================================== -->
 
                     <div class="producto-resumen">
+
 
                         <div class="producto-resumen-imagen">
 
@@ -951,6 +1111,7 @@
                             >
 
                         </div>
+
 
 
                         <div class="producto-resumen-info">
@@ -966,18 +1127,22 @@
                         </div>
 
 
+
                         <div class="producto-resumen-precio">
                             $10.00
                         </div>
 
+
                     </div>
 
 
-                    <!-- ======================================
+
+                    <!-- =============================================
                          PRECIO DEL PRODUCTO
-                         
-                         EDITA $10.00 SI CAMBIAS EL PRECIO.
-                    ======================================= -->
+
+                         EDITAR:
+                         $10.00
+                    ============================================== -->
 
                     <div class="resumen-linea">
 
@@ -992,16 +1157,19 @@
                     </div>
 
 
-                    <!-- ======================================
+
+                    <!-- =============================================
                          ENVÍO
-                         
-                         PUEDES CAMBIAR:
-                         
-                         Se coordina
-                         Gratis
-                         $3.00
-                         $5.00
-                    ======================================= -->
+
+                         GRATIS:
+                         cambia "Se coordina" por "Gratis"
+
+                         CON PRECIO:
+                         cambia por "$3.00"
+
+                         SEGÚN DESTINO:
+                         "Se calcula según destino"
+                    ============================================== -->
 
                     <div class="resumen-linea">
 
@@ -1016,11 +1184,16 @@
                     </div>
 
 
-                    <!-- ======================================
+
+                    <!-- =============================================
                          TOTAL
-                         
-                         EDITA EL TOTAL FINAL.
-                    ======================================= -->
+
+                         SI PRODUCTO = $10 Y ENVÍO GRATIS:
+                         Total = $10.00
+
+                         SI PRODUCTO = $10 Y ENVÍO $3:
+                         Total = $13.00
+                    ============================================== -->
 
                     <div class="resumen-linea total">
 
@@ -1035,19 +1208,35 @@
                     </div>
 
 
-                    <!-- ======================================
-                         BOTÓN CONTINUAR AL PAGO
-                         
-                         ESTE BOTÓN ABRE EL LINK DE PAYPHONE.
-                    ======================================= -->
+
+                    <!-- =============================================
+                         BOTÓN DE PAGO
+
+                         ESTE ES EL BOTÓN QUE:
+
+                         1. REVISA EL FORMULARIO.
+                         2. ENVÍA LOS DATOS A GOOGLE SHEETS.
+                         3. ABRE PAYPHONE.
+                    ============================================== -->
 
                     <button
                         type="button"
+                        id="btnPagar"
                         class="btn-pagar"
                         onclick="continuarAlPago()"
                     >
                         Continuar al pago
                     </button>
+
+
+
+                    <div
+                        id="mensajeProceso"
+                        class="mensaje-proceso"
+                    >
+                        Registrando tu pedido...
+                    </div>
+
 
 
                     <p class="seguridad">
@@ -1056,61 +1245,82 @@
 
                 </section>
 
+
             </div>
+
 
         </div>
 
     </main>
 
 
-    <!-- ==========================================
+
+    <!-- =====================================================
          FOOTER
-    =========================================== -->
+    ====================================================== -->
 
     <footer>
 
         <p>
+
             © 2026
-            <strong>ZENTROXEC</strong>.
+
+            <strong>
+                ZENTROXEC
+            </strong>.
+
             Todos los derechos reservados.
+
         </p>
 
     </footer>
 
 
-    <!-- ==========================================
+
+    <!-- =====================================================
          JAVASCRIPT
-    =========================================== -->
+    ====================================================== -->
 
     <script>
 
-        /* ==================================================
-           LINK DE PAYPHONE
 
-           PRODUCTO:
-           Cable Delta macho a 2 SATA hembra
+        /* =====================================================
+           🔴 GOOGLE APPS SCRIPT
 
-           SI CAMBIAS EL LINK DE PAGO EN EL FUTURO,
-           MODIFICA SOLAMENTE ESTA URL.
-        ================================================== */
+           ESTE ES EL ENLACE QUE ME PROPORCIONASTE.
+
+           NO CAMBIES ESTA URL A MENOS QUE CREES
+           OTRO GOOGLE APPS SCRIPT.
+        ====================================================== */
+
+        const GOOGLE_SCRIPT_URL =
+            "https://script.google.com/macros/s/AKfycbzfVmHhyISYruGRZk3R30fBiCvOM5Gv5rQODIsxlMqCIiIsBF_8T6AFvhQTVUf7cMfb/exec";
+
+
+
+        /* =====================================================
+           🔴 PAYPHONE
+
+           ESTE ES EL ENLACE DE COBRO DE ESTE PRODUCTO.
+
+           Si posteriormente tienes otro enlace de PayPhone,
+           solamente cambia esta URL.
+        ====================================================== */
 
         const PAYPHONE_URL =
             "https://ppls.me/KT8CHtyeUHxwBmYlg5NIyA";
 
 
-        /* ==================================================
-           MOSTRAR "OTRA PROVINCIA"
 
-           Cuando el cliente selecciona "Otra provincia",
-           aparece automáticamente el campo para escribir
-           el nombre de la provincia.
-        ================================================== */
+        /* =====================================================
+           MOSTRAR / OCULTAR "OTRA PROVINCIA"
+        ====================================================== */
 
         const provincia =
             document.getElementById("provincia");
 
-        const otraProvinciaCampo =
-            document.getElementById("otraProvinciaCampo");
+        const campoOtraProvincia =
+            document.getElementById("campoOtraProvincia");
 
         const otraProvincia =
             document.getElementById("otraProvincia");
@@ -1120,37 +1330,64 @@
 
             if (this.value === "Otra provincia") {
 
-                otraProvinciaCampo.style.display = "block";
+                campoOtraProvincia.style.display = "block";
 
                 otraProvincia.required = true;
 
             } else {
 
-                otraProvinciaCampo.style.display = "none";
+                campoOtraProvincia.style.display = "none";
 
                 otraProvincia.required = false;
 
                 otraProvincia.value = "";
-
             }
 
         });
 
 
-        /* ==================================================
-           CONTINUAR AL PAGO
-        ================================================== */
 
-        function continuarAlPago() {
+        /* =====================================================
+           CONTINUAR AL PAGO
+
+           FUNCIONAMIENTO:
+
+           1. Comprueba que el formulario esté completo.
+           2. Recoge los datos.
+           3. Los envía a Google Apps Script.
+           4. Google Apps Script los registra en Google Sheets.
+           5. Abre PayPhone.
+
+           IMPORTANTE:
+
+           El cliente NO introduce aquí los datos de tarjeta.
+
+           El pago se realiza directamente en PayPhone.
+        ====================================================== */
+
+        async function continuarAlPago() {
+
 
             const formulario =
                 document.getElementById("formCompra");
+
 
             const mensajeError =
                 document.getElementById("mensajeError");
 
 
-            /* Comprobar campos obligatorios */
+            const mensajeProceso =
+                document.getElementById("mensajeProceso");
+
+
+            const boton =
+                document.getElementById("btnPagar");
+
+
+
+            /* =================================================
+               VALIDAR FORMULARIO
+            ================================================== */
 
             if (!formulario.checkValidity()) {
 
@@ -1159,34 +1396,206 @@
                 formulario.reportValidity();
 
                 return;
-
             }
 
-
-            /* Ocultar mensaje de error */
 
             mensajeError.classList.remove("mostrar");
 
 
-            /* ==================================================
-               REDIRECCIÓN A PAYPHONE
 
-               IMPORTANTE:
-               El checkout de PayPhone se abre en una nueva
-               pestaña/ventana.
+            /* =================================================
+               OBTENER PROVINCIA
 
-               Los datos de tarjeta NO se solicitan en esta página.
+               Si seleccionó "Otra provincia", utilizamos
+               el nombre escrito por el cliente.
             ================================================== */
 
-            window.open(
-                PAYPHONE_URL,
-                "_blank",
-                "noopener,noreferrer"
-            );
+            let provinciaFinal =
+                provincia.value;
+
+
+            if (provincia.value === "Otra provincia") {
+
+                provinciaFinal =
+                    otraProvincia.value.trim();
+            }
+
+
+
+            /* =================================================
+               RECOPILAR DATOS
+            ================================================== */
+
+            const datosPedido = {
+
+                fecha:
+                    new Date().toLocaleString("es-EC"),
+
+                producto:
+                    "Cable Delta macho a 2 SATA hembra",
+
+                cantidad:
+                    "1",
+
+                precio:
+                    "$10.00",
+
+                envio:
+                    "Se coordina",
+
+                total:
+                    "$10.00",
+
+                direccion:
+                    document.getElementById("direccion").value,
+
+                sinNumero:
+                    document.getElementById("sinNumero").checked
+                    ? "Sí"
+                    : "No",
+
+                provincia:
+                    provinciaFinal,
+
+                canton:
+                    document.getElementById("canton").value,
+
+                parroquia:
+                    document.getElementById("parroquia").value,
+
+                calleSecundaria:
+                    document.getElementById("calleSecundaria").value,
+
+                departamento:
+                    document.getElementById("departamento").value,
+
+                indicaciones:
+                    document.getElementById("indicaciones").value,
+
+                nombre:
+                    document.getElementById("nombre").value,
+
+                telefono:
+                    document.getElementById("telefono").value
+
+            };
+
+
+
+            /* =================================================
+               DESACTIVAR BOTÓN
+            ================================================== */
+
+            boton.disabled = true;
+
+            boton.textContent =
+                "Registrando pedido...";
+
+            mensajeProceso.classList.add("mostrar");
+
+
+
+            /* =================================================
+               ENVIAR A GOOGLE APPS SCRIPT
+
+               mode: "no-cors"
+
+               Esto permite enviar la información al Apps Script
+               aunque tu página esté alojada en GitHub Pages.
+
+               IMPORTANTE:
+
+               Google Apps Script debe estar publicado como
+               aplicación web.
+            ================================================== */
+
+            try {
+
+
+                await fetch(
+                    GOOGLE_SCRIPT_URL,
+                    {
+
+                        method: "POST",
+
+                        mode: "no-cors",
+
+                        headers: {
+                            "Content-Type":
+                                "text/plain;charset=utf-8"
+                        },
+
+                        body:
+                            JSON.stringify(datosPedido)
+
+                    }
+                );
+
+
+                /* =================================================
+                   GUARDAR TAMBIÉN UNA COPIA LOCAL
+
+                   Esto permite conservar temporalmente los datos
+                   en el navegador en caso de que el usuario
+                   vuelva atrás.
+                ================================================== */
+
+                try {
+
+                    localStorage.setItem(
+                        "ultimoPedidoZentroxEc",
+                        JSON.stringify(datosPedido)
+                    );
+
+                } catch (errorLocal) {
+
+                    console.log(
+                        "No se pudo guardar copia local.",
+                        errorLocal
+                    );
+
+                }
+
+
+
+                /* =================================================
+                   ABRIR PAYPHONE
+
+                   Después de enviar el pedido a Google Sheets,
+                   se abre el enlace de cobro.
+                ================================================== */
+
+                window.location.href =
+                    PAYPHONE_URL;
+
+
+            } catch (error) {
+
+
+                console.error(
+                    "Error al registrar el pedido:",
+                    error
+                );
+
+
+                /* =================================================
+                   AUNQUE HAYA UN PROBLEMA CON GOOGLE SHEETS,
+                   SE PERMITE CONTINUAR A PAYPHONE.
+
+                   Esto evita bloquear la venta si el servicio
+                   de registro presenta un problema temporal.
+                ================================================== */
+
+                window.location.href =
+                    PAYPHONE_URL;
+
+            }
 
         }
 
     </script>
 
+
 </body>
+
 </html>
