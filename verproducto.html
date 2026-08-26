@@ -10,7 +10,6 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-
     <!-- =====================================================
          EDITAR: TÍTULO DE LA PÁGINA
     ====================================================== -->
@@ -26,7 +25,7 @@
 
     <meta
         name="description"
-        content="Cable de poder Delta SATA macho a 2 SATA hembra. Consulta características y detalles del producto en ZENTROXEC."
+        content="Cable de poder Delta SATA macho a 2 SATA hembra. Consulta características, medios de pago y detalles del producto en ZENTROXEC."
     >
 
 
@@ -34,32 +33,22 @@
 
         /* =====================================================
            VARIABLES DE COLORES
-
-           EDITAR AQUÍ SI QUIERES CAMBIAR LOS COLORES
+           
+           EDITAR AQUÍ LOS COLORES DE LA PÁGINA
         ====================================================== */
 
         :root {
 
             --negro: #050505;
-
             --negro-card: #101010;
-
             --negro-suave: #151515;
-
             --blanco: #ffffff;
-
             --gris: #999999;
-
             --gris-claro: #cccccc;
-
             --borde: #252525;
-
             --rojo: #e50914;
-
             --rojo-hover: #b80710;
-
             --verde: #00a650;
-
             --azul: #3483fa;
 
         }
@@ -72,9 +61,7 @@
         * {
 
             margin: 0;
-
             padding: 0;
-
             box-sizing: border-box;
 
         }
@@ -153,9 +140,7 @@
 
 
         /* =====================================================
-           LOGO
-
-           EDITAR: NOMBRE DEL LOGO
+           EDITAR: LOGO
         ====================================================== */
 
         .logo {
@@ -244,8 +229,6 @@
 
         /* =====================================================
            BOTÓN VOLVER
-           
-           EDITAR: TEXTO DEL BOTÓN
         ====================================================== */
 
         .volver {
@@ -307,7 +290,7 @@
 
 
         /* =====================================================
-           GALERÍA DE IMÁGENES
+           GALERÍA
         ====================================================== */
 
         .galeria {
@@ -318,11 +301,9 @@
 
 
         /* =====================================================
-           IMAGEN PRINCIPAL
+           EDITAR: IMAGEN PRINCIPAL
 
-           EDITAR: RUTA DE LA IMAGEN PRINCIPAL
-           
-           Actualmente:
+           Ruta actual:
            img/delta.png
         ====================================================== */
 
@@ -367,11 +348,8 @@
 
         /* =====================================================
            SEGUNDA IMAGEN
-
-           EDITAR: RUTA DE LA SEGUNDA IMAGEN
            
-           Actualmente:
-           63664.jpg
+           EDITAR: RUTA DE LA SEGUNDA IMAGEN
         ====================================================== */
 
         .imagen-secundaria {
@@ -431,8 +409,6 @@
 
         /* =====================================================
            CALIFICACIÓN
-           
-           EDITAR: ESTRELLA, CALIFICACIÓN Y VENTAS
         ====================================================== */
 
         .valoracion {
@@ -475,7 +451,7 @@
 
         /* =====================================================
            STOCK
-
+           
            EDITAR: TEXTO DE STOCK
         ====================================================== */
 
@@ -508,8 +484,8 @@
 
         /* =====================================================
            PRECIO
-
-           EL PRECIO CAMBIA AUTOMÁTICAMENTE
+           
+           EL PRECIO SE MODIFICA AUTOMÁTICAMENTE
            SEGÚN LA CANTIDAD.
         ====================================================== */
 
@@ -521,7 +497,7 @@
 
             font-weight: 900;
 
-            margin-bottom: 22px;
+            margin-bottom: 10px;
 
         }
 
@@ -541,8 +517,6 @@
 
         /* =====================================================
            DESCUENTO
-           
-           EDITAR: TEXTO DEL DESCUENTO
         ====================================================== */
 
         .descuento {
@@ -563,189 +537,59 @@
 
             font-weight: 800;
 
-            margin-bottom: 18px;
-
-        }
-
-
-        /* =====================================================
-           MEDIOS DE PAGO
-
-           EDITAR:
-           Los nombres de las tarjetas están dentro
-           del HTML.
-        ====================================================== */
-
-        .medios-pago {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 7px;
-
             margin-bottom: 22px;
-
-            flex-wrap: nowrap;
-
-        }
-
-
-        .medios-pago-titulo {
-
-            color: #888888;
-
-            font-size: 12px;
-
-            font-weight: 700;
-
-            white-space: nowrap;
-
-            margin-right: 4px;
-
-        }
-
-
-        /* =====================================================
-           CÍRCULOS DE MEDIOS DE PAGO
-           
-           EDITAR AQUÍ EL TAMAÑO SI LO NECESITAS
-        ====================================================== */
-
-        .pago-circulo {
-
-            width: 42px;
-
-            height: 42px;
-
-            min-width: 42px;
-
-            border-radius: 50%;
-
-            background: #ffffff;
-
-            border: 1px solid #dddddd;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            color: #111111;
-
-            font-size: 8px;
-
-            font-weight: 900;
-
-            text-align: center;
-
-            overflow: hidden;
-
-        }
-
-
-        .pago-visa {
-
-            color: #173b8f;
-
-            font-size: 11px;
-
-            font-style: italic;
-
-        }
-
-
-        .pago-mastercard {
-
-            color: #111111;
-
-            font-size: 7px;
-
-        }
-
-
-        .pago-discover {
-
-            color: #111111;
-
-            font-size: 7px;
-
-        }
-
-
-        .pago-diners {
-
-            color: #174ea6;
-
-            font-size: 7px;
 
         }
 
 
         /* =====================================================
            CANTIDAD
-
-           EDITAR:
-           Las cantidades disponibles están en el HTML.
-
-           Actualmente:
-           1, 2, 3 y 4
+           
+           EDITAR: CANTIDAD MÁXIMA
+           
+           ACTUALMENTE:
+           1 o 2 unidades
         ====================================================== */
 
-        .cantidad {
+        .cantidad-contenedor {
 
-            width: 100%;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-
-            background: #151515;
-
-            border: 1px solid #252525;
-
-            border-radius: 8px;
-
-            min-height: 50px;
-
-            padding: 0 15px;
-
-            margin-bottom: 10px;
+            margin-bottom: 20px;
 
         }
 
 
-        .cantidad label {
+        .cantidad-titulo {
+
+            display: block;
 
             color: #ffffff;
 
-            font-size: 15px;
+            font-size: 14px;
 
-            font-weight: 700;
+            font-weight: 800;
+
+            margin-bottom: 8px;
 
         }
 
 
-        .cantidad select {
+        .cantidad-select {
 
-            background: #101010;
+            width: 100%;
+
+            min-height: 48px;
+
+            background: #151515;
 
             color: #ffffff;
 
             border: 1px solid #333333;
 
-            border-radius: 6px;
+            border-radius: 8px;
 
-            min-width: 70px;
+            padding: 0 14px;
 
-            height: 38px;
-
-            padding: 0 10px;
-
-            font-size: 14px;
+            font-size: 15px;
 
             font-weight: 700;
 
@@ -756,9 +600,205 @@
         }
 
 
-        .cantidad select:focus {
+        .cantidad-select:focus {
 
             border-color: var(--rojo);
+
+        }
+
+
+        /* =====================================================
+           MEDIOS DE PAGO
+           
+           EDITAR: TEXTOS O ICONOS SI NECESITAS
+        ====================================================== */
+
+        .medios-pago {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .medios-pago-titulo {
+
+            color: #999999;
+
+            font-size: 13px;
+
+            white-space: nowrap;
+
+        }
+
+
+        .tarjetas {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 5px;
+
+        }
+
+
+        .tarjeta {
+
+            width: 42px;
+
+            height: 28px;
+
+            border-radius: 50%;
+
+            background: #ffffff;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: #111111;
+
+            font-size: 6px;
+
+            font-weight: 900;
+
+            overflow: hidden;
+
+            border: 1px solid #dddddd;
+
+        }
+
+
+        .tarjeta.visa {
+
+            color: #1a3fa3;
+
+        }
+
+
+        .tarjeta.mastercard {
+
+            color: #d41414;
+
+        }
+
+
+        .tarjeta.discover {
+
+            color: #e67e22;
+
+        }
+
+
+        .tarjeta.diners {
+
+            color: #1769aa;
+
+        }
+
+
+        /* =====================================================
+           INFORMACIÓN BÁSICA
+        ====================================================== */
+
+        .datos {
+
+            border-top:
+                1px solid var(--borde);
+
+            border-bottom:
+                1px solid var(--borde);
+
+            padding:
+                18px 0;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .dato {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            margin-bottom: 10px;
+
+            font-size: 14px;
+
+        }
+
+
+        .dato:last-child {
+
+            margin-bottom: 0;
+
+        }
+
+
+        .dato-label {
+
+            color: #777777;
+
+        }
+
+
+        .dato-valor {
+
+            color: #ffffff;
+
+            font-weight: 700;
+
+            text-align: right;
+
+        }
+
+
+        /* =====================================================
+           ENTREGA
+        ====================================================== */
+
+        .entrega {
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .entrega-principal {
+
+            font-size: 16px;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .verde {
+
+            color: var(--verde);
+
+            font-weight: 800;
+
+        }
+
+
+        .entrega-secundaria {
+
+            color: #888888;
+
+            font-size: 14px;
 
         }
 
@@ -811,8 +851,14 @@
         /* =====================================================
            EDITAR: BOTÓN COMPRAR AHORA
 
-           El enlace cambia automáticamente
-           según la cantidad seleccionada.
+           IMPORTANTE:
+
+           Este botón SIEMPRE manda a comprar.html.
+
+           La cantidad elegida se guarda en:
+           sessionStorage
+
+           comprar.html podrá leerla posteriormente.
         ====================================================== */
 
         .btn-comprar {
@@ -839,51 +885,42 @@
 
         /* =====================================================
            BOTÓN AGREGAR AL CARRITO
-           
-           EDITAR:
-           Texto del botón.
-           
-           El icono 🛒 está colocado a la izquierda.
+
+           EDITAR: TEXTO DEL BOTÓN
         ====================================================== */
 
         .btn-carrito {
 
-            background: rgba(52, 131, 250, 0.12);
+            background: #151515;
 
-            color: #5c9cff;
+            color: #ffffff;
 
             border:
-                1px solid rgba(52, 131, 250, 0.35);
-
-            gap: 9px;
+                1px solid #333333;
 
         }
 
 
         .btn-carrito:hover {
 
-            background: rgba(52, 131, 250, 0.20);
+            background: #1c1c1c;
 
-            border-color: #3483fa;
-
-            color: #ffffff;
+            border-color: #555555;
 
         }
 
 
         .icono-carrito {
 
-            font-size: 18px;
+            font-size: 17px;
 
-            line-height: 1;
+            margin-right: 8px;
 
         }
 
 
         /* =====================================================
            BOTÓN WHATSAPP
-           
-           EDITAR: TEXTO DEL BOTÓN
         ====================================================== */
 
         .btn-whatsapp {
@@ -912,8 +949,6 @@
 
         /* =====================================================
            VENDEDOR
-           
-           EDITAR: DATOS DEL VENDEDOR
         ====================================================== */
 
         .vendedor {
@@ -953,17 +988,8 @@
         }
 
 
-        .mercadolider strong {
-
-            color: #dddddd;
-
-        }
-
-
         /* =====================================================
-           BLOQUE DE SEGURIDAD
-           
-           EDITAR: TEXTOS DE SEGURIDAD Y GARANTÍA
+           SEGURIDAD
         ====================================================== */
 
         .seguridad {
@@ -1019,7 +1045,7 @@
 
 
         /* =====================================================
-           SECCIÓN DE CARACTERÍSTICAS
+           DETALLES
         ====================================================== */
 
         .detalles {
@@ -1124,8 +1150,6 @@
 
         /* =====================================================
            FOOTER
-           
-           EDITAR: TEXTO DEL FOOTER
         ====================================================== */
 
         footer {
@@ -1281,40 +1305,6 @@
             }
 
 
-            .medios-pago {
-
-                gap: 5px;
-
-            }
-
-
-            .medios-pago-titulo {
-
-                font-size: 11px;
-
-            }
-
-
-            .pago-circulo {
-
-                width: 38px;
-
-                height: 38px;
-
-                min-width: 38px;
-
-                font-size: 7px;
-
-            }
-
-
-            .pago-visa {
-
-                font-size: 10px;
-
-            }
-
-
             .detalles {
 
                 padding: 25px 20px;
@@ -1381,24 +1371,6 @@
 
             }
 
-
-            .pago-circulo {
-
-                width: 34px;
-
-                height: 34px;
-
-                min-width: 34px;
-
-            }
-
-
-            .medios-pago {
-
-                gap: 3px;
-
-            }
-
         }
 
     </style>
@@ -1411,8 +1383,6 @@
 
     <!-- =====================================================
          HEADER
-
-         EDITAR: LOGO Y ENLACES DEL MENÚ
     ====================================================== -->
 
     <header>
@@ -1420,9 +1390,7 @@
         <div class="header-container">
 
 
-            <!-- =================================================
-                 EDITAR: LOGO
-            ================================================== -->
+            <!-- EDITAR: LOGO -->
 
             <a
                 href="index.html"
@@ -1434,9 +1402,7 @@
             </a>
 
 
-            <!-- =================================================
-                 EDITAR: MENÚ
-            ================================================== -->
+            <!-- EDITAR: ENLACES DEL MENÚ -->
 
             <nav>
 
@@ -1471,11 +1437,7 @@
     <main class="producto-page">
 
 
-        <!-- =================================================
-             BOTÓN VOLVER
-
-             EDITAR: TEXTO O ENLACE SI LO NECESITAS
-        ================================================== -->
+        <!-- EDITAR: TEXTO DEL BOTÓN VOLVER -->
 
         <a
             href="productos.html"
@@ -1487,10 +1449,6 @@
         </a>
 
 
-
-        <!-- =================================================
-             PRODUCTO PRINCIPAL
-        ================================================== -->
 
         <section class="producto-principal">
 
@@ -1505,7 +1463,7 @@
                 <!-- =================================================
                      EDITAR: IMAGEN PRINCIPAL
 
-                     Actualmente:
+                     ACTUAL:
                      img/delta.png
                 ================================================== -->
 
@@ -1521,9 +1479,6 @@
 
                 <!-- =================================================
                      EDITAR: SEGUNDA IMAGEN
-
-                     Actualmente:
-                     63664.jpg
                 ================================================== -->
 
                 <div class="imagen-secundaria">
@@ -1540,15 +1495,13 @@
 
 
             <!-- =================================================
-                 INFORMACIÓN DEL PRODUCTO
+                 INFORMACIÓN
             ================================================== -->
 
             <div class="producto-info">
 
 
-                <!-- =================================================
-                     EDITAR: NOMBRE DEL PRODUCTO
-                ================================================== -->
+                <!-- EDITAR: NOMBRE DEL PRODUCTO -->
 
                 <h1 class="producto-titulo">
 
@@ -1557,9 +1510,7 @@
                 </h1>
 
 
-                <!-- =================================================
-                     EDITAR: CALIFICACIÓN Y VENTAS
-                ================================================== -->
+                <!-- EDITAR: CALIFICACIÓN Y VENTAS -->
 
                 <div class="valoracion">
 
@@ -1582,9 +1533,7 @@
                 </div>
 
 
-                <!-- =================================================
-                     EDITAR: STOCK
-                ================================================== -->
+                <!-- EDITAR: STOCK -->
 
                 <div class="stock">
 
@@ -1596,24 +1545,29 @@
                 <!-- =================================================
                      PRECIO
 
-                     NO CAMBIES EL TEXTO AQUÍ.
-                     
-                     JavaScript lo actualiza automáticamente
-                     según la cantidad seleccionada.
+                     PRECIO BASE:
+                     $10 POR UNIDAD
+
+                     EL JAVASCRIPT CAMBIA AUTOMÁTICAMENTE
+                     EL PRECIO SEGÚN LA CANTIDAD.
                 ================================================== -->
 
-                <div
-                    class="precio"
-                    id="precioProducto"
-                >
+                <div class="precio">
 
-                    US$ 10
+                    US$ <span id="precioEntero">10</span>
+
+                    <span class="precio-decimal">
+                        00
+                    </span>
 
                 </div>
 
 
+
                 <!-- =================================================
-                     EDITAR: DESCUENTO
+                     DESCUENTO
+                     
+                     EDITAR TEXTO
                 ================================================== -->
 
                 <div class="descuento">
@@ -1623,18 +1577,61 @@
                 </div>
 
 
+
+                <!-- =================================================
+                     CANTIDAD
+                     
+                     SOLO HAY:
+                     1 UNIDAD
+                     2 UNIDADES
+                ================================================== -->
+
+                <div class="cantidad-contenedor">
+
+                    <!-- EDITAR: TEXTO -->
+
+                    <label
+                        for="cantidad"
+                        class="cantidad-titulo"
+                    >
+
+                        Cantidad
+
+                    </label>
+
+
+                    <!-- =================================================
+                         EDITAR: OPCIONES DE CANTIDAD
+
+                         Actualmente solamente 1 y 2.
+                    ================================================== -->
+
+                    <select
+                        id="cantidad"
+                        class="cantidad-select"
+                    >
+
+                        <option value="1">
+                            1 unidad
+                        </option>
+
+                        <option value="2">
+                            2 unidades
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
                 <!-- =================================================
                      MEDIOS DE PAGO
-                     
-                     EDITAR:
-                     Puedes cambiar los nombres de las tarjetas
-                     dentro de cada círculo.
+
+                     EDITAR: NOMBRES SI NECESITAS
                 ================================================== -->
 
                 <div class="medios-pago">
-
-
-                    <!-- EDITAR: TEXTO MEDIOS DE PAGO -->
 
                     <span class="medios-pago-titulo">
 
@@ -1643,115 +1640,56 @@
                     </span>
 
 
-                    <!-- EDITAR: VISA -->
-
-                    <div class="pago-circulo pago-visa">
-
-                        VISA
-
-                    </div>
+                    <div class="tarjetas">
 
 
-                    <!-- EDITAR: MASTERCARD -->
-
-                    <div class="pago-circulo pago-mastercard">
-
-                        Mastercard
-
-                    </div>
+                        <div class="tarjeta visa">
+                            VISA
+                        </div>
 
 
-                    <!-- EDITAR: DISCOVER -->
-
-                    <div class="pago-circulo pago-discover">
-
-                        Discover
-
-                    </div>
+                        <div class="tarjeta mastercard">
+                            MC
+                        </div>
 
 
-                    <!-- EDITAR: DINERS -->
+                        <div class="tarjeta discover">
+                            DISC
+                        </div>
 
-                    <div class="pago-circulo pago-diners">
 
-                        Diners
+                        <div class="tarjeta diners">
+                            DINERS
+                        </div>
+
 
                     </div>
 
                 </div>
 
 
+
                 <!-- =================================================
-                     CANTIDAD
+                     DATOS DEL PRODUCTO
 
-                     EDITAR:
-                     Aquí puedes agregar o eliminar cantidades.
-
-                     Actualmente solamente:
-                     1, 2, 3 y 4.
-
-                     Cada cambio de cantidad modifica:
-                     1. El precio.
-                     2. El enlace de COMPRAR AHORA.
+                     NO SE MODIFICA LA ESTRUCTURA.
                 ================================================== -->
 
-                <div class="cantidad">
+                <div class="datos">
 
 
-                    <!-- EDITAR: TEXTO CANTIDAD -->
+                    <div class="dato">
 
-                    <label
-                        for="cantidadProducto"
-                    >
+                        <span class="dato-label">
+                            Color
+                        </span>
 
-                        Cantidad:
+                        <span class="dato-valor">
+                            Negro
+                        </span>
 
-                    </label>
+                    </div>
 
-
-                    <select
-                        id="cantidadProducto"
-                        onchange="actualizarProducto()"
-                    >
-
-
-                        <!-- EDITAR: CANTIDAD 1 -->
-
-                        <option value="1">
-
-                            1
-
-                        </option>
-
-
-                        <!-- EDITAR: CANTIDAD 2 -->
-
-                        <option value="2">
-
-                            2
-
-                        </option>
-
-
-                        <!-- EDITAR: CANTIDAD 3 -->
-
-                        <option value="3">
-
-                            3
-
-                        </option>
-
-
-                        <!-- EDITAR: CANTIDAD 4 -->
-
-                        <option value="4">
-
-                            4
-
-                        </option>
-
-
-                    </select>
 
                 </div>
 
@@ -1765,22 +1703,19 @@
 
 
                     <!-- =================================================
-                         BOTÓN COMPRAR AHORA
-
-                         EDITAR:
-                         El texto puede cambiarse aquí.
+                         COMPRAR AHORA
 
                          IMPORTANTE:
-                         El href de cantidad 1 se utiliza como
-                         enlace de US$10.
 
-                         Si tienes un enlace de pago específico
-                         para US$10, reemplaza solamente el href.
+                         SIEMPRE MANDA A comprar.html.
+
+                         La cantidad seleccionada se guarda
+                         antes de enviarlo.
                     ================================================== -->
 
                     <a
                         href="comprar.html"
-                        id="botonComprar"
+                        id="btnComprar"
                         class="btn btn-comprar"
                     >
 
@@ -1789,26 +1724,20 @@
                     </a>
 
 
+
                     <!-- =================================================
-                         BOTÓN AGREGAR AL CARRITO
+                         AGREGAR AL CARRITO
 
-                         EDITAR:
-                         Puedes cambiar el texto.
-
-                         El icono 🛒 está a la izquierda.
+                         EDITAR: TEXTO DEL BOTÓN
                     ================================================== -->
 
                     <button
                         type="button"
+                        id="btnCarrito"
                         class="btn btn-carrito"
-                        id="botonCarrito"
-                        onclick="agregarAlCarrito()"
                     >
 
-                        <span
-                            class="icono-carrito"
-                            aria-hidden="true"
-                        >
+                        <span class="icono-carrito">
                             🛒
                         </span>
 
@@ -1817,11 +1746,9 @@
                     </button>
 
 
-                    <!-- =================================================
-                         BOTÓN WHATSAPP
 
-                         EDITAR:
-                         Puedes cambiar el texto.
+                    <!-- =================================================
+                         WHATSAPP
                     ================================================== -->
 
                     <a
@@ -1838,10 +1765,11 @@
                 </div>
 
 
+
                 <!-- =================================================
                      VENDEDOR
-
-                     EDITAR: DATOS DEL VENDEDOR
+                     
+                     EDITAR TEXTOS
                 ================================================== -->
 
                 <div class="vendedor">
@@ -1866,10 +1794,11 @@
                 </div>
 
 
-                <!-- =================================================
-                     COMPRA PROTEGIDA
 
-                     EDITAR: TEXTOS
+                <!-- =================================================
+                     SEGURIDAD
+                     
+                     EDITAR TEXTOS
                 ================================================== -->
 
                 <div class="seguridad">
@@ -1878,17 +1807,13 @@
                     <div class="seguridad-item">
 
                         <div class="seguridad-icono">
-
                             🛡️
-
                         </div>
 
                         <div class="seguridad-texto">
 
                             <strong>
-
                                 Compra protegida.
-
                             </strong>
 
                             Recibe el producto que esperabas
@@ -1903,17 +1828,13 @@
                     <div class="seguridad-item">
 
                         <div class="seguridad-icono">
-
                             🏅
-
                         </div>
 
                         <div class="seguridad-texto">
 
                             <strong>
-
                                 Garantía.
-
                             </strong>
 
                             12 meses de garantía de fábrica.
@@ -1937,9 +1858,7 @@
         <section class="detalles">
 
 
-            <!-- =================================================
-                 EDITAR: TÍTULO
-            ================================================== -->
+            <!-- EDITAR: TÍTULO -->
 
             <h2 class="detalles-titulo">
 
@@ -1950,9 +1869,7 @@
 
 
             <!-- =================================================
-                 01. CARACTERÍSTICAS PRINCIPALES
-
-                 EDITAR CADA <li>
+                 01. CARACTERÍSTICAS
             ================================================== -->
 
             <div class="detalle-bloque">
@@ -1970,13 +1887,11 @@
 
                 <ul>
 
-
                     <!-- EDITAR -->
 
                     <li>
                         Marca: Delta
                     </li>
-
 
                     <!-- EDITAR -->
 
@@ -1984,13 +1899,11 @@
                         Modelo: Cable de poder SATA
                     </li>
 
-
                     <!-- EDITAR -->
 
                     <li>
                         Color: Negro
                     </li>
-
 
                     <!-- EDITAR -->
 
@@ -1998,13 +1911,11 @@
                         Conector principal: Delta macho
                     </li>
 
-
                     <!-- EDITAR -->
 
                     <li>
                         Salidas: 2 conectores SATA hembra
                     </li>
-
 
                 </ul>
 
@@ -2014,8 +1925,6 @@
 
             <!-- =================================================
                  02. OTROS
-
-                 EDITAR CADA <li>
             ================================================== -->
 
             <div class="detalle-bloque">
@@ -2033,13 +1942,11 @@
 
                 <ul>
 
-
                     <!-- EDITAR -->
 
                     <li>
                         Fácil instalación.
                     </li>
-
 
                     <!-- EDITAR -->
 
@@ -2047,20 +1954,17 @@
                         Diseño compacto.
                     </li>
 
-
                     <!-- EDITAR -->
 
                     <li>
                         Cable pensado para alimentación de dispositivos SATA compatibles.
                     </li>
 
-
                     <!-- EDITAR -->
 
                     <li>
                         Color negro.
                     </li>
-
 
                 </ul>
 
@@ -2070,8 +1974,6 @@
 
             <!-- =================================================
                  03. ESPECIFICACIONES
-
-                 EDITAR CADA <li>
             ================================================== -->
 
             <div class="detalle-bloque">
@@ -2089,13 +1991,11 @@
 
                 <ul>
 
-
                     <!-- EDITAR -->
 
                     <li>
                         Conecta una salida Delta con dos conexiones SATA de alimentación.
                     </li>
-
 
                     <!-- EDITAR -->
 
@@ -2103,13 +2003,11 @@
                         Permite alimentar dispositivos compatibles desde la conexión correspondiente.
                     </li>
 
-
                     <!-- EDITAR -->
 
                     <li>
                         Instalación sencilla y directa.
                     </li>
-
 
                     <!-- EDITAR -->
 
@@ -2117,13 +2015,11 @@
                         Longitud aproximada: 15 cm.
                     </li>
 
-
                     <!-- EDITAR -->
 
                     <li>
                         Tipo de conexión: alimentación SATA.
                     </li>
-
 
                 </ul>
 
@@ -2133,8 +2029,6 @@
 
             <!-- =================================================
                  04. PROPÓSITO
-
-                 EDITAR TODO EL TEXTO DEL PÁRRAFO
             ================================================== -->
 
             <div class="detalle-bloque">
@@ -2149,6 +2043,8 @@
 
                 </h3>
 
+
+                <!-- EDITAR: DESCRIPCIÓN -->
 
                 <p>
 
@@ -2179,8 +2075,6 @@
 
     <!-- =====================================================
          FOOTER
-
-         EDITAR: TEXTO DEL FOOTER
     ====================================================== -->
 
     <footer>
@@ -2212,248 +2106,161 @@
            =====================================================
            CONFIGURACIÓN DEL PRODUCTO
            =====================================================
+           
+           EDITAR AQUÍ EL PRECIO BASE
+           
+           1 unidad = $10
+           2 unidades = $20
         ====================================================== */
 
-
-        /*
-         * =====================================================
-         * EDITAR: PRECIO DE UNA UNIDAD
-         *
-         * Actualmente:
-         *
-         * 1 unidad = US$10
-         *
-         * El sistema calcula automáticamente:
-         *
-         * 1 = US$10
-         * 2 = US$20
-         * 3 = US$30
-         * 4 = US$40
-         * =====================================================
-        */
-
-        const PRECIO_UNITARIO = 10;
-
-
-
-        /*
-         * =====================================================
-         * BOTÓN COMPRAR
-         *
-         * NO CAMBIES ESTA LÍNEA.
-         * =====================================================
-        */
-
-        const botonComprar =
-            document.getElementById(
-                "botonComprar"
-            );
-
-
-
-        /*
-         * =====================================================
-         * LINK DE US$10
-         *
-         * IMPORTANTE:
-         *
-         * El sistema toma automáticamente el enlace
-         * que tiene el botón COMPRAR AHORA inicialmente.
-         *
-         * Actualmente es:
-         *
-         * comprar.html
-         *
-         * Si tienes un enlace de pago específico para
-         * US$10, cambia el href del botón arriba.
-         * =====================================================
-        */
-
-        const LINK_10 =
-            botonComprar.getAttribute(
-                "href"
-            );
-
-
-
-        /*
-         * =====================================================
-         * EDITAR:
-         *
-         * LINK DE US$20
-         *
-         * CANTIDAD: 2
-         * =====================================================
-        */
-
-        const LINK_20 =
-            "https://ppls.me/OnmwepzpJyIEMrq7uoPn9g";
-
-
-
-        /*
-         * =====================================================
-         * EDITAR:
-         *
-         * LINK DE US$30
-         *
-         * CANTIDAD: 3
-         * =====================================================
-        */
-
-        const LINK_30 =
-            "https://ppls.me/NUp6yYWJ8LcXDd9jnvRA";
-
-
-
-        /*
-         * =====================================================
-         * EDITAR:
-         *
-         * LINK DE US$40
-         *
-         * CANTIDAD: 4
-         * =====================================================
-        */
-
-        const LINK_40 =
-            "https://ppls.me/SYxHVTiGHCdhEYtqRDHwA";
+        const PRECIO_POR_UNIDAD = 10;
 
 
 
         /* =====================================================
-           =====================================================
-           ACTUALIZAR PRECIO Y ENLACE
-           =====================================================
+           ELEMENTOS DE LA PÁGINA
         ====================================================== */
 
+        const cantidadSelect =
+            document.getElementById("cantidad");
 
-        /*
-         * =====================================================
-         * EDITAR:
-         *
-         * Esta función controla:
-         *
-         * - Cantidad
-         * - Precio
-         * - Enlace de compra
-         * =====================================================
-        */
+        const precioEntero =
+            document.getElementById("precioEntero");
 
-        function actualizarProducto() {
+        const btnComprar =
+            document.getElementById("btnComprar");
 
 
-            /*
-             * Obtener cantidad seleccionada
-            */
+
+        /* =====================================================
+           CAMBIAR PRECIO SEGÚN CANTIDAD
+           
+           EDITAR ESTA FUNCIÓN SOLO SI CAMBIAS
+           EL SISTEMA DE PRECIOS.
+        ====================================================== */
+
+        function actualizarPrecio() {
 
             const cantidad =
-                parseInt(
-                    document.getElementById(
-                        "cantidadProducto"
-                    ).value
-                );
+                Number(cantidadSelect.value);
 
-
-
-            /*
-             * Calcular precio total
-            */
 
             const precioTotal =
-                PRECIO_UNITARIO * cantidad;
+                PRECIO_POR_UNIDAD * cantidad;
 
 
-
-            /*
-             * Mostrar precio actualizado
-            */
-
-            document.getElementById(
-                "precioProducto"
-            ).textContent =
-                "US$ " + precioTotal;
-
+            precioEntero.textContent =
+                precioTotal;
 
 
             /*
-             * =================================================
-             * CAMBIAR ENLACE SEGÚN CANTIDAD
-             * =================================================
+             * Guardamos la cantidad para que
+             * comprar.html pueda utilizarla.
             */
 
-            if (cantidad === 1) {
-
-                botonComprar.href =
-                    LINK_10;
-
-            }
-
-
-            else if (cantidad === 2) {
-
-                botonComprar.href =
-                    LINK_20;
-
-            }
-
-
-            else if (cantidad === 3) {
-
-                botonComprar.href =
-                    LINK_30;
-
-            }
-
-
-            else if (cantidad === 4) {
-
-                botonComprar.href =
-                    LINK_40;
-
-            }
-
-        }
-
-
-
-        /* =====================================================
-           =====================================================
-           AGREGAR AL CARRITO
-           =====================================================
-        ====================================================== */
-
-
-        /*
-         * =====================================================
-         * EDITAR:
-         *
-         * Esta función controla el botón
-         * "AGREGAR AL CARRITO".
-         *
-         * Actualmente muestra un mensaje con
-         * la cantidad seleccionada.
-         *
-         * Aquí posteriormente podemos conectar
-         * un carrito real.
-         * =====================================================
-        */
-
-        function agregarAlCarrito() {
-
-
-            const cantidad =
-                document.getElementById(
-                    "cantidadProducto"
-                ).value;
-
-
-            alert(
-                "Producto agregado al carrito. Cantidad: " +
+            sessionStorage.setItem(
+                "cantidadProducto",
                 cantidad
             );
 
+
+            /*
+             * También guardamos el precio total.
+            */
+
+            sessionStorage.setItem(
+                "precioProducto",
+                precioTotal
+            );
+
         }
+
+
+
+        /* =====================================================
+           DETECTAR CAMBIO DE CANTIDAD
+        ====================================================== */
+
+        cantidadSelect.addEventListener(
+            "change",
+            actualizarPrecio
+        );
+
+
+
+        /* =====================================================
+           COMPRAR AHORA
+           
+           IMPORTANTE:
+
+           NO MANDA DIRECTAMENTE AL LINK DE PAGO.
+
+           Primero manda a:
+
+           comprar.html
+
+           y conserva la cantidad seleccionada.
+        ====================================================== */
+
+        btnComprar.addEventListener(
+            "click",
+            function() {
+
+                actualizarPrecio();
+
+            }
+        );
+
+
+
+        /* =====================================================
+           AGREGAR AL CARRITO
+           
+           EDITAR AQUÍ LA FUNCIÓN DEL CARRITO
+           CUANDO CREES EL SISTEMA COMPLETO.
+        ====================================================== */
+
+        document
+            .getElementById("btnCarrito")
+            .addEventListener(
+                "click",
+                function() {
+
+                    const cantidad =
+                        Number(cantidadSelect.value);
+
+
+                    const precioTotal =
+                        PRECIO_POR_UNIDAD * cantidad;
+
+
+                    /*
+                     * Guardar datos para el carrito.
+                    */
+
+                    sessionStorage.setItem(
+                        "carritoCantidad",
+                        cantidad
+                    );
+
+
+                    sessionStorage.setItem(
+                        "carritoPrecio",
+                        precioTotal
+                    );
+
+
+                    /*
+                     * EDITAR AQUÍ EL MENSAJE
+                     * DEL BOTÓN CARRITO.
+                    */
+
+                    alert(
+                        "Producto agregado al carrito."
+                    );
+
+                }
+            );
 
 
 
@@ -2482,7 +2289,6 @@
             "593960648763";
 
 
-
         /*
          * =====================================================
          * EDITAR AQUÍ EL MENSAJE DE WHATSAPP
@@ -2493,10 +2299,9 @@
             "Hola ZENTROXEC, quiero consultar la disponibilidad del Cable Delta macho a 2 SATA hembra.";
 
 
-
         /*
          * =====================================================
-         * CREAR ENLACE DE WHATSAPP
+         * CREAR ENLACE
          * =====================================================
         */
 
@@ -2505,38 +2310,23 @@
             `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensajeWhatsApp)}`;
 
 
-
         /*
          * =====================================================
-         * ASIGNAR ENLACE AL BOTÓN WHATSAPP
+         * ASIGNAR ENLACE
          * =====================================================
         */
 
         document.getElementById(
             "whatsappProducto"
-        ).href =
-            enlaceWhatsApp;
+        ).href = enlaceWhatsApp;
 
 
 
         /* =====================================================
-           =====================================================
-           INICIAR PÁGINA
-           =====================================================
+           INICIALIZAR PRECIO
         ====================================================== */
 
-
-        /*
-         * =====================================================
-         * Al abrir la página:
-         *
-         * Cantidad = 1
-         * Precio = US$10
-         * Link = enlace de US$10
-         * =====================================================
-        */
-
-        actualizarProducto();
+        actualizarPrecio();
 
 
     </script>
