@@ -38,15 +38,25 @@
         :root {
 
             --negro: #050505;
+
             --negro-card: #101010;
+
             --negro-suave: #151515;
+
             --blanco: #ffffff;
+
             --gris: #999999;
+
             --gris-claro: #cccccc;
+
             --borde: #252525;
+
             --rojo: #e50914;
+
             --rojo-hover: #b80710;
+
             --verde: #00a650;
+
             --azul: #3483fa;
 
         }
@@ -59,7 +69,9 @@
         * {
 
             margin: 0;
+
             padding: 0;
+
             box-sizing: border-box;
 
         }
@@ -288,7 +300,7 @@
 
 
         /* =====================================================
-           GALERÍA DE IMÁGENES
+           GALERÍA
         ====================================================== */
 
         .galeria {
@@ -297,6 +309,10 @@
 
         }
 
+
+        /* =====================================================
+           IMAGEN PRINCIPAL
+        ====================================================== */
 
         .imagen-principal {
 
@@ -336,6 +352,10 @@
 
         }
 
+
+        /* =====================================================
+           SEGUNDA IMAGEN
+        ====================================================== */
 
         .imagen-secundaria {
 
@@ -1469,10 +1489,6 @@
                 </div>
 
 
-                <!-- =================================================
-                     PRECIO
-                ================================================== -->
-
                 <div
                     class="precio"
                     id="precioProducto"
@@ -1489,10 +1505,6 @@
 
                 </div>
 
-
-                <!-- =================================================
-                     MEDIOS DE PAGO
-                ================================================== -->
 
                 <div class="medios-pago">
 
@@ -1588,16 +1600,21 @@
                          BOTÓN COMPRAR AHORA
 
                          IMPORTANTE:
-                         Ahora TODAS las cantidades llevan primero
-                         a comprar.html.
 
-                         La cantidad seleccionada se guarda en
-                         sessionStorage para que comprar.html pueda
-                         leerla.
+                         Para cantidad 1:
+                         comprar.html?cantidad=1&precio=10
+
+                         Para cantidades 2, 3 y 4:
+                         se mantienen tus enlaces de pago actuales.
+
+                         Cuando posteriormente modifiquemos
+                         comprar.html, podrá recibir estos datos
+                         y mostrar el precio correcto en el
+                         RESUMEN DE COMPRA.
                     ================================================== -->
 
                     <a
-                        href="comprar.html"
+                        href="comprar.html?cantidad=1&precio=10"
                         id="botonComprar"
                         class="btn btn-comprar"
                     >
@@ -1606,6 +1623,12 @@
 
                     </a>
 
+
+                    <!-- =================================================
+                         BOTÓN AGREGAR AL CARRITO
+
+                         NO MODIFICADO
+                    ================================================== -->
 
                     <button
                         type="button"
@@ -1625,6 +1648,12 @@
 
                     </button>
 
+
+                    <!-- =================================================
+                         BOTÓN WHATSAPP
+
+                         NO MODIFICADO
+                    ================================================== -->
 
                     <a
                         id="whatsappProducto"
@@ -1743,10 +1772,6 @@
 
 
 
-            <!-- =================================================
-                 01. CARACTERÍSTICAS PRINCIPALES
-            ================================================== -->
-
             <div class="detalle-bloque">
 
                 <h3>
@@ -1788,10 +1813,6 @@
 
 
 
-            <!-- =================================================
-                 02. OTROS
-            ================================================== -->
-
             <div class="detalle-bloque">
 
                 <h3>
@@ -1828,10 +1849,6 @@
             </div>
 
 
-
-            <!-- =================================================
-                 03. ESPECIFICACIONES
-            ================================================== -->
 
             <div class="detalle-bloque">
 
@@ -1873,10 +1890,6 @@
             </div>
 
 
-
-            <!-- =================================================
-                 04. PROPÓSITO
-            ================================================== -->
 
             <div class="detalle-bloque">
 
@@ -1953,48 +1966,91 @@
 
 
         /*
-         * PRECIO UNITARIO
-         *
-         * 1 = US$10
-         * 2 = US$20
-         * 3 = US$30
-         * 4 = US$40
+         * =====================================================
+         * PRECIO DE UNA UNIDAD
+         * =====================================================
         */
 
         const PRECIO_UNITARIO = 10;
 
 
 
-        /* =====================================================
-           ELEMENTOS
-        ====================================================== */
+        /*
+         * =====================================================
+         * BOTÓN COMPRAR
+         * =====================================================
+        */
 
         const botonComprar =
             document.getElementById(
                 "botonComprar"
             );
 
-        const selectorCantidad =
-            document.getElementById(
-                "cantidadProducto"
-            );
 
-        const precioProducto =
-            document.getElementById(
-                "precioProducto"
-            );
+
+        /*
+         * =====================================================
+         * LINK DE US$10
+         *
+         * AHORA SE ENVÍA A comprar.html
+         * JUNTO CON:
+         *
+         * cantidad=1
+         * precio=10
+         *
+         * Esto permitirá que comprar.html conozca
+         * qué cantidad seleccionó el cliente.
+         * =====================================================
+        */
+
+        const LINK_10 =
+            "comprar.html?cantidad=1&precio=10";
+
+
+
+        /*
+         * =====================================================
+         * LINK DE US$20
+         *
+         * Se mantiene el enlace original.
+         * =====================================================
+        */
+
+        const LINK_20 =
+            "https://ppls.me/OnmwepzpJyIEMrq7uoPn9g";
+
+
+
+        /*
+         * =====================================================
+         * LINK DE US$30
+         *
+         * Se mantiene el enlace original.
+         * =====================================================
+        */
+
+        const LINK_30 =
+            "https://ppls.me/NUp6yYWJ8LcXDd9jnvRA";
+
+
+
+        /*
+         * =====================================================
+         * LINK DE US$40
+         *
+         * Se mantiene el enlace original.
+         * =====================================================
+        */
+
+        const LINK_40 =
+            "https://ppls.me/SYxHVTiGHCdhEYtqRDHwA";
 
 
 
         /* =====================================================
-           ACTUALIZAR PRODUCTO
-           
-           Esta función actualiza:
-           
-           1. Cantidad
-           2. Precio
-           3. Datos que se enviarán a comprar.html
+           ACTUALIZAR PRECIO Y ENLACE
         ====================================================== */
+
 
         function actualizarProducto() {
 
@@ -2005,8 +2061,11 @@
 
             const cantidad =
                 parseInt(
-                    selectorCantidad.value
+                    document.getElementById(
+                        "cantidadProducto"
+                    ).value
                 );
+
 
 
             /*
@@ -2017,162 +2076,104 @@
                 PRECIO_UNITARIO * cantidad;
 
 
+
             /*
-             * Mostrar precio
+             * Mostrar precio actualizado
             */
 
-            precioProducto.textContent =
+            document.getElementById(
+                "precioProducto"
+            ).textContent =
                 "US$ " + precioTotal;
 
 
-            /*
-             * =================================================
-             * GUARDAR DATOS DEL PRODUCTO
-             *
-             * Se utilizan para que comprar.html pueda saber
-             * qué producto y qué cantidad seleccionó el cliente.
-             * =================================================
-            */
-
-            sessionStorage.setItem(
-                "productoNombre",
-                "Cable de Poder Delta SATA Macho a 2x SATA Hembra"
-            );
-
-
-            sessionStorage.setItem(
-                "productoCantidad",
-                cantidad
-            );
-
-
-            sessionStorage.setItem(
-                "productoPrecioUnitario",
-                PRECIO_UNITARIO
-            );
-
-
-            sessionStorage.setItem(
-                "productoPrecioTotal",
-                precioTotal
-            );
-
 
             /*
              * =================================================
-             * EL BOTÓN SIEMPRE VA A comprar.html
-             *
-             * La cantidad ya está guardada en sessionStorage.
+             * CAMBIAR ENLACE SEGÚN CANTIDAD
              * =================================================
             */
 
-            botonComprar.href =
-                "comprar.html";
+
+            if (cantidad === 1) {
+
+                /*
+                 * 1 unidad
+                 *
+                 * Envía a comprar.html
+                 * la cantidad y el precio.
+                */
+
+                botonComprar.href =
+                    "comprar.html?cantidad=1&precio=10";
+
+            }
+
+
+            else if (cantidad === 2) {
+
+                /*
+                 * 2 unidades
+                 *
+                 * Se mantiene el enlace de pago existente.
+                */
+
+                botonComprar.href =
+                    LINK_20;
+
+            }
+
+
+            else if (cantidad === 3) {
+
+                /*
+                 * 3 unidades
+                 *
+                 * Se mantiene el enlace de pago existente.
+                */
+
+                botonComprar.href =
+                    LINK_30;
+
+            }
+
+
+            else if (cantidad === 4) {
+
+                /*
+                 * 4 unidades
+                 *
+                 * Se mantiene el enlace de pago existente.
+                */
+
+                botonComprar.href =
+                    LINK_40;
+
+            }
 
         }
 
 
 
         /* =====================================================
-           PREPARAR COMPRA
-           
-           Antes de entrar a comprar.html se vuelve a guardar
-           la cantidad seleccionada para evitar perderla.
-        ====================================================== */
-
-        botonComprar.addEventListener(
-            "click",
-            function () {
-
-
-                const cantidad =
-                    parseInt(
-                        selectorCantidad.value
-                    );
-
-
-                const precioTotal =
-                    PRECIO_UNITARIO * cantidad;
-
-
-                sessionStorage.setItem(
-                    "productoNombre",
-                    "Cable de Poder Delta SATA Macho a 2x SATA Hembra"
-                );
-
-
-                sessionStorage.setItem(
-                    "productoCantidad",
-                    cantidad
-                );
-
-
-                sessionStorage.setItem(
-                    "productoPrecioUnitario",
-                    PRECIO_UNITARIO
-                );
-
-
-                sessionStorage.setItem(
-                    "productoPrecioTotal",
-                    precioTotal
-                );
-
-            }
-        );
-
-
-
-        /* =====================================================
            AGREGAR AL CARRITO
+           
+           NO MODIFICADO
         ====================================================== */
+
 
         function agregarAlCarrito() {
 
 
             const cantidad =
-                parseInt(
-                    selectorCantidad.value
-                );
+                document.getElementById(
+                    "cantidadProducto"
+                ).value;
 
-
-            const precioTotal =
-                PRECIO_UNITARIO * cantidad;
-
-
-            /*
-             * Guardar producto actual.
-            */
-
-            sessionStorage.setItem(
-                "carritoProducto",
-                "Cable de Poder Delta SATA Macho a 2x SATA Hembra"
-            );
-
-
-            sessionStorage.setItem(
-                "carritoCantidad",
-                cantidad
-            );
-
-
-            sessionStorage.setItem(
-                "carritoPrecio",
-                precioTotal
-            );
-
-
-            /*
-             * Mensaje actual.
-             *
-             * Posteriormente aquí se puede conectar
-             * un carrito completo.
-            */
 
             alert(
-                "Producto agregado al carrito.\n\n" +
-                "Cantidad: " + cantidad + "\n" +
-                "Total: US$ " + precioTotal
+                "Producto agregado al carrito. Cantidad: " +
+                cantidad
             );
 
         }
@@ -2184,43 +2185,21 @@
         ====================================================== */
 
 
-        /*
-         * NÚMERO DE WHATSAPP
-         *
-         * Ecuador:
-         * 593960648763
-         *
-         * SIN +
-         * SIN ESPACIOS
-         * SIN GUIONES
-        */
-
         const WHATSAPP =
             "593960648763";
 
 
-
-        /*
-         * MENSAJE DE WHATSAPP
-        */
 
         const mensajeWhatsApp =
             "Hola ZENTROXEC, quiero consultar la disponibilidad del Cable Delta macho a 2 SATA hembra.";
 
 
 
-        /*
-         * CREAR ENLACE
-        */
-
         const enlaceWhatsApp =
+
             `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensajeWhatsApp)}`;
 
 
-
-        /*
-         * ASIGNAR ENLACE
-        */
 
         document.getElementById(
             "whatsappProducto"
@@ -2231,16 +2210,19 @@
 
         /* =====================================================
            INICIAR PÁGINA
-           
-           Cantidad inicial:
-           1
-           
-           Precio:
-           US$10
-           
-           Compra:
-           comprar.html
         ====================================================== */
+
+
+        /*
+         * Al abrir:
+         *
+         * Cantidad = 1
+         * Precio = US$10
+         *
+         * Comprar ahora:
+         *
+         * comprar.html?cantidad=1&precio=10
+        */
 
         actualizarProducto();
 
