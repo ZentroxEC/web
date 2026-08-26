@@ -131,7 +131,6 @@
 
 
         nav a:hover {
-
             color: #e50914;
         }
 
@@ -173,7 +172,6 @@
 
 
         .titulo h1 span {
-
             color: #e50914;
         }
 
@@ -245,7 +243,6 @@
            ===================================================== */
 
         .campo {
-
             margin-bottom: 18px;
         }
 
@@ -571,7 +568,6 @@
 
 
         .mensaje-error.mostrar {
-
             display: block;
         }
 
@@ -604,7 +600,6 @@
 
 
         .mensaje-exito.mostrar {
-
             display: block;
         }
 
@@ -637,7 +632,6 @@
 
 
         footer strong {
-
             color: #ffffff;
         }
 
@@ -695,7 +689,6 @@
 
 
             .seccion {
-
                 padding: 20px;
             }
 
@@ -710,7 +703,6 @@
 
 
             .producto-resumen-precio {
-
                 font-size: 17px;
             }
         }
@@ -869,101 +861,30 @@
                                         Selecciona una provincia
                                     </option>
 
-                                    <option>
-                                        Azuay
-                                    </option>
-
-                                    <option>
-                                        Bolívar
-                                    </option>
-
-                                    <option>
-                                        Cañar
-                                    </option>
-
-                                    <option>
-                                        Carchi
-                                    </option>
-
-                                    <option>
-                                        Chimborazo
-                                    </option>
-
-                                    <option>
-                                        Cotopaxi
-                                    </option>
-
-                                    <option>
-                                        El Oro
-                                    </option>
-
-                                    <option>
-                                        Esmeraldas
-                                    </option>
-
-                                    <option>
-                                        Galápagos
-                                    </option>
-
-                                    <option>
-                                        Guayas
-                                    </option>
-
-                                    <option>
-                                        Imbabura
-                                    </option>
-
-                                    <option>
-                                        Loja
-                                    </option>
-
-                                    <option>
-                                        Los Ríos
-                                    </option>
-
-                                    <option>
-                                        Manabí
-                                    </option>
-
-                                    <option>
-                                        Morona Santiago
-                                    </option>
-
-                                    <option>
-                                        Napo
-                                    </option>
-
-                                    <option>
-                                        Orellana
-                                    </option>
-
-                                    <option>
-                                        Pastaza
-                                    </option>
-
-                                    <option>
-                                        Pichincha
-                                    </option>
-
-                                    <option>
-                                        Santa Elena
-                                    </option>
-
-                                    <option>
-                                        Santo Domingo de los Tsáchilas
-                                    </option>
-
-                                    <option>
-                                        Sucumbíos
-                                    </option>
-
-                                    <option>
-                                        Tungurahua
-                                    </option>
-
-                                    <option>
-                                        Zamora Chinchipe
-                                    </option>
+                                    <option>Azuay</option>
+                                    <option>Bolívar</option>
+                                    <option>Cañar</option>
+                                    <option>Carchi</option>
+                                    <option>Chimborazo</option>
+                                    <option>Cotopaxi</option>
+                                    <option>El Oro</option>
+                                    <option>Esmeraldas</option>
+                                    <option>Galápagos</option>
+                                    <option>Guayas</option>
+                                    <option>Imbabura</option>
+                                    <option>Loja</option>
+                                    <option>Los Ríos</option>
+                                    <option>Manabí</option>
+                                    <option>Morona Santiago</option>
+                                    <option>Napo</option>
+                                    <option>Orellana</option>
+                                    <option>Pastaza</option>
+                                    <option>Pichincha</option>
+                                    <option>Santa Elena</option>
+                                    <option>Santo Domingo de los Tsáchilas</option>
+                                    <option>Sucumbíos</option>
+                                    <option>Tungurahua</option>
+                                    <option>Zamora Chinchipe</option>
 
                                     <option value="otra">
                                         Otra provincia
@@ -1206,12 +1127,14 @@
                         <div class="producto-resumen-imagen">
 
                             <!--
+                            =====================================================
                             EDITAR IMAGEN AQUÍ
 
                             Cambia:
                             img/delta.png
 
                             por la imagen de tu producto.
+                            =====================================================
                             -->
 
                             <img
@@ -1232,9 +1155,16 @@
                             </h3>
 
 
-                            <!-- EDITAR CANTIDAD -->
+                            <!--
+                            =====================================================
+                            CANTIDAD DINÁMICA
 
-                            <p>
+                            Este texto cambia automáticamente dependiendo
+                            de la cantidad seleccionada en verproducto.html.
+                            =====================================================
+                            -->
+
+                            <p id="cantidadProducto">
                                 Cantidad: 1
                             </p>
 
@@ -1242,12 +1172,21 @@
 
 
 
-                        <!-- EDITAR PRECIO -->
+                        <!--
+                        =====================================================
+                        PRECIO DINÁMICO
 
-                        <div class="producto-resumen-precio">
+                        Cambia automáticamente:
+                        1 unidad = $10.00
+                        2 unidades = $20.00
+                        =====================================================
+                        -->
 
+                        <div
+                            class="producto-resumen-precio"
+                            id="precioProducto"
+                        >
                             $10.00
-
                         </div>
 
                     </div>
@@ -1262,7 +1201,7 @@
                             Producto
                         </span>
 
-                        <span>
+                        <span id="subtotalProducto">
                             $10.00
                         </span>
 
@@ -1273,7 +1212,7 @@
                     <!-- ENVÍO -->
 
                     <!--
-                    =================================================
+                    =====================================================
                     EDITAR ENVÍO
 
                     GRATIS:
@@ -1284,7 +1223,7 @@
 
                     POR COORDINAR:
                     <span>Se coordina</span>
-                    =================================================
+                    =====================================================
                     -->
 
                     <div class="resumen-linea">
@@ -1309,7 +1248,7 @@
                             Total
                         </span>
 
-                        <span>
+                        <span id="totalProducto">
                             $10.00
                         </span>
 
@@ -1324,6 +1263,12 @@
                     <!-- =================================================
                          BOTÓN CONTINUAR AL PAGO
                          ================================================= -->
+
+                    <!--
+                    =====================================================
+                    EDITAR TEXTO DEL BOTÓN AQUÍ
+                    =====================================================
+                    -->
 
                     <button
                         type="button"
@@ -1401,13 +1346,191 @@
 
 
         /* =====================================================
-           🔴 PAYPHONE
+           🔴 CONFIGURACIÓN DEL PRODUCTO
 
-           Este es el enlace de cobro de este producto.
+           EDITAR AQUÍ SI CAMBIAS EL PRODUCTO.
+
+           Precio base:
+           1 unidad = $10
+
+           Actualmente solo existen:
+
+           Cantidad 1 = $10
+           Cantidad 2 = $20
            ===================================================== */
 
-        const PAYPHONE_URL =
-            "https://ppls.me/KT8CHtyeUHxwBmYlg5NIyA";
+        const PRECIO_UNITARIO = 10;
+
+
+
+        /* =====================================================
+           🔴 ENLACES DE PAYPHONE
+
+           MUY IMPORTANTE:
+
+           Cantidad 1 → enlace de $10
+
+           Cantidad 2 → enlace de $20
+
+           Si posteriormente agregas más cantidades,
+           puedes añadirlas aquí.
+           ===================================================== */
+
+        const PAYPHONE_LINKS = {
+
+            1:
+                "https://ppls.me/KT8CHtyeUHxwBmYlg5NIyA",
+
+            2:
+                "https://ppls.me/OnmwepzpJyIEMrq7uoPn9g"
+
+        };
+
+
+
+        /* =====================================================
+           🔴 OBTENER CANTIDAD DESDE verproducto.html
+
+           verproducto.html debe enviar algo parecido a:
+
+           comprar.html?cantidad=1&precio=10
+
+           o:
+
+           comprar.html?cantidad=2&precio=20
+
+           ===================================================== */
+
+        const parametrosURL =
+            new URLSearchParams(
+                window.location.search
+            );
+
+
+
+        let cantidad =
+            parseInt(
+                parametrosURL.get("cantidad")
+            );
+
+
+
+        let precioRecibido =
+            parseFloat(
+                parametrosURL.get("precio")
+            );
+
+
+
+        /* =====================================================
+           VALIDACIÓN
+
+           Si no llega una cantidad válida,
+           utilizamos cantidad 1.
+
+           Si no llega un precio válido,
+           calculamos el precio automáticamente.
+           ===================================================== */
+
+        if (
+            !cantidad ||
+            cantidad < 1 ||
+            cantidad > 2
+        ) {
+
+            cantidad = 1;
+
+        }
+
+
+
+        /* =====================================================
+           PRECIO FINAL
+
+           El precio se calcula según la cantidad.
+
+           1 × $10 = $10
+           2 × $10 = $20
+
+           De esta forma no dependemos únicamente del
+           precio enviado desde la otra página.
+           ===================================================== */
+
+        let precioTotal =
+            cantidad * PRECIO_UNITARIO;
+
+
+
+        /* =====================================================
+           ELEMENTOS DEL RESUMEN
+           ===================================================== */
+
+        const cantidadProducto =
+            document.getElementById(
+                "cantidadProducto"
+            );
+
+
+        const precioProducto =
+            document.getElementById(
+                "precioProducto"
+            );
+
+
+        const subtotalProducto =
+            document.getElementById(
+                "subtotalProducto"
+            );
+
+
+        const totalProducto =
+            document.getElementById(
+                "totalProducto"
+            );
+
+
+
+        /* =====================================================
+           ACTUALIZAR RESUMEN
+
+           Esta función modifica:
+
+           - Cantidad
+           - Precio del producto
+           - Subtotal
+           - Total
+           ===================================================== */
+
+        function actualizarResumen() {
+
+
+            cantidadProducto.textContent =
+                "Cantidad: " + cantidad;
+
+
+            precioProducto.textContent =
+                "$" +
+                precioTotal.toFixed(2);
+
+
+            subtotalProducto.textContent =
+                "$" +
+                precioTotal.toFixed(2);
+
+
+            totalProducto.textContent =
+                "$" +
+                precioTotal.toFixed(2);
+
+        }
+
+
+
+        /* =====================================================
+           EJECUTAR AL CARGAR LA PÁGINA
+           ===================================================== */
+
+        actualizarResumen();
 
 
 
@@ -1416,12 +1539,16 @@
            ===================================================== */
 
         const provincia =
-            document.getElementById("provincia");
+            document.getElementById(
+                "provincia"
+            );
+
 
         const otraProvinciaContainer =
             document.getElementById(
                 "otraProvinciaContainer"
             );
+
 
         const otraProvincia =
             document.getElementById(
@@ -1433,21 +1560,26 @@
             "change",
             function () {
 
-                if (this.value === "otra") {
+                if (
+                    this.value === "otra"
+                ) {
 
                     otraProvinciaContainer.style.display =
                         "block";
 
-                    otraProvincia.required = true;
+                    otraProvincia.required =
+                        true;
 
                 } else {
 
                     otraProvinciaContainer.style.display =
                         "none";
 
-                    otraProvincia.required = false;
+                    otraProvincia.required =
+                        false;
 
-                    otraProvincia.value = "";
+                    otraProvincia.value =
+                        "";
 
                 }
 
@@ -1461,8 +1593,9 @@
 
            1. Comprueba formulario.
            2. Recoge los datos.
-           3. Envía el pedido a Google Sheets.
-           4. Abre PayPhone.
+           3. Obtiene cantidad y precio.
+           4. Envía el pedido a Google Sheets.
+           5. Abre el PayPhone correspondiente.
            ===================================================== */
 
         async function continuarAlPago() {
@@ -1522,7 +1655,8 @@
                DESACTIVAR BOTÓN
                ================================================= */
 
-            boton.disabled = true;
+            boton.disabled =
+                true;
 
             boton.textContent =
                 "Registrando pedido...";
@@ -1549,6 +1683,49 @@
 
 
             /* =================================================
+               OBTENER LINK DE PAYPHONE
+
+               Según la cantidad:
+
+               1 → $10
+               2 → $20
+               ================================================= */
+
+            const PAYPHONE_URL =
+                PAYPHONE_LINKS[cantidad];
+
+
+
+            /* =================================================
+               SEGURIDAD
+
+               Si por alguna razón no existe un enlace
+               correspondiente a la cantidad, detenemos
+               el proceso.
+               ================================================= */
+
+            if (!PAYPHONE_URL) {
+
+                mensajeError.textContent =
+                    "No existe un enlace de pago para esta cantidad.";
+
+                mensajeError.classList.add(
+                    "mostrar"
+                );
+
+                boton.disabled =
+                    false;
+
+                boton.textContent =
+                    "Continuar al pago";
+
+                return;
+
+            }
+
+
+
+            /* =================================================
                CREAR DATOS DEL PEDIDO
                ================================================= */
 
@@ -1559,15 +1736,18 @@
                         "nombre"
                     ).value.trim(),
 
+
                 telefono:
                     document.getElementById(
                         "telefono"
                     ).value.trim(),
 
+
                 direccion:
                     document.getElementById(
                         "direccion"
                     ).value.trim(),
+
 
                 sinNumero:
                     document.getElementById(
@@ -1576,33 +1756,40 @@
                         ? "Sí"
                         : "No",
 
+
                 provincia:
                     provinciaFinal,
+
 
                 canton:
                     document.getElementById(
                         "canton"
                     ).value.trim(),
 
+
                 parroquia:
                     document.getElementById(
                         "parroquia"
                     ).value.trim(),
+
 
                 calleSecundaria:
                     document.getElementById(
                         "calleSecundaria"
                     ).value.trim(),
 
+
                 departamento:
                     document.getElementById(
                         "departamento"
                     ).value.trim(),
 
+
                 indicaciones:
                     document.getElementById(
                         "indicaciones"
                     ).value.trim(),
+
 
 
                 /* =============================================
@@ -1615,23 +1802,33 @@
                     "Cable Delta macho a 2 SATA hembra",
 
 
+
                 /* =============================================
                    CANTIDAD
+
+                   AHORA ES DINÁMICA.
+
+                   1 o 2 dependiendo de verproducto.html
                    ============================================= */
 
                 cantidad:
-                    1,
+                    cantidad,
+
 
 
                 /* =============================================
                    PRECIO
 
-                   IMPORTANTE:
-                   Debe coincidir con el precio que cobras.
+                   AHORA ES DINÁMICO.
+
+                   1 unidad = $10.00
+                   2 unidades = $20.00
                    ============================================= */
 
                 precio:
-                    "$10.00",
+                    "$" +
+                    precioTotal.toFixed(2),
+
 
 
                 /* =============================================
@@ -1644,21 +1841,24 @@
                    "$3.00"
 
                    "Se coordina"
-
                    ============================================= */
 
                 envio:
                     "Se coordina",
 
 
+
                 /* =============================================
                    TOTAL
+
+                   AHORA ES DINÁMICO.
 
                    Debe coincidir con PayPhone.
                    ============================================= */
 
                 total:
-                    "$10.00"
+                    "$" +
+                    precioTotal.toFixed(2)
 
             };
 
@@ -1669,45 +1869,52 @@
                ================================================= */
 
             const jsonPedido =
-                JSON.stringify(pedido);
+                JSON.stringify(
+                    pedido
+                );
 
 
 
             /* =================================================
                ENVIAR A GOOGLE APPS SCRIPT
 
-               IMPORTANTE:
-
-               Usamos text/plain para evitar el problema
-               de preflight CORS que puede ocurrir con
-               application/json.
+               Usamos text/plain para evitar problemas
+               de preflight CORS.
                ================================================= */
 
             try {
 
 
                 await fetch(
+
                     APPS_SCRIPT_URL,
+
                     {
 
-                        method: "POST",
+                        method:
+                            "POST",
 
-                        mode: "no-cors",
+                        mode:
+                            "no-cors",
 
-                        keepalive: true,
+                        keepalive:
+                            true,
 
-                        headers: {
+                        headers:
+                            {
 
-                            "Content-Type":
-                                "text/plain;charset=UTF-8"
+                                "Content-Type":
+                                    "text/plain;charset=UTF-8"
 
-                        },
+                            },
 
                         body:
                             jsonPedido
 
                     }
+
                 );
+
 
 
                 /* =============================================
@@ -1723,6 +1930,7 @@
                     "Abriendo PayPhone...";
 
 
+
                 /* =============================================
                    ESPERAR UN MOMENTO
 
@@ -1731,13 +1939,16 @@
                    ============================================= */
 
                 setTimeout(
+
                     function () {
 
                         window.location.href =
                             PAYPHONE_URL;
 
                     },
+
                     700
+
                 );
 
 
@@ -1759,7 +1970,8 @@
                 );
 
 
-                boton.disabled = false;
+                boton.disabled =
+                    false;
 
 
                 boton.textContent =
