@@ -90,7 +90,7 @@
 
         /* =====================================================
            LOGO
-           
+
            EDITAR: CAMBIA ZENTROXEC AQUÍ
         ====================================================== */
 
@@ -414,7 +414,9 @@
         }
 
 
-        /* COMPRAR */
+        /* =====================================================
+           BOTÓN COMPRAR
+        ====================================================== */
 
         .btn-comprar {
             background: #e50914;
@@ -431,9 +433,15 @@
         }
 
 
-        /* DETALLES */
+        /* =====================================================
+           BOTÓN VER PRODUCTO
 
-        .btn-detalles {
+           ESTE BOTÓN AHORA ENVÍA DIRECTAMENTE A:
+
+           verproducto.html
+        ====================================================== */
+
+        .btn-ver-producto {
             background: transparent;
 
             color: #ffffff;
@@ -441,7 +449,7 @@
             border: 1px solid #444444;
         }
 
-        .btn-detalles:hover {
+        .btn-ver-producto:hover {
             border-color: #ffffff;
 
             background: #ffffff;
@@ -450,7 +458,9 @@
         }
 
 
-        /* WHATSAPP */
+        /* =====================================================
+           BOTÓN WHATSAPP
+        ====================================================== */
 
         .btn-whatsapp {
             width: 82%;
@@ -474,279 +484,6 @@
             border-color: #555555;
 
             background: #1c1c1c;
-        }
-
-
-        /* =====================================================
-           =====================================================
-           VENTANA EMERGENTE
-           =====================================================
-        ====================================================== */
-
-        .modal {
-
-            /* IMPORTANTE:
-               Oculta la ventana inicialmente */
-            display: none;
-
-            position: fixed;
-
-            z-index: 2000;
-
-            left: 0;
-
-            top: 0;
-
-            width: 100%;
-
-            height: 100%;
-
-            /* Fondo oscuro */
-            background: rgba(0, 0, 0, 0.84);
-
-            /*
-                IMPORTANTE:
-
-                Estos valores crean separación
-                entre la ventana y los bordes
-                de la pantalla.
-            */
-
-            padding: 55px 20px;
-
-            /*
-                Permite desplazarse si el contenido
-                es demasiado largo.
-            */
-
-            overflow-y: auto;
-
-            /*
-                Centra la ventana.
-            */
-
-            align-items: flex-start;
-
-            justify-content: center;
-        }
-
-
-        /* =====================================================
-           CUANDO LA VENTANA ESTÁ ACTIVA
-        ====================================================== */
-
-        .modal.activo {
-
-            display: flex;
-
-        }
-
-
-        /* =====================================================
-           CONTENIDO DE LA VENTANA
-
-           AQUÍ ESTÁ LA CORRECCIÓN PRINCIPAL
-        ====================================================== */
-
-        .modal-contenido {
-
-            width: 100%;
-
-            max-width: 750px;
-
-            /*
-                IMPORTANTE:
-
-                La ventana nunca tocará
-                directamente la parte superior.
-            */
-
-            margin: 10px auto 40px;
-
-            background: #101010;
-
-            /*
-                Borde completo de la ventana.
-            */
-
-            border: 1px solid #3a3a3a;
-
-            border-radius: 14px;
-
-            padding: 35px;
-
-            position: relative;
-
-            /*
-                Limita la altura.
-            */
-
-            max-height: calc(100vh - 130px);
-
-            /*
-                Si hay mucho contenido,
-                aparece desplazamiento dentro
-                de la ventana.
-            */
-
-            overflow-y: auto;
-
-            box-shadow:
-                0 20px 60px rgba(0, 0, 0, 0.75);
-        }
-
-
-        /*
-            BARRA DE DESPLAZAMIENTO
-            DE LA VENTANA
-        */
-
-        .modal-contenido::-webkit-scrollbar {
-            width: 7px;
-        }
-
-        .modal-contenido::-webkit-scrollbar-track {
-            background: #0b0b0b;
-        }
-
-        .modal-contenido::-webkit-scrollbar-thumb {
-            background: #444444;
-
-            border-radius: 10px;
-        }
-
-        .modal-contenido::-webkit-scrollbar-thumb:hover {
-            background: #666666;
-        }
-
-
-        /* =====================================================
-           BOTÓN CERRAR
-        ====================================================== */
-
-        .modal-cerrar {
-
-            position: sticky;
-
-            top: 0;
-
-            float: right;
-
-            z-index: 10;
-
-            width: 38px;
-
-            height: 38px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            background: #151515;
-
-            border: 1px solid #333333;
-
-            border-radius: 8px;
-
-            color: #aaaaaa;
-
-            font-size: 27px;
-
-            cursor: pointer;
-
-            line-height: 1;
-
-            transition:
-                background 0.2s ease,
-                color 0.2s ease,
-                border-color 0.2s ease;
-        }
-
-        .modal-cerrar:hover {
-
-            color: #ffffff;
-
-            background: #e50914;
-
-            border-color: #e50914;
-
-        }
-
-
-        /* =====================================================
-           TÍTULO DE LA VENTANA
-        ====================================================== */
-
-        .modal-titulo {
-
-            clear: both;
-
-            color: #ffffff;
-
-            font-size: 28px;
-
-            margin-bottom: 25px;
-
-            padding-top: 15px;
-
-            padding-right: 10px;
-
-            line-height: 1.25;
-        }
-
-
-        /* =====================================================
-           BLOQUES DE DETALLES
-        ====================================================== */
-
-        .detalle-bloque {
-
-            margin-bottom: 28px;
-
-            padding-bottom: 5px;
-        }
-
-        .detalle-bloque h3 {
-
-            color: #ffffff;
-
-            font-size: 18px;
-
-            margin-bottom: 12px;
-        }
-
-        .detalle-bloque h3 span {
-
-            color: #e50914;
-
-            margin-right: 8px;
-        }
-
-        .detalle-bloque ul {
-
-            padding-left: 20px;
-        }
-
-        .detalle-bloque li {
-
-            color: #999999;
-
-            font-size: 14px;
-
-            margin-bottom: 8px;
-        }
-
-        .detalle-bloque p {
-
-            color: #999999;
-
-            font-size: 14px;
-
-            line-height: 1.7;
-
-            white-space: pre-line;
         }
 
 
@@ -993,49 +730,6 @@
 
             }
 
-
-            /* =================================================
-               VENTANA EMERGENTE EN CELULAR
-            ================================================== */
-
-            .modal {
-
-                padding: 25px 12px;
-
-                align-items: flex-start;
-
-            }
-
-            .modal-contenido {
-
-                margin-top: 20px;
-
-                margin-bottom: 25px;
-
-                max-height: calc(100vh - 70px);
-
-                padding: 25px 20px;
-
-                border-radius: 12px;
-
-            }
-
-            .modal-titulo {
-
-                font-size: 23px;
-
-                padding-top: 15px;
-
-            }
-
-            .modal-cerrar {
-
-                width: 36px;
-
-                height: 36px;
-
-            }
-
         }
 
 
@@ -1079,20 +773,6 @@
             .producto-imagen {
 
                 height: 230px;
-
-            }
-
-            .modal {
-
-                padding: 18px 8px;
-
-            }
-
-            .modal-contenido {
-
-                margin-top: 15px;
-
-                padding: 22px 17px;
 
             }
 
@@ -1303,7 +983,13 @@
                     <div class="producto-botones">
 
 
-                        <!-- EDITAR: BOTÓN COMPRAR -->
+                        <!-- =================================================
+                             BOTÓN COMPRAR
+
+                             EDITAR: cambia comprar.html solamente
+                             si posteriormente cambia tu sistema
+                             de compra.
+                        ================================================== -->
 
                         <a
                             href="comprar.html"
@@ -1311,42 +997,42 @@
                         >
 
                             COMPRAR
+
                         </a>
-
-                        <!-- =========================================================
-                             🛒 FIN DEL BOTÓN COMPRAR
-
-                             NO MODIFICAR EL CÓDIGO DE ARRIBA SI NO NECESITAS
-                             CAMBIAR EL ENLACE O LA FUNCIÓN DEL BOTÓN.
-
-                             ========================================================= -->
 
 
 
                         <!-- =================================================
-                             BOTÓN DETALLES
+                             BOTÓN VER PRODUCTO
 
-                             NO CAMBIAR.
+                             ESTE BOTÓN ENVÍA A:
 
-                             Abre la ventana emergente.
+                             verproducto.html
+
+                             IMPORTANTE:
+                             El archivo debe llamarse exactamente:
+
+                             verproducto.html
+
+                             y debe estar en la misma carpeta que
+                             productos.html.
                         ================================================== -->
 
-                        <button
-                            type="button"
-                            class="btn btn-detalles"
-                            onclick="abrirDetalles()"
+                        <a
+                            href="verproducto.html"
+                            class="btn btn-ver-producto"
                         >
 
-                            DETALLES DEL PRODUCTO
+                            VER PRODUCTO
 
-                        </button>
+                        </a>
 
 
 
                         <!-- =================================================
                              BOTÓN WHATSAPP
 
-                             El número se modifica en JavaScript.
+                             El enlace se genera mediante JavaScript.
                         ================================================== -->
 
                         <a
@@ -1371,274 +1057,6 @@
         </div>
 
     </main>
-
-
-
-    <!-- =====================================================
-         =====================================================
-         VENTANA EMERGENTE DE DETALLES
-         =====================================================
-    ====================================================== -->
-
-    <div
-        id="modalDetalles"
-        class="modal"
-        onclick="cerrarModalFondo(event)"
-    >
-
-
-        <div class="modal-contenido">
-
-
-            <!-- =================================================
-                 BOTÓN CERRAR
-            ================================================== -->
-
-            <button
-                type="button"
-                class="modal-cerrar"
-                onclick="cerrarDetalles()"
-                aria-label="Cerrar ventana"
-            >
-
-                ×
-
-            </button>
-
-
-
-            <!-- =================================================
-                 EDITAR: TÍTULO DEL PRODUCTO
-            ================================================== -->
-
-            <h2 class="modal-titulo">
-
-                Cable Delta macho a 2 SATA hembra
-
-            </h2>
-
-
-
-            <!-- =================================================
-                 01. CARACTERÍSTICAS PRINCIPALES
-
-                 EDITA LOS <li>
-            ================================================== -->
-
-            <div class="detalle-bloque">
-
-                <h3>
-
-                    <span>01.</span>
-                    Características principales
-
-                </h3>
-
-
-                <ul>
-
-
-                    <!-- EDITAR CARACTERÍSTICA 1 -->
-
-                    <li>
-                        Marca: Delta
-                    </li>
-
-
-                    <!-- EDITAR CARACTERÍSTICA 2 -->
-
-                    <li>
-                        Modelo: CA-SATA-M-HH
-                    </li>
-
-
-                    <!-- EDITAR CARACTERÍSTICA 3 -->
-
-                    <li>
-                        Color: Negro
-                    </li>
-
-
-                    <!-- EDITAR CARACTERÍSTICA 4 -->
-
-                    <li>
-                        Voltaje: 5V
-                    </li>
-
-
-                    <!-- AGREGAR MÁS CARACTERÍSTICAS -->
-
-                    <!--
-
-                    <li>
-                        Escribe aquí otra característica.
-                    </li>
-
-                    -->
-
-
-                </ul>
-
-            </div>
-
-
-
-            <!-- =================================================
-                 02. OTROS
-            ================================================== -->
-
-            <div class="detalle-bloque">
-
-                <h3>
-
-                    <span>02.</span>
-                    Otros
-
-                </h3>
-
-
-                <ul>
-
-
-                    <!-- EDITAR OTRO 1 -->
-
-                    <li>
-                        Cantidad de pines: 15
-                    </li>
-
-
-                    <!-- EDITAR OTRO 2 -->
-
-                    <li>
-                        Tipo de conector: SATA
-                    </li>
-
-
-                    <!-- AGREGAR MÁS DATOS -->
-
-                    <!--
-
-                    <li>
-                        Escribe aquí otro dato.
-                    </li>
-
-                    -->
-
-
-                </ul>
-
-            </div>
-
-
-
-            <!-- =================================================
-                 03. ESPECIFICACIONES
-            ================================================== -->
-
-            <div class="detalle-bloque">
-
-                <h3>
-
-                    <span>03.</span>
-                    Especificaciones
-
-                </h3>
-
-
-                <ul>
-
-
-                    <!-- EDITAR ESPECIFICACIÓN 1 -->
-
-                    <li>
-                        Conecta los 3 voltajes de alimentación (3,3V, 5V, 12V)
-                    </li>
-
-
-                    <!-- EDITAR ESPECIFICACIÓN 2 -->
-
-                    <li>
-                        Permite la conexión de dos unidades a un conector de fuente de alimentación
-                    </li>
-
-
-                    <!-- EDITAR ESPECIFICACIÓN 3 -->
-
-                    <li>
-                        Fácil de usar e instalar
-                    </li>
-
-
-                    <!-- EDITAR ESPECIFICACIÓN 4 -->
-
-                    <li>
-                        1 enchufe de alimentación en 2 receptáculos de alimentación
-                    </li>
-
-
-                    <!-- EDITAR ESPECIFICACIÓN 5 -->
-
-                    <li>
-                        Longitud: 15 cm
-                    </li>
-
-
-                    <!-- AGREGAR MÁS -->
-
-                    <!--
-
-                    <li>
-                        Longitud: XX cm.
-                    </li>
-
-                    <li>
-                        Color: Negro.
-                    </li>
-
-                    -->
-
-
-                </ul>
-
-            </div>
-
-
-
-            <!-- =================================================
-                 04. PROPÓSITO
-            ================================================== -->
-
-            <div class="detalle-bloque">
-
-                <h3>
-
-                    <span>04.</span>
-                    Propósito
-
-                </h3>
-
-
-                <!-- EDITAR: TODO ESTE TEXTO -->
-
-                <p>
-
-                    somos una tienda online comprometida con ofrecerte
-                    productos de calidad y un servicio confiable.
-
-                    Nos distinguimos por nuestra atención profesional
-                    y amable, asegurándonos de que tu experiencia
-                    de compra sea rápida, segura y sin preocupaciones.
-
-                    Garantía de fábrica: 12 meses.
-
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
 
 
 
@@ -1809,107 +1227,6 @@
 
         document.getElementById("whatsappProducto").href =
             enlaceWhatsApp;
-
-
-
-        /* =====================================================
-           =====================================================
-           VENTANA EMERGENTE
-           =====================================================
-        ====================================================== */
-
-
-        /*
-         * =====================================================
-         * ABRIR VENTANA
-         * =====================================================
-        */
-
-        function abrirDetalles() {
-
-            const modal =
-                document.getElementById("modalDetalles");
-
-            modal.classList.add("activo");
-
-            /*
-             * Evita que la página de atrás
-             * se desplace mientras la ventana
-             * está abierta.
-            */
-
-            document.body.style.overflow = "hidden";
-
-        }
-
-
-
-        /*
-         * =====================================================
-         * CERRAR VENTANA
-         * =====================================================
-        */
-
-        function cerrarDetalles() {
-
-            const modal =
-                document.getElementById("modalDetalles");
-
-            modal.classList.remove("activo");
-
-            /*
-             * Devuelve el desplazamiento
-             * normal de la página.
-            */
-
-            document.body.style.overflow = "";
-
-        }
-
-
-
-        /*
-         * =====================================================
-         * CERRAR AL HACER CLIC EN EL FONDO OSCURO
-         *
-         * Solo se cierra si haces clic fuera
-         * del cuadro de detalles.
-         * =====================================================
-        */
-
-        function cerrarModalFondo(event) {
-
-            if (
-                event.target ===
-                document.getElementById("modalDetalles")
-            ) {
-
-                cerrarDetalles();
-
-            }
-
-        }
-
-
-
-        /*
-         * =====================================================
-         * CERRAR CON LA TECLA ESC
-         * =====================================================
-        */
-
-        document.addEventListener(
-            "keydown",
-            function(event) {
-
-                if (event.key === "Escape") {
-
-                    cerrarDetalles();
-
-                }
-
-            }
-        );
 
 
     </script>
