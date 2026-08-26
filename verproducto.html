@@ -10,79 +10,46 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <!-- =====================================================
-         EDITAR: TÍTULO DE LA PÁGINA
-    ====================================================== -->
-
     <title>
         Cable Delta SATA | ZENTROXEC
     </title>
-
-
-    <!-- =====================================================
-         EDITAR: DESCRIPCIÓN SEO
-    ====================================================== -->
 
     <meta
         name="description"
         content="Cable de poder Delta SATA macho a 2 SATA hembra. Consulta características y detalles del producto en ZENTROXEC."
     >
 
-
     <style>
-
-        /* =====================================================
-           VARIABLES DE COLORES
-        ====================================================== */
 
         :root {
 
             --negro: #050505;
-
             --negro-card: #101010;
-
             --negro-suave: #151515;
-
             --blanco: #ffffff;
-
             --gris: #999999;
-
             --gris-claro: #cccccc;
-
             --borde: #252525;
-
             --rojo: #e50914;
-
             --rojo-hover: #b80710;
-
             --verde: #00a650;
-
             --azul: #3483fa;
 
         }
 
-
-        /* =====================================================
-           RESET
-        ====================================================== */
-
         * {
 
             margin: 0;
-
             padding: 0;
-
             box-sizing: border-box;
 
         }
-
 
         html {
 
             scroll-behavior: smooth;
 
         }
-
 
         body {
 
@@ -92,26 +59,16 @@
                 sans-serif;
 
             background: var(--negro);
-
             color: var(--blanco);
-
             line-height: 1.6;
 
         }
 
-
-        /* =====================================================
-           HEADER
-        ====================================================== */
-
         header {
 
             position: sticky;
-
             top: 0;
-
             z-index: 1000;
-
             width: 100%;
 
             background:
@@ -125,33 +82,22 @@
 
         }
 
-
         .header-container {
 
             width: 100%;
-
             max-width: 1250px;
-
             min-height: 76px;
 
             margin: 0 auto;
-
             padding: 0 25px;
 
             display: flex;
-
             align-items: center;
-
             justify-content: space-between;
 
             gap: 30px;
 
         }
-
-
-        /* =====================================================
-           LOGO
-        ====================================================== */
 
         .logo {
 
@@ -160,7 +106,6 @@
             color: var(--blanco);
 
             font-size: 27px;
-
             font-weight: 900;
 
             letter-spacing: 1px;
@@ -169,30 +114,21 @@
 
         }
 
-
         .logo span {
 
             color: var(--rojo);
 
         }
 
-
-        /* =====================================================
-           MENÚ
-        ====================================================== */
-
         nav {
 
             display: flex;
-
             align-items: center;
-
             justify-content: center;
 
             gap: 30px;
 
         }
-
 
         nav a {
 
@@ -201,7 +137,6 @@
             text-decoration: none;
 
             font-size: 13px;
-
             font-weight: 800;
 
             letter-spacing: 0.3px;
@@ -211,22 +146,15 @@
 
         }
 
-
         nav a:hover {
 
             color: var(--rojo);
 
         }
 
-
-        /* =====================================================
-           CONTENEDOR PRINCIPAL
-        ====================================================== */
-
         .producto-page {
 
             width: 100%;
-
             max-width: 1100px;
 
             margin: 0 auto;
@@ -235,11 +163,6 @@
                 45px 25px 80px;
 
         }
-
-
-        /* =====================================================
-           BOTÓN VOLVER
-        ====================================================== */
 
         .volver {
 
@@ -254,7 +177,6 @@
             text-decoration: none;
 
             font-size: 14px;
-
             font-weight: 700;
 
             margin-bottom: 30px;
@@ -264,17 +186,11 @@
 
         }
 
-
         .volver:hover {
 
             color: var(--rojo);
 
         }
-
-
-        /* =====================================================
-           TARJETA PRINCIPAL
-        ====================================================== */
 
         .producto-principal {
 
@@ -298,21 +214,11 @@
 
         }
 
-
-        /* =====================================================
-           GALERÍA
-        ====================================================== */
-
         .galeria {
 
             width: 100%;
 
         }
-
-
-        /* =====================================================
-           IMAGEN PRINCIPAL
-        ====================================================== */
 
         .imagen-principal {
 
@@ -329,7 +235,6 @@
             display: flex;
 
             align-items: center;
-
             justify-content: center;
 
             border:
@@ -337,11 +242,9 @@
 
         }
 
-
         .imagen-principal img {
 
             width: 100%;
-
             height: 100%;
 
             max-height: 500px;
@@ -351,11 +254,6 @@
             display: block;
 
         }
-
-
-        /* =====================================================
-           SEGUNDA IMAGEN
-        ====================================================== */
 
         .imagen-secundaria {
 
@@ -371,21 +269,14 @@
 
         }
 
-
         .imagen-secundaria img {
 
             width: 100%;
-
             height: auto;
 
             display: block;
 
         }
-
-
-        /* =====================================================
-           INFORMACIÓN DEL PRODUCTO
-        ====================================================== */
 
         .producto-info {
 
@@ -393,7 +284,6 @@
                 5px 5px 10px;
 
         }
-
 
         .producto-titulo {
 
@@ -407,11 +297,6 @@
 
         }
 
-
-        /* =====================================================
-           CALIFICACIÓN
-        ====================================================== */
-
         .valoracion {
 
             display: flex;
@@ -424,7 +309,6 @@
 
         }
 
-
         .estrella {
 
             color: #3483fa;
@@ -433,13 +317,11 @@
 
         }
 
-
         .valoracion strong {
 
             font-size: 17px;
 
         }
-
 
         .ventas {
 
@@ -448,11 +330,6 @@
             font-size: 15px;
 
         }
-
-
-        /* =====================================================
-           STOCK
-        ====================================================== */
 
         .stock {
 
@@ -473,17 +350,11 @@
             border-radius: 6px;
 
             font-size: 12px;
-
             font-weight: 800;
 
             margin-bottom: 18px;
 
         }
-
-
-        /* =====================================================
-           PRECIO
-        ====================================================== */
 
         .precio {
 
@@ -497,7 +368,6 @@
 
         }
 
-
         .precio-decimal {
 
             font-size: 25px;
@@ -509,11 +379,6 @@
             top: 3px;
 
         }
-
-
-        /* =====================================================
-           DESCUENTO
-        ====================================================== */
 
         .descuento {
 
@@ -530,17 +395,11 @@
             border-radius: 5px;
 
             font-size: 13px;
-
             font-weight: 800;
 
             margin-bottom: 18px;
 
         }
-
-
-        /* =====================================================
-           MEDIOS DE PAGO
-        ====================================================== */
 
         .medios-pago {
 
@@ -556,13 +415,11 @@
 
         }
 
-
         .medios-pago-titulo {
 
             color: #888888;
 
             font-size: 12px;
-
             font-weight: 700;
 
             white-space: nowrap;
@@ -571,11 +428,9 @@
 
         }
 
-
         .pago-circulo {
 
             width: 42px;
-
             height: 42px;
 
             min-width: 42px;
@@ -584,18 +439,17 @@
 
             background: #ffffff;
 
-            border: 1px solid #dddddd;
+            border:
+                1px solid #dddddd;
 
             display: flex;
 
             align-items: center;
-
             justify-content: center;
 
             color: #111111;
 
             font-size: 8px;
-
             font-weight: 900;
 
             text-align: center;
@@ -603,7 +457,6 @@
             overflow: hidden;
 
         }
-
 
         .pago-visa {
 
@@ -615,7 +468,6 @@
 
         }
 
-
         .pago-mastercard {
 
             color: #111111;
@@ -623,7 +475,6 @@
             font-size: 7px;
 
         }
-
 
         .pago-discover {
 
@@ -633,7 +484,6 @@
 
         }
 
-
         .pago-diners {
 
             color: #174ea6;
@@ -641,11 +491,6 @@
             font-size: 7px;
 
         }
-
-
-        /* =====================================================
-           CANTIDAD
-        ====================================================== */
 
         .cantidad {
 
@@ -659,7 +504,8 @@
 
             background: #151515;
 
-            border: 1px solid #252525;
+            border:
+                1px solid #252525;
 
             border-radius: 8px;
 
@@ -671,17 +517,14 @@
 
         }
 
-
         .cantidad label {
 
             color: #ffffff;
 
             font-size: 15px;
-
             font-weight: 700;
 
         }
-
 
         .cantidad select {
 
@@ -689,7 +532,8 @@
 
             color: #ffffff;
 
-            border: 1px solid #333333;
+            border:
+                1px solid #333333;
 
             border-radius: 6px;
 
@@ -700,7 +544,6 @@
             padding: 0 10px;
 
             font-size: 14px;
-
             font-weight: 700;
 
             cursor: pointer;
@@ -709,17 +552,12 @@
 
         }
 
-
         .cantidad select:focus {
 
-            border-color: var(--rojo);
+            border-color:
+                var(--rojo);
 
         }
-
-
-        /* =====================================================
-           BOTONES
-        ====================================================== */
 
         .botones {
 
@@ -730,7 +568,6 @@
             gap: 10px;
 
         }
-
 
         .btn {
 
@@ -743,13 +580,11 @@
             display: flex;
 
             align-items: center;
-
             justify-content: center;
 
             text-decoration: none;
 
             font-size: 14px;
-
             font-weight: 900;
 
             cursor: pointer;
@@ -760,11 +595,6 @@
                 color 0.2s ease;
 
         }
-
-
-        /* =====================================================
-           BOTÓN COMPRAR AHORA
-        ====================================================== */
 
         .btn-comprar {
 
@@ -777,45 +607,42 @@
 
         }
 
-
         .btn-comprar:hover {
 
-            background: var(--rojo-hover);
+            background:
+                var(--rojo-hover);
 
             border-color:
                 var(--rojo-hover);
 
         }
 
-
-        /* =====================================================
-           BOTÓN AGREGAR AL CARRITO
-        ====================================================== */
-
         .btn-carrito {
 
-            background: rgba(52, 131, 250, 0.12);
+            background:
+                rgba(52, 131, 250, 0.12);
 
             color: #5c9cff;
 
             border:
-                1px solid rgba(52, 131, 250, 0.35);
+                1px solid
+                rgba(52, 131, 250, 0.35);
 
             gap: 9px;
 
         }
 
-
         .btn-carrito:hover {
 
-            background: rgba(52, 131, 250, 0.20);
+            background:
+                rgba(52, 131, 250, 0.20);
 
-            border-color: #3483fa;
+            border-color:
+                #3483fa;
 
             color: #ffffff;
 
         }
-
 
         .icono-carrito {
 
@@ -824,11 +651,6 @@
             line-height: 1;
 
         }
-
-
-        /* =====================================================
-           BOTÓN WHATSAPP
-        ====================================================== */
 
         .btn-whatsapp {
 
@@ -841,7 +663,6 @@
 
         }
 
-
         .btn-whatsapp:hover {
 
             background: #1c1c1c;
@@ -852,11 +673,6 @@
                 #555555;
 
         }
-
-
-        /* =====================================================
-           VENDEDOR
-        ====================================================== */
 
         .vendedor {
 
@@ -869,7 +685,6 @@
 
         }
 
-
         .vendedor-principal {
 
             font-size: 16px;
@@ -878,13 +693,11 @@
 
         }
 
-
         .vendedor-principal strong {
 
             color: #5c9cff;
 
         }
-
 
         .mercadolider {
 
@@ -894,17 +707,11 @@
 
         }
 
-
         .mercadolider strong {
 
             color: #dddddd;
 
         }
-
-
-        /* =====================================================
-           BLOQUE DE SEGURIDAD
-        ====================================================== */
 
         .seguridad {
 
@@ -916,7 +723,6 @@
                 1px solid var(--borde);
 
         }
-
 
         .seguridad-item {
 
@@ -930,7 +736,6 @@
 
         }
 
-
         .seguridad-icono {
 
             font-size: 24px;
@@ -938,7 +743,6 @@
             min-width: 30px;
 
         }
-
 
         .seguridad-texto {
 
@@ -950,17 +754,11 @@
 
         }
 
-
         .seguridad-texto strong {
 
             color: #ffffff;
 
         }
-
-
-        /* =====================================================
-           SECCIÓN DE CARACTERÍSTICAS
-        ====================================================== */
 
         .detalles {
 
@@ -978,7 +776,6 @@
 
         }
 
-
         .detalles-titulo {
 
             font-size: 27px;
@@ -986,7 +783,6 @@
             margin-bottom: 30px;
 
         }
-
 
         .detalle-bloque {
 
@@ -998,13 +794,11 @@
 
         }
 
-
         .detalle-bloque:first-of-type {
 
             padding-top: 0;
 
         }
-
 
         .detalle-bloque:last-child {
 
@@ -1014,7 +808,6 @@
 
         }
 
-
         .detalle-bloque h3 {
 
             font-size: 19px;
@@ -1022,7 +815,6 @@
             margin-bottom: 15px;
 
         }
-
 
         .detalle-bloque h3 span {
 
@@ -1032,13 +824,11 @@
 
         }
 
-
         .detalle-bloque ul {
 
             padding-left: 20px;
 
         }
-
 
         .detalle-bloque li {
 
@@ -1050,7 +840,6 @@
 
         }
 
-
         .detalle-bloque p {
 
             color: #999999;
@@ -1060,11 +849,6 @@
             line-height: 1.8;
 
         }
-
-
-        /* =====================================================
-           FOOTER
-        ====================================================== */
 
         footer {
 
@@ -1081,7 +865,6 @@
 
         }
 
-
         footer p {
 
             color: #666666;
@@ -1090,17 +873,11 @@
 
         }
 
-
         footer strong {
 
             color: #ffffff;
 
         }
-
-
-        /* =====================================================
-           TABLET
-        ====================================================== */
 
         @media (max-width: 850px) {
 
@@ -1118,11 +895,6 @@
 
         }
 
-
-        /* =====================================================
-           CELULAR
-        ====================================================== */
-
         @media (max-width: 700px) {
 
             header {
@@ -1130,7 +902,6 @@
                 position: relative;
 
             }
-
 
             .header-container {
 
@@ -1145,7 +916,6 @@
 
             }
 
-
             .logo {
 
                 font-size: 27px;
@@ -1153,7 +923,6 @@
                 text-align: center;
 
             }
-
 
             nav {
 
@@ -1169,7 +938,6 @@
 
             }
 
-
             nav a {
 
                 font-size: 10px;
@@ -1178,14 +946,12 @@
 
             }
 
-
             .producto-page {
 
                 padding:
                     25px 15px 60px;
 
             }
-
 
             .producto-principal {
 
@@ -1197,13 +963,11 @@
 
             }
 
-
             .imagen-principal {
 
                 min-height: 300px;
 
             }
-
 
             .producto-titulo {
 
@@ -1211,13 +975,11 @@
 
             }
 
-
             .precio {
 
                 font-size: 40px;
 
             }
-
 
             .medios-pago {
 
@@ -1225,18 +987,15 @@
 
             }
 
-
             .medios-pago-titulo {
 
                 font-size: 11px;
 
             }
 
-
             .pago-circulo {
 
                 width: 38px;
-
                 height: 38px;
 
                 min-width: 38px;
@@ -1245,13 +1004,11 @@
 
             }
 
-
             .pago-visa {
 
                 font-size: 10px;
 
             }
-
 
             .detalles {
 
@@ -1261,7 +1018,6 @@
 
             }
 
-
             .detalles-titulo {
 
                 font-size: 24px;
@@ -1269,11 +1025,6 @@
             }
 
         }
-
-
-        /* =====================================================
-           CELULARES PEQUEÑOS
-        ====================================================== */
 
         @media (max-width: 380px) {
 
@@ -1284,13 +1035,11 @@
 
             }
 
-
             .logo {
 
                 font-size: 24px;
 
             }
-
 
             nav {
 
@@ -1298,13 +1047,11 @@
 
             }
 
-
             nav a {
 
                 font-size: 9px;
 
             }
-
 
             .imagen-principal {
 
@@ -1312,24 +1059,20 @@
 
             }
 
-
             .producto-titulo {
 
                 font-size: 22px;
 
             }
 
-
             .pago-circulo {
 
                 width: 34px;
-
                 height: 34px;
 
                 min-width: 34px;
 
             }
-
 
             .medios-pago {
 
@@ -1343,18 +1086,11 @@
 
 </head>
 
-
 <body>
-
-
-    <!-- =====================================================
-         HEADER
-    ====================================================== -->
 
     <header>
 
         <div class="header-container">
-
 
             <a
                 href="index.html"
@@ -1364,7 +1100,6 @@
                 ZENTRO<span>X</span>EC
 
             </a>
-
 
             <nav>
 
@@ -1391,13 +1126,7 @@
     </header>
 
 
-
-    <!-- =====================================================
-         CONTENIDO DEL PRODUCTO
-    ====================================================== -->
-
     <main class="producto-page">
-
 
         <a
             href="productos.html"
@@ -1409,20 +1138,9 @@
         </a>
 
 
-
-        <!-- =================================================
-             PRODUCTO PRINCIPAL
-        ================================================== -->
-
         <section class="producto-principal">
 
-
-            <!-- =================================================
-                 GALERÍA
-            ================================================== -->
-
             <div class="galeria">
-
 
                 <div class="imagen-principal">
 
@@ -1432,7 +1150,6 @@
                     >
 
                 </div>
-
 
                 <div class="imagen-secundaria">
 
@@ -1446,13 +1163,7 @@
             </div>
 
 
-
-            <!-- =================================================
-                 INFORMACIÓN DEL PRODUCTO
-            ================================================== -->
-
             <div class="producto-info">
-
 
                 <h1 class="producto-titulo">
 
@@ -1508,13 +1219,11 @@
 
                 <div class="medios-pago">
 
-
                     <span class="medios-pago-titulo">
 
                         Medios de pago
 
                     </span>
-
 
                     <div class="pago-circulo pago-visa">
 
@@ -1522,20 +1231,17 @@
 
                     </div>
 
-
                     <div class="pago-circulo pago-mastercard">
 
                         Mastercard
 
                     </div>
 
-
                     <div class="pago-circulo pago-discover">
 
                         Discover
 
                     </div>
-
 
                     <div class="pago-circulo pago-diners">
 
@@ -1546,12 +1252,7 @@
                 </div>
 
 
-                <!-- =================================================
-                     CANTIDAD
-                ================================================== -->
-
                 <div class="cantidad">
-
 
                     <label
                         for="cantidadProducto"
@@ -1560,7 +1261,6 @@
                         Cantidad:
 
                     </label>
-
 
                     <select
                         id="cantidadProducto"
@@ -1588,30 +1288,7 @@
                 </div>
 
 
-
-                <!-- =================================================
-                     BOTONES
-                ================================================== -->
-
                 <div class="botones">
-
-
-                    <!-- =================================================
-                         BOTÓN COMPRAR AHORA
-
-                         IMPORTANTE:
-
-                         Para cantidad 1:
-                         comprar.html?cantidad=1&precio=10
-
-                         Para cantidades 2, 3 y 4:
-                         se mantienen tus enlaces de pago actuales.
-
-                         Cuando posteriormente modifiquemos
-                         comprar.html, podrá recibir estos datos
-                         y mostrar el precio correcto en el
-                         RESUMEN DE COMPRA.
-                    ================================================== -->
 
                     <a
                         href="comprar.html?cantidad=1&precio=10"
@@ -1623,12 +1300,6 @@
 
                     </a>
 
-
-                    <!-- =================================================
-                         BOTÓN AGREGAR AL CARRITO
-
-                         NO MODIFICADO
-                    ================================================== -->
 
                     <button
                         type="button"
@@ -1649,12 +1320,6 @@
                     </button>
 
 
-                    <!-- =================================================
-                         BOTÓN WHATSAPP
-
-                         NO MODIFICADO
-                    ================================================== -->
-
                     <a
                         id="whatsappProducto"
                         class="btn btn-whatsapp"
@@ -1669,10 +1334,6 @@
                 </div>
 
 
-                <!-- =================================================
-                     VENDEDOR
-                ================================================== -->
-
                 <div class="vendedor">
 
                     <div class="vendedor-principal">
@@ -1685,7 +1346,6 @@
 
                     </div>
 
-
                     <div class="mercadolider">
 
                         Venta directa | Atención al cliente
@@ -1695,27 +1355,18 @@
                 </div>
 
 
-                <!-- =================================================
-                     COMPRA PROTEGIDA
-                ================================================== -->
-
                 <div class="seguridad">
-
 
                     <div class="seguridad-item">
 
                         <div class="seguridad-icono">
-
                             🛡️
-
                         </div>
 
                         <div class="seguridad-texto">
 
                             <strong>
-
                                 Compra protegida.
-
                             </strong>
 
                             Recibe el producto que esperabas
@@ -1730,17 +1381,13 @@
                     <div class="seguridad-item">
 
                         <div class="seguridad-icono">
-
                             🏅
-
                         </div>
 
                         <div class="seguridad-texto">
 
                             <strong>
-
                                 Garantía.
-
                             </strong>
 
                             12 meses de garantía de fábrica.
@@ -1756,20 +1403,13 @@
         </section>
 
 
-
-        <!-- =====================================================
-             DETALLES COMPLETOS
-        ====================================================== -->
-
         <section class="detalles">
-
 
             <h2 class="detalles-titulo">
 
                 Detalles del producto
 
             </h2>
-
 
 
             <div class="detalle-bloque">
@@ -1783,7 +1423,6 @@
                     Características principales
 
                 </h3>
-
 
                 <ul>
 
@@ -1812,7 +1451,6 @@
             </div>
 
 
-
             <div class="detalle-bloque">
 
                 <h3>
@@ -1824,7 +1462,6 @@
                     Otros
 
                 </h3>
-
 
                 <ul>
 
@@ -1849,7 +1486,6 @@
             </div>
 
 
-
             <div class="detalle-bloque">
 
                 <h3>
@@ -1861,7 +1497,6 @@
                     Especificaciones
 
                 </h3>
-
 
                 <ul>
 
@@ -1890,7 +1525,6 @@
             </div>
 
 
-
             <div class="detalle-bloque">
 
                 <h3>
@@ -1902,7 +1536,6 @@
                     Propósito
 
                 </h3>
-
 
                 <p>
 
@@ -1924,16 +1557,10 @@
 
             </div>
 
-
         </section>
 
     </main>
 
-
-
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
 
     <footer>
 
@@ -1952,224 +1579,107 @@
     </footer>
 
 
-
-    <!-- =====================================================
-         JAVASCRIPT
-    ====================================================== -->
-
     <script>
-
-
-        /* =====================================================
-           CONFIGURACIÓN DEL PRODUCTO
-        ====================================================== */
-
 
         /*
          * =====================================================
-         * PRECIO DE UNA UNIDAD
+         * CONFIGURACIÓN DEL PRODUCTO
          * =====================================================
-        */
+         */
 
         const PRECIO_UNITARIO = 10;
 
 
-
         /*
          * =====================================================
-         * BOTÓN COMPRAR
+         * ELEMENTOS
          * =====================================================
-        */
+         */
 
         const botonComprar =
-            document.getElementById(
-                "botonComprar"
-            );
+            document.getElementById("botonComprar");
 
+        const selectorCantidad =
+            document.getElementById("cantidadProducto");
 
-
-        /*
-         * =====================================================
-         * LINK DE US$10
-         *
-         * AHORA SE ENVÍA A comprar.html
-         * JUNTO CON:
-         *
-         * cantidad=1
-         * precio=10
-         *
-         * Esto permitirá que comprar.html conozca
-         * qué cantidad seleccionó el cliente.
-         * =====================================================
-        */
-
-        const LINK_10 =
-            "comprar.html?cantidad=1&precio=10";
-
+        const precioProducto =
+            document.getElementById("precioProducto");
 
 
         /*
          * =====================================================
-         * LINK DE US$20
+         * ACTUALIZAR PRODUCTO
+         * =====================================================
          *
-         * Se mantiene el enlace original.
-         * =====================================================
-        */
-
-        const LINK_20 =
-            "https://ppls.me/OnmwepzpJyIEMrq7uoPn9g";
-
-
-
-        /*
-         * =====================================================
-         * LINK DE US$30
+         * El botón COMPRAR AHORA SIEMPRE lleva a comprar.html.
          *
-         * Se mantiene el enlace original.
-         * =====================================================
-        */
-
-        const LINK_30 =
-            "https://ppls.me/NUp6yYWJ8LcXDd9jnvRA";
-
-
-
-        /*
-         * =====================================================
-         * LINK DE US$40
+         * Ejemplos:
          *
-         * Se mantiene el enlace original.
-         * =====================================================
-        */
-
-        const LINK_40 =
-            "https://ppls.me/SYxHVTiGHCdhEYtqRDHwA";
-
-
-
-        /* =====================================================
-           ACTUALIZAR PRECIO Y ENLACE
-        ====================================================== */
-
+         * Cantidad 1:
+         * comprar.html?cantidad=1&precio=10
+         *
+         * Cantidad 2:
+         * comprar.html?cantidad=2&precio=20
+         *
+         * Cantidad 3:
+         * comprar.html?cantidad=3&precio=30
+         *
+         * Cantidad 4:
+         * comprar.html?cantidad=4&precio=40
+         *
+         */
 
         function actualizarProducto() {
 
-
-            /*
-             * Obtener cantidad seleccionada
-            */
-
             const cantidad =
                 parseInt(
-                    document.getElementById(
-                        "cantidadProducto"
-                    ).value
+                    selectorCantidad.value,
+                    10
                 );
 
-
-
-            /*
-             * Calcular precio total
-            */
 
             const precioTotal =
                 PRECIO_UNITARIO * cantidad;
 
 
-
             /*
-             * Mostrar precio actualizado
-            */
+             * Mostrar precio total.
+             */
 
-            document.getElementById(
-                "precioProducto"
-            ).textContent =
+            precioProducto.textContent =
                 "US$ " + precioTotal;
 
 
+            /*
+             * Crear URL para comprar.html.
+             */
+
+            const urlCompra =
+                "comprar.html?cantidad=" +
+                encodeURIComponent(cantidad) +
+                "&precio=" +
+                encodeURIComponent(precioTotal);
+
 
             /*
-             * =================================================
-             * CAMBIAR ENLACE SEGÚN CANTIDAD
-             * =================================================
-            */
+             * Actualizar botón Comprar ahora.
+             */
 
-
-            if (cantidad === 1) {
-
-                /*
-                 * 1 unidad
-                 *
-                 * Envía a comprar.html
-                 * la cantidad y el precio.
-                */
-
-                botonComprar.href =
-                    "comprar.html?cantidad=1&precio=10";
-
-            }
-
-
-            else if (cantidad === 2) {
-
-                /*
-                 * 2 unidades
-                 *
-                 * Se mantiene el enlace de pago existente.
-                */
-
-                botonComprar.href =
-                    LINK_20;
-
-            }
-
-
-            else if (cantidad === 3) {
-
-                /*
-                 * 3 unidades
-                 *
-                 * Se mantiene el enlace de pago existente.
-                */
-
-                botonComprar.href =
-                    LINK_30;
-
-            }
-
-
-            else if (cantidad === 4) {
-
-                /*
-                 * 4 unidades
-                 *
-                 * Se mantiene el enlace de pago existente.
-                */
-
-                botonComprar.href =
-                    LINK_40;
-
-            }
+            botonComprar.href = urlCompra;
 
         }
 
 
-
-        /* =====================================================
-           AGREGAR AL CARRITO
-           
-           NO MODIFICADO
-        ====================================================== */
-
+        /*
+         * =====================================================
+         * AGREGAR AL CARRITO
+         * =====================================================
+         */
 
         function agregarAlCarrito() {
 
-
             const cantidad =
-                document.getElementById(
-                    "cantidadProducto"
-                ).value;
-
+                selectorCantidad.value;
 
             alert(
                 "Producto agregado al carrito. Cantidad: " +
@@ -2179,26 +1689,22 @@
         }
 
 
-
-        /* =====================================================
-           WHATSAPP
-        ====================================================== */
-
+        /*
+         * =====================================================
+         * WHATSAPP
+         * =====================================================
+         */
 
         const WHATSAPP =
             "593960648763";
-
 
 
         const mensajeWhatsApp =
             "Hola ZENTROXEC, quiero consultar la disponibilidad del Cable Delta macho a 2 SATA hembra.";
 
 
-
         const enlaceWhatsApp =
-
             `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensajeWhatsApp)}`;
-
 
 
         document.getElementById(
@@ -2207,28 +1713,15 @@
             enlaceWhatsApp;
 
 
-
-        /* =====================================================
-           INICIAR PÁGINA
-        ====================================================== */
-
-
         /*
-         * Al abrir:
-         *
-         * Cantidad = 1
-         * Precio = US$10
-         *
-         * Comprar ahora:
-         *
-         * comprar.html?cantidad=1&precio=10
-        */
+         * =====================================================
+         * INICIAR PÁGINA
+         * =====================================================
+         */
 
         actualizarProducto();
 
-
     </script>
-
 
 </body>
 
