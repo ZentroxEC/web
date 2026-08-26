@@ -10,7 +10,6 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-
     <!-- =====================================================
          EDITAR: TÍTULO DE LA PÁGINA
     ====================================================== -->
@@ -35,31 +34,21 @@
         /* =====================================================
            VARIABLES DE COLORES
 
-           EDITAR AQUÍ SI QUIERES CAMBIAR LOS COLORES
+           EDITAR AQUÍ LOS COLORES GENERALES
         ====================================================== */
 
         :root {
 
             --negro: #050505;
-
             --negro-card: #101010;
-
             --negro-suave: #151515;
-
             --blanco: #ffffff;
-
             --gris: #999999;
-
             --gris-claro: #cccccc;
-
             --borde: #252525;
-
             --rojo: #e50914;
-
             --rojo-hover: #b80710;
-
             --verde: #00a650;
-
             --azul: #3483fa;
 
         }
@@ -72,9 +61,7 @@
         * {
 
             margin: 0;
-
             padding: 0;
-
             box-sizing: border-box;
 
         }
@@ -153,9 +140,7 @@
 
 
         /* =====================================================
-           LOGO
-
-           EDITAR: NOMBRE DEL LOGO
+           EDITAR: LOGO
         ====================================================== */
 
         .logo {
@@ -305,7 +290,7 @@
 
 
         /* =====================================================
-           GALERÍA DE IMÁGENES
+           GALERÍA
         ====================================================== */
 
         .galeria {
@@ -318,7 +303,10 @@
         /* =====================================================
            IMAGEN PRINCIPAL
 
-           EDITAR: IMAGEN PRINCIPAL
+           EDITAR AQUÍ:
+
+           Cambia img/delta.png
+           por otra imagen si algún día lo necesitas.
         ====================================================== */
 
         .imagen-principal {
@@ -363,7 +351,7 @@
         /* =====================================================
            SEGUNDA IMAGEN
 
-           EDITAR: SEGUNDA IMAGEN
+           EDITAR AQUÍ LA SEGUNDA IMAGEN
         ====================================================== */
 
         .imagen-secundaria {
@@ -466,7 +454,7 @@
         /* =====================================================
            STOCK
 
-           EDITAR: TEXTO DE STOCK
+           EDITAR: CANTIDAD DE STOCK
         ====================================================== */
 
         .stock {
@@ -499,10 +487,10 @@
         /* =====================================================
            PRECIO
 
-           EDITAR: PRECIO BASE EN JAVASCRIPT
+           EDITAR EL PRECIO BASE AQUÍ EN EL HTML
 
-           Actualmente:
-           US$ 10,00
+           El JavaScript calcula automáticamente:
+           PRECIO × CANTIDAD
         ====================================================== */
 
         .precio {
@@ -561,7 +549,7 @@
         /* =====================================================
            MEDIOS DE PAGO
 
-           EDITAR: TEXTO O MÉTODOS DE PAGO
+           LOS CÍRCULOS ESTÁN MÁS PEQUEÑOS Y JUNTOS.
         ====================================================== */
 
         .medios-pago {
@@ -570,57 +558,47 @@
 
             align-items: center;
 
-            justify-content: space-between;
+            justify-content: flex-start;
 
-            gap: 12px;
+            gap: 8px;
 
             margin-bottom: 22px;
-
-            padding:
-                10px 0;
-
-        }
-
-
-        .medios-pago-titulo {
-
-            color: #ffffff;
-
-            font-size: 13px;
-
-            font-weight: 800;
 
             white-space: nowrap;
 
         }
 
 
-        .medios-pago-iconos {
+        /* =====================================================
+           EDITAR: TEXTO "MEDIOS DE PAGO"
+        ====================================================== */
 
-            display: flex;
+        .medios-pago-titulo {
 
-            align-items: center;
+            color: #777777;
 
-            justify-content: flex-end;
+            font-size: 13px;
 
-            gap: 6px;
+            font-weight: 700;
 
-            flex-wrap: nowrap;
+            margin-right: 3px;
 
         }
 
 
         /* =====================================================
-           CÍRCULOS DE MÉTODOS DE PAGO
+           CÍRCULOS DE LAS TARJETAS
 
-           SE HICIERON MÁS PEQUEÑOS
+           EDITAR TAMAÑO AQUÍ SI QUIERES CAMBIARLOS
         ====================================================== */
 
         .pago-circulo {
 
-            width: 38px;
+            width: 43px;
 
-            height: 38px;
+            height: 43px;
+
+            flex-shrink: 0;
 
             border-radius: 50%;
 
@@ -636,38 +614,31 @@
 
             overflow: hidden;
 
-            flex-shrink: 0;
-
-        }
-
-
-        .pago-circulo span {
-
-            font-size: 8px;
+            font-size: 9px;
 
             font-weight: 900;
 
             color: #111111;
 
-            text-align: center;
-
-            line-height: 1;
-
         }
 
 
-        .pago-visa {
+        /* =====================================================
+           LOGOS DE PAGO
+        ====================================================== */
 
-            color: #1434cb !important;
+        .visa {
 
-            font-size: 10px !important;
+            color: #173b8f;
+
+            font-size: 12px;
 
             font-style: italic;
 
         }
 
 
-        .pago-mastercard {
+        .mastercard {
 
             display: flex;
 
@@ -680,65 +651,137 @@
         }
 
 
-        .master-rojo {
+        .mastercard::before {
 
-            width: 14px;
+            content: "";
 
-            height: 14px;
+            width: 13px;
+
+            height: 13px;
+
+            background: #eb001b;
 
             border-radius: 50%;
 
-            background: #eb001b;
+            display: block;
 
         }
 
 
-        .master-amarillo {
+        .mastercard::after {
 
-            width: 14px;
+            content: "";
 
-            height: 14px;
+            width: 13px;
+
+            height: 13px;
+
+            background: #f79e1b;
 
             border-radius: 50%;
 
-            background: #f79e1b;
+            display: block;
 
             margin-left: -5px;
 
         }
 
 
-        .pago-discover {
+        .discover {
 
-            color: #111111 !important;
+            color: #222222;
 
-            font-size: 6px !important;
-
-            font-weight: 900 !important;
+            font-size: 8px;
 
         }
 
 
-        .pago-diners {
+        .diners {
 
-            color: #164194 !important;
+            color: #222222;
 
-            font-size: 7px !important;
+            font-size: 7px;
 
-            font-weight: 900 !important;
+            text-transform: lowercase;
 
         }
 
 
         /* =====================================================
-           CANTIDAD
+           INFORMACIÓN BÁSICA
+        ====================================================== */
 
-           EDITAR: CANTIDAD MÁXIMA EN HTML
+        .datos {
+
+            border-top:
+                1px solid var(--borde);
+
+            border-bottom:
+                1px solid var(--borde);
+
+            padding:
+                18px 0;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .dato {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            margin-bottom: 10px;
+
+            font-size: 14px;
+
+        }
+
+
+        .dato:last-child {
+
+            margin-bottom: 0;
+
+        }
+
+
+        .dato-label {
+
+            color: #777777;
+
+        }
+
+
+        .dato-valor {
+
+            color: #ffffff;
+
+            font-weight: 700;
+
+            text-align: right;
+
+        }
+
+
+        /* =====================================================
+           BOTÓN DE CANTIDAD
         ====================================================== */
 
         .cantidad {
 
             width: 100%;
+
+            min-height: 58px;
+
+            background: #f5f5f5;
+
+            color: #111111;
+
+            border-radius: 10px;
 
             display: flex;
 
@@ -746,88 +789,141 @@
 
             justify-content: space-between;
 
-            gap: 15px;
+            padding: 0 18px;
 
-            padding:
-                15px 18px;
-
-            background: #151515;
-
-            border:
-                1px solid var(--borde);
-
-            border-radius: 10px;
-
-            margin-bottom: 20px;
-
-        }
-
-
-        .cantidad-label {
-
-            font-size: 16px;
-
-            color: #ffffff;
-
-            font-weight: 700;
-
-        }
-
-
-        .cantidad-control {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 10px;
-
-        }
-
-
-        .cantidad-btn {
-
-            width: 34px;
-
-            height: 34px;
-
-            border-radius: 6px;
-
-            border: 1px solid #444444;
-
-            background: #202020;
-
-            color: #ffffff;
-
-            font-size: 20px;
+            margin-bottom: 12px;
 
             cursor: pointer;
 
+        }
+
+
+        .cantidad-texto {
+
             display: flex;
 
             align-items: center;
 
-            justify-content: center;
+            gap: 12px;
+
+            font-size: 16px;
 
         }
 
 
-        .cantidad-btn:hover {
+        .cantidad-texto strong {
 
-            background: #2a2a2a;
+            font-size: 18px;
 
         }
 
 
-        .cantidad-numero {
+        .cantidad-disponible {
 
-            min-width: 25px;
+            color: #aaaaaa;
 
-            text-align: center;
+            font-size: 15px;
 
-            font-size: 17px;
+        }
+
+
+        .cantidad-flecha {
+
+            color: var(--azul);
+
+            font-size: 28px;
+
+            line-height: 1;
+
+        }
+
+
+        .cantidad-selector {
+
+            display: none;
+
+            background: #ffffff;
+
+            border: 1px solid #dddddd;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .cantidad-opcion {
+
+            width: 100%;
+
+            border: none;
+
+            border-bottom: 1px solid #eeeeee;
+
+            background: #ffffff;
+
+            padding: 14px 18px;
+
+            text-align: left;
+
+            font-size: 15px;
+
+            cursor: pointer;
+
+        }
+
+
+        .cantidad-opcion:last-child {
+
+            border-bottom: none;
+
+        }
+
+
+        .cantidad-opcion:hover {
+
+            background: #f2f2f2;
+
+        }
+
+
+        /* =====================================================
+           ENTREGA
+        ====================================================== */
+
+        .entrega {
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .entrega-principal {
+
+            font-size: 16px;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .verde {
+
+            color: var(--verde);
 
             font-weight: 800;
+
+        }
+
+
+        .entrega-secundaria {
+
+            color: #888888;
+
+            font-size: 14px;
 
         }
 
@@ -878,7 +974,7 @@
 
 
         /* =====================================================
-           EDITAR: BOTÓN COMPRAR
+           BOTÓN COMPRAR
         ====================================================== */
 
         .btn-comprar {
@@ -906,28 +1002,28 @@
         /* =====================================================
            BOTÓN AGREGAR AL CARRITO
 
-           EDITAR: TEXTO DEL BOTÓN
+           EL ICONO SE COLOCA A LA IZQUIERDA
         ====================================================== */
 
         .btn-carrito {
 
-            background: transparent;
+            background: #151515;
 
             color: #ffffff;
 
             border:
                 1px solid #444444;
 
+            gap: 10px;
+
         }
 
 
         .btn-carrito:hover {
 
-            background: #ffffff;
+            background: #1c1c1c;
 
-            color: #050505;
-
-            border-color: #ffffff;
+            border-color: #666666;
 
         }
 
@@ -935,18 +1031,18 @@
         /* =====================================================
            ICONO DEL CARRITO
 
-           EDITAR: TAMAÑO DEL ICONO AQUÍ
+           EDITAR TAMAÑO AQUÍ SI LO NECESITAS
         ====================================================== */
 
         .icono-carrito {
 
-            width: 18px;
+            width: 19px;
 
-            height: 18px;
+            height: 19px;
 
-            margin-right: 8px;
+            display: block;
 
-            object-fit: contain;
+            flex-shrink: 0;
 
         }
 
@@ -1084,7 +1180,7 @@
 
 
         /* =====================================================
-           SECCIÓN DE CARACTERÍSTICAS
+           DETALLES COMPLETOS
         ====================================================== */
 
         .detalles {
@@ -1344,6 +1440,33 @@
             }
 
 
+            /* =================================================
+               MEDIOS DE PAGO EN CELULAR
+            ================================================== */
+
+            .medios-pago {
+
+                gap: 5px;
+
+            }
+
+
+            .medios-pago-titulo {
+
+                font-size: 12px;
+
+            }
+
+
+            .pago-circulo {
+
+                width: 38px;
+
+                height: 38px;
+
+            }
+
+
             .detalles {
 
                 padding: 25px 20px;
@@ -1356,57 +1479,6 @@
             .detalles-titulo {
 
                 font-size: 24px;
-
-            }
-
-
-            /* =================================================
-               MEDIOS DE PAGO EN CELULAR
-            ================================================== */
-
-            .medios-pago {
-
-                gap: 8px;
-
-            }
-
-
-            .pago-circulo {
-
-                width: 34px;
-
-                height: 34px;
-
-            }
-
-
-            .pago-visa {
-
-                font-size: 9px !important;
-
-            }
-
-
-            .master-rojo,
-            .master-amarillo {
-
-                width: 12px;
-
-                height: 12px;
-
-            }
-
-
-            .pago-discover {
-
-                font-size: 5px !important;
-
-            }
-
-
-            .pago-diners {
-
-                font-size: 6px !important;
 
             }
 
@@ -1462,18 +1534,18 @@
             }
 
 
-            .medios-pago-titulo {
+            .pago-circulo {
 
-                font-size: 11px;
+                width: 34px;
+
+                height: 34px;
 
             }
 
 
-            .pago-circulo {
+            .medios-pago {
 
-                width: 31px;
-
-                height: 31px;
+                gap: 4px;
 
             }
 
@@ -1555,9 +1627,9 @@
 
 
 
-        <!-- =================================================
+        <!-- =====================================================
              PRODUCTO PRINCIPAL
-        ================================================== -->
+        ====================================================== -->
 
         <section class="producto-principal">
 
@@ -1569,19 +1641,27 @@
             <div class="galeria">
 
 
-                <!-- EDITAR: IMAGEN PRINCIPAL -->
+                <!-- =================================================
+                     EDITAR: IMAGEN PRINCIPAL
+
+                     AHORA ES:
+
+                     img/delta.png
+                ================================================== -->
 
                 <div class="imagen-principal">
 
                     <img
-                        src="63663.jpg"
+                        src="img/delta.png"
                         alt="Cable de Poder Delta SATA Macho a 2 SATA Hembra"
                     >
 
                 </div>
 
 
-                <!-- EDITAR: SEGUNDA IMAGEN -->
+                <!-- =================================================
+                     EDITAR: SEGUNDA IMAGEN
+                ================================================== -->
 
                 <div class="imagen-secundaria">
 
@@ -1645,12 +1725,13 @@
 
 
                 <!-- =================================================
-                     PRECIO
+                     EDITAR: PRECIO BASE
 
-                     EDITAR: EL PRECIO BASE SE CAMBIA
-                     EN JAVASCRIPT AL FINAL.
+                     ESTE ES EL PRECIO DE UNA UNIDAD.
 
-                     Actualmente: US$ 10,00
+                     Si cambias este número,
+                     el precio total se actualizará
+                     automáticamente según la cantidad.
                 ================================================== -->
 
                 <div class="precio">
@@ -1658,7 +1739,7 @@
                     US$ <span id="precioEntero">10</span>
 
                     <span class="precio-decimal">
-                        <span id="precioDecimal">00</span>
+                        00
                     </span>
 
                 </div>
@@ -1666,8 +1747,6 @@
 
                 <!-- =================================================
                      DESCUENTO
-
-                     EDITAR: TEXTO DEL DESCUENTO
                 ================================================== -->
 
                 <div class="descuento">
@@ -1677,14 +1756,14 @@
                 </div>
 
 
-
                 <!-- =================================================
                      MEDIOS DE PAGO
 
-                     EDITAR: MÉTODOS DE PAGO
+                     LOS CÍRCULOS ESTÁN JUNTOS Y MÁS PEQUEÑOS.
                 ================================================== -->
 
                 <div class="medios-pago">
+
 
                     <!-- EDITAR: TEXTO -->
 
@@ -1695,140 +1774,160 @@
                     </span>
 
 
-                    <!-- ICONOS -->
+                    <!-- VISA -->
 
-                    <div class="medios-pago-iconos">
+                    <div class="pago-circulo">
 
-
-                        <!-- VISA -->
-
-                        <div
-                            class="pago-circulo"
-                            title="Visa"
-                        >
-
-                            <span class="pago-visa">
-                                VISA
-                            </span>
-
-                        </div>
-
-
-                        <!-- MASTERCARD -->
-
-                        <div
-                            class="pago-circulo"
-                            title="Mastercard"
-                        >
-
-                            <span class="pago-mastercard">
-
-                                <span class="master-rojo"></span>
-
-                                <span class="master-amarillo"></span>
-
-                            </span>
-
-                        </div>
-
-
-                        <!-- DISCOVER -->
-
-                        <div
-                            class="pago-circulo"
-                            title="Discover"
-                        >
-
-                            <span class="pago-discover">
-                                DISCOVER
-                            </span>
-
-                        </div>
-
-
-                        <!-- DINERS -->
-
-                        <div
-                            class="pago-circulo"
-                            title="Diners Club"
-                        >
-
-                            <span class="pago-diners">
-                                DINERS
-                            </span>
-
-                        </div>
-
+                        <span class="visa">
+                            VISA
+                        </span>
 
                     </div>
+
+
+                    <!-- MASTERCARD -->
+
+                    <div class="pago-circulo">
+
+                        <span class="mastercard"></span>
+
+                    </div>
+
+
+                    <!-- DISCOVER -->
+
+                    <div class="pago-circulo">
+
+                        <span class="discover">
+                            DISCOVER
+                        </span>
+
+                    </div>
+
+
+                    <!-- DINERS -->
+
+                    <div class="pago-circulo">
+
+                        <span class="diners">
+                            diners
+                        </span>
+
+                    </div>
+
 
                 </div>
 
 
 
                 <!-- =================================================
-                     CANTIDAD
-
-                     EDITAR: CANTIDAD MÁXIMA
-                     
-                     Actualmente máximo = 5.
+                     DATOS DEL PRODUCTO
                 ================================================== -->
 
-                <div class="cantidad">
+                <div class="datos">
 
 
-                    <!-- EDITAR: TEXTO -->
+                    <!-- EDITAR: COLOR -->
 
-                    <span class="cantidad-label">
+                    <div class="dato">
 
-                        Cantidad:
-
-                    </span>
-
-
-                    <div class="cantidad-control">
-
-
-                        <!-- BOTÓN RESTAR -->
-
-                        <button
-                            type="button"
-                            class="cantidad-btn"
-                            onclick="cambiarCantidad(-1)"
-                            aria-label="Disminuir cantidad"
-                        >
-
-                            −
-
-                        </button>
-
-
-                        <!-- CANTIDAD ACTUAL -->
-
-                        <span
-                            id="cantidadNumero"
-                            class="cantidad-numero"
-                        >
-
-                            1
-
+                        <span class="dato-label">
+                            Color
                         </span>
 
-
-                        <!-- BOTÓN SUMAR -->
-
-                        <button
-                            type="button"
-                            class="cantidad-btn"
-                            onclick="cambiarCantidad(1)"
-                            aria-label="Aumentar cantidad"
-                        >
-
-                            +
-
-                        </button>
+                        <span class="dato-valor">
+                            Negro
+                        </span>
 
                     </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     BOTÓN CANTIDAD
+
+                     EDITAR AQUÍ EL MÁXIMO DE UNIDADES
+
+                     Actualmente: 5
+                ================================================== -->
+
+                <div
+                    class="cantidad"
+                    onclick="mostrarCantidad()"
+                >
+
+                    <div class="cantidad-texto">
+
+                        <span>
+                            Cantidad:
+                        </span>
+
+                        <strong id="cantidadSeleccionada">
+                            1
+                        </strong>
+
+                        <span class="cantidad-disponible">
+                            (5 disponibles)
+                        </span>
+
+                    </div>
+
+
+                    <span class="cantidad-flecha">
+                        ›
+                    </span>
+
+                </div>
+
+
+                <!-- =================================================
+                     OPCIONES DE CANTIDAD
+
+                     EDITAR AQUÍ LAS OPCIONES SI CAMBIA EL STOCK.
+                ================================================== -->
+
+                <div
+                    id="selectorCantidad"
+                    class="cantidad-selector"
+                >
+
+                    <button
+                        class="cantidad-opcion"
+                        onclick="seleccionarCantidad(1)"
+                    >
+                        1 unidad
+                    </button>
+
+                    <button
+                        class="cantidad-opcion"
+                        onclick="seleccionarCantidad(2)"
+                    >
+                        2 unidades
+                    </button>
+
+                    <button
+                        class="cantidad-opcion"
+                        onclick="seleccionarCantidad(3)"
+                    >
+                        3 unidades
+                    </button>
+
+                    <button
+                        class="cantidad-opcion"
+                        onclick="seleccionarCantidad(4)"
+                    >
+                        4 unidades
+                    </button>
+
+                    <button
+                        class="cantidad-opcion"
+                        onclick="seleccionarCantidad(5)"
+                    >
+                        5 unidades
+                    </button>
 
                 </div>
 
@@ -1842,9 +1941,9 @@
 
 
                     <!-- =================================================
-                         BOTÓN COMPRAR AHORA
+                         EDITAR: BOTÓN COMPRAR AHORA
 
-                         EDITAR: ENLACE DEL BOTÓN
+                         CAMBIA href SI CAMBIA TU PÁGINA DE COMPRA.
                     ================================================== -->
 
                     <a
@@ -1857,38 +1956,69 @@
                     </a>
 
 
+
                     <!-- =================================================
                          BOTÓN AGREGAR AL CARRITO
 
+                         EL ICONO ESTÁ A LA IZQUIERDA.
+
                          EDITAR: TEXTO DEL BOTÓN
-
-                         EDITAR: IMAGEN DEL ICONO DEL CARRITO
-
-                         Actualmente utiliza:
-                         carrito.png
                     ================================================== -->
 
                     <button
                         type="button"
                         class="btn btn-carrito"
-                        onclick="agregarAlCarrito()"
+                        onclick="agregarCarrito()"
                     >
 
-                        <img
-                            src="carrito.png"
-                            alt="Carrito"
+
+                        <!-- =================================================
+                             ICONO DE CARRITO
+
+                             EDITAR: TAMAÑO EN .icono-carrito
+                        ================================================== -->
+
+                        <svg
                             class="icono-carrito"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true"
                         >
+
+                            <path
+                                d="M3 4H5L7.2 14.5C7.4 15.4 8.2 16 9.1 16H17.5C18.4 16 19.2 15.4 19.5 14.6L21 9H6"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+
+                            <circle
+                                cx="9"
+                                cy="20"
+                                r="1.5"
+                                fill="currentColor"
+                            />
+
+                            <circle
+                                cx="18"
+                                cy="20"
+                                r="1.5"
+                                fill="currentColor"
+                            />
+
+                        </svg>
+
 
                         AGREGAR AL CARRITO
 
                     </button>
 
 
-                    <!-- =================================================
-                         BOTÓN WHATSAPP
 
-                         EDITAR: TEXTO
+                    <!-- =================================================
+                         EDITAR: BOTÓN WHATSAPP
                     ================================================== -->
 
                     <a
@@ -1912,7 +2042,7 @@
 
                 <div class="vendedor">
 
-                    <!-- EDITAR: VENDEDOR -->
+                    <!-- EDITAR: NOMBRE DEL VENDEDOR -->
 
                     <div class="vendedor-principal">
 
@@ -1925,7 +2055,7 @@
                     </div>
 
 
-                    <!-- EDITAR: TEXTO -->
+                    <!-- EDITAR: INFORMACIÓN DEL VENDEDOR -->
 
                     <div class="mercadolider">
 
@@ -1943,6 +2073,8 @@
 
                 <div class="seguridad">
 
+
+                    <!-- EDITAR: PRIMER BLOQUE -->
 
                     <div class="seguridad-item">
 
@@ -1964,6 +2096,8 @@
 
                     </div>
 
+
+                    <!-- EDITAR: GARANTÍA -->
 
                     <div class="seguridad-item">
 
@@ -2184,7 +2318,7 @@
                 </h3>
 
 
-                <!-- EDITAR: DESCRIPCIÓN LARGA -->
+                <!-- EDITAR: DESCRIPCIÓN -->
 
                 <p>
 
@@ -2205,7 +2339,6 @@
                 </p>
 
             </div>
-
 
         </section>
 
@@ -2244,152 +2377,168 @@
 
         /* =====================================================
            =====================================================
-           PRECIO Y CANTIDAD
+           CONFIGURACIÓN EDITABLE DEL PRODUCTO
            =====================================================
         ====================================================== */
 
 
         /*
          * =====================================================
-         * EDITAR AQUÍ EL PRECIO BASE DEL PRODUCTO
+         * EDITAR: PRECIO DE UNA UNIDAD
          *
          * Actualmente:
          *
-         * US$ 10,00
+         * US$ 10.00
          *
-         * IMPORTANTE:
-         *
-         * El precio se multiplica automáticamente
-         * según la cantidad seleccionada.
+         * Si cambias este valor, el precio total
+         * se calculará automáticamente.
          * =====================================================
         */
 
-        const PRECIO_BASE = 10;
+        const PRECIO_UNITARIO = 10;
 
 
         /*
          * =====================================================
-         * EDITAR AQUÍ LA CANTIDAD MÁXIMA
+         * EDITAR: CANTIDAD MÁXIMA DISPONIBLE
          *
          * Actualmente:
          *
-         * 5 unidades
+         * 5
          * =====================================================
         */
 
-        const CANTIDAD_MAXIMA = 5;
+        const STOCK_MAXIMO = 5;
 
 
         /*
          * =====================================================
-         * CANTIDAD INICIAL
-         *
-         * Actualmente comienza en 1.
+         * CANTIDAD ACTUAL
          * =====================================================
         */
 
-        let cantidad = 1;
+        let cantidadActual = 1;
+
+
+
+        /* =====================================================
+           =====================================================
+           CANTIDAD
+           =====================================================
+        ====================================================== */
 
 
         /*
          * =====================================================
-         * CAMBIAR CANTIDAD
-         *
-         * Esta función aumenta o disminuye
-         * la cantidad seleccionada.
+         * MOSTRAR OPCIONES DE CANTIDAD
          * =====================================================
         */
 
-        function cambiarCantidad(cambio) {
+        function mostrarCantidad() {
 
-            const nuevaCantidad =
-                cantidad + cambio;
+            const selector =
+                document.getElementById(
+                    "selectorCantidad"
+                );
 
+            if (
+                selector.style.display === "block"
+            ) {
 
-            /*
-             * Evita bajar de 1.
-             */
+                selector.style.display = "none";
 
-            if (nuevaCantidad < 1) {
+            } else {
 
-                return;
-
-            }
-
-
-            /*
-             * Evita superar las unidades disponibles.
-             */
-
-            if (nuevaCantidad > CANTIDAD_MAXIMA) {
-
-                return;
+                selector.style.display = "block";
 
             }
-
-
-            cantidad =
-                nuevaCantidad;
-
-
-            actualizarPrecio();
 
         }
 
 
+
         /*
          * =====================================================
-         * ACTUALIZAR PRECIO
+         * SELECCIONAR CANTIDAD
          *
-         * Ejemplo:
+         * EDITAR EL PRECIO:
          *
-         * 1 × US$ 10 = US$ 10
-         * 2 × US$ 10 = US$ 20
-         * 3 × US$ 10 = US$ 30
-         * 4 × US$ 10 = US$ 40
-         * 5 × US$ 10 = US$ 50
+         * PRECIO_UNITARIO
+         *
+         * El total se calcula automáticamente.
          * =====================================================
         */
 
-        function actualizarPrecio() {
+        function seleccionarCantidad(cantidad) {
+
+            if (
+                cantidad < 1 ||
+                cantidad > STOCK_MAXIMO
+            ) {
+
+                return;
+
+            }
+
+
+            cantidadActual = cantidad;
+
+
+            /*
+             * Actualizar número mostrado.
+            */
+
+            document.getElementById(
+                "cantidadSeleccionada"
+            ).textContent = cantidadActual;
+
+
+            /*
+             * Calcular precio total.
+            */
 
             const precioTotal =
-                PRECIO_BASE * cantidad;
+                PRECIO_UNITARIO *
+                cantidadActual;
 
 
             /*
-             * Separar parte entera y decimal.
-             */
+             * Mostrar precio total.
+            */
 
-            const precioFormateado =
-                precioTotal.toFixed(2);
-
-
-            const partes =
-                precioFormateado.split(".");
+            const precioEntero =
+                Math.floor(precioTotal);
 
 
-            /*
-             * Actualizar precio mostrado.
-             */
+            const precioDecimal =
+                Math.round(
+                    (precioTotal - precioEntero) * 100
+                );
+
 
             document.getElementById(
                 "precioEntero"
-            ).textContent = partes[0];
+            ).textContent =
+                precioEntero;
 
 
-            document.getElementById(
-                "precioDecimal"
-            ).textContent = partes[1];
+            document.querySelector(
+                ".precio-decimal"
+            ).textContent =
+                String(precioDecimal).padStart(
+                    2,
+                    "0"
+                );
 
 
             /*
-             * Actualizar número de cantidad.
-             */
+             * Cerrar selector.
+            */
 
             document.getElementById(
-                "cantidadNumero"
-            ).textContent = cantidad;
+                "selectorCantidad"
+            ).style.display =
+                "none";
 
         }
 
@@ -2404,21 +2553,29 @@
 
         /*
          * =====================================================
-         * EDITAR AQUÍ LO QUE DEBE HACER EL BOTÓN
-         * "AGREGAR AL CARRITO"
+         * EDITAR AQUÍ LA FUNCIÓN DEL CARRITO
          *
-         * Por ahora muestra una confirmación.
+         * Actualmente muestra la cantidad seleccionada.
          *
-         * Aquí posteriormente podemos conectar
-         * un carrito real.
+         * Más adelante aquí podemos conectar
+         * un carrito real con varios productos.
          * =====================================================
         */
 
-        function agregarAlCarrito() {
+        function agregarCarrito() {
+
+            const precioTotal =
+                PRECIO_UNITARIO *
+                cantidadActual;
+
 
             alert(
-                "Producto agregado al carrito. Cantidad: "
-                + cantidad
+                "Producto agregado al carrito.\n\n" +
+                "Cantidad: " +
+                cantidadActual +
+                "\n" +
+                "Total: US$ " +
+                precioTotal.toFixed(2)
             );
 
         }
@@ -2479,16 +2636,8 @@
 
         document.getElementById(
             "whatsappProducto"
-        ).href = enlaceWhatsApp;
-
-
-        /*
-         * =====================================================
-         * INICIAR EL PRECIO
-         * =====================================================
-        */
-
-        actualizarPrecio();
+        ).href =
+            enlaceWhatsApp;
 
 
     </script>
