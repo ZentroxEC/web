@@ -10,29 +10,65 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Ver producto | ZENTROXEC</title>
+    <!-- =====================================================
+         EDITAR: TÍTULO DE LA PÁGINA
+    ====================================================== -->
+
+    <title>
+        Cable Delta SATA | ZENTROXEC
+    </title>
+
+
+    <!-- =====================================================
+         EDITAR: DESCRIPCIÓN SEO
+    ====================================================== -->
 
     <meta
         name="description"
-        content="Cable Delta macho a 2 SATA hembra | ZENTROXEC"
+        content="Cable de poder Delta SATA macho a 2 SATA hembra. Consulta características y detalles del producto en ZENTROXEC."
     >
 
 
     <style>
 
         /* =====================================================
-           CONFIGURACIÓN GENERAL
-           ===================================================== */
+           VARIABLES DE COLORES
+        ====================================================== */
+
+        :root {
+
+            --negro: #050505;
+            --negro-card: #101010;
+            --negro-suave: #151515;
+            --blanco: #ffffff;
+            --gris: #999999;
+            --gris-claro: #cccccc;
+            --borde: #252525;
+            --rojo: #e50914;
+            --rojo-hover: #b80710;
+            --verde: #00a650;
+            --azul: #3483fa;
+
+        }
+
+
+        /* =====================================================
+           RESET
+        ====================================================== */
 
         * {
+
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+
         }
 
 
         html {
+
             scroll-behavior: smooth;
+
         }
 
 
@@ -43,19 +79,26 @@
                 Helvetica,
                 sans-serif;
 
-            background: #050505;
+            background: var(--negro);
 
-            color: #ffffff;
+            color: var(--blanco);
 
             line-height: 1.6;
+
         }
 
 
         /* =====================================================
            HEADER
-           ===================================================== */
+        ====================================================== */
 
         header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
 
             width: 100%;
 
@@ -64,6 +107,10 @@
 
             border-bottom:
                 1px solid #222222;
+
+            backdrop-filter:
+                blur(10px);
+
         }
 
 
@@ -86,16 +133,19 @@
             justify-content: space-between;
 
             gap: 30px;
+
         }
 
 
         /* =====================================================
-           EDITAR LOGO AQUÍ
-           ===================================================== */
+           LOGO
+        ====================================================== */
 
         .logo {
 
-            color: #ffffff;
+            flex-shrink: 0;
+
+            color: var(--blanco);
 
             font-size: 27px;
 
@@ -104,13 +154,20 @@
             letter-spacing: 1px;
 
             text-decoration: none;
+
         }
 
 
         .logo span {
-            color: #e50914;
+
+            color: var(--rojo);
+
         }
 
+
+        /* =====================================================
+           MENÚ
+        ====================================================== */
 
         nav {
 
@@ -121,6 +178,7 @@
             justify-content: center;
 
             gap: 30px;
+
         }
 
 
@@ -134,63 +192,123 @@
 
             font-weight: 800;
 
-            transition: color 0.2s ease;
+            letter-spacing: 0.3px;
+
+            transition:
+                color 0.2s ease;
+
         }
 
 
         nav a:hover {
-            color: #e50914;
+
+            color: var(--rojo);
+
         }
 
 
-
         /* =====================================================
-           CONTENEDOR DEL PRODUCTO
-           ===================================================== */
+           CONTENEDOR PRINCIPAL
+        ====================================================== */
 
-        .producto-container {
+        .producto-page {
 
             width: 100%;
 
-            max-width: 1200px;
+            max-width: 1100px;
 
             margin: 0 auto;
 
             padding:
-                60px 25px 90px;
+                45px 25px 80px;
+
         }
 
 
-        .producto-grid {
+        /* =====================================================
+           BOTÓN VOLVER
+        ====================================================== */
+
+        .volver {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            color: #bbbbbb;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            margin-bottom: 30px;
+
+            transition:
+                color 0.2s ease;
+
+        }
+
+
+        .volver:hover {
+
+            color: var(--rojo);
+
+        }
+
+
+        /* =====================================================
+           TARJETA PRINCIPAL
+        ====================================================== */
+
+        .producto-principal {
 
             display: grid;
 
             grid-template-columns:
-                1fr 1fr;
+                minmax(0, 1fr)
+                minmax(0, 1fr);
 
-            gap: 55px;
+            gap: 45px;
 
-            align-items: start;
+            background:
+                var(--negro-card);
+
+            border:
+                1px solid var(--borde);
+
+            border-radius: 16px;
+
+            padding: 25px;
+
         }
 
 
-
         /* =====================================================
-           IMAGEN DEL PRODUCTO
-           ===================================================== */
+           GALERÍA DE IMÁGENES
+        ====================================================== */
 
-        .producto-imagen-contenedor {
+        .galeria {
 
             width: 100%;
 
+        }
+
+
+        .imagen-principal {
+
+            width: 100%;
+
+            min-height: 430px;
+
             background: #ffffff;
 
-            border-radius: 15px;
+            border-radius: 12px;
 
             overflow: hidden;
-
-            border:
-                1px solid #292929;
 
             display: flex;
 
@@ -198,18 +316,13 @@
 
             justify-content: center;
 
-            min-height: 500px;
+            border:
+                1px solid #dddddd;
+
         }
 
 
-        /* =====================================================
-           EDITAR IMAGEN DEL PRODUCTO AQUÍ
-
-           Actualmente:
-           img/delta.png
-           ===================================================== */
-
-        .producto-imagen {
+        .imagen-principal img {
 
             width: 100%;
 
@@ -219,260 +332,195 @@
 
             object-fit: contain;
 
-            padding: 25px;
+            display: block;
+
         }
 
+
+        .imagen-secundaria {
+
+            width: 100%;
+
+            margin-top: 15px;
+
+            background: #ffffff;
+
+            border-radius: 12px;
+
+            overflow: hidden;
+
+        }
+
+
+        .imagen-secundaria img {
+
+            width: 100%;
+
+            height: auto;
+
+            display: block;
+
+        }
 
 
         /* =====================================================
            INFORMACIÓN DEL PRODUCTO
-           ===================================================== */
+        ====================================================== */
 
         .producto-info {
 
-            padding-top: 5px;
+            padding:
+                5px 5px 10px;
+
+        }
+
+
+        .producto-titulo {
+
+            font-size: 31px;
+
+            line-height: 1.2;
+
+            font-weight: 800;
+
+            margin-bottom: 15px;
+
         }
 
 
         /* =====================================================
-           EDITAR TEXTO / NOMBRE DEL PRODUCTO AQUÍ
-           ===================================================== */
+           CALIFICACIÓN
+        ====================================================== */
 
-        .producto-info h1 {
+        .valoracion {
 
-            font-size:
-                clamp(28px, 4vw, 42px);
+            display: flex;
 
-            line-height: 1.15;
+            align-items: center;
 
-            margin-bottom: 18px;
+            gap: 8px;
 
-            font-weight: 900;
+            margin-bottom: 22px;
+
         }
 
 
-        .producto-descripcion {
+        .estrella {
 
-            color: #a5a5a5;
+            color: #3483fa;
+
+            font-size: 23px;
+
+        }
+
+
+        .valoracion strong {
+
+            font-size: 17px;
+
+        }
+
+
+        .ventas {
+
+            color: #888888;
 
             font-size: 15px;
 
-            margin-bottom: 25px;
         }
 
+
+        /* =====================================================
+           STOCK
+        ====================================================== */
+
+        .stock {
+
+            display: inline-block;
+
+            padding:
+                7px 11px;
+
+            background:
+                rgba(229, 9, 20, 0.12);
+
+            border:
+                1px solid
+                rgba(229, 9, 20, 0.3);
+
+            color: #ff4b55;
+
+            border-radius: 6px;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            margin-bottom: 18px;
+
+        }
 
 
         /* =====================================================
            PRECIO
-           ===================================================== */
+        ====================================================== */
 
         .precio {
 
-            display: flex;
+            font-size: 45px;
 
-            align-items: center;
-
-            gap: 10px;
-
-            margin-bottom: 25px;
-        }
-
-
-        .precio-actual {
-
-            font-size: 32px;
+            line-height: 1;
 
             font-weight: 900;
 
-            color: #ffffff;
+            margin-bottom: 22px;
+
         }
 
 
+        .precio-decimal {
+
+            font-size: 25px;
+
+            vertical-align: top;
+
+            position: relative;
+
+            top: 3px;
+
+        }
+
 
         /* =====================================================
-           CANTIDAD
-           ===================================================== */
+           DESCUENTO
+        ====================================================== */
 
-        .cantidad-titulo {
+        .descuento {
 
-            display: block;
+            display: inline-block;
 
-            color: #eeeeee;
+            background:
+                rgba(52, 131, 250, 0.12);
 
-            font-size: 14px;
+            color: #5c9cff;
+
+            padding:
+                8px 12px;
+
+            border-radius: 5px;
+
+            font-size: 13px;
 
             font-weight: 800;
 
-            margin-bottom: 8px;
+            margin-bottom: 18px;
+
         }
-
-
-        .cantidad-select {
-
-            width: 100%;
-
-            max-width: 180px;
-
-            height: 48px;
-
-            padding:
-                0 14px;
-
-            border:
-                1px solid #3a3a3a;
-
-            border-radius: 8px;
-
-            background: #0b0b0b;
-
-            color: #ffffff;
-
-            font-size: 14px;
-
-            font-weight: 700;
-
-            outline: none;
-
-            cursor: pointer;
-
-            margin-bottom: 20px;
-        }
-
-
-        .cantidad-select:focus {
-
-            border-color:
-                #e50914;
-        }
-
-
-
-        /* =====================================================
-           BOTONES
-           ===================================================== */
-
-        .botones-compra {
-
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 12px;
-
-            margin-top: 5px;
-        }
-
-
-        .btn {
-
-            width: 100%;
-
-            min-height: 52px;
-
-            border-radius: 8px;
-
-            font-size: 14px;
-
-            font-weight: 900;
-
-            cursor: pointer;
-
-            transition:
-                0.2s ease;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            text-decoration: none;
-        }
-
-
-        /* =====================================================
-           BOTÓN AGREGAR AL CARRITO
-
-           EDITAR TEXTO DEL BOTÓN AQUÍ
-           ===================================================== */
-
-        .btn-carrito {
-
-            background: #151515;
-
-            border:
-                1px solid #3a3a3a;
-
-            color: #ffffff;
-
-            gap: 9px;
-        }
-
-
-        .btn-carrito:hover {
-
-            background: #202020;
-
-            border-color:
-                #555555;
-        }
-
-
-        /* =====================================================
-           ICONO DEL CARRITO
-
-           El icono está a la izquierda del texto.
-           ===================================================== */
-
-        .icono-carrito {
-
-            width: 18px;
-
-            height: 18px;
-
-            object-fit: contain;
-
-            flex-shrink: 0;
-        }
-
-
-
-        /* =====================================================
-           BOTÓN COMPRAR AHORA
-
-           IMPORTANTE:
-
-           Este botón manda a comprar.html.
-
-           NO manda directamente a PayPhone.
-           ===================================================== */
-
-        .btn-comprar {
-
-            background:
-                #e50914;
-
-            border:
-                1px solid #e50914;
-
-            color: #ffffff;
-        }
-
-
-        .btn-comprar:hover {
-
-            background:
-                #b80710;
-
-            border-color:
-                #b80710;
-        }
-
 
 
         /* =====================================================
            MEDIOS DE PAGO
-           ===================================================== */
+        ====================================================== */
 
         .medios-pago {
 
@@ -482,247 +530,521 @@
 
             gap: 7px;
 
-            margin-top: 22px;
+            margin-bottom: 22px;
 
             flex-wrap: nowrap;
+
         }
 
 
         .medios-pago-titulo {
 
-            color: #777777;
+            color: #888888;
 
-            font-size: 11px;
+            font-size: 12px;
 
             font-weight: 700;
 
             white-space: nowrap;
 
-            margin-right: 2px;
+            margin-right: 4px;
+
         }
 
 
-        /* =====================================================
-           CÍRCULOS DE TARJETAS
+        .pago-circulo {
 
-           Se mantienen pequeños y juntos.
-           ===================================================== */
+            width: 42px;
 
-        .tarjeta-icono {
+            height: 42px;
 
-            width: 28px;
-
-            height: 28px;
+            min-width: 42px;
 
             border-radius: 50%;
 
             background: #ffffff;
 
-            border:
-                1px solid #333333;
+            border: 1px solid #dddddd;
 
             display: flex;
 
             align-items: center;
 
             justify-content: center;
+
+            color: #111111;
+
+            font-size: 8px;
+
+            font-weight: 900;
+
+            text-align: center;
 
             overflow: hidden;
 
-            flex-shrink: 0;
         }
 
 
-        .tarjeta-icono img {
+        .pago-visa {
+
+            color: #173b8f;
+
+            font-size: 11px;
+
+            font-style: italic;
+
+        }
+
+
+        .pago-mastercard {
+
+            color: #111111;
+
+            font-size: 7px;
+
+        }
+
+
+        .pago-discover {
+
+            color: #111111;
+
+            font-size: 7px;
+
+        }
+
+
+        .pago-diners {
+
+            color: #174ea6;
+
+            font-size: 7px;
+
+        }
+
+
+        /* =====================================================
+           CANTIDAD
+        ====================================================== */
+
+        .cantidad {
 
             width: 100%;
 
-            height: 100%;
-
-            object-fit: contain;
-
-            padding: 4px;
-        }
-
-
-
-        /* =====================================================
-           CARACTERÍSTICAS
-           ===================================================== */
-
-        .caracteristicas {
-
-            margin-top: 35px;
-
-            padding-top: 30px;
-
-            border-top:
-                1px solid #252525;
-        }
-
-
-        .caracteristicas h2 {
-
-            font-size: 21px;
-
-            margin-bottom: 18px;
-        }
-
-
-        .caracteristica {
-
             display: flex;
 
-            gap: 12px;
+            align-items: center;
 
-            margin-bottom: 13px;
+            justify-content: space-between;
 
-            color: #aaaaaa;
+            background: #151515;
 
-            font-size: 14px;
-        }
-
-
-        .caracteristica strong {
-
-            color: #ffffff;
-        }
-
-
-
-        /* =====================================================
-           MENSAJE DEL CARRITO
-           ===================================================== */
-
-        .mensaje-carrito {
-
-            display: none;
-
-            margin-top: 15px;
-
-            padding: 12px;
-
-            border:
-                1px solid #00b450;
+            border: 1px solid #252525;
 
             border-radius: 8px;
 
-            background:
-                rgba(0, 180, 80, 0.08);
+            min-height: 50px;
 
-            color: #75e6a5;
+            padding: 0 15px;
 
-            font-size: 13px;
+            margin-bottom: 10px;
 
-            text-align: center;
         }
 
 
-        .mensaje-carrito.mostrar {
+        .cantidad label {
 
-            display: block;
+            color: #ffffff;
+
+            font-size: 15px;
+
+            font-weight: 700;
+
         }
 
+
+        .cantidad select {
+
+            background: #101010;
+
+            color: #ffffff;
+
+            border: 1px solid #333333;
+
+            border-radius: 6px;
+
+            min-width: 70px;
+
+            height: 38px;
+
+            padding: 0 10px;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            outline: none;
+
+        }
+
+
+        .cantidad select:focus {
+
+            border-color: var(--rojo);
+
+        }
 
 
         /* =====================================================
-           MODAL
-           ===================================================== */
+           BOTONES
+        ====================================================== */
 
-        .modal {
+        .botones {
 
-            position: fixed;
+            display: flex;
 
-            inset: 0;
+            flex-direction: column;
 
-            background:
-                rgba(0, 0, 0, 0.78);
+            gap: 10px;
 
-            display: none;
+        }
+
+
+        .btn {
+
+            width: 100%;
+
+            min-height: 50px;
+
+            border-radius: 8px;
+
+            display: flex;
 
             align-items: center;
 
             justify-content: center;
 
-            padding: 20px;
-
-            z-index: 9999;
-        }
-
-
-        .modal.mostrar {
-
-            display: flex;
-        }
-
-
-        .modal-contenido {
-
-            width: 100%;
-
-            max-width: 650px;
-
-            max-height: 85vh;
-
-            overflow-y: auto;
-
-            background: #101010;
-
-            border:
-                1px solid #292929;
-
-            border-radius: 14px;
-
-            padding: 30px;
-
-            position: relative;
-        }
-
-
-        .modal-cerrar {
-
-            position: absolute;
-
-            top: 14px;
-
-            right: 18px;
-
-            background: transparent;
-
-            border: none;
-
-            color: #ffffff;
-
-            font-size: 28px;
-
-            cursor: pointer;
-
-            line-height: 1;
-        }
-
-
-        .modal-contenido h2 {
-
-            margin-bottom: 15px;
-
-            font-size: 25px;
-        }
-
-
-        .modal-contenido p {
-
-            color: #aaaaaa;
+            text-decoration: none;
 
             font-size: 14px;
 
-            margin-bottom: 12px;
+            font-weight: 900;
+
+            cursor: pointer;
+
+            transition:
+                background 0.2s ease,
+                border-color 0.2s ease,
+                color 0.2s ease;
+
         }
 
+
+        /* =====================================================
+           BOTÓN COMPRAR AHORA
+        ====================================================== */
+
+        .btn-comprar {
+
+            background: var(--rojo);
+
+            color: #ffffff;
+
+            border:
+                1px solid var(--rojo);
+
+        }
+
+
+        .btn-comprar:hover {
+
+            background: var(--rojo-hover);
+
+            border-color:
+                var(--rojo-hover);
+
+        }
+
+
+        /* =====================================================
+           BOTÓN AGREGAR AL CARRITO
+        ====================================================== */
+
+        .btn-carrito {
+
+            background: rgba(52, 131, 250, 0.12);
+
+            color: #5c9cff;
+
+            border:
+                1px solid rgba(52, 131, 250, 0.35);
+
+            gap: 9px;
+
+        }
+
+
+        .btn-carrito:hover {
+
+            background: rgba(52, 131, 250, 0.20);
+
+            border-color: #3483fa;
+
+            color: #ffffff;
+
+        }
+
+
+        .icono-carrito {
+
+            font-size: 18px;
+
+            line-height: 1;
+
+        }
+
+
+        /* =====================================================
+           BOTÓN WHATSAPP
+        ====================================================== */
+
+        .btn-whatsapp {
+
+            background: #151515;
+
+            color: #bbbbbb;
+
+            border:
+                1px solid #333333;
+
+        }
+
+
+        .btn-whatsapp:hover {
+
+            background: #1c1c1c;
+
+            color: #ffffff;
+
+            border-color:
+                #555555;
+
+        }
+
+
+        /* =====================================================
+           VENDEDOR
+        ====================================================== */
+
+        .vendedor {
+
+            margin-top: 25px;
+
+            padding-top: 20px;
+
+            border-top:
+                1px solid var(--borde);
+
+        }
+
+
+        .vendedor-principal {
+
+            font-size: 16px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .vendedor-principal strong {
+
+            color: #5c9cff;
+
+        }
+
+
+        .mercadolider {
+
+            color: #888888;
+
+            font-size: 13px;
+
+        }
+
+
+        .mercadolider strong {
+
+            color: #dddddd;
+
+        }
+
+
+        /* =====================================================
+           BLOQUE DE SEGURIDAD
+        ====================================================== */
+
+        .seguridad {
+
+            margin-top: 20px;
+
+            padding-top: 20px;
+
+            border-top:
+                1px solid var(--borde);
+
+        }
+
+
+        .seguridad-item {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 12px;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .seguridad-icono {
+
+            font-size: 24px;
+
+            min-width: 30px;
+
+        }
+
+
+        .seguridad-texto {
+
+            color: #999999;
+
+            font-size: 13px;
+
+            line-height: 1.5;
+
+        }
+
+
+        .seguridad-texto strong {
+
+            color: #ffffff;
+
+        }
+
+
+        /* =====================================================
+           SECCIÓN DE CARACTERÍSTICAS
+        ====================================================== */
+
+        .detalles {
+
+            margin-top: 35px;
+
+            background:
+                var(--negro-card);
+
+            border:
+                1px solid var(--borde);
+
+            border-radius: 16px;
+
+            padding: 35px;
+
+        }
+
+
+        .detalles-titulo {
+
+            font-size: 27px;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .detalle-bloque {
+
+            padding:
+                25px 0;
+
+            border-bottom:
+                1px solid var(--borde);
+
+        }
+
+
+        .detalle-bloque:first-of-type {
+
+            padding-top: 0;
+
+        }
+
+
+        .detalle-bloque:last-child {
+
+            border-bottom: none;
+
+            padding-bottom: 0;
+
+        }
+
+
+        .detalle-bloque h3 {
+
+            font-size: 19px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .detalle-bloque h3 span {
+
+            color: var(--rojo);
+
+            margin-right: 8px;
+
+        }
+
+
+        .detalle-bloque ul {
+
+            padding-left: 20px;
+
+        }
+
+
+        .detalle-bloque li {
+
+            color: #999999;
+
+            font-size: 14px;
+
+            margin-bottom: 9px;
+
+        }
+
+
+        .detalle-bloque p {
+
+            color: #999999;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+        }
 
 
         /* =====================================================
            FOOTER
-           ===================================================== */
+        ====================================================== */
 
         footer {
 
@@ -731,10 +1053,12 @@
 
             text-align: center;
 
-            background: #050505;
+            background:
+                #050505;
 
             border-top:
                 1px solid #1c1c1c;
+
         }
 
 
@@ -743,49 +1067,71 @@
             color: #666666;
 
             font-size: 12px;
+
         }
 
 
         footer strong {
+
             color: #ffffff;
+
         }
 
+
+        /* =====================================================
+           TABLET
+        ====================================================== */
+
+        @media (max-width: 850px) {
+
+            .producto-principal {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .imagen-principal {
+
+                min-height: 380px;
+
+            }
+
+        }
 
 
         /* =====================================================
            CELULAR
-           ===================================================== */
+        ====================================================== */
 
-        @media (max-width: 850px) {
+        @media (max-width: 700px) {
 
-            .producto-grid {
+            header {
 
-                grid-template-columns:
-                    1fr;
+                position: relative;
 
-                gap: 35px;
             }
 
-
-            .producto-imagen-contenedor {
-
-                min-height: 350px;
-            }
-
-        }
-
-
-        @media (max-width: 600px) {
 
             .header-container {
 
+                min-height: auto;
+
                 padding:
-                    22px 18px;
+                    25px 20px 20px;
 
-                flex-direction:
-                    column;
+                flex-direction: column;
 
-                gap: 16px;
+                gap: 18px;
+
+            }
+
+
+            .logo {
+
+                font-size: 27px;
+
+                text-align: center;
+
             }
 
 
@@ -793,49 +1139,182 @@
 
                 width: 100%;
 
-                justify-content:
-                    space-between;
+                display: flex;
+
+                align-items: center;
+
+                justify-content: space-between;
 
                 gap: 8px;
+
             }
 
 
             nav a {
 
                 font-size: 10px;
+
+                padding: 5px 3px;
+
             }
 
 
-            .producto-container {
+            .producto-page {
 
                 padding:
-                    35px 15px 60px;
+                    25px 15px 60px;
+
             }
 
 
-            .producto-imagen-contenedor {
+            .producto-principal {
+
+                padding: 15px;
+
+                gap: 25px;
+
+                border-radius: 12px;
+
+            }
+
+
+            .imagen-principal {
 
                 min-height: 300px;
+
             }
 
 
-            .producto-imagen {
+            .producto-titulo {
 
-                padding: 18px;
+                font-size: 25px;
+
+            }
+
+
+            .precio {
+
+                font-size: 40px;
+
             }
 
 
             .medios-pago {
 
                 gap: 5px;
+
             }
 
 
-            .tarjeta-icono {
+            .medios-pago-titulo {
 
-                width: 26px;
+                font-size: 11px;
 
-                height: 26px;
+            }
+
+
+            .pago-circulo {
+
+                width: 38px;
+
+                height: 38px;
+
+                min-width: 38px;
+
+                font-size: 7px;
+
+            }
+
+
+            .pago-visa {
+
+                font-size: 10px;
+
+            }
+
+
+            .detalles {
+
+                padding: 25px 20px;
+
+                border-radius: 12px;
+
+            }
+
+
+            .detalles-titulo {
+
+                font-size: 24px;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           CELULARES PEQUEÑOS
+        ====================================================== */
+
+        @media (max-width: 380px) {
+
+            .header-container {
+
+                padding:
+                    22px 14px 18px;
+
+            }
+
+
+            .logo {
+
+                font-size: 24px;
+
+            }
+
+
+            nav {
+
+                gap: 4px;
+
+            }
+
+
+            nav a {
+
+                font-size: 9px;
+
+            }
+
+
+            .imagen-principal {
+
+                min-height: 250px;
+
+            }
+
+
+            .producto-titulo {
+
+                font-size: 22px;
+
+            }
+
+
+            .pago-circulo {
+
+                width: 34px;
+
+                height: 34px;
+
+                min-width: 34px;
+
+            }
+
+
+            .medios-pago {
+
+                gap: 3px;
+
             }
 
         }
@@ -850,22 +1329,20 @@
 
     <!-- =====================================================
          HEADER
-         ===================================================== -->
+    ====================================================== -->
 
     <header>
 
         <div class="header-container">
 
 
-            <!-- =================================================
-                 EDITAR LOGO AQUÍ
-                 ================================================= -->
-
             <a
                 href="index.html"
                 class="logo"
             >
+
                 ZENTRO<span>X</span>EC
+
             </a>
 
 
@@ -896,36 +1373,52 @@
 
 
     <!-- =====================================================
-         PRODUCTO
-         ===================================================== -->
+         CONTENIDO DEL PRODUCTO
+    ====================================================== -->
 
-    <main class="producto-container">
+    <main class="producto-page">
 
 
-        <div class="producto-grid">
+        <a
+            href="productos.html"
+            class="volver"
+        >
+
+            ← Volver a productos
+
+        </a>
+
+
+
+        <!-- =================================================
+             PRODUCTO PRINCIPAL
+        ================================================== -->
+
+        <section class="producto-principal">
 
 
             <!-- =================================================
-                 IMAGEN
-                 ================================================= -->
+                 GALERÍA
+            ================================================== -->
 
-            <div>
+            <div class="galeria">
 
-                <div class="producto-imagen-contenedor">
 
-                    <!--
-                    =================================================
-                    EDITAR IMAGEN DEL PRODUCTO AQUÍ
-
-                    Imagen actual:
-                    img/delta.png
-                    =================================================
-                    -->
+                <div class="imagen-principal">
 
                     <img
                         src="img/delta.png"
-                        alt="Cable Delta macho a 2 SATA hembra"
-                        class="producto-imagen"
+                        alt="Cable de Poder Delta SATA Macho a 2 SATA Hembra"
+                    >
+
+                </div>
+
+
+                <div class="imagen-secundaria">
+
+                    <img
+                        src="63664.jpg"
+                        alt="Información del Cable Delta SATA"
                     >
 
                 </div>
@@ -935,450 +1428,499 @@
 
 
             <!-- =================================================
-                 INFORMACIÓN
-                 ================================================= -->
+                 INFORMACIÓN DEL PRODUCTO
+            ================================================== -->
 
             <div class="producto-info">
 
 
-                <!--
-                =================================================
-                EDITAR NOMBRE DEL PRODUCTO AQUÍ
-                =================================================
-                -->
+                <h1 class="producto-titulo">
 
-                <h1>
-                    Cable Delta macho a 2 SATA hembra
+                    Cable de Poder Delta SATA Macho a 2x SATA Hembra
+
                 </h1>
 
 
+                <div class="valoracion">
 
-                <!--
-                =================================================
-                EDITAR DESCRIPCIÓN AQUÍ
-                =================================================
-                -->
+                    <span class="estrella">
+                        ★
+                    </span>
 
-                <p class="producto-descripcion">
+                    <strong>
+                        5.0
+                    </strong>
 
-                    Cable adaptador de alimentación Delta
-                    macho a 2 conectores SATA hembra,
-                    diseñado para alimentar dispositivos
-                    de almacenamiento compatibles.
+                    <span>
+                        |
+                    </span>
 
-                </p>
-
-
-
-                <!-- =================================================
-                     PRECIO
-                     ================================================= -->
-
-                <div class="precio">
-
-                    <!--
-                    =================================================
-                    PRECIO BASE
-
-                    1 unidad = $10.00
-
-                    El precio mostrado cambia automáticamente
-                    cuando el cliente selecciona la cantidad.
-                    =================================================
-                    -->
-
-                    <span
-                        class="precio-actual"
-                        id="precioActual"
-                    >
-                        $10.00
+                    <span class="ventas">
+                        +5 vendidos
                     </span>
 
                 </div>
 
 
+                <div class="stock">
+
+                    🔥 ÚLTIMAS 5 UNIDADES
+
+                </div>
+
+
+                <!-- =================================================
+                     PRECIO
+                ================================================== -->
+
+                <div
+                    class="precio"
+                    id="precioProducto"
+                >
+
+                    US$ 10
+
+                </div>
+
+
+                <div class="descuento">
+
+                    20% OFF Diners
+
+                </div>
+
+
+                <!-- =================================================
+                     MEDIOS DE PAGO
+                ================================================== -->
+
+                <div class="medios-pago">
+
+
+                    <span class="medios-pago-titulo">
+
+                        Medios de pago
+
+                    </span>
+
+
+                    <div class="pago-circulo pago-visa">
+
+                        VISA
+
+                    </div>
+
+
+                    <div class="pago-circulo pago-mastercard">
+
+                        Mastercard
+
+                    </div>
+
+
+                    <div class="pago-circulo pago-discover">
+
+                        Discover
+
+                    </div>
+
+
+                    <div class="pago-circulo pago-diners">
+
+                        Diners
+
+                    </div>
+
+                </div>
+
 
                 <!-- =================================================
                      CANTIDAD
-                     ================================================= -->
+                ================================================== -->
 
-                <!--
-                =====================================================
-                EDITAR TEXTO DEL SELECTOR AQUÍ
-                =====================================================
-                -->
-
-                <label
-                    class="cantidad-titulo"
-                    for="cantidad"
-                >
-                    Cantidad
-                </label>
+                <div class="cantidad">
 
 
-                <!--
-                =====================================================
-                SOLO HAY 2 CANTIDADES:
+                    <label
+                        for="cantidadProducto"
+                    >
 
-                1 → $10
-                2 → $20
+                        Cantidad:
 
-                NO AGREGAR 3 NI 4 AQUÍ.
-                =====================================================
-                -->
+                    </label>
 
-                <select
-                    id="cantidad"
-                    class="cantidad-select"
-                >
 
-                    <option value="1">
-                        1 unidad — $10.00
-                    </option>
+                    <select
+                        id="cantidadProducto"
+                        onchange="actualizarProducto()"
+                    >
 
-                    <option value="2">
-                        2 unidades — $20.00
-                    </option>
+                        <option value="1">
+                            1
+                        </option>
 
-                </select>
+                        <option value="2">
+                            2
+                        </option>
+
+                        <option value="3">
+                            3
+                        </option>
+
+                        <option value="4">
+                            4
+                        </option>
+
+                    </select>
+
+                </div>
 
 
 
                 <!-- =================================================
                      BOTONES
-                     ================================================= -->
+                ================================================== -->
 
-                <div class="botones-compra">
+                <div class="botones">
 
 
-                    <!--
-                    =================================================
-                    BOTÓN AGREGAR AL CARRITO
+                    <!-- =================================================
+                         BOTÓN COMPRAR AHORA
 
-                    EDITAR TEXTO AQUÍ SI LO NECESITAS.
-                    =================================================
-                    -->
+                         IMPORTANTE:
+                         Ahora TODAS las cantidades llevan primero
+                         a comprar.html.
+
+                         La cantidad seleccionada se guarda en
+                         sessionStorage para que comprar.html pueda
+                         leerla.
+                    ================================================== -->
+
+                    <a
+                        href="comprar.html"
+                        id="botonComprar"
+                        class="btn btn-comprar"
+                    >
+
+                        COMPRAR AHORA
+
+                    </a>
+
 
                     <button
                         type="button"
                         class="btn btn-carrito"
-                        id="btnCarrito"
+                        id="botonCarrito"
                         onclick="agregarAlCarrito()"
                     >
 
-                        <!--
-                        =================================================
-                        ICONO DEL CARRITO
-
-                        Si tienes otro icono puedes cambiar el src.
-                        =================================================
-                        -->
-
-                        <img
-                            src="img/carrito.png"
-                            alt="Carrito"
+                        <span
                             class="icono-carrito"
+                            aria-hidden="true"
                         >
+                            🛒
+                        </span>
 
-                        Agregar al carrito
+                        AGREGAR AL CARRITO
 
                     </button>
 
 
-
-                    <!--
-                    =================================================
-                    BOTÓN COMPRAR AHORA
-
-                    IMPORTANTE:
-
-                    Este botón manda a comprar.html.
-
-                    NO manda directamente a PayPhone.
-
-                    La cantidad se envía mediante URL.
-                    =================================================
-                    -->
-
-                    <button
-                        type="button"
-                        class="btn btn-comprar"
-                        id="btnComprar"
-                        onclick="comprarAhora()"
+                    <a
+                        id="whatsappProducto"
+                        class="btn btn-whatsapp"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
 
-                        Comprar ahora
+                        CONSULTAR POR WHATSAPP
 
-                    </button>
-
+                    </a>
 
                 </div>
-
 
 
                 <!-- =================================================
-                     MENSAJE DEL CARRITO
-                     ================================================= -->
+                     VENDEDOR
+                ================================================== -->
 
-                <div
-                    id="mensajeCarrito"
-                    class="mensaje-carrito"
-                >
-                    Producto agregado al carrito.
+                <div class="vendedor">
+
+                    <div class="vendedor-principal">
+
+                        Vendido por
+
+                        <strong>
+                            ZENTROXEC
+                        </strong>
+
+                    </div>
+
+
+                    <div class="mercadolider">
+
+                        Venta directa | Atención al cliente
+
+                    </div>
+
                 </div>
-
 
 
                 <!-- =================================================
-                     MÉTODOS DE PAGO
-                     ================================================= -->
+                     COMPRA PROTEGIDA
+                ================================================== -->
 
-                <div class="medios-pago">
-
-
-                    <!--
-                    =================================================
-                    EDITAR TEXTO "MEDIOS DE PAGO" AQUÍ
-                    =================================================
-                    -->
-
-                    <span class="medios-pago-titulo">
-                        Medios de pago
-                    </span>
+                <div class="seguridad">
 
 
+                    <div class="seguridad-item">
 
-                    <!-- VISA -->
+                        <div class="seguridad-icono">
 
-                    <div
-                        class="tarjeta-icono"
-                        title="Visa"
-                    >
+                            🛡️
 
-                        <!--
-                        EDITAR ICONO VISA AQUÍ
-                        -->
+                        </div>
 
-                        <img
-                            src="img/visa.png"
-                            alt="Visa"
-                        >
+                        <div class="seguridad-texto">
+
+                            <strong>
+
+                                Compra protegida.
+
+                            </strong>
+
+                            Recibe el producto que esperabas
+                            o comunícate con nosotros para
+                            gestionar cualquier inconveniente.
+
+                        </div>
 
                     </div>
 
 
+                    <div class="seguridad-item">
 
-                    <!-- MASTERCARD -->
+                        <div class="seguridad-icono">
 
-                    <div
-                        class="tarjeta-icono"
-                        title="Mastercard"
-                    >
+                            🏅
 
-                        <!--
-                        EDITAR ICONO MASTERCARD AQUÍ
-                        -->
+                        </div>
 
-                        <img
-                            src="img/mastercard.png"
-                            alt="Mastercard"
-                        >
+                        <div class="seguridad-texto">
 
-                    </div>
+                            <strong>
 
+                                Garantía.
 
+                            </strong>
 
-                    <!-- DISCOVER -->
+                            12 meses de garantía de fábrica.
 
-                    <div
-                        class="tarjeta-icono"
-                        title="Discover"
-                    >
-
-                        <!--
-                        EDITAR ICONO DISCOVER AQUÍ
-                        -->
-
-                        <img
-                            src="img/discover.png"
-                            alt="Discover"
-                        >
-
-                    </div>
-
-
-
-                    <!-- DINERS -->
-
-                    <div
-                        class="tarjeta-icono"
-                        title="Diners Club"
-                    >
-
-                        <!--
-                        EDITAR ICONO DINERS AQUÍ
-                        -->
-
-                        <img
-                            src="img/diners.png"
-                            alt="Diners Club"
-                        >
+                        </div>
 
                     </div>
 
                 </div>
-
-
-
-                <!-- =================================================
-                     CARACTERÍSTICAS
-                     ================================================= -->
-
-                <div class="caracteristicas">
-
-
-                    <!--
-                    =================================================
-                    EDITAR TÍTULO AQUÍ
-                    =================================================
-                    -->
-
-                    <h2>
-                        Características principales
-                    </h2>
-
-
-
-                    <div class="caracteristica">
-
-                        <span>✓</span>
-
-                        <span>
-                            <strong>Conector:</strong>
-                            Delta macho.
-                        </span>
-
-                    </div>
-
-
-
-                    <div class="caracteristica">
-
-                        <span>✓</span>
-
-                        <span>
-                            <strong>Salidas:</strong>
-                            2 conectores SATA hembra.
-                        </span>
-
-                    </div>
-
-
-
-                    <div class="caracteristica">
-
-                        <span>✓</span>
-
-                        <span>
-                            <strong>Uso:</strong>
-                            alimentación de dispositivos SATA compatibles.
-                        </span>
-
-                    </div>
-
-
-
-                    <div class="caracteristica">
-
-                        <span>✓</span>
-
-                        <span>
-                            <strong>Compatibilidad:</strong>
-                            HDD, SSD y otros dispositivos compatibles.
-                        </span>
-
-                    </div>
-
-
-                </div>
-
 
             </div>
 
-        </div>
+        </section>
+
+
+
+        <!-- =====================================================
+             DETALLES COMPLETOS
+        ====================================================== -->
+
+        <section class="detalles">
+
+
+            <h2 class="detalles-titulo">
+
+                Detalles del producto
+
+            </h2>
+
+
+
+            <!-- =================================================
+                 01. CARACTERÍSTICAS PRINCIPALES
+            ================================================== -->
+
+            <div class="detalle-bloque">
+
+                <h3>
+
+                    <span>
+                        01.
+                    </span>
+
+                    Características principales
+
+                </h3>
+
+
+                <ul>
+
+                    <li>
+                        Marca: Delta
+                    </li>
+
+                    <li>
+                        Modelo: Cable de poder SATA
+                    </li>
+
+                    <li>
+                        Color: Negro
+                    </li>
+
+                    <li>
+                        Conector principal: Delta macho
+                    </li>
+
+                    <li>
+                        Salidas: 2 conectores SATA hembra
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 02. OTROS
+            ================================================== -->
+
+            <div class="detalle-bloque">
+
+                <h3>
+
+                    <span>
+                        02.
+                    </span>
+
+                    Otros
+
+                </h3>
+
+
+                <ul>
+
+                    <li>
+                        Fácil instalación.
+                    </li>
+
+                    <li>
+                        Diseño compacto.
+                    </li>
+
+                    <li>
+                        Cable pensado para alimentación de dispositivos SATA compatibles.
+                    </li>
+
+                    <li>
+                        Color negro.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 03. ESPECIFICACIONES
+            ================================================== -->
+
+            <div class="detalle-bloque">
+
+                <h3>
+
+                    <span>
+                        03.
+                    </span>
+
+                    Especificaciones
+
+                </h3>
+
+
+                <ul>
+
+                    <li>
+                        Conecta una salida Delta con dos conexiones SATA de alimentación.
+                    </li>
+
+                    <li>
+                        Permite alimentar dispositivos compatibles desde la conexión correspondiente.
+                    </li>
+
+                    <li>
+                        Instalación sencilla y directa.
+                    </li>
+
+                    <li>
+                        Longitud aproximada: 15 cm.
+                    </li>
+
+                    <li>
+                        Tipo de conexión: alimentación SATA.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 04. PROPÓSITO
+            ================================================== -->
+
+            <div class="detalle-bloque">
+
+                <h3>
+
+                    <span>
+                        04.
+                    </span>
+
+                    Propósito
+
+                </h3>
+
+
+                <p>
+
+                    Este cable está diseñado para proporcionar
+                    una solución práctica cuando necesitas
+                    conectar dispositivos de almacenamiento
+                    compatibles mediante conexiones de alimentación
+                    SATA.
+
+                    Es especialmente útil en configuraciones
+                    donde se necesita ampliar las posibilidades
+                    de alimentación de dispositivos compatibles.
+
+                    Antes de comprar, verifica que el conector
+                    Delta de tu equipo y los dispositivos que
+                    deseas conectar sean compatibles con este cable.
+
+                </p>
+
+            </div>
+
+
+        </section>
 
     </main>
 
 
 
     <!-- =====================================================
-         MODAL
-         ===================================================== -->
-
-    <div
-        class="modal"
-        id="modalDetalles"
-    >
-
-        <div class="modal-contenido">
-
-
-            <!--
-            =================================================
-            BOTÓN CERRAR MODAL
-            =================================================
-            -->
-
-            <button
-                type="button"
-                class="modal-cerrar"
-                onclick="cerrarModal()"
-                aria-label="Cerrar"
-            >
-                ×
-            </button>
-
-
-            <!--
-            =================================================
-            EDITAR TÍTULO DEL MODAL AQUÍ
-            =================================================
-            -->
-
-            <h2>
-                Detalles del producto
-            </h2>
-
-
-            <p>
-                Cable Delta macho a 2 SATA hembra
-                para alimentación de dispositivos
-                de almacenamiento compatibles.
-            </p>
-
-
-            <p>
-                Diseñado para ofrecer una solución
-                práctica cuando necesitas alimentar
-                dos dispositivos SATA compatibles.
-            </p>
-
-
-            <p>
-                Antes de realizar la compra verifica
-                que el conector Delta de tu equipo sea
-                compatible con este cable.
-            </p>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- =====================================================
          FOOTER
-         ===================================================== -->
+    ====================================================== -->
 
     <footer>
 
@@ -1388,9 +1930,9 @@
 
             <strong>
                 ZENTROXEC
-            </strong>.
+            </strong>
 
-            Todos los derechos reservados.
+            . Todos los derechos reservados.
 
         </p>
 
@@ -1400,66 +1942,66 @@
 
     <!-- =====================================================
          JAVASCRIPT
-         ===================================================== -->
+    ====================================================== -->
 
     <script>
 
 
         /* =====================================================
            CONFIGURACIÓN DEL PRODUCTO
+        ====================================================== */
 
-           EDITAR AQUÍ EL PRECIO BASE.
 
-           Actualmente:
-
-           1 unidad = $10
-           2 unidades = $20
-           ===================================================== */
+        /*
+         * PRECIO UNITARIO
+         *
+         * 1 = US$10
+         * 2 = US$20
+         * 3 = US$30
+         * 4 = US$40
+        */
 
         const PRECIO_UNITARIO = 10;
 
 
 
         /* =====================================================
-           OBTENER ELEMENTOS
-           ===================================================== */
+           ELEMENTOS
+        ====================================================== */
+
+        const botonComprar =
+            document.getElementById(
+                "botonComprar"
+            );
 
         const selectorCantidad =
             document.getElementById(
-                "cantidad"
+                "cantidadProducto"
             );
 
-
-        const precioActual =
+        const precioProducto =
             document.getElementById(
-                "precioActual"
-            );
-
-
-        const btnCarrito =
-            document.getElementById(
-                "btnCarrito"
-            );
-
-
-        const mensajeCarrito =
-            document.getElementById(
-                "mensajeCarrito"
+                "precioProducto"
             );
 
 
 
         /* =====================================================
-           ACTUALIZAR PRECIO
+           ACTUALIZAR PRODUCTO
+           
+           Esta función actualiza:
+           
+           1. Cantidad
+           2. Precio
+           3. Datos que se enviarán a comprar.html
+        ====================================================== */
 
-           Cada vez que cambia la cantidad:
+        function actualizarProducto() {
 
-           1 → $10
-           2 → $20
-           ===================================================== */
 
-        function actualizarPrecio() {
-
+            /*
+             * Obtener cantidad seleccionada
+            */
 
             const cantidad =
                 parseInt(
@@ -1467,43 +2009,114 @@
                 );
 
 
-            const precio =
-                cantidad *
-                PRECIO_UNITARIO;
+            /*
+             * Calcular precio total
+            */
+
+            const precioTotal =
+                PRECIO_UNITARIO * cantidad;
 
 
-            precioActual.textContent =
-                "$" +
-                precio.toFixed(2);
+            /*
+             * Mostrar precio
+            */
+
+            precioProducto.textContent =
+                "US$ " + precioTotal;
 
 
-            /* =============================================
-               También actualizamos el texto de las opciones
-               para que siempre coincida con el precio.
-               ============================================= */
+            /*
+             * =================================================
+             * GUARDAR DATOS DEL PRODUCTO
+             *
+             * Se utilizan para que comprar.html pueda saber
+             * qué producto y qué cantidad seleccionó el cliente.
+             * =================================================
+            */
 
-            selectorCantidad.options[0].text =
-                "1 unidad — $" +
-                PRECIO_UNITARIO.toFixed(2);
+            sessionStorage.setItem(
+                "productoNombre",
+                "Cable de Poder Delta SATA Macho a 2x SATA Hembra"
+            );
 
 
-            selectorCantidad.options[1].text =
-                "2 unidades — $" +
-                (PRECIO_UNITARIO * 2).toFixed(2);
+            sessionStorage.setItem(
+                "productoCantidad",
+                cantidad
+            );
+
+
+            sessionStorage.setItem(
+                "productoPrecioUnitario",
+                PRECIO_UNITARIO
+            );
+
+
+            sessionStorage.setItem(
+                "productoPrecioTotal",
+                precioTotal
+            );
+
+
+            /*
+             * =================================================
+             * EL BOTÓN SIEMPRE VA A comprar.html
+             *
+             * La cantidad ya está guardada en sessionStorage.
+             * =================================================
+            */
+
+            botonComprar.href =
+                "comprar.html";
 
         }
 
 
 
         /* =====================================================
-           CAMBIAR CANTIDAD
-           ===================================================== */
+           PREPARAR COMPRA
+           
+           Antes de entrar a comprar.html se vuelve a guardar
+           la cantidad seleccionada para evitar perderla.
+        ====================================================== */
 
-        selectorCantidad.addEventListener(
-            "change",
+        botonComprar.addEventListener(
+            "click",
             function () {
 
-                actualizarPrecio();
+
+                const cantidad =
+                    parseInt(
+                        selectorCantidad.value
+                    );
+
+
+                const precioTotal =
+                    PRECIO_UNITARIO * cantidad;
+
+
+                sessionStorage.setItem(
+                    "productoNombre",
+                    "Cable de Poder Delta SATA Macho a 2x SATA Hembra"
+                );
+
+
+                sessionStorage.setItem(
+                    "productoCantidad",
+                    cantidad
+                );
+
+
+                sessionStorage.setItem(
+                    "productoPrecioUnitario",
+                    PRECIO_UNITARIO
+                );
+
+
+                sessionStorage.setItem(
+                    "productoPrecioTotal",
+                    precioTotal
+                );
 
             }
         );
@@ -1511,77 +2124,8 @@
 
 
         /* =====================================================
-           COMPRAR AHORA
-
-           IMPORTANTE:
-
-           NO ENVÍA DIRECTAMENTE A PAYPHONE.
-
-           Envía a comprar.html.
-
-           La cantidad y el precio viajan en la URL.
-
-           Cantidad 1:
-
-           comprar.html?cantidad=1&precio=10
-
-
-           Cantidad 2:
-
-           comprar.html?cantidad=2&precio=20
-           ===================================================== */
-
-        function comprarAhora() {
-
-
-            const cantidad =
-                parseInt(
-                    selectorCantidad.value
-                );
-
-
-            const precio =
-                cantidad *
-                PRECIO_UNITARIO;
-
-
-
-            /* =================================================
-               CREAR URL PARA comprar.html
-               ================================================= */
-
-            const urlCompra =
-                "comprar.html" +
-                "?cantidad=" +
-                encodeURIComponent(
-                    cantidad
-                ) +
-                "&precio=" +
-                encodeURIComponent(
-                    precio
-                );
-
-
-
-            /* =================================================
-               IR A comprar.html
-               ================================================= */
-
-            window.location.href =
-                urlCompra;
-
-        }
-
-
-
-        /* =====================================================
            AGREGAR AL CARRITO
-
-           EDITAR AQUÍ EL COMPORTAMIENTO DEL CARRITO.
-
-           Por ahora muestra confirmación visual y guarda
-           temporalmente el producto en localStorage.
-           ===================================================== */
+        ====================================================== */
 
         function agregarAlCarrito() {
 
@@ -1592,104 +2136,43 @@
                 );
 
 
-            const precio =
-                cantidad *
-                PRECIO_UNITARIO;
+            const precioTotal =
+                PRECIO_UNITARIO * cantidad;
 
 
+            /*
+             * Guardar producto actual.
+            */
 
-            /* =================================================
-               INFORMACIÓN DEL PRODUCTO
-               ================================================= */
-
-            const productoCarrito = {
-
-                nombre:
-                    "Cable Delta macho a 2 SATA hembra",
-
-                imagen:
-                    "img/delta.png",
-
-                cantidad:
-                    cantidad,
-
-                precioUnitario:
-                    PRECIO_UNITARIO,
-
-                total:
-                    precio
-
-            };
-
-
-
-            /* =================================================
-               GUARDAR EN LOCALSTORAGE
-               ================================================= */
-
-            localStorage.setItem(
-
-                "carritoZentroxec",
-
-                JSON.stringify(
-                    productoCarrito
-                )
-
+            sessionStorage.setItem(
+                "carritoProducto",
+                "Cable de Poder Delta SATA Macho a 2x SATA Hembra"
             );
 
 
-
-            /* =================================================
-               MOSTRAR MENSAJE
-               ================================================= */
-
-            mensajeCarrito.textContent =
-                "Producto agregado al carrito.";
-
-            mensajeCarrito.classList.add(
-                "mostrar"
+            sessionStorage.setItem(
+                "carritoCantidad",
+                cantidad
             );
 
 
-
-            /* =================================================
-               CAMBIAR TEMPORALMENTE EL TEXTO DEL BOTÓN
-               ================================================= */
-
-            const textoOriginal =
-                btnCarrito.innerHTML;
-
-
-            btnCarrito.innerHTML =
-                "✓ Producto agregado";
-
-
-            setTimeout(
-
-                function () {
-
-                    btnCarrito.innerHTML =
-                        textoOriginal;
-
-                },
-
-                1800
-
+            sessionStorage.setItem(
+                "carritoPrecio",
+                precioTotal
             );
 
 
-            setTimeout(
+            /*
+             * Mensaje actual.
+             *
+             * Posteriormente aquí se puede conectar
+             * un carrito completo.
+            */
 
-                function () {
-
-                    mensajeCarrito.classList.remove(
-                        "mostrar"
-                    );
-
-                },
-
-                2500
-
+            alert(
+                "Producto agregado al carrito.\n\n" +
+                "Cantidad: " + cantidad + "\n" +
+                "Total: US$ " + precioTotal
             );
 
         }
@@ -1697,56 +2180,70 @@
 
 
         /* =====================================================
-           MODAL
-           ===================================================== */
+           WHATSAPP
+        ====================================================== */
 
-        function cerrarModal() {
 
-            document
-                .getElementById(
-                    "modalDetalles"
-                )
-                .classList.remove(
-                    "mostrar"
-                );
+        /*
+         * NÚMERO DE WHATSAPP
+         *
+         * Ecuador:
+         * 593960648763
+         *
+         * SIN +
+         * SIN ESPACIOS
+         * SIN GUIONES
+        */
 
-        }
+        const WHATSAPP =
+            "593960648763";
+
+
+
+        /*
+         * MENSAJE DE WHATSAPP
+        */
+
+        const mensajeWhatsApp =
+            "Hola ZENTROXEC, quiero consultar la disponibilidad del Cable Delta macho a 2 SATA hembra.";
+
+
+
+        /*
+         * CREAR ENLACE
+        */
+
+        const enlaceWhatsApp =
+            `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensajeWhatsApp)}`;
+
+
+
+        /*
+         * ASIGNAR ENLACE
+        */
+
+        document.getElementById(
+            "whatsappProducto"
+        ).href =
+            enlaceWhatsApp;
 
 
 
         /* =====================================================
-           CERRAR MODAL AL HACER CLIC FUERA
-           ===================================================== */
+           INICIAR PÁGINA
+           
+           Cantidad inicial:
+           1
+           
+           Precio:
+           US$10
+           
+           Compra:
+           comprar.html
+        ====================================================== */
 
-        document
-            .getElementById(
-                "modalDetalles"
-            )
-            .addEventListener(
+        actualizarProducto();
 
-                "click",
-
-                function (event) {
-
-                    if (
-                        event.target === this
-                    ) {
-
-                        cerrarModal();
-
-                    }
-
-                }
-
-            );
-
-
-
-        /* =====================================================
-           INICIALIZAR PRECIO
-           ===================================================== */
-
-        actualizarPrecio();
 
     </script>
 
