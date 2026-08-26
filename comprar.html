@@ -1,1989 +1,612 @@
-<!DOCTYPE html>
-<html lang="es">
+<script>
 
-<head>
+    /* =====================================================
+       🔴 APPS SCRIPT
 
-    <meta charset="UTF-8">
+       Este es tu enlace /exec.
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+       NO CAMBIAR salvo que hagas una nueva implementación.
+       ===================================================== */
 
-    <title>Finalizar compra | ZENTROXEC</title>
+    const APPS_SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycbzfVmHhyISYruGRZk3R30fBiCvOM5Gv5rQODIsxlMqCIiIsBF_8T6AFvhQTVUf7cMfb/exec";
 
-    <meta
-        name="description"
-        content="Completa tus datos de envío y continúa con el pago."
-    >
 
+    /* =====================================================
+       🔴 CONFIGURACIÓN DEL PRODUCTO
 
-    <style>
+       Precio de 1 unidad:
+       $10
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+       La cantidad puede venir desde verproducto.html.
 
+       Ejemplo:
 
-        html {
-            scroll-behavior: smooth;
-        }
+       cantidad=1 → $10
+       cantidad=2 → $20
 
+       Si posteriormente cambias el precio unitario,
+       solamente cambia PRECIO_UNITARIO.
+       ===================================================== */
 
-        body {
+    const PRECIO_UNITARIO = 10;
 
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
 
-            background: #050505;
+    /* =====================================================
+       🔴 ENLACES DE PAYPHONE
 
-            color: #ffffff;
+       Cada cantidad tiene su propio enlace.
 
-            line-height: 1.6;
-        }
+       Cantidad 1 → $10
+       Cantidad 2 → $20
 
+       Si agregas más cantidades, puedes añadirlas aquí.
+       ===================================================== */
 
-        /* =====================================================
-           HEADER
-           ===================================================== */
+    const PAYPHONE_LINKS = {
 
-        header {
+        1:
+            "https://ppls.me/KT8CHtyeUHxwBmYlg5NIyA",
 
-            width: 100%;
+        2:
+            "https://ppls.me/OnmwepzpJyIEMrq7uoPn9g"
 
-            background:
-                rgba(5, 5, 5, 0.97);
+    };
 
-            border-bottom:
-                1px solid #222222;
-        }
 
+    /* =====================================================
+       🔴 RECIBIR DATOS DESDE verproducto.html
 
-        .header-container {
+       verproducto.html debe enviar al usuario a:
 
-            width: 100%;
+       comprar.html?cantidad=1
 
-            max-width: 1250px;
+       o:
 
-            min-height: 76px;
+       comprar.html?cantidad=2
 
-            margin: 0 auto;
+       También puede enviar el precio:
 
-            padding: 0 25px;
+       comprar.html?cantidad=2&precio=20
 
-            display: flex;
+       PERO comprar.html NO confiará en ese precio.
 
-            align-items: center;
+       El precio siempre será calculado aquí:
 
-            justify-content: space-between;
+       cantidad × PRECIO_UNITARIO
+       ===================================================== */
 
-            gap: 30px;
-        }
+    const parametrosURL =
+        new URLSearchParams(
+            window.location.search
+        );
 
 
-        .logo {
+    /* =====================================================
+       OBTENER CANTIDAD
+       ===================================================== */
 
-            color: #ffffff;
+    let cantidad =
+        parseInt(
+            parametrosURL.get("cantidad"),
+            10
+        );
 
-            font-size: 27px;
 
-            font-weight: 900;
+    /* =====================================================
+       VALIDAR CANTIDAD
 
-            letter-spacing: 1px;
+       Actualmente permitimos:
 
-            text-decoration: none;
-        }
+       1
+       2
 
+       Si no llega una cantidad válida,
+       utilizamos 1.
+       ===================================================== */
 
-        .logo span {
-            color: #e50914;
-        }
+    if (
+        !Number.isInteger(cantidad) ||
+        cantidad < 1 ||
+        cantidad > 2
+    ) {
 
+        cantidad = 1;
 
-        nav {
+    }
 
-            display: flex;
 
-            align-items: center;
+    /* =====================================================
+       🔴 CALCULAR PRECIO
 
-            justify-content: center;
+       IMPORTANTE:
 
-            gap: 30px;
-        }
+       NO utilizamos directamente el precio recibido
+       desde la URL.
 
+       El precio se calcula:
 
-        nav a {
+       cantidad × precio unitario
 
-            color: #dddddd;
+       1 × $10 = $10
+       2 × $10 = $20
+       ===================================================== */
 
-            text-decoration: none;
+    let precioTotal =
+        cantidad * PRECIO_UNITARIO;
 
-            font-size: 13px;
 
-            font-weight: 800;
+    /* =====================================================
+       ELEMENTOS DEL RESUMEN DE COMPRA
+       ===================================================== */
 
-            transition: color 0.2s ease;
-        }
+    const cantidadProducto =
+        document.getElementById(
+            "cantidadProducto"
+        );
 
 
-        nav a:hover {
-            color: #e50914;
-        }
+    const precioProducto =
+        document.getElementById(
+            "precioProducto"
+        );
 
 
-        /* =====================================================
-           CONTENEDOR
-           ===================================================== */
+    const subtotalProducto =
+        document.getElementById(
+            "subtotalProducto"
+        );
 
-        .checkout {
 
-            width: 100%;
+    const totalProducto =
+        document.getElementById(
+            "totalProducto"
+        );
 
-            max-width: 1050px;
 
-            margin: 0 auto;
+    /* =====================================================
+       🔴 ACTUALIZAR RESUMEN DE COMPRA
 
-            padding:
-                55px 20px 80px;
-        }
+       Esta función modifica automáticamente:
 
+       Cantidad
+       Precio del producto
+       Subtotal
+       Total
+       ===================================================== */
 
-        .titulo {
+    function actualizarResumen() {
 
-            text-align: center;
 
-            margin-bottom: 40px;
-        }
+        cantidadProducto.textContent =
+            "Cantidad: " + cantidad;
 
 
-        .titulo h1 {
+        precioProducto.textContent =
+            "$" +
+            precioTotal.toFixed(2);
 
-            font-size:
-                clamp(32px, 5vw, 50px);
 
-            line-height: 1.1;
+        subtotalProducto.textContent =
+            "$" +
+            precioTotal.toFixed(2);
 
-            margin-bottom: 12px;
-        }
 
+        totalProducto.textContent =
+            "$" +
+            precioTotal.toFixed(2);
 
-        .titulo h1 span {
-            color: #e50914;
-        }
+    }
 
 
-        .titulo p {
+    /* =====================================================
+       ACTUALIZAR EL RESUMEN AL ABRIR comprar.html
+       ===================================================== */
 
-            color: #999999;
+    actualizarResumen();
 
-            font-size: 15px;
-        }
 
+    /* =====================================================
+       PROVINCIA "OTRA"
+       ===================================================== */
 
-        /* =====================================================
-           GRID
-           ===================================================== */
+    const provincia =
+        document.getElementById(
+            "provincia"
+        );
 
-        .checkout-grid {
 
-            display: grid;
+    const otraProvinciaContainer =
+        document.getElementById(
+            "otraProvinciaContainer"
+        );
 
-            grid-template-columns:
-                1.15fr 0.85fr;
 
-            gap: 25px;
+    const otraProvincia =
+        document.getElementById(
+            "otraProvincia"
+        );
 
-            align-items: start;
-        }
 
+    provincia.addEventListener(
+        "change",
+        function () {
 
-        /* =====================================================
-           SECCIONES
-           ===================================================== */
+            if (
+                this.value === "otra"
+            ) {
 
-        .seccion {
+                otraProvinciaContainer.style.display =
+                    "block";
 
-            background: #101010;
+                otraProvincia.required =
+                    true;
 
-            border:
-                1px solid #252525;
+            } else {
 
-            border-radius: 14px;
+                otraProvinciaContainer.style.display =
+                    "none";
 
-            padding: 28px;
+                otraProvincia.required =
+                    false;
 
-            margin-bottom: 25px;
-        }
+                otraProvincia.value =
+                    "";
 
-
-        .seccion h2 {
-
-            font-size: 22px;
-
-            margin-bottom: 6px;
-        }
-
-
-        .seccion-subtitulo {
-
-            color: #888888;
-
-            font-size: 13px;
-
-            margin-bottom: 25px;
-        }
-
-
-        /* =====================================================
-           CAMPOS
-           ===================================================== */
-
-        .campo {
-            margin-bottom: 18px;
-        }
-
-
-        .campo label {
-
-            display: block;
-
-            color: #eeeeee;
-
-            font-size: 14px;
-
-            font-weight: 700;
-
-            margin-bottom: 7px;
-        }
-
-
-        .campo input,
-        .campo select,
-        .campo textarea {
-
-            width: 100%;
-
-            min-height: 48px;
-
-            padding:
-                12px 14px;
-
-            border-radius: 8px;
-
-            border:
-                1px solid #3a3a3a;
-
-            background: #080808;
-
-            color: #ffffff;
-
-            outline: none;
-
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
-
-            font-size: 14px;
-        }
-
-
-        .campo textarea {
-
-            min-height: 110px;
-
-            resize: vertical;
-        }
-
-
-        .campo input:focus,
-        .campo select:focus,
-        .campo textarea:focus {
-
-            border-color:
-                #e50914;
-        }
-
-
-        .fila {
-
-            display: grid;
-
-            grid-template-columns:
-                1fr 1fr;
-
-            gap: 15px;
-        }
-
-
-        /* =====================================================
-           CHECKBOX
-           ===================================================== */
-
-        .check-line {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 10px;
-
-            color: #aaaaaa;
-
-            font-size: 13px;
-
-            margin:
-                5px 0 20px;
-        }
-
-
-        .check-line input {
-
-            width: 18px;
-
-            height: 18px;
-
-            accent-color:
-                #e50914;
-        }
-
-
-        /* =====================================================
-           PRODUCTO
-           ===================================================== */
-
-        .producto-resumen {
-
-            display: flex;
-
-            gap: 15px;
-
-            align-items: center;
-
-            padding: 16px;
-
-            border:
-                1px solid #292929;
-
-            border-radius: 10px;
-
-            background: #080808;
-
-            margin-bottom: 20px;
-        }
-
-
-        .producto-resumen-imagen {
-
-            width: 75px;
-
-            height: 75px;
-
-            background: #ffffff;
-
-            border-radius: 8px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            overflow: hidden;
-
-            flex-shrink: 0;
-        }
-
-
-        .producto-resumen-imagen img {
-
-            width: 100%;
-
-            height: 100%;
-
-            object-fit: contain;
-
-            padding: 5px;
-        }
-
-
-        .producto-resumen-info {
-
-            flex: 1;
-        }
-
-
-        .producto-resumen-info h3 {
-
-            font-size: 15px;
-
-            margin-bottom: 4px;
-        }
-
-
-        .producto-resumen-info p {
-
-            color: #888888;
-
-            font-size: 12px;
-        }
-
-
-        .producto-resumen-precio {
-
-            font-size: 20px;
-
-            font-weight: 900;
-        }
-
-
-        /* =====================================================
-           RESUMEN
-           ===================================================== */
-
-        .resumen-linea {
-
-            display: flex;
-
-            justify-content:
-                space-between;
-
-            gap: 15px;
-
-            color: #999999;
-
-            font-size: 14px;
-
-            margin-bottom: 12px;
-        }
-
-
-        .resumen-linea.total {
-
-            border-top:
-                1px solid #292929;
-
-            padding-top: 16px;
-
-            margin-top: 16px;
-
-            color: #ffffff;
-
-            font-size: 20px;
-
-            font-weight: 900;
-        }
-
-
-        /* =====================================================
-           BOTÓN
-           ===================================================== */
-
-        .btn-pagar {
-
-            width: 100%;
-
-            min-height: 52px;
-
-            border:
-                1px solid #e50914;
-
-            border-radius: 8px;
-
-            background:
-                #e50914;
-
-            color: #ffffff;
-
-            font-size: 14px;
-
-            font-weight: 900;
-
-            cursor: pointer;
-
-            transition:
-                0.2s ease;
-        }
-
-
-        .btn-pagar:hover {
-
-            background:
-                #b80710;
-
-            border-color:
-                #b80710;
-        }
-
-
-        .btn-pagar:disabled {
-
-            opacity: 0.6;
-
-            cursor: not-allowed;
-        }
-
-
-        .seguridad {
-
-            text-align: center;
-
-            color: #666666;
-
-            font-size: 11px;
-
-            margin-top: 12px;
-        }
-
-
-        /* =====================================================
-           ERROR
-           ===================================================== */
-
-        .mensaje-error {
-
-            display: none;
-
-            background:
-                rgba(229, 9, 20, 0.10);
-
-            border:
-                1px solid #e50914;
-
-            color:
-                #ff8b91;
-
-            padding: 12px;
-
-            border-radius: 8px;
-
-            font-size: 13px;
-
-            margin-bottom: 15px;
-        }
-
-
-        .mensaje-error.mostrar {
-            display: block;
-        }
-
-
-        /* =====================================================
-           ÉXITO
-           ===================================================== */
-
-        .mensaje-exito {
-
-            display: none;
-
-            background:
-                rgba(0, 180, 80, 0.10);
-
-            border:
-                1px solid #00b450;
-
-            color:
-                #75e6a5;
-
-            padding: 12px;
-
-            border-radius: 8px;
-
-            font-size: 13px;
-
-            margin-bottom: 15px;
-        }
-
-
-        .mensaje-exito.mostrar {
-            display: block;
-        }
-
-
-        /* =====================================================
-           FOOTER
-           ===================================================== */
-
-        footer {
-
-            padding:
-                30px 20px;
-
-            text-align: center;
-
-            background:
-                #050505;
-
-            border-top:
-                1px solid #1c1c1c;
-        }
-
-
-        footer p {
-
-            color: #666666;
-
-            font-size: 12px;
-        }
-
-
-        footer strong {
-            color: #ffffff;
-        }
-
-
-        /* =====================================================
-           CELULAR
-           ===================================================== */
-
-        @media (max-width: 800px) {
-
-            .checkout-grid {
-
-                grid-template-columns:
-                    1fr;
-            }
-        }
-
-
-        @media (max-width: 600px) {
-
-            .header-container {
-
-                padding:
-                    22px 18px;
-
-                flex-direction:
-                    column;
-
-                gap: 16px;
             }
 
-
-            nav {
-
-                width: 100%;
-
-                justify-content:
-                    space-between;
-
-                gap: 8px;
-            }
+        }
+    );
 
 
-            nav a {
+    /* =====================================================
+       🔴 CONTINUAR AL PAGO
+       ===================================================== */
 
-                font-size: 10px;
-            }
-
-
-            .checkout {
-
-                padding:
-                    35px 14px 60px;
-            }
+    async function continuarAlPago() {
 
 
-            .seccion {
-                padding: 20px;
-            }
+        const formulario =
+            document.getElementById(
+                "formCompra"
+            );
 
 
-            .fila {
-
-                grid-template-columns:
-                    1fr;
-
-                gap: 0;
-            }
+        const mensajeError =
+            document.getElementById(
+                "mensajeError"
+            );
 
 
-            .producto-resumen-precio {
-                font-size: 17px;
-            }
+        const mensajeExito =
+            document.getElementById(
+                "mensajeExito"
+            );
+
+
+        const boton =
+            document.getElementById(
+                "btnPagar"
+            );
+
+
+        /* =================================================
+           VALIDAR FORMULARIO
+           ================================================= */
+
+        if (
+            !formulario.checkValidity()
+        ) {
+
+            mensajeError.textContent =
+                "Completa todos los campos obligatorios antes de continuar.";
+
+            mensajeError.classList.add(
+                "mostrar"
+            );
+
+            formulario.reportValidity();
+
+            return;
+
         }
 
-    </style>
 
-</head>
+        mensajeError.classList.remove(
+            "mostrar"
+        );
 
 
-<body>
+        /* =================================================
+           OBTENER PROVINCIA
+           ================================================= */
 
+        let provinciaFinal =
+            provincia.value;
 
-    <!-- =====================================================
-         HEADER
-         ===================================================== -->
 
-    <header>
+        if (
+            provincia.value === "otra"
+        ) {
 
-        <div class="header-container">
+            provinciaFinal =
+                otraProvincia.value.trim();
 
-            <a
-                href="index.html"
-                class="logo"
-            >
-                ZENTRO<span>X</span>EC
-            </a>
+        }
 
 
-            <nav>
+        /* =================================================
+           🔴 OBTENER PAYPHONE SEGÚN CANTIDAD
 
-                <a href="index.html">
-                    INICIO
-                </a>
+           1 → enlace de $10
+           2 → enlace de $20
+           ================================================= */
 
-                <a href="productos.html">
-                    PRODUCTOS
-                </a>
+        const PAYPHONE_URL =
+            PAYPHONE_LINKS[cantidad];
 
-                <a href="acerca.html">
-                    ACERCA DE
-                </a>
 
-                <a href="contacto.html">
-                    CONTACTO
-                </a>
+        /* =================================================
+           SEGURIDAD
 
-            </nav>
+           Si no existe enlace para esa cantidad,
+           detenemos el proceso.
+           ================================================= */
 
-        </div>
+        if (!PAYPHONE_URL) {
 
-    </header>
+            mensajeError.textContent =
+                "No existe un enlace de pago para esta cantidad.";
 
+            mensajeError.classList.add(
+                "mostrar"
+            );
 
+            return;
 
-    <!-- =====================================================
-         CONTENIDO
-         ===================================================== -->
+        }
 
-    <main class="checkout">
 
+        /* =================================================
+           DESACTIVAR BOTÓN
+           ================================================= */
 
-        <section class="titulo">
+        boton.disabled =
+            true;
 
-            <h1>
-                Finaliza tu
-                <span>compra</span>
-            </h1>
+        boton.textContent =
+            "Registrando pedido...";
 
-            <p>
-                Completa los datos de envío antes de continuar con el pago.
-            </p>
 
-        </section>
+        /* =================================================
+           🔴 CREAR PEDIDO
 
+           Los datos de cantidad, precio y total
+           salen directamente de la información
+           calculada por comprar.html.
+           ================================================= */
 
+        const pedido = {
 
-        <div class="checkout-grid">
+            nombre:
+                document.getElementById(
+                    "nombre"
+                ).value.trim(),
 
 
-            <!-- =================================================
-                 COLUMNA IZQUIERDA
-                 ================================================= -->
+            telefono:
+                document.getElementById(
+                    "telefono"
+                ).value.trim(),
 
-            <div>
 
-                <section class="seccion">
+            direccion:
+                document.getElementById(
+                    "direccion"
+                ).value.trim(),
 
-                    <h2>
-                        Envío
-                    </h2>
 
-                    <p class="seccion-subtitulo">
-                        Ingresa los datos necesarios para realizar la entrega.
-                    </p>
+            sinNumero:
+                document.getElementById(
+                    "sinNumero"
+                ).checked
+                    ? "Sí"
+                    : "No",
 
 
-                    <form id="formCompra">
+            provincia:
+                provinciaFinal,
 
 
-                        <!-- DIRECCIÓN -->
+            canton:
+                document.getElementById(
+                    "canton"
+                ).value.trim(),
 
-                        <div class="campo">
 
-                            <label for="direccion">
-                                Dirección o lugar
-                            </label>
+            parroquia:
+                document.getElementById(
+                    "parroquia"
+                ).value.trim(),
 
-                            <input
-                                type="text"
-                                id="direccion"
-                                name="direccion"
-                                placeholder="Ej: Avenida los Leones 4563"
-                                required
-                            >
 
-                        </div>
+            calleSecundaria:
+                document.getElementById(
+                    "calleSecundaria"
+                ).value.trim(),
 
 
+            departamento:
+                document.getElementById(
+                    "departamento"
+                ).value.trim(),
 
-                        <!-- SIN NÚMERO -->
 
-                        <label class="check-line">
+            indicaciones:
+                document.getElementById(
+                    "indicaciones"
+                ).value.trim(),
 
-                            <input
-                                type="checkbox"
-                                id="sinNumero"
-                                name="sinNumero"
-                            >
 
-                            <span>
-                                La calle no tiene número
-                            </span>
+            /* =============================================
+               PRODUCTO
+               ============================================= */
 
-                        </label>
+            producto:
+                "Cable Delta macho a 2 SATA hembra",
 
 
+            /* =============================================
+               🔴 CANTIDAD DINÁMICA
 
-                        <!-- PROVINCIA Y CANTÓN -->
+               Viene de verproducto.html.
+               ============================================= */
 
-                        <div class="fila">
+            cantidad:
+                cantidad,
 
 
-                            <div class="campo">
+            /* =============================================
+               🔴 PRECIO DINÁMICO
 
-                                <label for="provincia">
-                                    Provincia
-                                </label>
+               1 → $10.00
+               2 → $20.00
+               ============================================= */
 
-                                <select
-                                    id="provincia"
-                                    name="provincia"
-                                    required
-                                >
+            precio:
+                "$" +
+                precioTotal.toFixed(2),
 
-                                    <option value="">
-                                        Selecciona una provincia
-                                    </option>
 
-                                    <option>Azuay</option>
-                                    <option>Bolívar</option>
-                                    <option>Cañar</option>
-                                    <option>Carchi</option>
-                                    <option>Chimborazo</option>
-                                    <option>Cotopaxi</option>
-                                    <option>El Oro</option>
-                                    <option>Esmeraldas</option>
-                                    <option>Galápagos</option>
-                                    <option>Guayas</option>
-                                    <option>Imbabura</option>
-                                    <option>Loja</option>
-                                    <option>Los Ríos</option>
-                                    <option>Manabí</option>
-                                    <option>Morona Santiago</option>
-                                    <option>Napo</option>
-                                    <option>Orellana</option>
-                                    <option>Pastaza</option>
-                                    <option>Pichincha</option>
-                                    <option>Santa Elena</option>
-                                    <option>Santo Domingo de los Tsáchilas</option>
-                                    <option>Sucumbíos</option>
-                                    <option>Tungurahua</option>
-                                    <option>Zamora Chinchipe</option>
+            /* =============================================
+               ENVÍO
+               ============================================= */
 
-                                    <option value="otra">
-                                        Otra provincia
-                                    </option>
+            envio:
+                "Se coordina",
 
-                                </select>
 
-                            </div>
+            /* =============================================
+               🔴 TOTAL DINÁMICO
 
+               Coincide con el resumen y PayPhone.
+               ============================================= */
 
-
-                            <div class="campo">
-
-                                <label for="canton">
-                                    Cantón
-                                </label>
-
-                                <input
-                                    type="text"
-                                    id="canton"
-                                    name="canton"
-                                    placeholder="Ej: Guayaquil"
-                                    required
-                                >
-
-                            </div>
-
-                        </div>
-
-
-
-                        <!-- OTRA PROVINCIA -->
-
-                        <div
-                            class="campo"
-                            id="otraProvinciaContainer"
-                            style="display:none;"
-                        >
-
-                            <label for="otraProvincia">
-                                Escribe la provincia
-                            </label>
-
-                            <input
-                                type="text"
-                                id="otraProvincia"
-                                name="otraProvincia"
-                                placeholder="Nombre de la provincia"
-                            >
-
-                        </div>
-
-
-
-                        <!-- PARROQUIA Y CALLE -->
-
-                        <div class="fila">
-
-
-                            <div class="campo">
-
-                                <label for="parroquia">
-                                    Parroquia
-                                </label>
-
-                                <input
-                                    type="text"
-                                    id="parroquia"
-                                    name="parroquia"
-                                    placeholder="Ingresa la parroquia"
-                                    required
-                                >
-
-                            </div>
-
-
-
-                            <div class="campo">
-
-                                <label for="calleSecundaria">
-                                    Calle secundaria
-                                </label>
-
-                                <input
-                                    type="text"
-                                    id="calleSecundaria"
-                                    name="calleSecundaria"
-                                    placeholder="Ingresa una calle"
-                                    required
-                                >
-
-                            </div>
-
-                        </div>
-
-
-
-                        <!-- DEPARTAMENTO -->
-
-                        <div class="campo">
-
-                            <label for="departamento">
-                                Departamento (opcional)
-                            </label>
-
-                            <input
-                                type="text"
-                                id="departamento"
-                                name="departamento"
-                                placeholder="Ej: 10B"
-                            >
-
-                        </div>
-
-
-
-                        <!-- INDICACIONES -->
-
-                        <div class="campo">
-
-                            <label for="indicaciones">
-                                Indicaciones para la entrega (opcional)
-                            </label>
-
-                            <textarea
-                                id="indicaciones"
-                                name="indicaciones"
-                                maxlength="128"
-                                placeholder="Ej.: Entre calles, color del edificio, no tiene timbre."
-                            ></textarea>
-
-                        </div>
-
-
-
-                        <!-- DATOS DEL RECIBIDOR -->
-
-                        <h2 style="margin-top:35px;">
-                            Datos de quien recibe
-                        </h2>
-
-                        <p class="seccion-subtitulo">
-                            Llamaremos si hay un problema con la entrega.
-                        </p>
-
-
-
-                        <div class="campo">
-
-                            <label for="nombre">
-                                Nombre y apellido
-                            </label>
-
-                            <input
-                                type="text"
-                                id="nombre"
-                                name="nombre"
-                                placeholder="Nombre y apellido"
-                                required
-                            >
-
-                        </div>
-
-
-
-                        <div class="campo">
-
-                            <label for="telefono">
-                                Teléfono
-                            </label>
-
-                            <input
-                                type="tel"
-                                id="telefono"
-                                name="telefono"
-                                placeholder="0999999999"
-                                inputmode="tel"
-                                required
-                            >
-
-                        </div>
-
-
-
-                        <!-- MENSAJE ERROR -->
-
-                        <div
-                            id="mensajeError"
-                            class="mensaje-error"
-                        >
-                            Completa todos los campos obligatorios antes de continuar.
-                        </div>
-
-
-
-                        <!-- MENSAJE ÉXITO -->
-
-                        <div
-                            id="mensajeExito"
-                            class="mensaje-exito"
-                        >
-                            Pedido registrado. Abriendo el pago...
-                        </div>
-
-
-                    </form>
-
-                </section>
-
-            </div>
-
-
-
-            <!-- =================================================
-                 COLUMNA DERECHA
-                 ================================================= -->
-
-            <div>
-
-
-                <section class="seccion">
-
-
-                    <h2>
-                        Resumen de compra
-                    </h2>
-
-
-                    <p class="seccion-subtitulo">
-                        Revisa el producto antes de continuar.
-                    </p>
-
-
-
-                    <!-- PRODUCTO -->
-
-                    <div class="producto-resumen">
-
-
-                        <div class="producto-resumen-imagen">
-
-                            <!--
-                            =====================================================
-                            EDITAR IMAGEN AQUÍ
-
-                            Cambia:
-                            img/delta.png
-
-                            por la imagen de tu producto.
-                            =====================================================
-                            -->
-
-                            <img
-                                src="img/delta.png"
-                                alt="Cable Delta macho a 2 SATA hembra"
-                            >
-
-                        </div>
-
-
-
-                        <div class="producto-resumen-info">
-
-                            <!-- EDITAR NOMBRE DEL PRODUCTO -->
-
-                            <h3>
-                                Cable Delta macho a 2 SATA hembra
-                            </h3>
-
-
-                            <!--
-                            =====================================================
-                            CANTIDAD DINÁMICA
-
-                            Este texto cambia automáticamente dependiendo
-                            de la cantidad seleccionada en verproducto.html.
-                            =====================================================
-                            -->
-
-                            <p id="cantidadProducto">
-                                Cantidad: 1
-                            </p>
-
-                        </div>
-
-
-
-                        <!--
-                        =====================================================
-                        PRECIO DINÁMICO
-
-                        Cambia automáticamente:
-                        1 unidad = $10.00
-                        2 unidades = $20.00
-                        =====================================================
-                        -->
-
-                        <div
-                            class="producto-resumen-precio"
-                            id="precioProducto"
-                        >
-                            $10.00
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- PRECIO -->
-
-                    <div class="resumen-linea">
-
-                        <span>
-                            Producto
-                        </span>
-
-                        <span id="subtotalProducto">
-                            $10.00
-                        </span>
-
-                    </div>
-
-
-
-                    <!-- ENVÍO -->
-
-                    <!--
-                    =====================================================
-                    EDITAR ENVÍO
-
-                    GRATIS:
-                    <span>Gratis</span>
-
-                    $3:
-                    <span>$3.00</span>
-
-                    POR COORDINAR:
-                    <span>Se coordina</span>
-                    =====================================================
-                    -->
-
-                    <div class="resumen-linea">
-
-                        <span>
-                            Envío
-                        </span>
-
-                        <span>
-                            Se coordina
-                        </span>
-
-                    </div>
-
-
-
-                    <!-- TOTAL -->
-
-                    <div class="resumen-linea total">
-
-                        <span>
-                            Total
-                        </span>
-
-                        <span id="totalProducto">
-                            $10.00
-                        </span>
-
-                    </div>
-
-
-
-                    <br>
-
-
-
-                    <!-- =================================================
-                         BOTÓN CONTINUAR AL PAGO
-                         ================================================= -->
-
-                    <!--
-                    =====================================================
-                    EDITAR TEXTO DEL BOTÓN AQUÍ
-                    =====================================================
-                    -->
-
-                    <button
-                        type="button"
-                        id="btnPagar"
-                        class="btn-pagar"
-                        onclick="continuarAlPago()"
-                    >
-
-                        Continuar al pago
-
-                    </button>
-
-
-
-                    <p class="seguridad">
-
-                        Serás dirigido a PayPhone para completar
-                        el pago de forma segura.
-
-                    </p>
-
-
-                </section>
-
-
-            </div>
-
-
-        </div>
-
-    </main>
-
-
-
-    <!-- =====================================================
-         FOOTER
-         ===================================================== -->
-
-    <footer>
-
-        <p>
-
-            © 2026
-
-            <strong>
-                ZENTROXEC
-            </strong>.
-
-            Todos los derechos reservados.
-
-        </p>
-
-    </footer>
-
-
-
-    <!-- =====================================================
-         JAVASCRIPT
-         ===================================================== -->
-
-    <script>
-
-
-        /* =====================================================
-           🔴 APPS SCRIPT
-
-           Este es tu enlace /exec.
-
-           NO CAMBIAR salvo que hagas una nueva implementación.
-           ===================================================== */
-
-        const APPS_SCRIPT_URL =
-            "https://script.google.com/macros/s/AKfycbzfVmHhyISYruGRZk3R30fBiCvOM5Gv5rQODIsxlMqCIiIsBF_8T6AFvhQTVUf7cMfb/exec";
-
-
-
-        /* =====================================================
-           🔴 CONFIGURACIÓN DEL PRODUCTO
-
-           EDITAR AQUÍ SI CAMBIAS EL PRODUCTO.
-
-           Precio base:
-           1 unidad = $10
-
-           Actualmente solo existen:
-
-           Cantidad 1 = $10
-           Cantidad 2 = $20
-           ===================================================== */
-
-        const PRECIO_UNITARIO = 10;
-
-
-
-        /* =====================================================
-           🔴 ENLACES DE PAYPHONE
-
-           MUY IMPORTANTE:
-
-           Cantidad 1 → enlace de $10
-
-           Cantidad 2 → enlace de $20
-
-           Si posteriormente agregas más cantidades,
-           puedes añadirlas aquí.
-           ===================================================== */
-
-        const PAYPHONE_LINKS = {
-
-            1:
-                "https://ppls.me/KT8CHtyeUHxwBmYlg5NIyA",
-
-            2:
-                "https://ppls.me/OnmwepzpJyIEMrq7uoPn9g"
+            total:
+                "$" +
+                precioTotal.toFixed(2)
 
         };
 
 
+        /* =================================================
+           CONVERTIR PEDIDO A JSON
+           ================================================= */
 
-        /* =====================================================
-           🔴 OBTENER CANTIDAD DESDE verproducto.html
-
-           verproducto.html debe enviar algo parecido a:
-
-           comprar.html?cantidad=1&precio=10
-
-           o:
-
-           comprar.html?cantidad=2&precio=20
-
-           ===================================================== */
-
-        const parametrosURL =
-            new URLSearchParams(
-                window.location.search
+        const jsonPedido =
+            JSON.stringify(
+                pedido
             );
 
 
+        /* =================================================
+           ENVIAR A GOOGLE APPS SCRIPT
+           ================================================= */
 
-        let cantidad =
-            parseInt(
-                parametrosURL.get("cantidad")
-            );
+        try {
 
+            await fetch(
 
+                APPS_SCRIPT_URL,
 
-        let precioRecibido =
-            parseFloat(
-                parametrosURL.get("precio")
-            );
+                {
 
+                    method:
+                        "POST",
 
+                    mode:
+                        "no-cors",
 
-        /* =====================================================
-           VALIDACIÓN
+                    keepalive:
+                        true,
 
-           Si no llega una cantidad válida,
-           utilizamos cantidad 1.
+                    headers:
+                        {
 
-           Si no llega un precio válido,
-           calculamos el precio automáticamente.
-           ===================================================== */
+                            "Content-Type":
+                                "text/plain;charset=UTF-8"
 
-        if (
-            !cantidad ||
-            cantidad < 1 ||
-            cantidad > 2
-        ) {
+                        },
 
-            cantidad = 1;
-
-        }
-
-
-
-        /* =====================================================
-           PRECIO FINAL
-
-           El precio se calcula según la cantidad.
-
-           1 × $10 = $10
-           2 × $10 = $20
-
-           De esta forma no dependemos únicamente del
-           precio enviado desde la otra página.
-           ===================================================== */
-
-        let precioTotal =
-            cantidad * PRECIO_UNITARIO;
-
-
-
-        /* =====================================================
-           ELEMENTOS DEL RESUMEN
-           ===================================================== */
-
-        const cantidadProducto =
-            document.getElementById(
-                "cantidadProducto"
-            );
-
-
-        const precioProducto =
-            document.getElementById(
-                "precioProducto"
-            );
-
-
-        const subtotalProducto =
-            document.getElementById(
-                "subtotalProducto"
-            );
-
-
-        const totalProducto =
-            document.getElementById(
-                "totalProducto"
-            );
-
-
-
-        /* =====================================================
-           ACTUALIZAR RESUMEN
-
-           Esta función modifica:
-
-           - Cantidad
-           - Precio del producto
-           - Subtotal
-           - Total
-           ===================================================== */
-
-        function actualizarResumen() {
-
-
-            cantidadProducto.textContent =
-                "Cantidad: " + cantidad;
-
-
-            precioProducto.textContent =
-                "$" +
-                precioTotal.toFixed(2);
-
-
-            subtotalProducto.textContent =
-                "$" +
-                precioTotal.toFixed(2);
-
-
-            totalProducto.textContent =
-                "$" +
-                precioTotal.toFixed(2);
-
-        }
-
-
-
-        /* =====================================================
-           EJECUTAR AL CARGAR LA PÁGINA
-           ===================================================== */
-
-        actualizarResumen();
-
-
-
-        /* =====================================================
-           PROVINCIA "OTRA"
-           ===================================================== */
-
-        const provincia =
-            document.getElementById(
-                "provincia"
-            );
-
-
-        const otraProvinciaContainer =
-            document.getElementById(
-                "otraProvinciaContainer"
-            );
-
-
-        const otraProvincia =
-            document.getElementById(
-                "otraProvincia"
-            );
-
-
-        provincia.addEventListener(
-            "change",
-            function () {
-
-                if (
-                    this.value === "otra"
-                ) {
-
-                    otraProvinciaContainer.style.display =
-                        "block";
-
-                    otraProvincia.required =
-                        true;
-
-                } else {
-
-                    otraProvinciaContainer.style.display =
-                        "none";
-
-                    otraProvincia.required =
-                        false;
-
-                    otraProvincia.value =
-                        "";
+                    body:
+                        jsonPedido
 
                 }
 
-            }
-        );
+            );
 
 
+            /* =============================================
+               PEDIDO REGISTRADO
+               ============================================= */
 
-        /* =====================================================
-           CONTINUAR AL PAGO
-
-           1. Comprueba formulario.
-           2. Recoge los datos.
-           3. Obtiene cantidad y precio.
-           4. Envía el pedido a Google Sheets.
-           5. Abre el PayPhone correspondiente.
-           ===================================================== */
-
-        async function continuarAlPago() {
+            mensajeExito.textContent =
+                "Pedido registrado. Abriendo el pago...";
 
 
-            const formulario =
-                document.getElementById(
-                    "formCompra"
-                );
-
-
-            const mensajeError =
-                document.getElementById(
-                    "mensajeError"
-                );
-
-
-            const mensajeExito =
-                document.getElementById(
-                    "mensajeExito"
-                );
-
-
-            const boton =
-                document.getElementById(
-                    "btnPagar"
-                );
-
-
-
-            /* =================================================
-               VALIDAR FORMULARIO
-               ================================================= */
-
-            if (
-                !formulario.checkValidity()
-            ) {
-
-                mensajeError.classList.add(
-                    "mostrar"
-                );
-
-                formulario.reportValidity();
-
-                return;
-
-            }
-
-
-            mensajeError.classList.remove(
+            mensajeExito.classList.add(
                 "mostrar"
             );
 
 
+            boton.textContent =
+                "Abriendo PayPhone...";
 
-            /* =================================================
-               DESACTIVAR BOTÓN
-               ================================================= */
+
+            /* =============================================
+               ESPERAR ANTES DE IR A PAYPHONE
+               ============================================= */
+
+            setTimeout(
+
+                function () {
+
+                    window.location.href =
+                        PAYPHONE_URL;
+
+                },
+
+                700
+
+            );
+
+
+        } catch (error) {
+
+            console.error(
+                "Error:",
+                error
+            );
+
+
+            mensajeError.textContent =
+                "No se pudo registrar el pedido. Intenta nuevamente.";
+
+
+            mensajeError.classList.add(
+                "mostrar"
+            );
+
 
             boton.disabled =
-                true;
+                false;
+
 
             boton.textContent =
-                "Registrando pedido...";
-
-
-
-            /* =================================================
-               OBTENER PROVINCIA
-               ================================================= */
-
-            let provinciaFinal =
-                provincia.value;
-
-
-            if (
-                provincia.value === "otra"
-            ) {
-
-                provinciaFinal =
-                    otraProvincia.value;
-
-            }
-
-
-
-            /* =================================================
-               OBTENER LINK DE PAYPHONE
-
-               Según la cantidad:
-
-               1 → $10
-               2 → $20
-               ================================================= */
-
-            const PAYPHONE_URL =
-                PAYPHONE_LINKS[cantidad];
-
-
-
-            /* =================================================
-               SEGURIDAD
-
-               Si por alguna razón no existe un enlace
-               correspondiente a la cantidad, detenemos
-               el proceso.
-               ================================================= */
-
-            if (!PAYPHONE_URL) {
-
-                mensajeError.textContent =
-                    "No existe un enlace de pago para esta cantidad.";
-
-                mensajeError.classList.add(
-                    "mostrar"
-                );
-
-                boton.disabled =
-                    false;
-
-                boton.textContent =
-                    "Continuar al pago";
-
-                return;
-
-            }
-
-
-
-            /* =================================================
-               CREAR DATOS DEL PEDIDO
-               ================================================= */
-
-            const pedido = {
-
-                nombre:
-                    document.getElementById(
-                        "nombre"
-                    ).value.trim(),
-
-
-                telefono:
-                    document.getElementById(
-                        "telefono"
-                    ).value.trim(),
-
-
-                direccion:
-                    document.getElementById(
-                        "direccion"
-                    ).value.trim(),
-
-
-                sinNumero:
-                    document.getElementById(
-                        "sinNumero"
-                    ).checked
-                        ? "Sí"
-                        : "No",
-
-
-                provincia:
-                    provinciaFinal,
-
-
-                canton:
-                    document.getElementById(
-                        "canton"
-                    ).value.trim(),
-
-
-                parroquia:
-                    document.getElementById(
-                        "parroquia"
-                    ).value.trim(),
-
-
-                calleSecundaria:
-                    document.getElementById(
-                        "calleSecundaria"
-                    ).value.trim(),
-
-
-                departamento:
-                    document.getElementById(
-                        "departamento"
-                    ).value.trim(),
-
-
-                indicaciones:
-                    document.getElementById(
-                        "indicaciones"
-                    ).value.trim(),
-
-
-
-                /* =============================================
-                   PRODUCTO
-
-                   EDITAR AQUÍ SI CAMBIAS DE PRODUCTO
-                   ============================================= */
-
-                producto:
-                    "Cable Delta macho a 2 SATA hembra",
-
-
-
-                /* =============================================
-                   CANTIDAD
-
-                   AHORA ES DINÁMICA.
-
-                   1 o 2 dependiendo de verproducto.html
-                   ============================================= */
-
-                cantidad:
-                    cantidad,
-
-
-
-                /* =============================================
-                   PRECIO
-
-                   AHORA ES DINÁMICO.
-
-                   1 unidad = $10.00
-                   2 unidades = $20.00
-                   ============================================= */
-
-                precio:
-                    "$" +
-                    precioTotal.toFixed(2),
-
-
-
-                /* =============================================
-                   ENVÍO
-
-                   Puedes cambiarlo por:
-
-                   "Gratis"
-
-                   "$3.00"
-
-                   "Se coordina"
-                   ============================================= */
-
-                envio:
-                    "Se coordina",
-
-
-
-                /* =============================================
-                   TOTAL
-
-                   AHORA ES DINÁMICO.
-
-                   Debe coincidir con PayPhone.
-                   ============================================= */
-
-                total:
-                    "$" +
-                    precioTotal.toFixed(2)
-
-            };
-
-
-
-            /* =================================================
-               CONVERTIR A JSON
-               ================================================= */
-
-            const jsonPedido =
-                JSON.stringify(
-                    pedido
-                );
-
-
-
-            /* =================================================
-               ENVIAR A GOOGLE APPS SCRIPT
-
-               Usamos text/plain para evitar problemas
-               de preflight CORS.
-               ================================================= */
-
-            try {
-
-
-                await fetch(
-
-                    APPS_SCRIPT_URL,
-
-                    {
-
-                        method:
-                            "POST",
-
-                        mode:
-                            "no-cors",
-
-                        keepalive:
-                            true,
-
-                        headers:
-                            {
-
-                                "Content-Type":
-                                    "text/plain;charset=UTF-8"
-
-                            },
-
-                        body:
-                            jsonPedido
-
-                    }
-
-                );
-
-
-
-                /* =============================================
-                   PEDIDO ENVIADO
-                   ============================================= */
-
-                mensajeExito.classList.add(
-                    "mostrar"
-                );
-
-
-                boton.textContent =
-                    "Abriendo PayPhone...";
-
-
-
-                /* =============================================
-                   ESPERAR UN MOMENTO
-
-                   Esto permite que la solicitud salga
-                   antes de cambiar de página.
-                   ============================================= */
-
-                setTimeout(
-
-                    function () {
-
-                        window.location.href =
-                            PAYPHONE_URL;
-
-                    },
-
-                    700
-
-                );
-
-
-            } catch (error) {
-
-
-                console.error(
-                    "Error:",
-                    error
-                );
-
-
-                mensajeError.textContent =
-                    "No se pudo registrar el pedido. Intenta nuevamente.";
-
-
-                mensajeError.classList.add(
-                    "mostrar"
-                );
-
-
-                boton.disabled =
-                    false;
-
-
-                boton.textContent =
-                    "Continuar al pago";
-
-            }
+                "Continuar al pago";
 
         }
 
-    </script>
+    }
 
-
-</body>
-
-</html>
+</script>
