@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 
@@ -223,78 +222,91 @@
 
 
         /* =====================================================
-           CARRUSEL PRINCIPAL
+           CARRUSEL DE IMÁGENES DEL PRODUCTO
            ===================================================== */
 
-        .carrusel {
-
-            width: 100%;
-
-            position: relative;
-
-            overflow: hidden;
-
-            border-radius: 12px;
-
-            background: #ffffff;
-
-            border:
-                1px solid #dddddd;
-
-            touch-action: pan-y;
-
-        }
-
-        .carrusel-contenedor {
-
-            width: 100%;
-
-            display: flex;
-
-            overflow-x: auto;
-
-            scroll-snap-type: x mandatory;
-
-            scroll-behavior: smooth;
-
-            scrollbar-width: none;
-
-            -webkit-overflow-scrolling: touch;
-
-        }
-
-        .carrusel-contenedor::-webkit-scrollbar {
-
-            display: none;
-
-        }
-
-        .carrusel-slide {
-
-            min-width: 100%;
+        .imagen-principal {
 
             width: 100%;
 
             min-height: 430px;
 
+            background: #ffffff;
+
+            border-radius: 12px;
+
+            overflow: hidden;
+
             display: flex;
 
             align-items: center;
+            justify-content: flex-start;
 
-            justify-content: center;
+            border:
+                1px solid #dddddd;
 
-            scroll-snap-align: start;
+            position: relative;
 
-            scroll-snap-stop: always;
+            touch-action: pan-y;
 
-            background: #ffffff;
+            cursor: grab;
 
         }
+
+
+        .imagen-principal:active {
+
+            cursor: grabbing;
+
+        }
+
+
+        .carrusel-contenedor {
+
+            width: 100%;
+            height: 100%;
+
+            overflow: hidden;
+
+        }
+
+
+        .carrusel-track {
+
+            width: 100%;
+
+            height: 100%;
+
+            display: flex;
+
+            transition:
+                transform 0.35s ease;
+
+            will-change: transform;
+
+        }
+
+
+        .carrusel-slide {
+
+            min-width: 100%;
+            width: 100%;
+
+            height: 100%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            flex-shrink: 0;
+
+        }
+
 
         .carrusel-slide img {
 
             width: 100%;
-
             height: 100%;
 
             max-height: 500px;
@@ -311,7 +323,61 @@
 
 
         /* =====================================================
-           FLECHAS DEL CARRUSEL
+           PUNTOS DEL CARRUSEL
+           ===================================================== */
+
+        .carrusel-puntos {
+
+            position: absolute;
+
+            bottom: 12px;
+            left: 0;
+
+            width: 100%;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 6px;
+
+            z-index: 5;
+
+        }
+
+
+        .carrusel-punto {
+
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: rgba(0, 0, 0, 0.25);
+
+            border:
+                1px solid rgba(0, 0, 0, 0.35);
+
+            transition:
+                all 0.2s ease;
+
+        }
+
+
+        .carrusel-punto.activo {
+
+            width: 9px;
+            height: 9px;
+
+            background: #111111;
+
+        }
+
+
+        /* =====================================================
+           BOTONES DEL CARRUSEL
            ===================================================== */
 
         .carrusel-flecha {
@@ -322,37 +388,36 @@
 
             transform: translateY(-50%);
 
-            width: 42px;
-
-            height: 42px;
+            width: 38px;
+            height: 38px;
 
             border-radius: 50%;
 
-            border: 1px solid #dddddd;
+            border:
+                1px solid #dddddd;
 
-            background: rgba(255, 255, 255, 0.92);
+            background:
+                rgba(255, 255, 255, 0.90);
 
             color: #111111;
 
             display: flex;
 
             align-items: center;
-
             justify-content: center;
 
-            font-size: 24px;
-
-            font-weight: 700;
+            font-size: 22px;
 
             cursor: pointer;
 
-            z-index: 5;
+            z-index: 10;
 
             transition:
                 background 0.2s ease,
                 transform 0.2s ease;
 
         }
+
 
         .carrusel-flecha:hover {
 
@@ -360,87 +425,20 @@
 
         }
 
-        .carrusel-flecha:active {
 
-            transform:
-                translateY(-50%)
-                scale(0.95);
-
-        }
-
-        .carrusel-anterior {
+        .carrusel-flecha.izquierda {
 
             left: 12px;
 
         }
 
-        .carrusel-siguiente {
+
+        .carrusel-flecha.derecha {
 
             right: 12px;
 
         }
 
-
-        /* =====================================================
-           INDICADORES DEL CARRUSEL
-           ===================================================== */
-
-        .carrusel-indicadores {
-
-            position: absolute;
-
-            left: 50%;
-
-            bottom: 12px;
-
-            transform: translateX(-50%);
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 6px;
-
-            z-index: 5;
-
-            padding:
-                5px 8px;
-
-            border-radius: 20px;
-
-            background:
-                rgba(0, 0, 0, 0.45);
-
-        }
-
-        .carrusel-indicador {
-
-            width: 7px;
-
-            height: 7px;
-
-            border-radius: 50%;
-
-            background: rgba(255, 255, 255, 0.55);
-
-            transition:
-                background 0.2s ease,
-                transform 0.2s ease;
-
-        }
-
-        .carrusel-indicador.activo {
-
-            background: #ffffff;
-
-            transform: scale(1.25);
-
-        }
-
-
-        /* =====================================================
-           IMAGEN SECUNDARIA
-           ===================================================== */
 
         .imagen-secundaria {
 
@@ -459,7 +457,6 @@
         .imagen-secundaria img {
 
             width: 100%;
-
             height: auto;
 
             display: block;
@@ -621,6 +618,11 @@
 
         }
 
+
+        /* =====================================================
+           CÍRCULOS DE LAS TARJETAS
+           ===================================================== */
+
         .pago-circulo {
 
             width: 42px;
@@ -646,11 +648,13 @@
 
         }
 
+
         .pago-circulo + .pago-circulo {
 
             margin-left: -21px;
 
         }
+
 
         .pago-circulo img {
 
@@ -662,6 +666,7 @@
             display: block;
 
         }
+
 
         .pago-visa {
 
@@ -1075,11 +1080,6 @@
 
         }
 
-
-        /* =====================================================
-           TABLET
-           ===================================================== */
-
         @media (max-width: 850px) {
 
             .producto-principal {
@@ -1088,18 +1088,13 @@
 
             }
 
-            .carrusel-slide {
+            .imagen-principal {
 
                 min-height: 380px;
 
             }
 
         }
-
-
-        /* =====================================================
-           MÓVIL
-           ===================================================== */
 
         @media (max-width: 700px) {
 
@@ -1169,31 +1164,9 @@
 
             }
 
-            .carrusel-slide {
+            .imagen-principal {
 
                 min-height: 300px;
-
-            }
-
-            .carrusel-flecha {
-
-                width: 36px;
-
-                height: 36px;
-
-                font-size: 20px;
-
-            }
-
-            .carrusel-anterior {
-
-                left: 8px;
-
-            }
-
-            .carrusel-siguiente {
-
-                right: 8px;
 
             }
 
@@ -1252,11 +1225,6 @@
 
         }
 
-
-        /* =====================================================
-           MÓVILES PEQUEÑOS
-           ===================================================== */
-
         @media (max-width: 380px) {
 
             .header-container {
@@ -1284,7 +1252,7 @@
 
             }
 
-            .carrusel-slide {
+            .imagen-principal {
 
                 min-height: 250px;
 
@@ -1377,83 +1345,102 @@
 
     <section class="producto-principal">
 
-
-        <!-- =================================================
-             GALERÍA / CARRUSEL
-             ================================================= -->
-
         <div class="galeria">
 
+
+            <!-- =================================================
+                 CARRUSEL PRINCIPAL DEL PRODUCTO
+                 
+                 PARA AGREGAR O CAMBIAR IMÁGENES:
+                 
+                 1. Coloca las imágenes dentro de la carpeta "img/"
+                 
+                 2. Cambia el nombre del archivo en:
+                    src="img/nombre-de-tu-imagen.jpg"
+                 
+                 Puedes agregar más:
+                 
+                 <div class="carrusel-slide">
+                     <img src="img/otra-imagen.jpg">
+                 </div>
+                 
+                 ================================================= -->
+
             <div
-                class="carrusel"
-                id="carruselProducto"
+                class="imagen-principal"
+                id="carruselPrincipal"
             >
 
-                <div
-                    class="carrusel-contenedor"
-                    id="carruselContenedor"
-                >
+                <div class="carrusel-contenedor">
+
+                    <div
+                        class="carrusel-track"
+                        id="carruselTrack"
+                    >
 
 
-                    <!-- IMAGEN 1 -->
+                        <!-- IMAGEN 1 -->
 
-                    <div class="carrusel-slide">
+                        <div class="carrusel-slide">
 
-                        <img
-                            src="img/delta.png"
-                            alt="Cable de Poder Delta SATA - Imagen 1"
-                            draggable="false"
-                        >
+                            <img
+                                src="img/delta.png"
+                                alt="Cable de Poder Delta SATA Macho a 2 SATA Hembra"
+                                draggable="false"
+                            >
 
-                    </div>
-
-
-                    <!-- IMAGEN 2 -->
-
-                    <div class="carrusel-slide">
-
-                        <img
-                            src="img/delta2.png"
-                            alt="Cable de Poder Delta SATA - Imagen 2"
-                            draggable="false"
-                        >
-
-                    </div>
+                        </div>
 
 
-                    <!-- IMAGEN 3 -->
+                        <!-- IMAGEN 2 -->
 
-                    <div class="carrusel-slide">
+                        <div class="carrusel-slide">
 
-                        <img
-                            src="img/delta3.png"
-                            alt="Cable de Poder Delta SATA - Imagen 3"
-                            draggable="false"
-                        >
+                            <img
+                                src="img/delta2.jpg"
+                                alt="Cable Delta SATA vista 2"
+                                draggable="false"
+                            >
 
-                    </div>
+                        </div>
 
 
-                    <!-- IMAGEN 4 -->
+                        <!-- IMAGEN 3 -->
 
-                    <div class="carrusel-slide">
+                        <div class="carrusel-slide">
 
-                        <img
-                            src="img/delta4.png"
-                            alt="Cable de Poder Delta SATA - Imagen 4"
-                            draggable="false"
-                        >
+                            <img
+                                src="img/delta3.jpg"
+                                alt="Cable Delta SATA vista 3"
+                                draggable="false"
+                            >
+
+                        </div>
+
+
+                        <!-- IMAGEN 4 -->
+
+                        <div class="carrusel-slide">
+
+                            <img
+                                src="img/delta4.jpg"
+                                alt="Cable Delta SATA vista 4"
+                                draggable="false"
+                            >
+
+                        </div>
+
 
                     </div>
 
                 </div>
 
 
-                <!-- FLECHA ANTERIOR -->
+                <!-- FLECHA IZQUIERDA -->
 
                 <button
                     type="button"
-                    class="carrusel-flecha carrusel-anterior"
+                    class="carrusel-flecha izquierda"
                     id="carruselAnterior"
                     aria-label="Imagen anterior"
                 >
@@ -1463,11 +1450,11 @@
                 </button>
 
 
-                <!-- FLECHA SIGUIENTE -->
+                <!-- FLECHA DERECHA -->
 
                 <button
                     type="button"
-                    class="carrusel-flecha carrusel-siguiente"
+                    class="carrusel-flecha derecha"
                     id="carruselSiguiente"
                     aria-label="Imagen siguiente"
                 >
@@ -1477,27 +1464,27 @@
                 </button>
 
 
-                <!-- INDICADORES -->
+                <!-- PUNTOS -->
 
                 <div
-                    class="carrusel-indicadores"
-                    id="carruselIndicadores"
+                    class="carrusel-puntos"
+                    id="carruselPuntos"
                 >
 
                     <span
-                        class="carrusel-indicador activo"
+                        class="carrusel-punto activo"
                     ></span>
 
                     <span
-                        class="carrusel-indicador"
+                        class="carrusel-punto"
                     ></span>
 
                     <span
-                        class="carrusel-indicador"
+                        class="carrusel-punto"
                     ></span>
 
                     <span
-                        class="carrusel-indicador"
+                        class="carrusel-punto"
                     ></span>
 
                 </div>
@@ -1571,6 +1558,10 @@
             </div>
 
 
+            <!-- =================================================
+                 MEDIOS DE PAGO
+                 ================================================= -->
+
             <div class="medios-pago">
 
                 <span class="medios-pago-titulo">
@@ -1579,6 +1570,8 @@
 
                 </span>
 
+
+                <!-- VISA -->
 
                 <div class="pago-circulo pago-visa">
 
@@ -1590,6 +1583,8 @@
                 </div>
 
 
+                <!-- MASTERCARD -->
+
                 <div class="pago-circulo pago-mastercard">
 
                     <img
@@ -1600,6 +1595,8 @@
                 </div>
 
 
+                <!-- DISCOVER -->
+
                 <div class="pago-circulo pago-discover">
 
                     <img
@@ -1609,6 +1606,8 @@
 
                 </div>
 
+
+                <!-- DINERS -->
 
                 <div class="pago-circulo pago-diners">
 
@@ -1995,9 +1994,17 @@ function actualizarProducto() {
         PRECIO_UNITARIO * cantidad;
 
 
+    /*
+     * Mostrar precio total.
+     */
+
     precioProducto.textContent =
         "US$ " + precioTotal;
 
+
+    /*
+     * Crear URL para comprar.html.
+     */
 
     const urlCompra =
         "comprar.html?cantidad=" +
@@ -2005,6 +2012,10 @@ function actualizarProducto() {
         "&precio=" +
         encodeURIComponent(precioTotal);
 
+
+    /*
+     * Actualizar botón Comprar ahora.
+     */
 
     botonComprar.href = urlCompra;
 
@@ -2056,81 +2067,73 @@ document.getElementById(
 
 /*
  * =====================================================
- * CARRUSEL DE PRODUCTO
+ * CARRUSEL DE IMÁGENES
  * =====================================================
  */
 
-const carruselContenedor =
-    document.getElementById(
-        "carruselContenedor"
-    );
+const carruselPrincipal =
+    document.getElementById("carruselPrincipal");
+
+const carruselTrack =
+    document.getElementById("carruselTrack");
+
+const carruselSlides =
+    document.querySelectorAll(".carrusel-slide");
+
+const carruselPuntos =
+    document.querySelectorAll(".carrusel-punto");
 
 const carruselAnterior =
-    document.getElementById(
-        "carruselAnterior"
-    );
+    document.getElementById("carruselAnterior");
 
 const carruselSiguiente =
-    document.getElementById(
-        "carruselSiguiente"
-    );
-
-const indicadores =
-    document.querySelectorAll(
-        ".carrusel-indicador"
-    );
+    document.getElementById("carruselSiguiente");
 
 
-let imagenActual = 0;
-
-const totalImagenes =
-    document.querySelectorAll(
-        ".carrusel-slide"
-    ).length;
+let indiceCarrusel = 0;
 
 
 /*
  * =====================================================
- * MOSTRAR IMAGEN
+ * MOSTRAR IMAGEN DEL CARRUSEL
  * =====================================================
  */
 
-function mostrarImagen(indice) {
+function mostrarImagenCarrusel(indice) {
+
+    const total =
+        carruselSlides.length;
+
 
     if (indice < 0) {
 
-        indice =
-            totalImagenes - 1;
+        indice = total - 1;
 
     }
 
-    if (indice >= totalImagenes) {
+
+    if (indice >= total) {
 
         indice = 0;
 
     }
 
 
-    imagenActual = indice;
+    indiceCarrusel = indice;
 
 
-    carruselContenedor.scrollTo({
-
-        left:
-            carruselContenedor.clientWidth *
-            imagenActual,
-
-        behavior: "smooth"
-
-    });
+    carruselTrack.style.transform =
+        "translateX(-" +
+        (indiceCarrusel * 100) +
+        "%)";
 
 
-    indicadores.forEach(
-        function(indicador, index) {
+    carruselPuntos.forEach(
+        (punto, posicion) => {
 
-            indicador.classList.toggle(
+            punto.classList.toggle(
                 "activo",
-                index === imagenActual
+                posicion === indiceCarrusel
             );
 
         }
@@ -2141,34 +2144,16 @@ function mostrarImagen(indice) {
 
 /*
  * =====================================================
- * BOTÓN ANTERIOR
- * =====================================================
- */
-
-carruselAnterior.addEventListener(
-    "click",
-    function() {
-
-        mostrarImagen(
-            imagenActual - 1
-        );
-
-    }
-);
-
-
-/*
- * =====================================================
- * BOTÓN SIGUIENTE
+ * SIGUIENTE IMAGEN
  * =====================================================
  */
 
 carruselSiguiente.addEventListener(
     "click",
-    function() {
+    function () {
 
-        mostrarImagen(
-            imagenActual + 1
+        mostrarImagenCarrusel(
+            indiceCarrusel + 1
         );
 
     }
@@ -2177,68 +2162,108 @@ carruselSiguiente.addEventListener(
 
 /*
  * =====================================================
- * DETECTAR DESLIZAMIENTO
+ * IMAGEN ANTERIOR
  * =====================================================
- *
- * Cuando el usuario desliza con el dedo,
- * detectamos automáticamente qué imagen
- * está visible.
  */
 
-carruselContenedor.addEventListener(
-    "scroll",
-    function() {
+carruselAnterior.addEventListener(
+    "click",
+    function () {
 
-        const posicion =
-            carruselContenedor.scrollLeft;
+        mostrarImagenCarrusel(
+            indiceCarrusel - 1
+        );
 
-        const ancho =
-            carruselContenedor.clientWidth;
+    }
+);
 
 
-        if (ancho <= 0) {
+/*
+ * =====================================================
+ * DESLIZAMIENTO TÁCTIL
+ * =====================================================
+ */
+
+let posicionInicialX = 0;
+
+let posicionFinalX = 0;
+
+
+carruselPrincipal.addEventListener(
+    "touchstart",
+    function (evento) {
+
+        posicionInicialX =
+            evento.touches[0].clientX;
+
+    },
+    { passive: true }
+);
+
+
+carruselPrincipal.addEventListener(
+    "touchend",
+    function (evento) {
+
+        posicionFinalX =
+            evento.changedTouches[0].clientX;
+
+        procesarDeslizamiento();
+
+    },
+    { passive: true }
+);
+
+
+/*
+ * =====================================================
+ * DESLIZAMIENTO CON MOUSE
+ * =====================================================
+ */
+
+let mousePresionado = false;
+
+
+carruselPrincipal.addEventListener(
+    "mousedown",
+    function (evento) {
+
+        mousePresionado = true;
+
+        posicionInicialX =
+            evento.clientX;
+
+    }
+);
+
+
+carruselPrincipal.addEventListener(
+    "mouseup",
+    function (evento) {
+
+        if (!mousePresionado) {
 
             return;
 
         }
 
 
-        const nuevaImagen =
-            Math.round(
-                posicion / ancho
-            );
+        mousePresionado = false;
+
+        posicionFinalX =
+            evento.clientX;
+
+        procesarDeslizamiento();
+
+    }
+);
 
 
-        if (
-            nuevaImagen !==
-            imagenActual
-        ) {
+carruselPrincipal.addEventListener(
+    "mouseleave",
+    function () {
 
-            imagenActual =
-                Math.max(
-                    0,
-                    Math.min(
-                        nuevaImagen,
-                        totalImagenes - 1
-                    )
-                );
-
-
-            indicadores.forEach(
-                function(
-                    indicador,
-                    index
-                ) {
-
-                    indicador.classList.toggle(
-                        "activo",
-                        index === imagenActual
-                    );
-
-                }
-            );
-
-        }
+        mousePresionado = false;
 
     }
 );
@@ -2246,18 +2271,76 @@ carruselContenedor.addEventListener(
 
 /*
  * =====================================================
- * INDICADORES CLICKEABLES
+ * PROCESAR DESLIZAMIENTO
  * =====================================================
  */
 
-indicadores.forEach(
-    function(indicador, index) {
+function procesarDeslizamiento() {
 
-        indicador.addEventListener(
+    const diferencia =
+        posicionInicialX -
+        posicionFinalX;
+
+
+    const distanciaMinima = 50;
+
+
+    if (
+        Math.abs(diferencia) <
+        distanciaMinima
+    ) {
+
+        return;
+
+    }
+
+
+    /*
+     * Deslizar hacia la izquierda:
+     * siguiente imagen.
+     */
+
+    if (diferencia > 0) {
+
+        mostrarImagenCarrusel(
+            indiceCarrusel + 1
+        );
+
+    }
+
+
+    /*
+     * Deslizar hacia la derecha:
+     * imagen anterior.
+     */
+
+    else {
+
+        mostrarImagenCarrusel(
+            indiceCarrusel - 1
+        );
+
+    }
+
+}
+
+
+/*
+ * =====================================================
+ * PUNTOS DEL CARRUSEL
+ * =====================================================
+ */
+
+carruselPuntos.forEach(
+    (punto, indice) => {
+
+        punto.addEventListener(
             "click",
-            function() {
+            function () {
 
-                mostrarImagen(index);
+                mostrarImagenCarrusel(
+                    indice
+                );
 
             }
         );
@@ -2268,37 +2351,11 @@ indicadores.forEach(
 
 /*
  * =====================================================
- * TECLADO EN PC
+ * INICIAR CARRUSEL
  * =====================================================
  */
 
-document.addEventListener(
-    "keydown",
-    function(evento) {
-
-        if (
-            evento.key === "ArrowLeft"
-        ) {
-
-            mostrarImagen(
-                imagenActual - 1
-            );
-
-        }
-
-
-        if (
-            evento.key === "ArrowRight"
-        ) {
-
-            mostrarImagen(
-                imagenActual + 1
-            );
-
-        }
-
-    }
-);
+mostrarImagenCarrusel(0);
 
 
 /*
@@ -2309,11 +2366,8 @@ document.addEventListener(
 
 actualizarProducto();
 
-mostrarImagen(0);
-
 </script>
 
 </body>
 
 </html>
-```
