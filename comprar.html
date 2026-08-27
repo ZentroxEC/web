@@ -1201,26 +1201,19 @@
                     <!-- =================================================
                          PRODUCTO
 
-                         ESTE RESUMEN SE ACTUALIZA AUTOMÁTICAMENTE
-                         SEGÚN LOS PARÁMETROS DE verproducto.html.
+                         EDITAR AQUÍ:
 
-                         EJEMPLO:
+                         IMAGEN:
+                         img/delta.png
 
-                         comprar.html?cantidad=2&precio=20
+                         NOMBRE:
+                         Cable Delta macho a 2 SATA hembra
 
-                         MOSTRARÁ:
+                         CANTIDAD:
+                         Cantidad: 1
 
-                         Cantidad: 2
-                         $20.00
-
-                         Y:
-
-                         comprar.html?cantidad=3&precio=30
-
-                         MOSTRARÁ:
-
-                         Cantidad: 3
-                         $30.00
+                         PRECIO:
+                         $10.00
                     ================================================== -->
 
                     <div class="producto-resumen">
@@ -1246,7 +1239,7 @@
                             </h3>
 
 
-                            <p id="cantidadResumen">
+                            <p>
 
                                 Cantidad: 1
 
@@ -1256,10 +1249,7 @@
 
 
 
-                        <div
-                            class="producto-resumen-precio"
-                            id="precioProductoResumen"
-                        >
+                        <div class="producto-resumen-precio">
 
                             $10.00
 
@@ -1279,10 +1269,8 @@
                             Producto
                         </span>
 
-                        <span id="precioProducto">
-
+                        <span>
                             $10.00
-
                         </span>
 
                     </div>
@@ -1317,10 +1305,8 @@
                             Total
                         </span>
 
-                        <span id="totalCompra">
-
+                        <span>
                             $10.00
-
                         </span>
 
                     </div>
@@ -1392,9 +1378,7 @@
 
 
         /* =====================================================
-           GOOGLE APPS SCRIPT
-
-           SE MANTIENE SIN CAMBIOS.
+           CONFIGURACIÓN PRINCIPAL
         ====================================================== */
 
         const APPS_SCRIPT_URL =
@@ -1403,23 +1387,26 @@
 
 
         /* =====================================================
-           ENLACES DE PAGO
+           LINKS DE PAYPHONE SEGÚN CANTIDAD
 
-           CADA CANTIDAD UTILIZA SU LINK CORRESPONDIENTE.
+           CANTIDAD 1 = $10
+           CANTIDAD 2 = $20
+           CANTIDAD 3 = $30
+           CANTIDAD 4 = $40
         ====================================================== */
 
-        const LINKS_PAGO = {
+        const PAYPHONE_URLS = {
 
-            1:
-                "https://ppls.me/KT8CHtyeUHxwBmYlg5NIyA",
+            "1":
+                "https://ppls.me/zbR40tWTnboL9Sf30syIxg",
 
-            2:
+            "2":
                 "https://ppls.me/OnmwepzpJyIEMrq7uoPn9g",
 
-            3:
+            "3":
                 "https://ppls.me/NUp6yYWJ8LcXDd9jnvRA",
 
-            4:
+            "4":
                 "https://ppls.me/SYxHVTiGHCdhEYtqRDHwA"
 
         };
@@ -1427,190 +1414,7 @@
 
 
         /* =====================================================
-           DATOS RECIBIDOS DESDE verproducto.html
-
-           Ejemplo:
-
-           comprar.html?cantidad=2&precio=20
-
-        ====================================================== */
-
-        const parametros =
-            new URLSearchParams(
-                window.location.search
-            );
-
-
-        let cantidad =
-            parseInt(
-                parametros.get("cantidad"),
-                10
-            );
-
-
-        let precio =
-            parseFloat(
-                parametros.get("precio")
-            );
-
-
-
-        /* =====================================================
-           VALIDACIÓN DE PARÁMETROS
-
-           Si no llegan parámetros válidos,
-           se utiliza el producto de US$10.
-        ====================================================== */
-
-        if (
-            !Number.isFinite(cantidad) ||
-            cantidad < 1
-        ) {
-
-            cantidad = 1;
-
-        }
-
-
-        if (
-            !Number.isFinite(precio) ||
-            precio <= 0
-        ) {
-
-            precio = 10;
-
-        }
-
-
-
-        /* =====================================================
-           PRECIOS PERMITIDOS
-
-           Evita que valores diferentes a los productos
-           configurados modifiquen accidentalmente el pedido.
-
-        ====================================================== */
-
-        const PRECIOS_VALIDOS = {
-
-            1: 10,
-            2: 20,
-            3: 30,
-            4: 40
-
-        };
-
-
-        if (
-            PRECIOS_VALIDOS[cantidad] !== undefined
-        ) {
-
-            precio =
-                PRECIOS_VALIDOS[cantidad];
-
-        }
-
-
-
-        /* =====================================================
-           OBTENER ELEMENTOS DEL RESUMEN
-        ====================================================== */
-
-        const cantidadResumen =
-            document.getElementById(
-                "cantidadResumen"
-            );
-
-
-        const precioProductoResumen =
-            document.getElementById(
-                "precioProductoResumen"
-            );
-
-
-        const precioProducto =
-            document.getElementById(
-                "precioProducto"
-            );
-
-
-        const totalCompra =
-            document.getElementById(
-                "totalCompra"
-            );
-
-
-
-        /* =====================================================
-           FORMATO DEL PRECIO
-        ====================================================== */
-
-        function formatoPrecio(valor) {
-
-            return (
-                "$" +
-                valor.toFixed(2)
-            );
-
-        }
-
-
-
-        /* =====================================================
-           ACTUALIZAR RESUMEN DE COMPRA
-        ====================================================== */
-
-        function actualizarResumen() {
-
-
-            const precioFormateado =
-                formatoPrecio(precio);
-
-
-
-            /* CANTIDAD */
-
-            cantidadResumen.textContent =
-                "Cantidad: " +
-                cantidad;
-
-
-
-            /* PRECIO DEL PRODUCTO */
-
-            precioProductoResumen.textContent =
-                precioFormateado;
-
-
-
-            /* LÍNEA PRODUCTO */
-
-            precioProducto.textContent =
-                precioFormateado;
-
-
-
-            /* TOTAL */
-
-            totalCompra.textContent =
-                precioFormateado;
-
-        }
-
-
-
-        /* =====================================================
-           INICIALIZAR RESUMEN
-        ====================================================== */
-
-        actualizarResumen();
-
-
-
-        /* =====================================================
            PRODUCTO
-
-           Estos datos se envían a Google Sheets.
         ====================================================== */
 
         const PRODUCTO =
@@ -1618,11 +1422,11 @@
 
 
         const CANTIDAD =
-            String(cantidad);
+            "1";
 
 
         const PRECIO =
-            formatoPrecio(precio);
+            "$10.00";
 
 
         const ENVIO =
@@ -1630,17 +1434,7 @@
 
 
         const TOTAL =
-            formatoPrecio(precio);
-
-
-
-        /* =====================================================
-           LINK DE PAGO SEGÚN CANTIDAD
-        ====================================================== */
-
-        const PAYPHONE_URL =
-            LINKS_PAGO[cantidad] ||
-            LINKS_PAGO[1];
+            "$10.00";
 
 
 
@@ -1649,21 +1443,13 @@
         ====================================================== */
 
         const provincia =
-            document.getElementById(
-                "provincia"
-            );
-
+            document.getElementById("provincia");
 
         const campoOtraProvincia =
-            document.getElementById(
-                "campoOtraProvincia"
-            );
-
+            document.getElementById("campoOtraProvincia");
 
         const otraProvincia =
-            document.getElementById(
-                "otraProvincia"
-            );
+            document.getElementById("otraProvincia");
 
 
         provincia.addEventListener(
@@ -1701,12 +1487,6 @@
 
         /* =====================================================
            CONTINUAR AL PAGO
-
-           1. Verifica formulario.
-           2. Obtiene datos.
-           3. Envía pedido a Google Sheets.
-           4. Utiliza el link de pago correspondiente
-              a la cantidad seleccionada.
         ====================================================== */
 
         async function continuarAlPago() {
@@ -1914,22 +1694,43 @@
 
 
                 /* =========================================
-                   REDIRECCIÓN
+                   SELECCIONAR LINK SEGÚN CANTIDAD
+                ========================================== */
 
-                   Aquí se utiliza automáticamente
-                   el enlace correspondiente.
+                const cantidadSeleccionada =
+                    String(CANTIDAD).trim();
 
-                   Cantidad 1 → US$10
-                   Cantidad 2 → US$20
-                   Cantidad 3 → US$30
-                   Cantidad 4 → US$40
+
+                const payphoneUrl =
+                    PAYPHONE_URLS[
+                        cantidadSeleccionada
+                    ];
+
+
+
+                /* =========================================
+                   VERIFICAR QUE EXISTA EL LINK
+                ========================================== */
+
+                if (!payphoneUrl) {
+
+                    throw new Error(
+                        "No existe un enlace de PayPhone para esta cantidad."
+                    );
+
+                }
+
+
+
+                /* =========================================
+                   REDIRIGIR A PAYPHONE
                 ========================================== */
 
                 setTimeout(
                     function () {
 
                         window.location.href =
-                            PAYPHONE_URL;
+                            payphoneUrl;
 
                     },
                     800
