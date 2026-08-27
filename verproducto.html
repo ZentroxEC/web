@@ -274,7 +274,6 @@
         .carrusel-track {
 
             width: 100%;
-
             height: 100%;
 
             display: flex;
@@ -338,7 +337,6 @@
             display: flex;
 
             justify-content: center;
-
             align-items: center;
 
             gap: 6px;
@@ -355,7 +353,8 @@
 
             border-radius: 50%;
 
-            background: rgba(0, 0, 0, 0.25);
+            background:
+                rgba(0, 0, 0, 0.25);
 
             border:
                 1px solid rgba(0, 0, 0, 0.35);
@@ -412,9 +411,31 @@
 
             z-index: 10;
 
+            opacity: 1;
+
+            visibility: visible;
+
             transition:
                 background 0.2s ease,
-                transform 0.2s ease;
+                transform 0.2s ease,
+                opacity 0.3s ease,
+                visibility 0.3s ease;
+
+        }
+
+
+        /*
+         * Las flechas desaparecen después
+         * de 3 segundos sin interacción.
+         */
+
+        .imagen-principal.ocultar-flechas .carrusel-flecha {
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            pointer-events: none;
 
         }
 
@@ -439,29 +460,6 @@
 
         }
 
-
-        .imagen-secundaria {
-
-            width: 100%;
-
-            margin-top: 15px;
-
-            background: #ffffff;
-
-            border-radius: 12px;
-
-            overflow: hidden;
-
-        }
-
-        .imagen-secundaria img {
-
-            width: 100%;
-            height: auto;
-
-            display: block;
-
-        }
 
         .producto-info {
 
@@ -1302,7 +1300,7 @@
             class="logo"
         >
 
-            ZENTRO<span>X</span>EC
+            ZENTROX<span>X</span>EC
 
         </a>
 
@@ -1350,20 +1348,20 @@
 
             <!-- =================================================
                  CARRUSEL PRINCIPAL DEL PRODUCTO
-                 
+
                  PARA AGREGAR O CAMBIAR IMÁGENES:
-                 
+
                  1. Coloca las imágenes dentro de la carpeta "img/"
-                 
+
                  2. Cambia el nombre del archivo en:
                     src="img/nombre-de-tu-imagen.jpg"
-                 
-                 Puedes agregar más:
-                 
-                 <div class="carrusel-slide">
-                     <img src="img/otra-imagen.jpg">
-                 </div>
-                 
+
+                 Puedes agregar todas las imágenes que quieras.
+
+                 IMPORTANTE:
+                 Todas las imágenes deben estar dentro de
+                 .carrusel-track.
+
                  ================================================= -->
 
             <div
@@ -1430,8 +1428,6 @@
 
                         </div>
 
-                        </div>
-
 
                         <!-- IMAGEN 5 -->
 
@@ -1439,12 +1435,39 @@
 
                             <img
                                 src="img/delta5.jpeg"
-                                alt="Cable Delta SATA vista 4"
+                                alt="Cable Delta SATA vista 5"
                                 draggable="false"
                             >
 
                         </div>
 
+
+                        <!--
+                        =================================================
+                        EJEMPLO PARA AGREGAR MÁS IMÁGENES
+
+                        <div class="carrusel-slide">
+
+                            <img
+                                src="img/delta6.jpeg"
+                                alt="Cable Delta SATA vista 6"
+                                draggable="false"
+                            >
+
+                        </div>
+
+                        <div class="carrusel-slide">
+
+                            <img
+                                src="img/delta7.jpeg"
+                                alt="Cable Delta SATA vista 7"
+                                draggable="false"
+                            >
+
+                        </div>
+
+                        =================================================
+                        -->
 
                     </div>
 
@@ -1502,17 +1525,11 @@
                         class="carrusel-punto"
                     ></span>
 
+                    <span
+                        class="carrusel-punto"
+                    ></span>
+
                 </div>
-
-            </div>
-
-
-            <div class="imagen-secundaria">
-
-                <img
-                    src="63664.jpg"
-                    alt="Información del Cable Delta SATA"
-                >
 
             </div>
 
@@ -2110,6 +2127,57 @@ let indiceCarrusel = 0;
 
 /*
  * =====================================================
+ * TEMPORIZADOR DE LAS FLECHAS
+ * =====================================================
+ */
+
+let temporizadorFlechas;
+
+
+/*
+ * =====================================================
+ * MOSTRAR FLECHAS
+ * =====================================================
+ */
+
+function mostrarFlechas() {
+
+    carruselPrincipal.classList.remove(
+        "ocultar-flechas"
+    );
+
+
+    /*
+     * Reiniciar temporizador.
+     */
+
+    clearTimeout(
+        temporizadorFlechas
+    );
+
+
+    /*
+     * Ocultar las flechas después
+     * de 3 segundos.
+     */
+
+    temporizadorFlechas =
+        setTimeout(
+            function () {
+
+                carruselPrincipal.classList.add(
+                    "ocultar-flechas"
+                );
+
+            },
+            3000
+        );
+
+}
+
+
+/*
+ * =====================================================
  * MOSTRAR IMAGEN DEL CARRUSEL
  * =====================================================
  */
@@ -2120,12 +2188,32 @@ function mostrarImagenCarrusel(indice) {
         carruselSlides.length;
 
 
+    /*
+     * Evitar errores si no existen
+     * imágenes.
+     */
+
+    if (total === 0) {
+
+        return;
+
+    }
+
+
+    /*
+     * Volver a la última imagen.
+     */
+
     if (indice < 0) {
 
         indice = total - 1;
 
     }
 
+
+    /*
+     * Volver a la primera imagen.
+     */
 
     if (indice >= total) {
 
@@ -2137,11 +2225,22 @@ function mostrarImagenCarrusel(indice) {
     indiceCarrusel = indice;
 
 
+    /*
+     * Mover el carrusel.
+     *
+     * Funciona independientemente de
+     * si hay 2, 5, 10 o más imágenes.
+     */
+
     carruselTrack.style.transform =
         "translateX(-" +
         (indiceCarrusel * 100) +
         "%)";
 
+
+    /*
+     * Actualizar los puntos.
+     */
 
     carruselPuntos.forEach(
         (punto, posicion) => {
@@ -2153,6 +2252,14 @@ function mostrarImagenCarrusel(indice) {
 
         }
     );
+
+
+    /*
+     * Mostrar las flechas y reiniciar
+     * el temporizador.
+     */
+
+    mostrarFlechas();
 
 }
 
@@ -2211,6 +2318,8 @@ carruselPrincipal.addEventListener(
         posicionInicialX =
             evento.touches[0].clientX;
 
+        mostrarFlechas();
+
     },
     { passive: true }
 );
@@ -2224,6 +2333,8 @@ carruselPrincipal.addEventListener(
             evento.changedTouches[0].clientX;
 
         procesarDeslizamiento();
+
+        mostrarFlechas();
 
     },
     { passive: true }
@@ -2248,6 +2359,8 @@ carruselPrincipal.addEventListener(
         posicionInicialX =
             evento.clientX;
 
+        mostrarFlechas();
+
     }
 );
 
@@ -2269,6 +2382,8 @@ carruselPrincipal.addEventListener(
             evento.clientX;
 
         procesarDeslizamiento();
+
+        mostrarFlechas();
 
     }
 );
@@ -2366,11 +2481,46 @@ carruselPuntos.forEach(
 
 /*
  * =====================================================
+ * MOSTRAR FLECHAS AL INTERACTUAR
+ * =====================================================
+ */
+
+carruselPrincipal.addEventListener(
+    "mouseenter",
+    function () {
+
+        mostrarFlechas();
+
+    }
+);
+
+
+carruselPrincipal.addEventListener(
+    "mousemove",
+    function () {
+
+        mostrarFlechas();
+
+    }
+);
+
+
+/*
+ * =====================================================
  * INICIAR CARRUSEL
  * =====================================================
  */
 
 mostrarImagenCarrusel(0);
+
+
+/*
+ * =====================================================
+ * INICIAR TEMPORIZADOR
+ * =====================================================
+ */
+
+mostrarFlechas();
 
 
 /*
