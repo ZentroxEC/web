@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 
@@ -986,13 +987,25 @@
                         <!-- =================================================
                              BOTÓN COMPRAR
 
-                             EDITAR: cambia comprar.html solamente
-                             si posteriormente cambia tu sistema
-                             de compra.
+                             ENVÍA A comprar.html CON LOS PARÁMETROS
+                             QUE comprar.html ESPERA:
+
+                             cantidad=1
+                             precio=10
+
+                             URL FINAL:
+
+                             comprar.html?cantidad=1&precio=10
+
+                             Esto hace que comprar.html reconozca
+                             automáticamente:
+
+                             Cantidad: 1
+                             Precio: $10.00
                         ================================================== -->
 
                         <a
-                            href="comprar.html"
+                            href="comprar.html?cantidad=1&precio=10"
                             class="btn btn-comprar"
                         >
 
@@ -1235,3 +1248,4 @@
 </body>
 
 </html>
+```
