@@ -37,6 +37,7 @@
 
         }
 
+
         * {
 
             margin: 0;
@@ -45,11 +46,13 @@
 
         }
 
+
         html {
 
             scroll-behavior: smooth;
 
         }
+
 
         body {
 
@@ -60,15 +63,24 @@
 
             background: var(--negro);
             color: var(--blanco);
+
             line-height: 1.6;
 
         }
 
+
+        /* =====================================================
+           ENCABEZADO
+           ===================================================== */
+
         header {
 
             position: sticky;
+
             top: 0;
+
             z-index: 1000;
+
             width: 100%;
 
             background:
@@ -82,22 +94,29 @@
 
         }
 
+
         .header-container {
 
             width: 100%;
+
             max-width: 1250px;
+
             min-height: 76px;
 
             margin: 0 auto;
+
             padding: 0 25px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
 
             gap: 30px;
 
         }
+
 
         .logo {
 
@@ -106,6 +125,7 @@
             color: var(--blanco);
 
             font-size: 27px;
+
             font-weight: 900;
 
             letter-spacing: 1px;
@@ -114,21 +134,26 @@
 
         }
 
+
         .logo span {
 
             color: var(--rojo);
 
         }
 
+
         nav {
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             gap: 30px;
 
         }
+
 
         nav a {
 
@@ -137,6 +162,7 @@
             text-decoration: none;
 
             font-size: 13px;
+
             font-weight: 800;
 
             letter-spacing: 0.3px;
@@ -146,15 +172,23 @@
 
         }
 
+
         nav a:hover {
 
             color: var(--rojo);
 
         }
 
+
+
+        /* =====================================================
+           PÁGINA DEL PRODUCTO
+           ===================================================== */
+
         .producto-page {
 
             width: 100%;
+
             max-width: 1100px;
 
             margin: 0 auto;
@@ -163,6 +197,7 @@
                 45px 25px 80px;
 
         }
+
 
         .volver {
 
@@ -177,6 +212,7 @@
             text-decoration: none;
 
             font-size: 14px;
+
             font-weight: 700;
 
             margin-bottom: 30px;
@@ -186,11 +222,18 @@
 
         }
 
+
         .volver:hover {
 
             color: var(--rojo);
 
         }
+
+
+
+        /* =====================================================
+           PRODUCTO PRINCIPAL
+           ===================================================== */
 
         .producto-principal {
 
@@ -214,22 +257,40 @@
 
         }
 
+
         .galeria {
 
             width: 100%;
 
+            min-width: 0;
+
         }
 
 
+
         /* =====================================================
-           CARRUSEL DE IMÁGENES DEL PRODUCTO
+           CARRUSEL DE IMÁGENES
+
+           ACEPTA IMÁGENES DE DIFERENTES PROPORCIONES:
+
+           - JPG
+           - JPEG
+           - PNG
+           - WEBP
+           - GIF
+           - SVG compatible con el navegador
+
+           La imagen se mantiene completa y centrada.
+           No se estira.
+           No se deforma.
+           No se corta.
            ===================================================== */
 
         .imagen-principal {
 
             width: 100%;
 
-            min-height: 430px;
+            height: 430px;
 
             background: #ffffff;
 
@@ -240,7 +301,8 @@
             display: flex;
 
             align-items: center;
-            justify-content: flex-start;
+
+            justify-content: center;
 
             border:
                 1px solid #dddddd;
@@ -264,6 +326,7 @@
         .carrusel-contenedor {
 
             width: 100%;
+
             height: 100%;
 
             overflow: hidden;
@@ -274,6 +337,7 @@
         .carrusel-track {
 
             width: 100%;
+
             height: 100%;
 
             display: flex;
@@ -289,94 +353,65 @@
         .carrusel-slide {
 
             min-width: 100%;
+
             width: 100%;
 
             height: 100%;
+
+            flex: 0 0 100%;
 
             display: flex;
 
             align-items: center;
+
             justify-content: center;
 
-            flex-shrink: 0;
+            padding: 15px;
+
+            overflow: hidden;
 
         }
 
 
+        /*
+         * IMPORTANTE:
+         *
+         * object-fit: contain hace que la imagen
+         * siempre entre completa en el carrusel.
+         *
+         * No importa si la imagen es:
+         *
+         * - vertical
+         * - horizontal
+         * - cuadrada
+         * - grande
+         * - pequeña
+         */
+
         .carrusel-slide img {
 
-            width: 100%;
-            height: 100%;
+            display: block;
 
-            max-height: 500px;
+            width: 100%;
+
+            height: 100%;
 
             object-fit: contain;
 
-            display: block;
+            object-position: center center;
 
             user-select: none;
 
             -webkit-user-drag: none;
 
+            pointer-events: none;
+
         }
+
 
 
         /* =====================================================
-           PUNTOS DEL CARRUSEL
-           ===================================================== */
-
-        .carrusel-puntos {
-
-            position: absolute;
-
-            bottom: 12px;
-            left: 0;
-
-            width: 100%;
-
-            display: flex;
-
-            justify-content: center;
-            align-items: center;
-
-            gap: 6px;
-
-            z-index: 5;
-
-        }
-
-
-        .carrusel-punto {
-
-            width: 7px;
-            height: 7px;
-
-            border-radius: 50%;
-
-            background:
-                rgba(0, 0, 0, 0.25);
-
-            border:
-                1px solid rgba(0, 0, 0, 0.35);
-
-            transition:
-                all 0.2s ease;
-
-        }
-
-
-        .carrusel-punto.activo {
-
-            width: 9px;
-            height: 9px;
-
-            background: #111111;
-
-        }
-
-
-        /* =====================================================
-           BOTONES DEL CARRUSEL
+           FLECHAS DEL CARRUSEL
            ===================================================== */
 
         .carrusel-flecha {
@@ -388,6 +423,7 @@
             transform: translateY(-50%);
 
             width: 38px;
+
             height: 38px;
 
             border-radius: 50%;
@@ -403,6 +439,7 @@
             display: flex;
 
             align-items: center;
+
             justify-content: center;
 
             font-size: 22px;
@@ -420,22 +457,6 @@
                 transform 0.2s ease,
                 opacity 0.3s ease,
                 visibility 0.3s ease;
-
-        }
-
-
-        /*
-         * Las flechas desaparecen después
-         * de 3 segundos sin interacción.
-         */
-
-        .imagen-principal.ocultar-flechas .carrusel-flecha {
-
-            opacity: 0;
-
-            visibility: hidden;
-
-            pointer-events: none;
 
         }
 
@@ -461,12 +482,96 @@
         }
 
 
+        /*
+         * Las flechas desaparecen después
+         * de 3 segundos sin interacción.
+         */
+
+        .imagen-principal.ocultar-flechas
+        .carrusel-flecha {
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            pointer-events: none;
+
+        }
+
+
+
+        /* =====================================================
+           PUNTOS DEL CARRUSEL
+           ===================================================== */
+
+        .carrusel-puntos {
+
+            position: absolute;
+
+            bottom: 12px;
+
+            left: 0;
+
+            width: 100%;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 6px;
+
+            z-index: 5;
+
+        }
+
+
+        .carrusel-punto {
+
+            width: 7px;
+
+            height: 7px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(0, 0, 0, 0.25);
+
+            border:
+                1px solid rgba(0, 0, 0, 0.35);
+
+            transition:
+                all 0.2s ease;
+
+            cursor: pointer;
+
+        }
+
+
+        .carrusel-punto.activo {
+
+            width: 9px;
+
+            height: 9px;
+
+            background: #111111;
+
+        }
+
+
+
+        /* =====================================================
+           INFORMACIÓN DEL PRODUCTO
+           ===================================================== */
+
         .producto-info {
 
             padding:
                 5px 5px 10px;
 
         }
+
 
         .producto-titulo {
 
@@ -480,6 +585,7 @@
 
         }
 
+
         .valoracion {
 
             display: flex;
@@ -492,6 +598,7 @@
 
         }
 
+
         .estrella {
 
             color: #3483fa;
@@ -500,11 +607,13 @@
 
         }
 
+
         .valoracion strong {
 
             font-size: 17px;
 
         }
+
 
         .ventas {
 
@@ -513,6 +622,7 @@
             font-size: 15px;
 
         }
+
 
         .stock {
 
@@ -533,11 +643,13 @@
             border-radius: 6px;
 
             font-size: 12px;
+
             font-weight: 800;
 
             margin-bottom: 18px;
 
         }
+
 
         .precio {
 
@@ -551,17 +663,6 @@
 
         }
 
-        .precio-decimal {
-
-            font-size: 25px;
-
-            vertical-align: top;
-
-            position: relative;
-
-            top: 3px;
-
-        }
 
         .descuento {
 
@@ -578,11 +679,13 @@
             border-radius: 5px;
 
             font-size: 13px;
+
             font-weight: 800;
 
             margin-bottom: 18px;
 
         }
+
 
 
         /* =====================================================
@@ -603,11 +706,13 @@
 
         }
 
+
         .medios-pago-titulo {
 
             color: #888888;
 
             font-size: 12px;
+
             font-weight: 700;
 
             white-space: nowrap;
@@ -617,13 +722,10 @@
         }
 
 
-        /* =====================================================
-           CÍRCULOS DE LAS TARJETAS
-           ===================================================== */
-
         .pago-circulo {
 
             width: 42px;
+
             height: 42px;
 
             min-width: 42px;
@@ -638,6 +740,7 @@
             display: flex;
 
             align-items: center;
+
             justify-content: center;
 
             overflow: hidden;
@@ -657,6 +760,7 @@
         .pago-circulo img {
 
             width: 100%;
+
             height: 100%;
 
             object-fit: cover;
@@ -672,11 +776,13 @@
 
         }
 
+
         .pago-mastercard {
 
             z-index: 2;
 
         }
+
 
         .pago-discover {
 
@@ -684,12 +790,18 @@
 
         }
 
+
         .pago-diners {
 
             z-index: 4;
 
         }
 
+
+
+        /* =====================================================
+           CANTIDAD
+           ===================================================== */
 
         .cantidad {
 
@@ -716,14 +828,17 @@
 
         }
 
+
         .cantidad label {
 
             color: #ffffff;
 
             font-size: 15px;
+
             font-weight: 700;
 
         }
+
 
         .cantidad select {
 
@@ -743,6 +858,7 @@
             padding: 0 10px;
 
             font-size: 14px;
+
             font-weight: 700;
 
             cursor: pointer;
@@ -751,12 +867,19 @@
 
         }
 
+
         .cantidad select:focus {
 
             border-color:
                 var(--rojo);
 
         }
+
+
+
+        /* =====================================================
+           BOTONES
+           ===================================================== */
 
         .botones {
 
@@ -767,6 +890,7 @@
             gap: 10px;
 
         }
+
 
         .btn {
 
@@ -779,11 +903,13 @@
             display: flex;
 
             align-items: center;
+
             justify-content: center;
 
             text-decoration: none;
 
             font-size: 14px;
+
             font-weight: 900;
 
             cursor: pointer;
@@ -794,6 +920,7 @@
                 color 0.2s ease;
 
         }
+
 
         .btn-comprar {
 
@@ -806,6 +933,7 @@
 
         }
 
+
         .btn-comprar:hover {
 
             background:
@@ -816,6 +944,20 @@
 
         }
 
+
+        /*
+         * =====================================================
+         * CARRITO DESACTIVADO TEMPORALMENTE
+         *
+         * El botón no aparece actualmente.
+         *
+         * Se conserva comentado para activarlo
+         * en el futuro cuando ZENTROXEC tenga
+         * sistema de carrito.
+         * =====================================================
+         */
+
+        /*
         .btn-carrito {
 
             background:
@@ -831,6 +973,7 @@
 
         }
 
+
         .btn-carrito:hover {
 
             background:
@@ -843,6 +986,7 @@
 
         }
 
+
         .icono-carrito {
 
             font-size: 18px;
@@ -850,6 +994,8 @@
             line-height: 1;
 
         }
+        */
+
 
         .btn-whatsapp {
 
@@ -862,6 +1008,7 @@
 
         }
 
+
         .btn-whatsapp:hover {
 
             background: #1c1c1c;
@@ -872,6 +1019,12 @@
                 #555555;
 
         }
+
+
+
+        /* =====================================================
+           VENDEDOR
+           ===================================================== */
 
         .vendedor {
 
@@ -884,6 +1037,7 @@
 
         }
 
+
         .vendedor-principal {
 
             font-size: 16px;
@@ -892,11 +1046,13 @@
 
         }
 
+
         .vendedor-principal strong {
 
             color: #5c9cff;
 
         }
+
 
         .mercadolider {
 
@@ -906,11 +1062,18 @@
 
         }
 
+
         .mercadolider strong {
 
             color: #dddddd;
 
         }
+
+
+
+        /* =====================================================
+           SEGURIDAD
+           ===================================================== */
 
         .seguridad {
 
@@ -922,6 +1085,7 @@
                 1px solid var(--borde);
 
         }
+
 
         .seguridad-item {
 
@@ -935,6 +1099,7 @@
 
         }
 
+
         .seguridad-icono {
 
             font-size: 24px;
@@ -942,6 +1107,7 @@
             min-width: 30px;
 
         }
+
 
         .seguridad-texto {
 
@@ -953,11 +1119,18 @@
 
         }
 
+
         .seguridad-texto strong {
 
             color: #ffffff;
 
         }
+
+
+
+        /* =====================================================
+           DETALLES DEL PRODUCTO
+           ===================================================== */
 
         .detalles {
 
@@ -971,17 +1144,148 @@
 
             border-radius: 16px;
 
-            padding: 35px;
+            padding: 0;
+
+            overflow: hidden;
 
         }
+
+
+        /*
+         * Encabezado clickeable
+         */
+
+        .detalles-encabezado {
+
+            width: 100%;
+
+            min-height: 75px;
+
+            padding:
+                20px 35px;
+
+            background: transparent;
+
+            border: none;
+
+            color: #ffffff;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            cursor: pointer;
+
+            text-align: left;
+
+        }
+
 
         .detalles-titulo {
 
             font-size: 27px;
 
-            margin-bottom: 30px;
+            margin: 0;
+
+            line-height: 1.2;
 
         }
+
+
+        /*
+         * Flecha
+         */
+
+        .flecha-detalles {
+
+            width: 38px;
+
+            height: 38px;
+
+            min-width: 38px;
+
+            border:
+                1px solid #333333;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: #ffffff;
+
+            font-size: 21px;
+
+            transition:
+                transform 0.3s ease,
+                background 0.2s ease;
+
+        }
+
+
+        .detalles-encabezado:hover
+        .flecha-detalles {
+
+            background: #1c1c1c;
+
+        }
+
+
+        /*
+         * La flecha gira cuando los detalles
+         * están abiertos.
+         */
+
+        .detalles.abierto
+        .flecha-detalles {
+
+            transform: rotate(180deg);
+
+        }
+
+
+        /*
+         * Contenedor que se abre y cierra
+         */
+
+        .detalles-contenido {
+
+            max-height: 0;
+
+            overflow: hidden;
+
+            transition:
+                max-height 0.45s ease;
+
+        }
+
+
+        /*
+         * Cuando está abierto
+         */
+
+        .detalles.abierto
+        .detalles-contenido {
+
+            max-height: 1500px;
+
+        }
+
+
+        .detalle-interno {
+
+            padding:
+                0 35px 35px;
+
+        }
+
 
         .detalle-bloque {
 
@@ -993,11 +1297,13 @@
 
         }
 
-        .detalle-bloque:first-of-type {
+
+        .detalle-bloque:first-child {
 
             padding-top: 0;
 
         }
+
 
         .detalle-bloque:last-child {
 
@@ -1007,6 +1313,7 @@
 
         }
 
+
         .detalle-bloque h3 {
 
             font-size: 19px;
@@ -1014,6 +1321,7 @@
             margin-bottom: 15px;
 
         }
+
 
         .detalle-bloque h3 span {
 
@@ -1023,11 +1331,13 @@
 
         }
 
+
         .detalle-bloque ul {
 
             padding-left: 20px;
 
         }
+
 
         .detalle-bloque li {
 
@@ -1039,6 +1349,7 @@
 
         }
 
+
         .detalle-bloque p {
 
             color: #999999;
@@ -1048,6 +1359,12 @@
             line-height: 1.8;
 
         }
+
+
+
+        /* =====================================================
+           FOOTER
+           ===================================================== */
 
         footer {
 
@@ -1064,6 +1381,7 @@
 
         }
 
+
         footer p {
 
             color: #666666;
@@ -1072,11 +1390,18 @@
 
         }
 
+
         footer strong {
 
             color: #ffffff;
 
         }
+
+
+
+        /* =====================================================
+           TABLET
+           ===================================================== */
 
         @media (max-width: 850px) {
 
@@ -1086,13 +1411,20 @@
 
             }
 
+
             .imagen-principal {
 
-                min-height: 380px;
+                height: 400px;
 
             }
 
         }
+
+
+
+        /* =====================================================
+           MÓVIL
+           ===================================================== */
 
         @media (max-width: 700px) {
 
@@ -1101,6 +1433,7 @@
                 position: relative;
 
             }
+
 
             .header-container {
 
@@ -1115,6 +1448,7 @@
 
             }
 
+
             .logo {
 
                 font-size: 27px;
@@ -1122,6 +1456,7 @@
                 text-align: center;
 
             }
+
 
             nav {
 
@@ -1137,13 +1472,16 @@
 
             }
 
+
             nav a {
 
                 font-size: 10px;
 
-                padding: 5px 3px;
+                padding:
+                    5px 3px;
 
             }
+
 
             .producto-page {
 
@@ -1151,6 +1489,7 @@
                     25px 15px 60px;
 
             }
+
 
             .producto-principal {
 
@@ -1162,11 +1501,20 @@
 
             }
 
+
             .imagen-principal {
 
-                min-height: 300px;
+                height: 300px;
 
             }
+
+
+            .carrusel-slide {
+
+                padding: 10px;
+
+            }
+
 
             .producto-titulo {
 
@@ -1174,11 +1522,13 @@
 
             }
 
+
             .precio {
 
                 font-size: 40px;
 
             }
+
 
             .medios-pago {
 
@@ -1186,20 +1536,24 @@
 
             }
 
+
             .medios-pago-titulo {
 
                 font-size: 11px;
 
             }
 
+
             .pago-circulo {
 
                 width: 38px;
+
                 height: 38px;
 
                 min-width: 38px;
 
             }
+
 
             .pago-circulo + .pago-circulo {
 
@@ -1207,13 +1561,16 @@
 
             }
 
-            .detalles {
 
-                padding: 25px 20px;
+            .detalles-encabezado {
 
-                border-radius: 12px;
+                min-height: 70px;
+
+                padding:
+                    18px 20px;
 
             }
+
 
             .detalles-titulo {
 
@@ -1221,7 +1578,21 @@
 
             }
 
+
+            .detalle-interno {
+
+                padding:
+                    0 20px 25px;
+
+            }
+
         }
+
+
+
+        /* =====================================================
+           MÓVILES PEQUEÑOS
+           ===================================================== */
 
         @media (max-width: 380px) {
 
@@ -1232,11 +1603,13 @@
 
             }
 
+
             .logo {
 
                 font-size: 24px;
 
             }
+
 
             nav {
 
@@ -1244,17 +1617,20 @@
 
             }
 
+
             nav a {
 
                 font-size: 9px;
 
             }
 
+
             .imagen-principal {
 
-                min-height: 250px;
+                height: 250px;
 
             }
+
 
             .producto-titulo {
 
@@ -1262,14 +1638,17 @@
 
             }
 
+
             .pago-circulo {
 
                 width: 34px;
+
                 height: 34px;
 
                 min-width: 34px;
 
             }
+
 
             .pago-circulo + .pago-circulo {
 
@@ -1277,9 +1656,30 @@
 
             }
 
+
             .medios-pago {
 
                 gap: 0;
+
+            }
+
+
+            .detalles-titulo {
+
+                font-size: 21px;
+
+            }
+
+
+            .flecha-detalles {
+
+                width: 34px;
+
+                height: 34px;
+
+                min-width: 34px;
+
+                font-size: 19px;
 
             }
 
@@ -1289,7 +1689,9 @@
 
 </head>
 
+
 <body>
+
 
 <header>
 
@@ -1303,6 +1705,7 @@
             ZENTROX<span>X</span>EC
 
         </a>
+
 
         <nav>
 
@@ -1329,7 +1732,9 @@
 </header>
 
 
+
 <main class="producto-page">
+
 
     <a
         href="productos.html"
@@ -1341,33 +1746,22 @@
     </a>
 
 
+
     <section class="producto-principal">
+
+
+        <!-- =================================================
+             GALERÍA
+             ================================================= -->
 
         <div class="galeria">
 
-
-            <!-- =================================================
-                 CARRUSEL PRINCIPAL DEL PRODUCTO
-
-                 PARA AGREGAR O CAMBIAR IMÁGENES:
-
-                 1. Coloca las imágenes dentro de la carpeta "img/"
-
-                 2. Cambia el nombre del archivo en:
-                    src="img/nombre-de-tu-imagen.jpg"
-
-                 Puedes agregar todas las imágenes que quieras.
-
-                 IMPORTANTE:
-                 Todas las imágenes deben estar dentro de
-                 .carrusel-track.
-
-                 ================================================= -->
 
             <div
                 class="imagen-principal"
                 id="carruselPrincipal"
             >
+
 
                 <div class="carrusel-contenedor">
 
@@ -1377,7 +1771,30 @@
                     >
 
 
-                        <!-- IMAGEN 1 -->
+                        <!-- =================================================
+                             IMAGEN 1
+
+                             Puedes utilizar:
+
+                             JPG
+                             JPEG
+                             PNG
+                             WEBP
+                             GIF
+                             SVG
+
+                             Ejemplos:
+
+                             img/delta.jpg
+                             img/delta.jpeg
+                             img/delta.png
+                             img/delta.webp
+                             img/delta.gif
+                             img/delta.svg
+
+                             No importa la proporción de la imagen.
+                             El sistema la centrará automáticamente.
+                             ================================================= -->
 
                         <div class="carrusel-slide">
 
@@ -1388,6 +1805,7 @@
                             >
 
                         </div>
+
 
 
                         <!-- IMAGEN 2 -->
@@ -1403,6 +1821,7 @@
                         </div>
 
 
+
                         <!-- IMAGEN 3 -->
 
                         <div class="carrusel-slide">
@@ -1414,6 +1833,7 @@
                             >
 
                         </div>
+
 
 
                         <!-- IMAGEN 4 -->
@@ -1429,6 +1849,7 @@
                         </div>
 
 
+
                         <!-- IMAGEN 5 -->
 
                         <div class="carrusel-slide">
@@ -1442,36 +1863,33 @@
                         </div>
 
 
-                        <!--
-                        =================================================
-                        EJEMPLO PARA AGREGAR MÁS IMÁGENES
 
-                        <div class="carrusel-slide">
+                        <!-- =================================================
+                             PARA AGREGAR MÁS IMÁGENES:
 
-                            <img
-                                src="img/delta6.jpeg"
-                                alt="Cable Delta SATA vista 6"
-                                draggable="false"
-                            >
+                             Solo copia este bloque:
 
-                        </div>
+                             <div class="carrusel-slide">
 
-                        <div class="carrusel-slide">
+                                 <img
+                                     src="img/delta6.webp"
+                                     alt="Cable Delta SATA vista 6"
+                                     draggable="false"
+                                 >
 
-                            <img
-                                src="img/delta7.jpeg"
-                                alt="Cable Delta SATA vista 7"
-                                draggable="false"
-                            >
+                             </div>
 
-                        </div>
+                             Puedes usar cualquier formato compatible
+                             con el navegador.
 
-                        =================================================
-                        -->
+                             Los puntos del carrusel se crearán
+                             automáticamente.
+                             ================================================= -->
 
                     </div>
 
                 </div>
+
 
 
                 <!-- FLECHA IZQUIERDA -->
@@ -1488,6 +1906,7 @@
                 </button>
 
 
+
                 <!-- FLECHA DERECHA -->
 
                 <button
@@ -1502,47 +1921,36 @@
                 </button>
 
 
-                <!-- PUNTOS -->
+
+                <!-- =================================================
+                     LOS PUNTOS SE CREAN AUTOMÁTICAMENTE CON JAVASCRIPT
+                     ================================================= -->
 
                 <div
                     class="carrusel-puntos"
                     id="carruselPuntos"
-                >
+                ></div>
 
-                    <span
-                        class="carrusel-punto activo"
-                    ></span>
-
-                    <span
-                        class="carrusel-punto"
-                    ></span>
-
-                    <span
-                        class="carrusel-punto"
-                    ></span>
-
-                    <span
-                        class="carrusel-punto"
-                    ></span>
-
-                    <span
-                        class="carrusel-punto"
-                    ></span>
-
-                </div>
 
             </div>
 
         </div>
 
 
+
+        <!-- =====================================================
+             INFORMACIÓN DEL PRODUCTO
+             ===================================================== -->
+
         <div class="producto-info">
+
 
             <h1 class="producto-titulo">
 
                 Cable de Poder Delta SATA Macho a 2x SATA Hembra
 
             </h1>
+
 
 
             <div class="valoracion">
@@ -1566,11 +1974,13 @@
             </div>
 
 
+
             <div class="stock">
 
                 🔥 ÚLTIMAS 5 UNIDADES
 
             </div>
+
 
 
             <div
@@ -1583,11 +1993,13 @@
             </div>
 
 
+
             <div class="descuento">
 
                 20% OFF Diners
 
             </div>
+
 
 
             <!-- =================================================
@@ -1603,6 +2015,7 @@
                 </span>
 
 
+
                 <!-- VISA -->
 
                 <div class="pago-circulo pago-visa">
@@ -1613,6 +2026,7 @@
                     >
 
                 </div>
+
 
 
                 <!-- MASTERCARD -->
@@ -1627,6 +2041,7 @@
                 </div>
 
 
+
                 <!-- DISCOVER -->
 
                 <div class="pago-circulo pago-discover">
@@ -1637,6 +2052,7 @@
                     >
 
                 </div>
+
 
 
                 <!-- DINERS -->
@@ -1652,6 +2068,11 @@
 
             </div>
 
+
+
+            <!-- =================================================
+                 CANTIDAD
+                 ================================================= -->
 
             <div class="cantidad">
 
@@ -1689,7 +2110,13 @@
             </div>
 
 
+
             <div class="botones">
+
+
+                <!-- =================================================
+                     COMPRAR AHORA
+                     ================================================= -->
 
                 <a
                     href="comprar.html?cantidad=1&precio=10"
@@ -1701,6 +2128,18 @@
 
                 </a>
 
+
+
+                <!-- =================================================
+                     BOTÓN CARRITO DESACTIVADO
+
+                     Lo dejo guardado para utilizarlo en el futuro.
+
+                     Cuando quieras activar el carrito, elimina
+                     los comentarios de este bloque y también
+                     activa la función agregarAlCarrito().
+
+                     =================================================
 
                 <button
                     type="button"
@@ -1720,6 +2159,12 @@
 
                 </button>
 
+                -->
+
+
+                <!-- =================================================
+                     WHATSAPP
+                     ================================================= -->
 
                 <a
                     id="whatsappProducto"
@@ -1732,8 +2177,14 @@
 
                 </a>
 
+
             </div>
 
+
+
+            <!-- =================================================
+                 VENDEDOR
+                 ================================================= -->
 
             <div class="vendedor">
 
@@ -1756,7 +2207,13 @@
             </div>
 
 
+
+            <!-- =================================================
+                 SEGURIDAD
+                 ================================================= -->
+
             <div class="seguridad">
+
 
                 <div class="seguridad-item">
 
@@ -1779,6 +2236,7 @@
                 </div>
 
 
+
                 <div class="seguridad-item">
 
                     <div class="seguridad-icono">
@@ -1797,6 +2255,7 @@
 
                 </div>
 
+
             </div>
 
         </div>
@@ -1804,163 +2263,235 @@
     </section>
 
 
-    <section class="detalles">
 
-        <h2 class="detalles-titulo">
+    <!-- =====================================================
+         DETALLES DEL PRODUCTO
+         ===================================================== -->
 
-            Detalles del producto
-
-        </h2>
-
-
-        <div class="detalle-bloque">
-
-            <h3>
-
-                <span>
-                    01.
-                </span>
-
-                Características principales
-
-            </h3>
-
-            <ul>
-
-                <li>
-                    Marca: Delta
-                </li>
-
-                <li>
-                    Modelo: Cable de poder SATA
-                </li>
-
-                <li>
-                    Color: Negro
-                </li>
-
-                <li>
-                    Conector principal: Delta macho
-                </li>
-
-                <li>
-                    Salidas: 2 conectores SATA hembra
-                </li>
-
-            </ul>
-
-        </div>
+    <section
+        class="detalles"
+        id="detallesProducto"
+    >
 
 
-        <div class="detalle-bloque">
+        <!-- =================================================
+             ENCABEZADO CLICKEABLE
+             ================================================= -->
 
-            <h3>
+        <button
+            type="button"
+            class="detalles-encabezado"
+            id="botonDetalles"
+            aria-expanded="false"
+            aria-controls="contenidoDetalles"
+        >
 
-                <span>
-                    02.
-                </span>
+            <h2 class="detalles-titulo">
 
-                Otros
+                Detalles del producto
 
-            </h3>
-
-            <ul>
-
-                <li>
-                    Fácil instalación.
-                </li>
-
-                <li>
-                    Diseño compacto.
-                </li>
-
-                <li>
-                    Cable pensado para alimentación de dispositivos SATA compatibles.
-                </li>
-
-                <li>
-                    Color negro.
-                </li>
-
-            </ul>
-
-        </div>
+            </h2>
 
 
-        <div class="detalle-bloque">
+            <span
+                class="flecha-detalles"
+                aria-hidden="true"
+            >
 
-            <h3>
+                ↓
 
-                <span>
-                    03.
-                </span>
+            </span>
 
-                Especificaciones
-
-            </h3>
-
-            <ul>
-
-                <li>
-                    Conecta una salida Delta con dos conexiones SATA de alimentación.
-                </li>
-
-                <li>
-                    Permite alimentar dispositivos compatibles desde la conexión correspondiente.
-                </li>
-
-                <li>
-                    Instalación sencilla y directa.
-                </li>
-
-                <li>
-                    Longitud aproximada: 15 cm.
-                </li>
-
-                <li>
-                    Tipo de conexión: alimentación SATA.
-                </li>
-
-            </ul>
-
-        </div>
+        </button>
 
 
-        <div class="detalle-bloque">
 
-            <h3>
+        <!-- =================================================
+             CONTENIDO OCULTO
+             ================================================= -->
 
-                <span>
-                    04.
-                </span>
+        <div
+            class="detalles-contenido"
+            id="contenidoDetalles"
+        >
 
-                Propósito
+            <div class="detalle-interno">
 
-            </h3>
 
-            <p>
+                <!-- =================================================
+                     01 - CARACTERÍSTICAS
+                     ================================================= -->
 
-                Este cable está diseñado para proporcionar
-                una solución práctica cuando necesitas
-                conectar dispositivos de almacenamiento
-                compatibles mediante conexiones de alimentación
-                SATA.
+                <div class="detalle-bloque">
 
-                Es especialmente útil en configuraciones
-                donde se necesita ampliar las posibilidades
-                de alimentación de dispositivos compatibles.
+                    <h3>
 
-                Antes de comprar, verifica que el conector
-                Delta de tu equipo y los dispositivos que
-                deseas conectar sean compatibles con este cable.
+                        <span>
+                            01.
+                        </span>
 
-            </p>
+                        Características principales
+
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            Marca: Delta
+                        </li>
+
+                        <li>
+                            Modelo: Cable de poder SATA
+                        </li>
+
+                        <li>
+                            Color: Negro
+                        </li>
+
+                        <li>
+                            Conector principal: Delta macho
+                        </li>
+
+                        <li>
+                            Salidas: 2 conectores SATA hembra
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     02 - OTROS
+                     ================================================= -->
+
+                <div class="detalle-bloque">
+
+                    <h3>
+
+                        <span>
+                            02.
+                        </span>
+
+                        Otros
+
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            Fácil instalación.
+                        </li>
+
+                        <li>
+                            Diseño compacto.
+                        </li>
+
+                        <li>
+                            Cable pensado para alimentación de dispositivos SATA compatibles.
+                        </li>
+
+                        <li>
+                            Color negro.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     03 - ESPECIFICACIONES
+                     ================================================= -->
+
+                <div class="detalle-bloque">
+
+                    <h3>
+
+                        <span>
+                            03.
+                        </span>
+
+                        Especificaciones
+
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            Conecta una salida Delta con dos conexiones SATA de alimentación.
+                        </li>
+
+                        <li>
+                            Permite alimentar dispositivos compatibles desde la conexión correspondiente.
+                        </li>
+
+                        <li>
+                            Instalación sencilla y directa.
+                        </li>
+
+                        <li>
+                            Longitud aproximada: 15 cm.
+                        </li>
+
+                        <li>
+                            Tipo de conexión: alimentación SATA.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     04 - PROPÓSITO
+                     ================================================= -->
+
+                <div class="detalle-bloque">
+
+                    <h3>
+
+                        <span>
+                            04.
+                        </span>
+
+                        Propósito
+
+                    </h3>
+
+                    <p>
+
+                        Este cable está diseñado para proporcionar
+                        una solución práctica cuando necesitas
+                        conectar dispositivos de almacenamiento
+                        compatibles mediante conexiones de alimentación
+                        SATA.
+
+                        Es especialmente útil en configuraciones
+                        donde se necesita ampliar las posibilidades
+                        de alimentación de dispositivos compatibles.
+
+                        Antes de comprar, verifica que el conector
+                        Delta de tu equipo y los dispositivos que
+                        deseas conectar sean compatibles con este cable.
+
+                    </p>
+
+                </div>
+
+
+            </div>
 
         </div>
 
     </section>
 
+
 </main>
+
 
 
 <footer>
@@ -1980,22 +2511,21 @@
 </footer>
 
 
+
 <script>
 
-/*
- * =====================================================
- * CONFIGURACIÓN DEL PRODUCTO
- * =====================================================
- */
+
+/* =====================================================
+   CONFIGURACIÓN DEL PRODUCTO
+   ===================================================== */
 
 const PRECIO_UNITARIO = 10;
 
 
-/*
- * =====================================================
- * ELEMENTOS
- * =====================================================
- */
+
+/* =====================================================
+   ELEMENTOS
+   ===================================================== */
 
 const botonComprar =
     document.getElementById("botonComprar");
@@ -2007,11 +2537,10 @@ const precioProducto =
     document.getElementById("precioProducto");
 
 
-/*
- * =====================================================
- * ACTUALIZAR PRODUCTO
- * =====================================================
- */
+
+/* =====================================================
+   ACTUALIZAR PRODUCTO
+   ===================================================== */
 
 function actualizarProducto() {
 
@@ -2049,16 +2578,16 @@ function actualizarProducto() {
      * Actualizar botón Comprar ahora.
      */
 
-    botonComprar.href = urlCompra;
+    botonComprar.href =
+        urlCompra;
 
 }
 
 
-/*
- * =====================================================
- * AGREGAR AL CARRITO
- * =====================================================
- */
+
+/* =====================================================
+   CARRITO — RESERVADO PARA EL FUTURO
+   =====================================================
 
 function agregarAlCarrito() {
 
@@ -2072,12 +2601,13 @@ function agregarAlCarrito() {
 
 }
 
+===================================================== */
 
-/*
- * =====================================================
- * WHATSAPP
- * =====================================================
- */
+
+
+/* =====================================================
+   WHATSAPP
+   ===================================================== */
 
 const WHATSAPP =
     "593960648763";
@@ -2087,8 +2617,17 @@ const mensajeWhatsApp =
     "Hola ZENTROXEC, quiero consultar la disponibilidad del Cable Delta macho a 2 SATA hembra.";
 
 
+/*
+ * Crear correctamente el enlace.
+ */
+
 const enlaceWhatsApp =
-    `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensajeWhatsApp)}`;
+    "https://wa.me/" +
+    WHATSAPP +
+    "?text=" +
+    encodeURIComponent(
+        mensajeWhatsApp
+    );
 
 
 document.getElementById(
@@ -2097,48 +2636,127 @@ document.getElementById(
     enlaceWhatsApp;
 
 
-/*
- * =====================================================
- * CARRUSEL DE IMÁGENES
- * =====================================================
- */
+
+/* =====================================================
+   CARRUSEL
+   ===================================================== */
 
 const carruselPrincipal =
-    document.getElementById("carruselPrincipal");
+    document.getElementById(
+        "carruselPrincipal"
+    );
+
 
 const carruselTrack =
-    document.getElementById("carruselTrack");
+    document.getElementById(
+        "carruselTrack"
+    );
+
 
 const carruselSlides =
-    document.querySelectorAll(".carrusel-slide");
+    document.querySelectorAll(
+        ".carrusel-slide"
+    );
 
-const carruselPuntos =
-    document.querySelectorAll(".carrusel-punto");
+
+const carruselPuntosContenedor =
+    document.getElementById(
+        "carruselPuntos"
+    );
+
 
 const carruselAnterior =
-    document.getElementById("carruselAnterior");
+    document.getElementById(
+        "carruselAnterior"
+    );
+
 
 const carruselSiguiente =
-    document.getElementById("carruselSiguiente");
+    document.getElementById(
+        "carruselSiguiente"
+    );
 
 
 let indiceCarrusel = 0;
 
 
-/*
- * =====================================================
- * TEMPORIZADOR DE LAS FLECHAS
- * =====================================================
- */
+
+/* =====================================================
+   CREAR PUNTOS AUTOMÁTICAMENTE
+   ===================================================== */
+
+function crearPuntosCarrusel() {
+
+    carruselPuntosContenedor.innerHTML = "";
+
+
+    carruselSlides.forEach(
+        function (_, indice) {
+
+            const punto =
+                document.createElement(
+                    "span"
+                );
+
+
+            punto.className =
+                "carrusel-punto";
+
+
+            if (indice === 0) {
+
+                punto.classList.add(
+                    "activo"
+                );
+
+            }
+
+
+            punto.addEventListener(
+                "click",
+                function (evento) {
+
+                    evento.stopPropagation();
+
+                    mostrarImagenCarrusel(
+                        indice
+                    );
+
+                }
+            );
+
+
+            carruselPuntosContenedor.appendChild(
+                punto
+            );
+
+        }
+    );
+
+}
+
+
+crearPuntosCarrusel();
+
+
+const carruselPuntos =
+    document.querySelectorAll(
+        ".carrusel-punto"
+    );
+
+
+
+/* =====================================================
+   TEMPORIZADOR DE LAS FLECHAS
+   ===================================================== */
 
 let temporizadorFlechas;
 
 
-/*
- * =====================================================
- * MOSTRAR FLECHAS
- * =====================================================
- */
+
+/* =====================================================
+   MOSTRAR FLECHAS
+   ===================================================== */
 
 function mostrarFlechas() {
 
@@ -2147,19 +2765,10 @@ function mostrarFlechas() {
     );
 
 
-    /*
-     * Reiniciar temporizador.
-     */
-
     clearTimeout(
         temporizadorFlechas
     );
 
-
-    /*
-     * Ocultar las flechas después
-     * de 3 segundos.
-     */
 
     temporizadorFlechas =
         setTimeout(
@@ -2176,22 +2785,16 @@ function mostrarFlechas() {
 }
 
 
-/*
- * =====================================================
- * MOSTRAR IMAGEN DEL CARRUSEL
- * =====================================================
- */
+
+/* =====================================================
+   MOSTRAR IMAGEN
+   ===================================================== */
 
 function mostrarImagenCarrusel(indice) {
 
     const total =
         carruselSlides.length;
 
-
-    /*
-     * Evitar errores si no existen
-     * imágenes.
-     */
 
     if (total === 0) {
 
@@ -2200,20 +2803,13 @@ function mostrarImagenCarrusel(indice) {
     }
 
 
-    /*
-     * Volver a la última imagen.
-     */
-
     if (indice < 0) {
 
-        indice = total - 1;
+        indice =
+            total - 1;
 
     }
 
-
-    /*
-     * Volver a la primera imagen.
-     */
 
     if (indice >= total) {
 
@@ -2222,28 +2818,37 @@ function mostrarImagenCarrusel(indice) {
     }
 
 
-    indiceCarrusel = indice;
+    indiceCarrusel =
+        indice;
 
 
     /*
-     * Mover el carrusel.
-     *
-     * Funciona independientemente de
-     * si hay 2, 5, 10 o más imágenes.
+     * Mover carrusel.
      */
 
     carruselTrack.style.transform =
         "translateX(-" +
-        (indiceCarrusel * 100) +
+        (
+            indiceCarrusel * 100
+        ) +
         "%)";
 
 
     /*
-     * Actualizar los puntos.
+     * Actualizar puntos.
      */
 
-    carruselPuntos.forEach(
-        (punto, posicion) => {
+    const puntosActuales =
+        document.querySelectorAll(
+            ".carrusel-punto"
+        );
+
+
+    puntosActuales.forEach(
+        function (
+            punto,
+            posicion
+        ) {
 
             punto.classList.toggle(
                 "activo",
@@ -2255,8 +2860,7 @@ function mostrarImagenCarrusel(indice) {
 
 
     /*
-     * Mostrar las flechas y reiniciar
-     * el temporizador.
+     * Mostrar flechas.
      */
 
     mostrarFlechas();
@@ -2264,15 +2868,16 @@ function mostrarImagenCarrusel(indice) {
 }
 
 
-/*
- * =====================================================
- * SIGUIENTE IMAGEN
- * =====================================================
- */
+
+/* =====================================================
+   SIGUIENTE
+   ===================================================== */
 
 carruselSiguiente.addEventListener(
     "click",
-    function () {
+    function (evento) {
+
+        evento.stopPropagation();
 
         mostrarImagenCarrusel(
             indiceCarrusel + 1
@@ -2282,15 +2887,16 @@ carruselSiguiente.addEventListener(
 );
 
 
-/*
- * =====================================================
- * IMAGEN ANTERIOR
- * =====================================================
- */
+
+/* =====================================================
+   ANTERIOR
+   ===================================================== */
 
 carruselAnterior.addEventListener(
     "click",
-    function () {
+    function (evento) {
+
+        evento.stopPropagation();
 
         mostrarImagenCarrusel(
             indiceCarrusel - 1
@@ -2300,11 +2906,10 @@ carruselAnterior.addEventListener(
 );
 
 
-/*
- * =====================================================
- * DESLIZAMIENTO TÁCTIL
- * =====================================================
- */
+
+/* =====================================================
+   DESLIZAMIENTO TÁCTIL
+   ===================================================== */
 
 let posicionInicialX = 0;
 
@@ -2321,7 +2926,9 @@ carruselPrincipal.addEventListener(
         mostrarFlechas();
 
     },
-    { passive: true }
+    {
+        passive: true
+    }
 );
 
 
@@ -2337,15 +2944,16 @@ carruselPrincipal.addEventListener(
         mostrarFlechas();
 
     },
-    { passive: true }
+    {
+        passive: true
+    }
 );
 
 
-/*
- * =====================================================
- * DESLIZAMIENTO CON MOUSE
- * =====================================================
- */
+
+/* =====================================================
+   DESLIZAMIENTO CON MOUSE
+   ===================================================== */
 
 let mousePresionado = false;
 
@@ -2399,11 +3007,10 @@ carruselPrincipal.addEventListener(
 );
 
 
-/*
- * =====================================================
- * PROCESAR DESLIZAMIENTO
- * =====================================================
- */
+
+/* =====================================================
+   PROCESAR DESLIZAMIENTO
+   ===================================================== */
 
 function procesarDeslizamiento() {
 
@@ -2426,8 +3033,7 @@ function procesarDeslizamiento() {
 
 
     /*
-     * Deslizar hacia la izquierda:
-     * siguiente imagen.
+     * Izquierda = siguiente.
      */
 
     if (diferencia > 0) {
@@ -2440,8 +3046,7 @@ function procesarDeslizamiento() {
 
 
     /*
-     * Deslizar hacia la derecha:
-     * imagen anterior.
+     * Derecha = anterior.
      */
 
     else {
@@ -2455,35 +3060,10 @@ function procesarDeslizamiento() {
 }
 
 
-/*
- * =====================================================
- * PUNTOS DEL CARRUSEL
- * =====================================================
- */
 
-carruselPuntos.forEach(
-    (punto, indice) => {
-
-        punto.addEventListener(
-            "click",
-            function () {
-
-                mostrarImagenCarrusel(
-                    indice
-                );
-
-            }
-        );
-
-    }
-);
-
-
-/*
- * =====================================================
- * MOSTRAR FLECHAS AL INTERACTUAR
- * =====================================================
- */
+/* =====================================================
+   MOSTRAR FLECHAS AL INTERACTUAR
+   ===================================================== */
 
 carruselPrincipal.addEventListener(
     "mouseenter",
@@ -2505,33 +3085,105 @@ carruselPrincipal.addEventListener(
 );
 
 
+
+/* =====================================================
+   DETALLES DEL PRODUCTO
+   ===================================================== */
+
+const detallesProducto =
+    document.getElementById(
+        "detallesProducto"
+    );
+
+
+const botonDetalles =
+    document.getElementById(
+        "botonDetalles"
+    );
+
+
+const contenidoDetalles =
+    document.getElementById(
+        "contenidoDetalles"
+    );
+
+
 /*
- * =====================================================
- * INICIAR CARRUSEL
- * =====================================================
+ * Los detalles comienzan cerrados.
  */
+
+botonDetalles.addEventListener(
+    "click",
+    function () {
+
+        const estaAbierto =
+            detallesProducto.classList.contains(
+                "abierto"
+            );
+
+
+        if (estaAbierto) {
+
+            /*
+             * Cerrar.
+             */
+
+            detallesProducto.classList.remove(
+                "abierto"
+            );
+
+            botonDetalles.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        }
+
+        else {
+
+            /*
+             * Abrir.
+             */
+
+            detallesProducto.classList.add(
+                "abierto"
+            );
+
+            botonDetalles.setAttribute(
+                "aria-expanded",
+                "true"
+            );
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   INICIAR CARRUSEL
+   ===================================================== */
 
 mostrarImagenCarrusel(0);
 
 
-/*
- * =====================================================
- * INICIAR TEMPORIZADOR
- * =====================================================
- */
+/* =====================================================
+   INICIAR TEMPORIZADOR
+   ===================================================== */
 
 mostrarFlechas();
 
 
-/*
- * =====================================================
- * INICIAR PÁGINA
- * =====================================================
- */
+/* =====================================================
+   INICIAR PRODUCTO
+   ===================================================== */
 
 actualizarProducto();
 
+
 </script>
+
 
 </body>
 
