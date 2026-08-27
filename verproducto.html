@@ -1,6 +1,6 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 
     <meta charset="UTF-8">
@@ -401,13 +401,17 @@
 
         }
 
+        /* =====================================================
+           MEDIOS DE PAGO
+           ===================================================== */
+
         .medios-pago {
 
             display: flex;
 
             align-items: center;
 
-            gap: 7px;
+            gap: 3px;
 
             margin-bottom: 22px;
 
@@ -424,16 +428,16 @@
 
             white-space: nowrap;
 
-            margin-right: 4px;
+            margin-right: 3px;
 
         }
 
         .pago-circulo {
 
-            width: 42px;
-            height: 42px;
+            width: 37px;
+            height: 37px;
 
-            min-width: 42px;
+            min-width: 37px;
 
             border-radius: 50%;
 
@@ -447,48 +451,55 @@
             align-items: center;
             justify-content: center;
 
-            color: #111111;
-
-            font-size: 8px;
-            font-weight: 900;
-
             text-align: center;
 
             overflow: hidden;
 
-        }
-
-        .pago-visa {
-
-            color: #173b8f;
-
-            font-size: 11px;
-
-            font-style: italic;
+            position: relative;
 
         }
 
-        .pago-mastercard {
+        .pago-circulo img {
 
-            color: #111111;
+            width: 72%;
 
-            font-size: 7px;
+            height: 72%;
 
-        }
+            object-fit: contain;
 
-        .pago-discover {
-
-            color: #111111;
-
-            font-size: 7px;
+            display: block;
 
         }
 
-        .pago-diners {
+        .pago-visa img {
 
-            color: #174ea6;
+            width: 76%;
 
-            font-size: 7px;
+            height: 76%;
+
+        }
+
+        .pago-mastercard img {
+
+            width: 78%;
+
+            height: 78%;
+
+        }
+
+        .pago-discover img {
+
+            width: 82%;
+
+            height: 82%;
+
+        }
+
+        .pago-diners img {
+
+            width: 80%;
+
+            height: 80%;
 
         }
 
@@ -983,7 +994,7 @@
 
             .medios-pago {
 
-                gap: 5px;
+                gap: 2px;
 
             }
 
@@ -995,18 +1006,17 @@
 
             .pago-circulo {
 
-                width: 38px;
-                height: 38px;
+                width: 34px;
+                height: 34px;
 
-                min-width: 38px;
-
-                font-size: 7px;
+                min-width: 34px;
 
             }
 
-            .pago-visa {
+            .pago-visa img {
 
-                font-size: 10px;
+                width: 76%;
+                height: 76%;
 
             }
 
@@ -1067,16 +1077,16 @@
 
             .pago-circulo {
 
-                width: 34px;
-                height: 34px;
+                width: 31px;
+                height: 31px;
 
-                min-width: 34px;
+                min-width: 31px;
 
             }
 
             .medios-pago {
 
-                gap: 3px;
+                gap: 1px;
 
             }
 
@@ -1088,311 +1098,336 @@
 
 <body>
 
-    <header>
+<header>
 
-        <div class="header-container">
-
-            <a
-                href="index.html"
-                class="logo"
-            >
-
-                ZENTRO<span>X</span>EC
-
-            </a>
-
-            <nav>
-
-                <a href="index.html">
-                    INICIO
-                </a>
-
-                <a href="productos.html">
-                    PRODUCTOS
-                </a>
-
-                <a href="acerca.html">
-                    ACERCA DE
-                </a>
-
-                <a href="contacto.html">
-                    CONTACTO
-                </a>
-
-            </nav>
-
-        </div>
-
-    </header>
-
-
-    <main class="producto-page">
+    <div class="header-container">
 
         <a
-            href="productos.html"
-            class="volver"
+            href="index.html"
+            class="logo"
         >
 
-            ← Volver a productos
+            ZENTRO<span>X</span>EC
 
         </a>
 
+        <nav>
 
-        <section class="producto-principal">
+            <a href="index.html">
+                INICIO
+            </a>
 
-            <div class="galeria">
+            <a href="productos.html">
+                PRODUCTOS
+            </a>
 
-                <div class="imagen-principal">
+            <a href="acerca.html">
+                ACERCA DE
+            </a>
 
-                    <img
-                        src="img/delta.png"
-                        alt="Cable de Poder Delta SATA Macho a 2 SATA Hembra"
-                    >
+            <a href="contacto.html">
+                CONTACTO
+            </a>
 
-                </div>
+        </nav>
 
-                <div class="imagen-secundaria">
+    </div>
 
-                    <img
-                        src="63664.jpg"
-                        alt="Información del Cable Delta SATA"
-                    >
-
-                </div>
-
-            </div>
-
-
-            <div class="producto-info">
-
-                <h1 class="producto-titulo">
-
-                    Cable de Poder Delta SATA Macho a 2x SATA Hembra
-
-                </h1>
+</header>
 
 
-                <div class="valoracion">
 
-                    <span class="estrella">
-                        ★
-                    </span>
+<main class="producto-page">
 
-                    <strong>
-                        5.0
-                    </strong>
+    <a
+        href="productos.html"
+        class="volver"
+    >
 
-                    <span>
-                        |
-                    </span>
+        ← Volver a productos
 
-                    <span class="ventas">
-                        +5 vendidos
-                    </span>
-
-                </div>
+    </a>
 
 
-                <div class="stock">
 
-                    🔥 ÚLTIMAS 5 UNIDADES
+    <section class="producto-principal">
 
-                </div>
+        <div class="galeria">
 
+            <div class="imagen-principal">
 
-                <div
-                    class="precio"
-                    id="precioProducto"
+                <img
+                    src="img/delta.png"
+                    alt="Cable de Poder Delta SATA Macho a 2 SATA Hembra"
                 >
 
-                    US$ 10
+            </div>
+
+            <div class="imagen-secundaria">
+
+                <img
+                    src="63664.jpg"
+                    alt="Información del Cable Delta SATA"
+                >
+
+            </div>
+
+        </div>
+
+
+
+        <div class="producto-info">
+
+            <h1 class="producto-titulo">
+
+                Cable de Poder Delta SATA Macho a 2x SATA Hembra
+
+            </h1>
+
+
+
+            <div class="valoracion">
+
+                <span class="estrella">
+                    ★
+                </span>
+
+                <strong>
+                    5.0
+                </strong>
+
+                <span>
+                    |
+                </span>
+
+                <span class="ventas">
+                    +5 vendidos
+                </span>
+
+            </div>
+
+
+
+            <div class="stock">
+
+                🔥 ÚLTIMAS 5 UNIDADES
+
+            </div>
+
+
+
+            <div
+                class="precio"
+                id="precioProducto"
+            >
+
+                US$ 10
+
+            </div>
+
+
+
+            <div class="descuento">
+
+                20% OFF Diners
+
+            </div>
+
+
+
+            <div class="medios-pago">
+
+                <span class="medios-pago-titulo">
+
+                    Medios de pago
+
+                </span>
+
+                <div class="pago-circulo pago-visa">
+
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg"
+                        alt="Visa"
+                    >
 
                 </div>
 
+                <div class="pago-circulo pago-mastercard">
 
-                <div class="descuento">
-
-                    20% OFF Diners
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
+                        alt="Mastercard"
+                    >
 
                 </div>
 
+                <div class="pago-circulo pago-discover">
 
-                <div class="medios-pago">
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Discover_Card_logo.svg"
+                        alt="Discover"
+                    >
 
-                    <span class="medios-pago-titulo">
+                </div>
 
-                        Medios de pago
+                <div class="pago-circulo pago-diners">
 
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Diners_Club_Logo3.svg"
+                        alt="Diners Club"
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <div class="cantidad">
+
+                <label
+                    for="cantidadProducto"
+                >
+
+                    Cantidad:
+
+                </label>
+
+                <select
+                    id="cantidadProducto"
+                    onchange="actualizarProducto()"
+                >
+
+                    <option value="1">
+                        1
+                    </option>
+
+                    <option value="2">
+                        2
+                    </option>
+
+                    <option value="3">
+                        3
+                    </option>
+
+                    <option value="4">
+                        4
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div class="botones">
+
+                <a
+                    href="comprar.html?cantidad=1&precio=10"
+                    id="botonComprar"
+                    class="btn btn-comprar"
+                >
+
+                    COMPRAR AHORA
+
+                </a>
+
+
+
+                <button
+                    type="button"
+                    class="btn btn-carrito"
+                    id="botonCarrito"
+                    onclick="agregarAlCarrito()"
+                >
+
+                    <span
+                        class="icono-carrito"
+                        aria-hidden="true"
+                    >
+                        🛒
                     </span>
 
-                    <div class="pago-circulo pago-visa">
+                    AGREGAR AL CARRITO
 
-                        VISA
-
-                    </div>
-
-                    <div class="pago-circulo pago-mastercard">
-
-                        Mastercard
-
-                    </div>
-
-                    <div class="pago-circulo pago-discover">
-
-                        Discover
-
-                    </div>
-
-                    <div class="pago-circulo pago-diners">
-
-                        Diners
-
-                    </div>
-
-                </div>
+                </button>
 
 
-                <div class="cantidad">
 
-                    <label
-                        for="cantidadProducto"
-                    >
+                <a
+                    id="whatsappProducto"
+                    class="btn btn-whatsapp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
 
-                        Cantidad:
+                    CONSULTAR POR WHATSAPP
 
-                    </label>
+                </a>
 
-                    <select
-                        id="cantidadProducto"
-                        onchange="actualizarProducto()"
-                    >
+            </div>
 
-                        <option value="1">
-                            1
-                        </option>
 
-                        <option value="2">
-                            2
-                        </option>
 
-                        <option value="3">
-                            3
-                        </option>
+            <div class="vendedor">
 
-                        <option value="4">
-                            4
-                        </option>
+                <div class="vendedor-principal">
 
-                    </select>
+                    Vendido por
+
+                    <strong>
+                        ZENTROXEC
+                    </strong>
 
                 </div>
 
+                <div class="mercadolider">
 
-                <div class="botones">
-
-                    <a
-                        href="comprar.html?cantidad=1&precio=10"
-                        id="botonComprar"
-                        class="btn btn-comprar"
-                    >
-
-                        COMPRAR AHORA
-
-                    </a>
-
-
-                    <button
-                        type="button"
-                        class="btn btn-carrito"
-                        id="botonCarrito"
-                        onclick="agregarAlCarrito()"
-                    >
-
-                        <span
-                            class="icono-carrito"
-                            aria-hidden="true"
-                        >
-                            🛒
-                        </span>
-
-                        AGREGAR AL CARRITO
-
-                    </button>
-
-
-                    <a
-                        id="whatsappProducto"
-                        class="btn btn-whatsapp"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-
-                        CONSULTAR POR WHATSAPP
-
-                    </a>
+                    Venta directa | Atención al cliente
 
                 </div>
 
+            </div>
 
-                <div class="vendedor">
 
-                    <div class="vendedor-principal">
 
-                        Vendido por
+            <div class="seguridad">
+
+                <div class="seguridad-item">
+
+                    <div class="seguridad-icono">
+                        🛡️
+                    </div>
+
+                    <div class="seguridad-texto">
 
                         <strong>
-                            ZENTROXEC
+                            Compra protegida.
                         </strong>
 
-                    </div>
-
-                    <div class="mercadolider">
-
-                        Venta directa | Atención al cliente
+                        Recibe el producto que esperabas
+                        o comunícate con nosotros para
+                        gestionar cualquier inconveniente.
 
                     </div>
 
                 </div>
 
 
-                <div class="seguridad">
 
-                    <div class="seguridad-item">
+                <div class="seguridad-item">
 
-                        <div class="seguridad-icono">
-                            🛡️
-                        </div>
-
-                        <div class="seguridad-texto">
-
-                            <strong>
-                                Compra protegida.
-                            </strong>
-
-                            Recibe el producto que esperabas
-                            o comunícate con nosotros para
-                            gestionar cualquier inconveniente.
-
-                        </div>
-
+                    <div class="seguridad-icono">
+                        🏅
                     </div>
 
+                    <div class="seguridad-texto">
 
-                    <div class="seguridad-item">
+                        <strong>
+                            Garantía.
+                        </strong>
 
-                        <div class="seguridad-icono">
-                            🏅
-                        </div>
-
-                        <div class="seguridad-texto">
-
-                            <strong>
-                                Garantía.
-                            </strong>
-
-                            12 meses de garantía de fábrica.
-
-                        </div>
+                        12 meses de garantía de fábrica.
 
                     </div>
 
@@ -1400,329 +1435,350 @@
 
             </div>
 
-        </section>
+        </div>
 
+    </section>
 
-        <section class="detalles">
 
-            <h2 class="detalles-titulo">
 
-                Detalles del producto
+    <section class="detalles">
 
-            </h2>
+        <h2 class="detalles-titulo">
 
+            Detalles del producto
 
-            <div class="detalle-bloque">
+        </h2>
 
-                <h3>
 
-                    <span>
-                        01.
-                    </span>
 
-                    Características principales
+        <div class="detalle-bloque">
 
-                </h3>
+            <h3>
 
-                <ul>
+                <span>
+                    01.
+                </span>
 
-                    <li>
-                        Marca: Delta
-                    </li>
+                Características principales
 
-                    <li>
-                        Modelo: Cable de poder SATA
-                    </li>
+            </h3>
 
-                    <li>
-                        Color: Negro
-                    </li>
+            <ul>
 
-                    <li>
-                        Conector principal: Delta macho
-                    </li>
+                <li>
+                    Marca: Delta
+                </li>
 
-                    <li>
-                        Salidas: 2 conectores SATA hembra
-                    </li>
+                <li>
+                    Modelo: Cable de poder SATA
+                </li>
 
-                </ul>
+                <li>
+                    Color: Negro
+                </li>
 
-            </div>
+                <li>
+                    Conector principal: Delta macho
+                </li>
 
+                <li>
+                    Salidas: 2 conectores SATA hembra
+                </li>
 
-            <div class="detalle-bloque">
+            </ul>
 
-                <h3>
+        </div>
 
-                    <span>
-                        02.
-                    </span>
 
-                    Otros
 
-                </h3>
+        <div class="detalle-bloque">
 
-                <ul>
+            <h3>
 
-                    <li>
-                        Fácil instalación.
-                    </li>
+                <span>
+                    02.
+                </span>
 
-                    <li>
-                        Diseño compacto.
-                    </li>
+                Otros
 
-                    <li>
-                        Cable pensado para alimentación de dispositivos SATA compatibles.
-                    </li>
+            </h3>
 
-                    <li>
-                        Color negro.
-                    </li>
+            <ul>
 
-                </ul>
+                <li>
+                    Fácil instalación.
+                </li>
 
-            </div>
+                <li>
+                    Diseño compacto.
+                </li>
 
+                <li>
+                    Cable pensado para alimentación de dispositivos SATA compatibles.
+                </li>
 
-            <div class="detalle-bloque">
+                <li>
+                    Color negro.
+                </li>
 
-                <h3>
+            </ul>
 
-                    <span>
-                        03.
-                    </span>
+        </div>
 
-                    Especificaciones
 
-                </h3>
 
-                <ul>
+        <div class="detalle-bloque">
 
-                    <li>
-                        Conecta una salida Delta con dos conexiones SATA de alimentación.
-                    </li>
+            <h3>
 
-                    <li>
-                        Permite alimentar dispositivos compatibles desde la conexión correspondiente.
-                    </li>
+                <span>
+                    03.
+                </span>
 
-                    <li>
-                        Instalación sencilla y directa.
-                    </li>
+                Especificaciones
 
-                    <li>
-                        Longitud aproximada: 15 cm.
-                    </li>
+            </h3>
 
-                    <li>
-                        Tipo de conexión: alimentación SATA.
-                    </li>
+            <ul>
 
-                </ul>
+                <li>
+                    Conecta una salida Delta con dos conexiones SATA de alimentación.
+                </li>
 
-            </div>
+                <li>
+                    Permite alimentar dispositivos compatibles desde la conexión correspondiente.
+                </li>
 
+                <li>
+                    Instalación sencilla y directa.
+                </li>
 
-            <div class="detalle-bloque">
+                <li>
+                    Longitud aproximada: 15 cm.
+                </li>
 
-                <h3>
+                <li>
+                    Tipo de conexión: alimentación SATA.
+                </li>
 
-                    <span>
-                        04.
-                    </span>
+            </ul>
 
-                    Propósito
+        </div>
 
-                </h3>
 
-                <p>
 
-                    Este cable está diseñado para proporcionar
-                    una solución práctica cuando necesitas
-                    conectar dispositivos de almacenamiento
-                    compatibles mediante conexiones de alimentación
-                    SATA.
+        <div class="detalle-bloque">
 
-                    Es especialmente útil en configuraciones
-                    donde se necesita ampliar las posibilidades
-                    de alimentación de dispositivos compatibles.
+            <h3>
 
-                    Antes de comprar, verifica que el conector
-                    Delta de tu equipo y los dispositivos que
-                    deseas conectar sean compatibles con este cable.
+                <span>
+                    04.
+                </span>
 
-                </p>
+                Propósito
 
-            </div>
+            </h3>
 
-        </section>
+            <p>
 
-    </main>
+                Este cable está diseñado para proporcionar
+                una solución práctica cuando necesitas
+                conectar dispositivos de almacenamiento
+                compatibles mediante conexiones de alimentación
+                SATA.
 
+                Es especialmente útil en configuraciones
+                donde se necesita ampliar las posibilidades
+                de alimentación de dispositivos compatibles.
 
-    <footer>
+                Antes de comprar, verifica que el conector
+                Delta de tu equipo y los dispositivos que
+                deseas conectar sean compatibles con este cable.
 
-        <p>
+            </p>
 
-            © 2026
+        </div>
 
-            <strong>
-                ZENTROXEC
-            </strong>
+    </section>
 
-            . Todos los derechos reservados.
+</main>
 
-        </p>
 
-    </footer>
 
+<footer>
 
-    <script>
+    <p>
 
-        /*
-         * =====================================================
-         * CONFIGURACIÓN DEL PRODUCTO
-         * =====================================================
-         */
+        © 2026
 
-        const PRECIO_UNITARIO = 10;
+        <strong>
+            ZENTROXEC
+        </strong>
 
+        . Todos los derechos reservados.
 
-        /*
-         * =====================================================
-         * ELEMENTOS
-         * =====================================================
-         */
+    </p>
 
-        const botonComprar =
-            document.getElementById("botonComprar");
+</footer>
 
-        const selectorCantidad =
-            document.getElementById("cantidadProducto");
 
-        const precioProducto =
-            document.getElementById("precioProducto");
 
+<script>
 
-        /*
-         * =====================================================
-         * ACTUALIZAR PRODUCTO
-         * =====================================================
-         *
-         * El botón COMPRAR AHORA SIEMPRE lleva a comprar.html.
-         *
-         * Ejemplos:
-         *
-         * Cantidad 1:
-         * comprar.html?cantidad=1&precio=10
-         *
-         * Cantidad 2:
-         * comprar.html?cantidad=2&precio=20
-         *
-         * Cantidad 3:
-         * comprar.html?cantidad=3&precio=30
-         *
-         * Cantidad 4:
-         * comprar.html?cantidad=4&precio=40
-         *
-         */
+    /*
+     * =====================================================
+     * CONFIGURACIÓN DEL PRODUCTO
+     * =====================================================
+     */
 
-        function actualizarProducto() {
+    const PRECIO_UNITARIO = 10;
 
-            const cantidad =
-                parseInt(
-                    selectorCantidad.value,
-                    10
-                );
 
 
-            const precioTotal =
-                PRECIO_UNITARIO * cantidad;
+    /*
+     * =====================================================
+     * ELEMENTOS
+     * =====================================================
+     */
 
+    const botonComprar =
+        document.getElementById("botonComprar");
 
-            /*
-             * Mostrar precio total.
-             */
+    const selectorCantidad =
+        document.getElementById("cantidadProducto");
 
-            precioProducto.textContent =
-                "US$ " + precioTotal;
+    const precioProducto =
+        document.getElementById("precioProducto");
 
 
-            /*
-             * Crear URL para comprar.html.
-             */
 
-            const urlCompra =
-                "comprar.html?cantidad=" +
-                encodeURIComponent(cantidad) +
-                "&precio=" +
-                encodeURIComponent(precioTotal);
+    /*
+     * =====================================================
+     * ACTUALIZAR PRODUCTO
+     * =====================================================
+     *
+     * El botón COMPRAR AHORA SIEMPRE lleva a comprar.html.
+     *
+     * Ejemplos:
+     *
+     * Cantidad 1:
+     * comprar.html?cantidad=1&precio=10
+     *
+     * Cantidad 2:
+     * comprar.html?cantidad=2&precio=20
+     *
+     * Cantidad 3:
+     * comprar.html?cantidad=3&precio=30
+     *
+     * Cantidad 4:
+     * comprar.html?cantidad=4&precio=40
+     *
+     */
 
+    function actualizarProducto() {
 
-            /*
-             * Actualizar botón Comprar ahora.
-             */
-
-            botonComprar.href = urlCompra;
-
-        }
-
-
-        /*
-         * =====================================================
-         * AGREGAR AL CARRITO
-         * =====================================================
-         */
-
-        function agregarAlCarrito() {
-
-            const cantidad =
-                selectorCantidad.value;
-
-            alert(
-                "Producto agregado al carrito. Cantidad: " +
-                cantidad
+        const cantidad =
+            parseInt(
+                selectorCantidad.value,
+                10
             );
 
-        }
 
 
-        /*
-         * =====================================================
-         * WHATSAPP
-         * =====================================================
-         */
+        const precioTotal =
+            PRECIO_UNITARIO * cantidad;
 
-        const WHATSAPP =
-            "593960648763";
-
-
-        const mensajeWhatsApp =
-            "Hola ZENTROXEC, quiero consultar la disponibilidad del Cable Delta macho a 2 SATA hembra.";
-
-
-        const enlaceWhatsApp =
-            `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensajeWhatsApp)}`;
-
-
-        document.getElementById(
-            "whatsappProducto"
-        ).href =
-            enlaceWhatsApp;
 
 
         /*
-         * =====================================================
-         * INICIAR PÁGINA
-         * =====================================================
+         * Mostrar precio total.
          */
 
-        actualizarProducto();
+        precioProducto.textContent =
+            "US$ " + precioTotal;
 
-    </script>
+
+
+        /*
+         * Crear URL para comprar.html.
+         */
+
+        const urlCompra =
+            "comprar.html?cantidad=" +
+            encodeURIComponent(cantidad) +
+            "&precio=" +
+            encodeURIComponent(precioTotal);
+
+
+
+        /*
+         * Actualizar botón Comprar ahora.
+         */
+
+        botonComprar.href = urlCompra;
+
+    }
+
+
+
+    /*
+     * =====================================================
+     * AGREGAR AL CARRITO
+     * =====================================================
+     */
+
+    function agregarAlCarrito() {
+
+        const cantidad =
+            selectorCantidad.value;
+
+        alert(
+            "Producto agregado al carrito. Cantidad: " +
+            cantidad
+        );
+
+    }
+
+
+
+    /*
+     * =====================================================
+     * WHATSAPP
+     * =====================================================
+     */
+
+    const WHATSAPP =
+        "593960648763";
+
+
+
+    const mensajeWhatsApp =
+        "Hola ZENTROXEC, quiero consultar la disponibilidad del Cable Delta macho a 2 SATA hembra.";
+
+
+
+    const enlaceWhatsApp =
+        `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensajeWhatsApp)}`;
+
+
+
+    document.getElementById(
+        "whatsappProducto"
+    ).href =
+        enlaceWhatsApp;
+
+
+
+    /*
+     * =====================================================
+     * INICIAR PÁGINA
+     * =====================================================
+     */
+
+    actualizarProducto();
+
+</script>
 
 </body>
-
 </html>
+```
