@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 
@@ -270,20 +271,6 @@
 
         /* =====================================================
            CARRUSEL DE IMÁGENES
-
-           ACEPTA IMÁGENES DE DIFERENTES PROPORCIONES:
-
-           - JPG
-           - JPEG
-           - PNG
-           - WEBP
-           - GIF
-           - SVG compatible con el navegador
-
-           La imagen se mantiene completa y centrada.
-           No se estira.
-           No se deforma.
-           No se corta.
            ===================================================== */
 
         .imagen-principal {
@@ -372,21 +359,6 @@
 
         }
 
-
-        /*
-         * IMPORTANTE:
-         *
-         * object-fit: contain hace que la imagen
-         * siempre entre completa en el carrusel.
-         *
-         * No importa si la imagen es:
-         *
-         * - vertical
-         * - horizontal
-         * - cuadrada
-         * - grande
-         * - pequeña
-         */
 
         .carrusel-slide img {
 
@@ -481,11 +453,6 @@
 
         }
 
-
-        /*
-         * Las flechas desaparecen después
-         * de 3 segundos sin interacción.
-         */
 
         .imagen-principal.ocultar-flechas
         .carrusel-flecha {
@@ -722,13 +689,20 @@
         }
 
 
+        /*
+         * CÍRCULOS DE MEDIOS DE PAGO
+         *
+         * Reducidos para que tengan aproximadamente
+         * el tamaño visual del texto "Medios de pago".
+         */
+
         .pago-circulo {
 
-            width: 42px;
+            width: 22px;
 
-            height: 42px;
+            height: 22px;
 
-            min-width: 42px;
+            min-width: 22px;
 
             border-radius: 50%;
 
@@ -750,9 +724,13 @@
         }
 
 
+        /*
+         * Solapamiento pequeño entre los logos.
+         */
+
         .pago-circulo + .pago-circulo {
 
-            margin-left: -21px;
+            margin-left: -6px;
 
         }
 
@@ -948,12 +926,6 @@
         /*
          * =====================================================
          * CARRITO DESACTIVADO TEMPORALMENTE
-         *
-         * El botón no aparece actualmente.
-         *
-         * Se conserva comentado para activarlo
-         * en el futuro cuando ZENTROXEC tenga
-         * sistema de carrito.
          * =====================================================
          */
 
@@ -1151,10 +1123,6 @@
         }
 
 
-        /*
-         * Encabezado clickeable
-         */
-
         .detalles-encabezado {
 
             width: 100%;
@@ -1196,10 +1164,6 @@
         }
 
 
-        /*
-         * Flecha
-         */
-
         .flecha-detalles {
 
             width: 38px;
@@ -1238,11 +1202,6 @@
         }
 
 
-        /*
-         * La flecha gira cuando los detalles
-         * están abiertos.
-         */
-
         .detalles.abierto
         .flecha-detalles {
 
@@ -1250,10 +1209,6 @@
 
         }
 
-
-        /*
-         * Contenedor que se abre y cierra
-         */
 
         .detalles-contenido {
 
@@ -1266,10 +1221,6 @@
 
         }
 
-
-        /*
-         * Cuando está abierto
-         */
 
         .detalles.abierto
         .detalles-contenido {
@@ -1544,20 +1495,24 @@
             }
 
 
+            /*
+             * Círculos pequeños también en móvil.
+             */
+
             .pago-circulo {
 
-                width: 38px;
+                width: 22px;
 
-                height: 38px;
+                height: 22px;
 
-                min-width: 38px;
+                min-width: 22px;
 
             }
 
 
             .pago-circulo + .pago-circulo {
 
-                margin-left: -19px;
+                margin-left: -6px;
 
             }
 
@@ -1639,20 +1594,25 @@
             }
 
 
+            /*
+             * En pantallas muy pequeñas se reducen
+             * ligeramente para conservar espacio.
+             */
+
             .pago-circulo {
 
-                width: 34px;
+                width: 20px;
 
-                height: 34px;
+                height: 20px;
 
-                min-width: 34px;
+                min-width: 20px;
 
             }
 
 
             .pago-circulo + .pago-circulo {
 
-                margin-left: -17px;
+                margin-left: -5px;
 
             }
 
@@ -1771,30 +1731,7 @@
                     >
 
 
-                        <!-- =================================================
-                             IMAGEN 1
-
-                             Puedes utilizar:
-
-                             JPG
-                             JPEG
-                             PNG
-                             WEBP
-                             GIF
-                             SVG
-
-                             Ejemplos:
-
-                             img/delta.jpg
-                             img/delta.jpeg
-                             img/delta.png
-                             img/delta.webp
-                             img/delta.gif
-                             img/delta.svg
-
-                             No importa la proporción de la imagen.
-                             El sistema la centrará automáticamente.
-                             ================================================= -->
+                        <!-- IMAGEN 1 -->
 
                         <div class="carrusel-slide">
 
@@ -1862,30 +1799,6 @@
 
                         </div>
 
-
-
-                        <!-- =================================================
-                             PARA AGREGAR MÁS IMÁGENES:
-
-                             Solo copia este bloque:
-
-                             <div class="carrusel-slide">
-
-                                 <img
-                                     src="img/delta6.webp"
-                                     alt="Cable Delta SATA vista 6"
-                                     draggable="false"
-                                 >
-
-                             </div>
-
-                             Puedes usar cualquier formato compatible
-                             con el navegador.
-
-                             Los puntos del carrusel se crearán
-                             automáticamente.
-                             ================================================= -->
-
                     </div>
 
                 </div>
@@ -1921,10 +1834,6 @@
                 </button>
 
 
-
-                <!-- =================================================
-                     LOS PUNTOS SE CREAN AUTOMÁTICAMENTE CON JAVASCRIPT
-                     ================================================= -->
 
                 <div
                     class="carrusel-puntos"
@@ -2132,15 +2041,9 @@
 
                 <!-- =================================================
                      BOTÓN CARRITO DESACTIVADO
+                     ================================================= -->
 
-                     Lo dejo guardado para utilizarlo en el futuro.
-
-                     Cuando quieras activar el carrito, elimina
-                     los comentarios de este bloque y también
-                     activa la función agregarAlCarrito().
-
-                     =================================================
-
+                <!--
                 <button
                     type="button"
                     class="btn btn-carrito"
@@ -2158,8 +2061,8 @@
                     AGREGAR AL CARRITO
 
                 </button>
-
                 -->
+
 
 
                 <!-- =================================================
@@ -2274,10 +2177,6 @@
     >
 
 
-        <!-- =================================================
-             ENCABEZADO CLICKEABLE
-             ================================================= -->
-
         <button
             type="button"
             class="detalles-encabezado"
@@ -2306,10 +2205,6 @@
 
 
 
-        <!-- =================================================
-             CONTENIDO OCULTO
-             ================================================= -->
-
         <div
             class="detalles-contenido"
             id="contenidoDetalles"
@@ -2318,9 +2213,7 @@
             <div class="detalle-interno">
 
 
-                <!-- =================================================
-                     01 - CARACTERÍSTICAS
-                     ================================================= -->
+                <!-- 01 -->
 
                 <div class="detalle-bloque">
 
@@ -2362,9 +2255,7 @@
 
 
 
-                <!-- =================================================
-                     02 - OTROS
-                     ================================================= -->
+                <!-- 02 -->
 
                 <div class="detalle-bloque">
 
@@ -2402,9 +2293,7 @@
 
 
 
-                <!-- =================================================
-                     03 - ESPECIFICACIONES
-                     ================================================= -->
+                <!-- 03 -->
 
                 <div class="detalle-bloque">
 
@@ -2446,9 +2335,7 @@
 
 
 
-                <!-- =================================================
-                     04 - PROPÓSITO
-                     ================================================= -->
+                <!-- 04 -->
 
                 <div class="detalle-bloque">
 
@@ -2555,17 +2442,9 @@ function actualizarProducto() {
         PRECIO_UNITARIO * cantidad;
 
 
-    /*
-     * Mostrar precio total.
-     */
-
     precioProducto.textContent =
         "US$ " + precioTotal;
 
-
-    /*
-     * Crear URL para comprar.html.
-     */
 
     const urlCompra =
         "comprar.html?cantidad=" +
@@ -2573,10 +2452,6 @@ function actualizarProducto() {
         "&precio=" +
         encodeURIComponent(precioTotal);
 
-
-    /*
-     * Actualizar botón Comprar ahora.
-     */
 
     botonComprar.href =
         urlCompra;
@@ -2616,10 +2491,6 @@ const WHATSAPP =
 const mensajeWhatsApp =
     "Hola ZENTROXEC, quiero consultar la disponibilidad del Cable Delta macho a 2 SATA hembra.";
 
-
-/*
- * Crear correctamente el enlace.
- */
 
 const enlaceWhatsApp =
     "https://wa.me/" +
@@ -2739,12 +2610,6 @@ function crearPuntosCarrusel() {
 crearPuntosCarrusel();
 
 
-const carruselPuntos =
-    document.querySelectorAll(
-        ".carrusel-punto"
-    );
-
-
 
 /* =====================================================
    TEMPORIZADOR DE LAS FLECHAS
@@ -2822,10 +2687,6 @@ function mostrarImagenCarrusel(indice) {
         indice;
 
 
-    /*
-     * Mover carrusel.
-     */
-
     carruselTrack.style.transform =
         "translateX(-" +
         (
@@ -2833,10 +2694,6 @@ function mostrarImagenCarrusel(indice) {
         ) +
         "%)";
 
-
-    /*
-     * Actualizar puntos.
-     */
 
     const puntosActuales =
         document.querySelectorAll(
@@ -2858,10 +2715,6 @@ function mostrarImagenCarrusel(indice) {
         }
     );
 
-
-    /*
-     * Mostrar flechas.
-     */
 
     mostrarFlechas();
 
@@ -3032,10 +2885,6 @@ function procesarDeslizamiento() {
     }
 
 
-    /*
-     * Izquierda = siguiente.
-     */
-
     if (diferencia > 0) {
 
         mostrarImagenCarrusel(
@@ -3043,11 +2892,6 @@ function procesarDeslizamiento() {
         );
 
     }
-
-
-    /*
-     * Derecha = anterior.
-     */
 
     else {
 
@@ -3108,10 +2952,6 @@ const contenidoDetalles =
     );
 
 
-/*
- * Los detalles comienzan cerrados.
- */
-
 botonDetalles.addEventListener(
     "click",
     function () {
@@ -3123,10 +2963,6 @@ botonDetalles.addEventListener(
 
 
         if (estaAbierto) {
-
-            /*
-             * Cerrar.
-             */
 
             detallesProducto.classList.remove(
                 "abierto"
@@ -3140,10 +2976,6 @@ botonDetalles.addEventListener(
         }
 
         else {
-
-            /*
-             * Abrir.
-             */
 
             detallesProducto.classList.add(
                 "abierto"
@@ -3188,3 +3020,4 @@ actualizarProducto();
 </body>
 
 </html>
+```
