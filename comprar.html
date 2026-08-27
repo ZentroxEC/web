@@ -19,10 +19,6 @@
 
     <style>
 
-        /* =====================================================
-           RESET
-        ====================================================== */
-
         * {
             margin: 0;
             padding: 0;
@@ -39,7 +35,6 @@
             color: #ffffff;
             line-height: 1.6;
         }
-
 
         /* =====================================================
            HEADER
@@ -106,7 +101,6 @@
             color: #e50914;
         }
 
-
         /* =====================================================
            CONTENEDOR PRINCIPAL
         ====================================================== */
@@ -119,7 +113,6 @@
 
             padding: 55px 20px 80px;
         }
-
 
         /* =====================================================
            TÍTULO
@@ -149,7 +142,6 @@
             font-size: 15px;
         }
 
-
         /* =====================================================
            GRID
         ====================================================== */
@@ -166,7 +158,6 @@
 
             align-items: start;
         }
-
 
         /* =====================================================
            TARJETAS
@@ -201,13 +192,11 @@
             margin-bottom: 25px;
         }
 
-
         /* =====================================================
            FORMULARIO
         ====================================================== */
 
         .campo {
-
             margin-bottom: 18px;
         }
 
@@ -266,7 +255,6 @@
             border-color: #e50914;
         }
 
-
         /* =====================================================
            FILAS
         ====================================================== */
@@ -281,7 +269,6 @@
 
             gap: 15px;
         }
-
 
         /* =====================================================
            CHECKBOX
@@ -310,21 +297,17 @@
             accent-color: #e50914;
         }
 
-
         /* =====================================================
-           CAMPO OTRA PROVINCIA
+           OTRA PROVINCIA
         ====================================================== */
 
         #campoOtraProvincia {
-
             display: none;
         }
 
         #campoOtraProvincia.mostrar {
-
             display: block;
         }
-
 
         /* =====================================================
            PRODUCTO
@@ -380,7 +363,6 @@
         }
 
         .producto-resumen-info {
-
             flex: 1;
         }
 
@@ -405,9 +387,8 @@
             font-weight: 900;
         }
 
-
         /* =====================================================
-           RESUMEN DE PEDIDO
+           RESUMEN
         ====================================================== */
 
         .resumen-linea {
@@ -440,9 +421,8 @@
             font-weight: 900;
         }
 
-
         /* =====================================================
-           BOTÓN CONTINUAR AL PAGO
+           BOTÓN PAGAR
         ====================================================== */
 
         .btn-pagar {
@@ -482,7 +462,6 @@
             cursor: wait;
         }
 
-
         /* =====================================================
            SEGURIDAD
         ====================================================== */
@@ -498,9 +477,8 @@
             margin-top: 12px;
         }
 
-
         /* =====================================================
-           MENSAJE DE ERROR
+           ERROR
         ====================================================== */
 
         .mensaje-error {
@@ -529,13 +507,11 @@
         }
 
         .mensaje-error.mostrar {
-
             display: block;
         }
 
-
         /* =====================================================
-           MENSAJE DE ÉXITO
+           ÉXITO
         ====================================================== */
 
         .mensaje-exito {
@@ -566,10 +542,8 @@
         }
 
         .mensaje-exito.mostrar {
-
             display: block;
         }
-
 
         /* =====================================================
            FOOTER
@@ -594,10 +568,8 @@
         }
 
         footer strong {
-
             color: #ffffff;
         }
-
 
         /* =====================================================
            CELULAR
@@ -606,11 +578,9 @@
         @media (max-width: 800px) {
 
             .checkout-grid {
-
                 grid-template-columns: 1fr;
             }
         }
-
 
         @media (max-width: 600px) {
 
@@ -633,17 +603,14 @@
             }
 
             nav a {
-
                 font-size: 10px;
             }
 
             .checkout {
-
                 padding: 35px 14px 60px;
             }
 
             .seccion {
-
                 padding: 20px;
             }
 
@@ -655,7 +622,6 @@
             }
 
             .producto-resumen-precio {
-
                 font-size: 17px;
             }
         }
@@ -714,15 +680,11 @@
 
 
     <!-- =====================================================
-         CONTENIDO PRINCIPAL
+         CONTENIDO
     ====================================================== -->
 
     <main class="checkout">
 
-
-        <!-- =================================================
-             TÍTULO
-        ================================================== -->
 
         <section class="titulo">
 
@@ -743,8 +705,7 @@
 
 
             <!-- =================================================
-                 COLUMNA IZQUIERDA
-                 FORMULARIO DE ENVÍO
+                 FORMULARIO
             ================================================== -->
 
             <div>
@@ -761,16 +722,8 @@
                     </p>
 
 
-                    <!-- =================================================
-                         FORMULARIO PRINCIPAL
-                    ================================================== -->
-
                     <form id="formCompra">
 
-
-                        <!-- =========================================
-                             DIRECCIÓN
-                        ========================================== -->
 
                         <div class="campo">
 
@@ -790,10 +743,6 @@
 
 
 
-                        <!-- =========================================
-                             SIN NÚMERO
-                        ========================================== -->
-
                         <label class="check-line">
 
                             <input
@@ -810,14 +759,8 @@
 
 
 
-                        <!-- =========================================
-                             PROVINCIA / CANTÓN
-                        ========================================== -->
-
                         <div class="fila">
 
-
-                            <!-- PROVINCIA -->
 
                             <div class="campo">
 
@@ -941,8 +884,6 @@
 
 
 
-                            <!-- CANTÓN -->
-
                             <div class="campo">
 
                                 <label for="canton">
@@ -963,10 +904,6 @@
 
 
 
-                        <!-- =========================================
-                             OTRA PROVINCIA
-                        ========================================== -->
-
                         <div
                             class="campo"
                             id="campoOtraProvincia"
@@ -986,10 +923,6 @@
                         </div>
 
 
-
-                        <!-- =========================================
-                             PARROQUIA / CALLE SECUNDARIA
-                        ========================================== -->
 
                         <div class="fila">
 
@@ -1031,10 +964,6 @@
 
 
 
-                        <!-- =========================================
-                             DEPARTAMENTO
-                        ========================================== -->
-
                         <div class="campo">
 
                             <label for="departamento">
@@ -1051,10 +980,6 @@
                         </div>
 
 
-
-                        <!-- =========================================
-                             INDICACIONES
-                        ========================================== -->
 
                         <div class="campo">
 
@@ -1073,33 +998,21 @@
 
 
 
-                        <!-- =========================================
-                             DATOS DE QUIEN RECIBE
-                        ========================================== -->
-
                         <h2 style="margin-top:35px;">
-
                             Datos de quien recibe
-
                         </h2>
 
 
                         <p class="seccion-subtitulo">
-
                             Llamaremos si hay un problema con la entrega.
-
                         </p>
 
 
 
-                        <!-- NOMBRE -->
-
                         <div class="campo">
 
                             <label for="nombre">
-
                                 Nombre y apellido
-
                             </label>
 
                             <input
@@ -1114,14 +1027,10 @@
 
 
 
-                        <!-- TELÉFONO -->
-
                         <div class="campo">
 
                             <label for="telefono">
-
                                 Teléfono
-
                             </label>
 
                             <input
@@ -1137,28 +1046,20 @@
 
 
 
-                        <!-- MENSAJE DE ERROR -->
-
                         <div
                             id="mensajeError"
                             class="mensaje-error"
                         >
-
                             Completa todos los campos obligatorios antes de continuar.
-
                         </div>
 
 
-
-                        <!-- MENSAJE DE ÉXITO -->
 
                         <div
                             id="mensajeExito"
                             class="mensaje-exito"
                         >
-
                             Pedido registrado. Redirigiendo al pago...
-
                         </div>
 
 
@@ -1171,12 +1072,10 @@
 
 
             <!-- =================================================
-                 COLUMNA DERECHA
                  RESUMEN
             ================================================== -->
 
             <div>
-
 
                 <section class="seccion">
 
@@ -1187,16 +1086,10 @@
 
 
                     <p class="seccion-subtitulo">
-
                         Revisa el producto antes de continuar.
-
                     </p>
 
 
-
-                    <!-- =================================================
-                         PRODUCTO
-                    ================================================== -->
 
                     <div class="producto-resumen">
 
@@ -1214,17 +1107,13 @@
 
                         <div class="producto-resumen-info">
 
-                            <h3 id="productoNombre">
-
+                            <h3>
                                 Cable Delta macho a 2 SATA hembra
-
                             </h3>
 
 
-                            <p id="productoCantidad">
-
+                            <p id="cantidadResumen">
                                 Cantidad: 1
-
                             </p>
 
                         </div>
@@ -1233,20 +1122,14 @@
 
                         <div
                             class="producto-resumen-precio"
-                            id="productoPrecio"
+                            id="precioProductoResumen"
                         >
-
                             $10.00
-
                         </div>
 
                     </div>
 
 
-
-                    <!-- =================================================
-                         PRECIO DEL PRODUCTO
-                    ================================================== -->
 
                     <div class="resumen-linea">
 
@@ -1254,19 +1137,13 @@
                             Producto
                         </span>
 
-                        <span id="resumenProducto">
-
+                        <span id="productoResumen">
                             $10.00
-
                         </span>
 
                     </div>
 
 
-
-                    <!-- =================================================
-                         ENVÍO
-                    ================================================== -->
 
                     <div class="resumen-linea">
 
@@ -1282,20 +1159,14 @@
 
 
 
-                    <!-- =================================================
-                         TOTAL
-                    ================================================== -->
-
                     <div class="resumen-linea total">
 
                         <span>
                             Total
                         </span>
 
-                        <span id="resumenTotal">
-
+                        <span id="totalResumen">
                             $10.00
-
                         </span>
 
                     </div>
@@ -1376,79 +1247,23 @@
 
 
         /* =====================================================
-           ENLACES DE PAYPHONE
-
-           CADA OPCIÓN TIENE:
-
-           $10 = cantidad 1
-           $20 = cantidad 2
-           $30 = cantidad 3
-           $40 = cantidad 4
-
-        ====================================================== */
-
-        const OPCIONES_PAYPHONE = {
-
-            "10-1":
-                "https://ppls.me/zbR40tWTnboL9Sf30syIxg",
-
-            "20-2":
-                "https://ppls.me/OnmwepzpJyIEMrq7uoPn9g",
-
-            "30-3":
-                "https://ppls.me/NUp6yYWJ8LcXDd9jnvRA",
-
-            "40-4":
-                "https://ppls.me/SYxHVTiGHCdhEYtqRDHwA"
-
-        };
-
-
-
-        /* =====================================================
            PRODUCTO
-
-           Estos valores son los que se envían
-           a Google Sheets.
-
-           El precio y cantidad también pueden ser
-           reemplazados por los parámetros recibidos
-           desde verproducto.html.
-
         ====================================================== */
 
-        let PRODUCTO =
+        const PRODUCTO =
             "Cable Delta macho a 2 SATA hembra";
 
 
-        let CANTIDAD =
-            1;
-
-
-        let PRECIO =
-            10;
-
-
-        const ENVIO =
-            "Se coordina";
-
-
-        let TOTAL =
-            10;
-
-
 
         /* =====================================================
-           LEER DATOS RECIBIDOS DESDE verproducto.html
+           LEER DATOS DE verproducto.html
+           
+           Las URL esperadas son:
 
-           comprar.html puede recibir:
-
-           comprar.html?precio=20&cantidad=2
-
-           o:
-
-           comprar.html?precio=30&cantidad=3
-
+           comprar.html?cantidad=1&precio=10
+           comprar.html?cantidad=2&precio=20
+           comprar.html?cantidad=3&precio=30
+           comprar.html?cantidad=4&precio=40
         ====================================================== */
 
         const parametros =
@@ -1457,126 +1272,169 @@
             );
 
 
-        const precioParametro =
-            parametros.get("precio");
+        const cantidadURL =
+            parseInt(
+                parametros.get("cantidad"),
+                10
+            );
 
 
-        const cantidadParametro =
-            parametros.get("cantidad");
-
-
-        const productoParametro =
-            parametros.get("producto");
+        const precioURL =
+            parseFloat(
+                parametros.get("precio"),
+            );
 
 
 
         /* =====================================================
-           APLICAR PRECIO Y CANTIDAD
+           VALIDAR CANTIDAD Y PRECIO
         ====================================================== */
 
-        if (
-            precioParametro !== null &&
-            cantidadParametro !== null
-        ) {
+        const opcionesValidas = {
 
-            const precioRecibido =
-                parseFloat(
-                    precioParametro
-                );
+            "1-10": {
+                cantidad: 1,
+                precio: 10,
+                payphone:
+                    "https://ppls.me/zbR40tWTnboL9Sf30syIxg"
+            },
 
+            "2-20": {
+                cantidad: 2,
+                precio: 20,
+                payphone:
+                    "https://ppls.me/OnmwepzpJyIEMrq7uoPn9g"
+            },
 
-            const cantidadRecibida =
-                parseInt(
-                    cantidadParametro,
-                    10
-                );
+            "3-30": {
+                cantidad: 3,
+                precio: 30,
+                payphone:
+                    "https://ppls.me/NUp6yYWJ8LcXDd9jnvRA"
+            },
 
-
-            if (
-                !isNaN(precioRecibido) &&
-                !isNaN(cantidadRecibida) &&
-                precioRecibido > 0 &&
-                cantidadRecibida > 0
-            ) {
-
-                PRECIO =
-                    precioRecibido;
-
-                CANTIDAD =
-                    cantidadRecibida;
-
+            "4-40": {
+                cantidad: 4,
+                precio: 40,
+                payphone:
+                    "https://ppls.me/SYxHVTiGHCdhEYtqRDHwA"
             }
 
+        };
+
+
+
+        const claveOpcion =
+            cantidadURL +
+            "-" +
+            precioURL;
+
+
+
+        const opcionSeleccionada =
+            opcionesValidas[claveOpcion];
+
+
+
+        /* =====================================================
+           ELEMENTOS DEL RESUMEN
+        ====================================================== */
+
+        const cantidadResumen =
+            document.getElementById(
+                "cantidadResumen"
+            );
+
+
+        const precioProductoResumen =
+            document.getElementById(
+                "precioProductoResumen"
+            );
+
+
+        const productoResumen =
+            document.getElementById(
+                "productoResumen"
+            );
+
+
+        const totalResumen =
+            document.getElementById(
+                "totalResumen"
+            );
+
+
+        const mensajeError =
+            document.getElementById(
+                "mensajeError"
+            );
+
+
+
+        /* =====================================================
+           SI LA URL ES VÁLIDA
+        ====================================================== */
+
+        if (opcionSeleccionada) {
+
+
+            cantidadResumen.textContent =
+                "Cantidad: " +
+                opcionSeleccionada.cantidad;
+
+
+            precioProductoResumen.textContent =
+                "$" +
+                opcionSeleccionada.precio.toFixed(2);
+
+
+            productoResumen.textContent =
+                "$" +
+                opcionSeleccionada.precio.toFixed(2);
+
+
+            totalResumen.textContent =
+                "$" +
+                opcionSeleccionada.precio.toFixed(2);
+
+
+        } else {
+
+
+            /* =================================================
+               URL NO VÁLIDA
+            ================================================== */
+
+            cantidadResumen.textContent =
+                "Cantidad no válida";
+
+
+            precioProductoResumen.textContent =
+                "$0.00";
+
+
+            productoResumen.textContent =
+                "$0.00";
+
+
+            totalResumen.textContent =
+                "$0.00";
+
+
+            mensajeError.textContent =
+                "La cantidad o el precio de la compra no son válidos. Regresa al producto y selecciona nuevamente la cantidad.";
+
+
+            mensajeError.classList.add(
+                "mostrar"
+            );
+
         }
 
 
 
         /* =====================================================
-           APLICAR NOMBRE DEL PRODUCTO SI VIENE
-        ====================================================== */
-
-        if (
-            productoParametro
-        ) {
-
-            PRODUCTO =
-                productoParametro;
-
-        }
-
-
-
-        /* =====================================================
-           CALCULAR TOTAL
-
-           El total corresponde a:
-
-           precio unitario × cantidad
-
-        ====================================================== */
-
-        TOTAL =
-            PRECIO * CANTIDAD;
-
-
-
-        /* =====================================================
-           ACTUALIZAR RESUMEN VISUAL
-        ====================================================== */
-
-        document.getElementById(
-            "productoNombre"
-        ).textContent =
-            PRODUCTO;
-
-
-        document.getElementById(
-            "productoCantidad"
-        ).textContent =
-            "Cantidad: " + CANTIDAD;
-
-
-        document.getElementById(
-            "productoPrecio"
-        ).textContent =
-            "$" + PRECIO.toFixed(2);
-
-
-        document.getElementById(
-            "resumenProducto"
-        ).textContent =
-            "$" + TOTAL.toFixed(2);
-
-
-        document.getElementById(
-            "resumenTotal"
-        ).textContent =
-            "$" + TOTAL.toFixed(2);
-
-
-
-        /* =====================================================
-           MOSTRAR / OCULTAR "OTRA PROVINCIA"
+           PROVINCIA
         ====================================================== */
 
         const provincia =
@@ -1611,8 +1469,7 @@
                         "mostrar"
                     );
 
-                    otraProvincia.required =
-                        true;
+                    otraProvincia.required = true;
 
                 } else {
 
@@ -1620,45 +1477,14 @@
                         "mostrar"
                     );
 
-                    otraProvincia.required =
-                        false;
+                    otraProvincia.required = false;
 
-                    otraProvincia.value =
-                        "";
+                    otraProvincia.value = "";
 
                 }
 
             }
         );
-
-
-
-        /* =====================================================
-           BUSCAR ENLACE DE PAYPHONE
-
-           La combinación debe coincidir exactamente:
-
-           $10 × 1
-           $20 × 2
-           $30 × 3
-           $40 × 4
-
-        ====================================================== */
-
-        function obtenerLinkPayPhone() {
-
-
-            const clave =
-                PRECIO +
-                "-" +
-                CANTIDAD;
-
-
-            return OPCIONES_PAYPHONE[
-                clave
-            ] || null;
-
-        }
 
 
 
@@ -1675,12 +1501,6 @@
                 );
 
 
-            const mensajeError =
-                document.getElementById(
-                    "mensajeError"
-                );
-
-
             const mensajeExito =
                 document.getElementById(
                     "mensajeExito"
@@ -1691,6 +1511,26 @@
                 document.getElementById(
                     "btnPagar"
                 );
+
+
+
+            /* =============================================
+               COMPROBAR OPCIÓN DE PAGO
+            ============================================== */
+
+            if (
+                !opcionSeleccionada
+            ) {
+
+                mensajeError.textContent =
+                    "No existe un enlace de pago para esta cantidad y precio. Regresa al producto y selecciona una cantidad válida.";
+
+                mensajeError.classList.add(
+                    "mostrar"
+                );
+
+                return;
+            }
 
 
 
@@ -1712,7 +1552,6 @@
                 formulario.reportValidity();
 
                 return;
-
             }
 
 
@@ -1723,41 +1562,10 @@
 
 
             /* =============================================
-               OBTENER LINK SEGÚN PRECIO Y CANTIDAD
-            ============================================== */
-
-            const PAYPHONE_URL =
-                obtenerLinkPayPhone();
-
-
-
-            /* =============================================
-               VERIFICAR QUE EXISTE UNA OPCIÓN
-            ============================================== */
-
-            if (
-                !PAYPHONE_URL
-            ) {
-
-                mensajeError.textContent =
-                    "La combinación de precio y cantidad no corresponde a una opción de pago disponible.";
-
-                mensajeError.classList.add(
-                    "mostrar"
-                );
-
-                return;
-
-            }
-
-
-
-            /* =============================================
                EVITAR DOBLE CLIC
             ============================================== */
 
-            boton.disabled =
-                true;
+            boton.disabled = true;
 
             boton.textContent =
                 "Registrando pedido...";
@@ -1765,7 +1573,7 @@
 
 
             /* =============================================
-               OBTENER PROVINCIA
+               PROVINCIA FINAL
             ============================================== */
 
             let provinciaFinal =
@@ -1785,7 +1593,7 @@
 
 
             /* =============================================
-               CREAR OBJETO DEL PEDIDO
+               DATOS DEL PEDIDO
             ============================================== */
 
             const pedido = {
@@ -1844,23 +1652,27 @@
                     PRODUCTO,
 
                 cantidad:
-                    CANTIDAD,
+                    String(
+                        opcionSeleccionada.cantidad
+                    ),
 
                 precio:
-                    "$" + PRECIO.toFixed(2),
+                    "$" +
+                    opcionSeleccionada.precio.toFixed(2),
 
                 envio:
-                    ENVIO,
+                    "Se coordina",
 
                 total:
-                    "$" + TOTAL.toFixed(2)
+                    "$" +
+                    opcionSeleccionada.precio.toFixed(2)
 
             };
 
 
 
             /* =============================================
-               ENVIAR PEDIDO A GOOGLE APPS SCRIPT
+               ENVIAR A GOOGLE APPS SCRIPT
             ============================================== */
 
             try {
@@ -1892,7 +1704,7 @@
 
 
                 /* =========================================
-                   MOSTRAR MENSAJE
+                   ÉXITO
                 ========================================== */
 
                 mensajeExito.classList.add(
@@ -1906,14 +1718,14 @@
 
 
                 /* =========================================
-                   REDIRIGIR AL LINK CORRESPONDIENTE
+                   REDIRECCIÓN AL PAYPHONE CORRESPONDIENTE
                 ========================================== */
 
                 setTimeout(
                     function () {
 
                         window.location.href =
-                            PAYPHONE_URL;
+                            opcionSeleccionada.payphone;
 
                     },
                     800
@@ -1938,8 +1750,7 @@
                 );
 
 
-                boton.disabled =
-                    false;
+                boton.disabled = false;
 
 
                 boton.textContent =
