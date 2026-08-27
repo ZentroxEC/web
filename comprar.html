@@ -10,10 +10,6 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <!-- =====================================================
-         EDITAR: TÍTULO DE LA PÁGINA
-    ====================================================== -->
-
     <title>Finalizar compra | ZENTROXEC</title>
 
     <meta
@@ -1200,27 +1196,6 @@
 
                     <!-- =================================================
                          PRODUCTO
-
-                         ESTE RESUMEN SE ACTUALIZA AUTOMÁTICAMENTE
-                         SEGÚN LOS PARÁMETROS DE verproducto.html.
-
-                         EJEMPLO:
-
-                         comprar.html?cantidad=2&precio=20
-
-                         MOSTRARÁ:
-
-                         Cantidad: 2
-                         $20.00
-
-                         Y:
-
-                         comprar.html?cantidad=3&precio=30
-
-                         MOSTRARÁ:
-
-                         Cantidad: 3
-                         $30.00
                     ================================================== -->
 
                     <div class="producto-resumen">
@@ -1239,14 +1214,14 @@
 
                         <div class="producto-resumen-info">
 
-                            <h3>
+                            <h3 id="productoNombre">
 
                                 Cable Delta macho a 2 SATA hembra
 
                             </h3>
 
 
-                            <p id="cantidadResumen">
+                            <p id="productoCantidad">
 
                                 Cantidad: 1
 
@@ -1258,7 +1233,7 @@
 
                         <div
                             class="producto-resumen-precio"
-                            id="precioProductoResumen"
+                            id="productoPrecio"
                         >
 
                             $10.00
@@ -1279,7 +1254,7 @@
                             Producto
                         </span>
 
-                        <span id="precioProducto">
+                        <span id="resumenProducto">
 
                             $10.00
 
@@ -1317,7 +1292,7 @@
                             Total
                         </span>
 
-                        <span id="totalCompra">
+                        <span id="resumenTotal">
 
                             $10.00
 
@@ -1393,8 +1368,6 @@
 
         /* =====================================================
            GOOGLE APPS SCRIPT
-
-           SE MANTIENE SIN CAMBIOS.
         ====================================================== */
 
         const APPS_SCRIPT_URL =
@@ -1403,23 +1376,29 @@
 
 
         /* =====================================================
-           ENLACES DE PAGO
+           ENLACES DE PAYPHONE
 
-           CADA CANTIDAD UTILIZA SU LINK CORRESPONDIENTE.
+           CADA OPCIÓN TIENE:
+
+           $10 = cantidad 1
+           $20 = cantidad 2
+           $30 = cantidad 3
+           $40 = cantidad 4
+
         ====================================================== */
 
-        const LINKS_PAGO = {
+        const OPCIONES_PAYPHONE = {
 
-            1:
-                "https://ppls.me/KT8CHtyeUHxwBmYlg5NIyA",
+            "10-1":
+                "https://ppls.me/zbR40tWTnboL9Sf30syIxg",
 
-            2:
+            "20-2":
                 "https://ppls.me/OnmwepzpJyIEMrq7uoPn9g",
 
-            3:
+            "30-3":
                 "https://ppls.me/NUp6yYWJ8LcXDd9jnvRA",
 
-            4:
+            "40-4":
                 "https://ppls.me/SYxHVTiGHCdhEYtqRDHwA"
 
         };
@@ -1427,11 +1406,48 @@
 
 
         /* =====================================================
-           DATOS RECIBIDOS DESDE verproducto.html
+           PRODUCTO
 
-           Ejemplo:
+           Estos valores son los que se envían
+           a Google Sheets.
 
-           comprar.html?cantidad=2&precio=20
+           El precio y cantidad también pueden ser
+           reemplazados por los parámetros recibidos
+           desde verproducto.html.
+
+        ====================================================== */
+
+        let PRODUCTO =
+            "Cable Delta macho a 2 SATA hembra";
+
+
+        let CANTIDAD =
+            1;
+
+
+        let PRECIO =
+            10;
+
+
+        const ENVIO =
+            "Se coordina";
+
+
+        let TOTAL =
+            10;
+
+
+
+        /* =====================================================
+           LEER DATOS RECIBIDOS DESDE verproducto.html
+
+           comprar.html puede recibir:
+
+           comprar.html?precio=20&cantidad=2
+
+           o:
+
+           comprar.html?precio=30&cantidad=3
 
         ====================================================== */
 
@@ -1441,206 +1457,121 @@
             );
 
 
-        let cantidad =
-            parseInt(
-                parametros.get("cantidad"),
-                10
-            );
+        const precioParametro =
+            parametros.get("precio");
 
 
-        let precio =
-            parseFloat(
-                parametros.get("precio")
-            );
+        const cantidadParametro =
+            parametros.get("cantidad");
+
+
+        const productoParametro =
+            parametros.get("producto");
 
 
 
         /* =====================================================
-           VALIDACIÓN DE PARÁMETROS
-
-           Si no llegan parámetros válidos,
-           se utiliza el producto de US$10.
+           APLICAR PRECIO Y CANTIDAD
         ====================================================== */
 
         if (
-            !Number.isFinite(cantidad) ||
-            cantidad < 1
+            precioParametro !== null &&
+            cantidadParametro !== null
         ) {
 
-            cantidad = 1;
+            const precioRecibido =
+                parseFloat(
+                    precioParametro
+                );
+
+
+            const cantidadRecibida =
+                parseInt(
+                    cantidadParametro,
+                    10
+                );
+
+
+            if (
+                !isNaN(precioRecibido) &&
+                !isNaN(cantidadRecibida) &&
+                precioRecibido > 0 &&
+                cantidadRecibida > 0
+            ) {
+
+                PRECIO =
+                    precioRecibido;
+
+                CANTIDAD =
+                    cantidadRecibida;
+
+            }
 
         }
 
+
+
+        /* =====================================================
+           APLICAR NOMBRE DEL PRODUCTO SI VIENE
+        ====================================================== */
 
         if (
-            !Number.isFinite(precio) ||
-            precio <= 0
+            productoParametro
         ) {
 
-            precio = 10;
+            PRODUCTO =
+                productoParametro;
 
         }
 
 
 
         /* =====================================================
-           PRECIOS PERMITIDOS
+           CALCULAR TOTAL
 
-           Evita que valores diferentes a los productos
-           configurados modifiquen accidentalmente el pedido.
+           El total corresponde a:
+
+           precio unitario × cantidad
 
         ====================================================== */
 
-        const PRECIOS_VALIDOS = {
-
-            1: 10,
-            2: 20,
-            3: 30,
-            4: 40
-
-        };
-
-
-        if (
-            PRECIOS_VALIDOS[cantidad] !== undefined
-        ) {
-
-            precio =
-                PRECIOS_VALIDOS[cantidad];
-
-        }
+        TOTAL =
+            PRECIO * CANTIDAD;
 
 
 
         /* =====================================================
-           OBTENER ELEMENTOS DEL RESUMEN
+           ACTUALIZAR RESUMEN VISUAL
         ====================================================== */
 
-        const cantidadResumen =
-            document.getElementById(
-                "cantidadResumen"
-            );
+        document.getElementById(
+            "productoNombre"
+        ).textContent =
+            PRODUCTO;
 
 
-        const precioProductoResumen =
-            document.getElementById(
-                "precioProductoResumen"
-            );
+        document.getElementById(
+            "productoCantidad"
+        ).textContent =
+            "Cantidad: " + CANTIDAD;
 
 
-        const precioProducto =
-            document.getElementById(
-                "precioProducto"
-            );
+        document.getElementById(
+            "productoPrecio"
+        ).textContent =
+            "$" + PRECIO.toFixed(2);
 
 
-        const totalCompra =
-            document.getElementById(
-                "totalCompra"
-            );
+        document.getElementById(
+            "resumenProducto"
+        ).textContent =
+            "$" + TOTAL.toFixed(2);
 
 
-
-        /* =====================================================
-           FORMATO DEL PRECIO
-        ====================================================== */
-
-        function formatoPrecio(valor) {
-
-            return (
-                "$" +
-                valor.toFixed(2)
-            );
-
-        }
-
-
-
-        /* =====================================================
-           ACTUALIZAR RESUMEN DE COMPRA
-        ====================================================== */
-
-        function actualizarResumen() {
-
-
-            const precioFormateado =
-                formatoPrecio(precio);
-
-
-
-            /* CANTIDAD */
-
-            cantidadResumen.textContent =
-                "Cantidad: " +
-                cantidad;
-
-
-
-            /* PRECIO DEL PRODUCTO */
-
-            precioProductoResumen.textContent =
-                precioFormateado;
-
-
-
-            /* LÍNEA PRODUCTO */
-
-            precioProducto.textContent =
-                precioFormateado;
-
-
-
-            /* TOTAL */
-
-            totalCompra.textContent =
-                precioFormateado;
-
-        }
-
-
-
-        /* =====================================================
-           INICIALIZAR RESUMEN
-        ====================================================== */
-
-        actualizarResumen();
-
-
-
-        /* =====================================================
-           PRODUCTO
-
-           Estos datos se envían a Google Sheets.
-        ====================================================== */
-
-        const PRODUCTO =
-            "Cable Delta macho a 2 SATA hembra";
-
-
-        const CANTIDAD =
-            String(cantidad);
-
-
-        const PRECIO =
-            formatoPrecio(precio);
-
-
-        const ENVIO =
-            "Se coordina";
-
-
-        const TOTAL =
-            formatoPrecio(precio);
-
-
-
-        /* =====================================================
-           LINK DE PAGO SEGÚN CANTIDAD
-        ====================================================== */
-
-        const PAYPHONE_URL =
-            LINKS_PAGO[cantidad] ||
-            LINKS_PAGO[1];
+        document.getElementById(
+            "resumenTotal"
+        ).textContent =
+            "$" + TOTAL.toFixed(2);
 
 
 
@@ -1680,7 +1611,8 @@
                         "mostrar"
                     );
 
-                    otraProvincia.required = true;
+                    otraProvincia.required =
+                        true;
 
                 } else {
 
@@ -1688,9 +1620,11 @@
                         "mostrar"
                     );
 
-                    otraProvincia.required = false;
+                    otraProvincia.required =
+                        false;
 
-                    otraProvincia.value = "";
+                    otraProvincia.value =
+                        "";
 
                 }
 
@@ -1700,13 +1634,36 @@
 
 
         /* =====================================================
-           CONTINUAR AL PAGO
+           BUSCAR ENLACE DE PAYPHONE
 
-           1. Verifica formulario.
-           2. Obtiene datos.
-           3. Envía pedido a Google Sheets.
-           4. Utiliza el link de pago correspondiente
-              a la cantidad seleccionada.
+           La combinación debe coincidir exactamente:
+
+           $10 × 1
+           $20 × 2
+           $30 × 3
+           $40 × 4
+
+        ====================================================== */
+
+        function obtenerLinkPayPhone() {
+
+
+            const clave =
+                PRECIO +
+                "-" +
+                CANTIDAD;
+
+
+            return OPCIONES_PAYPHONE[
+                clave
+            ] || null;
+
+        }
+
+
+
+        /* =====================================================
+           CONTINUAR AL PAGO
         ====================================================== */
 
         async function continuarAlPago() {
@@ -1745,6 +1702,9 @@
                 !formulario.checkValidity()
             ) {
 
+                mensajeError.textContent =
+                    "Completa todos los campos obligatorios antes de continuar.";
+
                 mensajeError.classList.add(
                     "mostrar"
                 );
@@ -1752,6 +1712,7 @@
                 formulario.reportValidity();
 
                 return;
+
             }
 
 
@@ -1762,10 +1723,41 @@
 
 
             /* =============================================
+               OBTENER LINK SEGÚN PRECIO Y CANTIDAD
+            ============================================== */
+
+            const PAYPHONE_URL =
+                obtenerLinkPayPhone();
+
+
+
+            /* =============================================
+               VERIFICAR QUE EXISTE UNA OPCIÓN
+            ============================================== */
+
+            if (
+                !PAYPHONE_URL
+            ) {
+
+                mensajeError.textContent =
+                    "La combinación de precio y cantidad no corresponde a una opción de pago disponible.";
+
+                mensajeError.classList.add(
+                    "mostrar"
+                );
+
+                return;
+
+            }
+
+
+
+            /* =============================================
                EVITAR DOBLE CLIC
             ============================================== */
 
-            boton.disabled = true;
+            boton.disabled =
+                true;
 
             boton.textContent =
                 "Registrando pedido...";
@@ -1855,13 +1847,13 @@
                     CANTIDAD,
 
                 precio:
-                    PRECIO,
+                    "$" + PRECIO.toFixed(2),
 
                 envio:
                     ENVIO,
 
                 total:
-                    TOTAL
+                    "$" + TOTAL.toFixed(2)
 
             };
 
@@ -1914,15 +1906,7 @@
 
 
                 /* =========================================
-                   REDIRECCIÓN
-
-                   Aquí se utiliza automáticamente
-                   el enlace correspondiente.
-
-                   Cantidad 1 → US$10
-                   Cantidad 2 → US$20
-                   Cantidad 3 → US$30
-                   Cantidad 4 → US$40
+                   REDIRIGIR AL LINK CORRESPONDIENTE
                 ========================================== */
 
                 setTimeout(
@@ -1954,7 +1938,8 @@
                 );
 
 
-                boton.disabled = false;
+                boton.disabled =
+                    false;
 
 
                 boton.textContent =
