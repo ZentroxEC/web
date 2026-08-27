@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 
@@ -220,31 +221,80 @@
 
         }
 
-        .imagen-principal {
+
+        /* =====================================================
+           CARRUSEL PRINCIPAL
+           ===================================================== */
+
+        .carrusel {
+
+            width: 100%;
+
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 12px;
+
+            background: #ffffff;
+
+            border:
+                1px solid #dddddd;
+
+            touch-action: pan-y;
+
+        }
+
+        .carrusel-contenedor {
+
+            width: 100%;
+
+            display: flex;
+
+            overflow-x: auto;
+
+            scroll-snap-type: x mandatory;
+
+            scroll-behavior: smooth;
+
+            scrollbar-width: none;
+
+            -webkit-overflow-scrolling: touch;
+
+        }
+
+        .carrusel-contenedor::-webkit-scrollbar {
+
+            display: none;
+
+        }
+
+        .carrusel-slide {
+
+            min-width: 100%;
 
             width: 100%;
 
             min-height: 430px;
 
-            background: #ffffff;
-
-            border-radius: 12px;
-
-            overflow: hidden;
-
             display: flex;
 
             align-items: center;
+
             justify-content: center;
 
-            border:
-                1px solid #dddddd;
+            scroll-snap-align: start;
+
+            scroll-snap-stop: always;
+
+            background: #ffffff;
 
         }
 
-        .imagen-principal img {
+        .carrusel-slide img {
 
             width: 100%;
+
             height: 100%;
 
             max-height: 500px;
@@ -253,7 +303,144 @@
 
             display: block;
 
+            user-select: none;
+
+            -webkit-user-drag: none;
+
         }
+
+
+        /* =====================================================
+           FLECHAS DEL CARRUSEL
+           ===================================================== */
+
+        .carrusel-flecha {
+
+            position: absolute;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            width: 42px;
+
+            height: 42px;
+
+            border-radius: 50%;
+
+            border: 1px solid #dddddd;
+
+            background: rgba(255, 255, 255, 0.92);
+
+            color: #111111;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 24px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            z-index: 5;
+
+            transition:
+                background 0.2s ease,
+                transform 0.2s ease;
+
+        }
+
+        .carrusel-flecha:hover {
+
+            background: #ffffff;
+
+        }
+
+        .carrusel-flecha:active {
+
+            transform:
+                translateY(-50%)
+                scale(0.95);
+
+        }
+
+        .carrusel-anterior {
+
+            left: 12px;
+
+        }
+
+        .carrusel-siguiente {
+
+            right: 12px;
+
+        }
+
+
+        /* =====================================================
+           INDICADORES DEL CARRUSEL
+           ===================================================== */
+
+        .carrusel-indicadores {
+
+            position: absolute;
+
+            left: 50%;
+
+            bottom: 12px;
+
+            transform: translateX(-50%);
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+            z-index: 5;
+
+            padding:
+                5px 8px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(0, 0, 0, 0.45);
+
+        }
+
+        .carrusel-indicador {
+
+            width: 7px;
+
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.55);
+
+            transition:
+                background 0.2s ease,
+                transform 0.2s ease;
+
+        }
+
+        .carrusel-indicador.activo {
+
+            background: #ffffff;
+
+            transform: scale(1.25);
+
+        }
+
+
+        /* =====================================================
+           IMAGEN SECUNDARIA
+           ===================================================== */
 
         .imagen-secundaria {
 
@@ -272,6 +459,7 @@
         .imagen-secundaria img {
 
             width: 100%;
+
             height: auto;
 
             display: block;
@@ -433,11 +621,6 @@
 
         }
 
-
-        /* =====================================================
-           CÍRCULOS DE LAS TARJETAS
-           ===================================================== */
-
         .pago-circulo {
 
             width: 42px;
@@ -463,22 +646,11 @@
 
         }
 
-
-        /*
-         * Los círculos se superponen aproximadamente
-         * la mitad de su tamaño.
-         */
-
         .pago-circulo + .pago-circulo {
 
             margin-left: -21px;
 
         }
-
-
-        /*
-         * Imágenes de las tarjetas.
-         */
 
         .pago-circulo img {
 
@@ -490,11 +662,6 @@
             display: block;
 
         }
-
-
-        /*
-         * Orden de superposición.
-         */
 
         .pago-visa {
 
@@ -908,6 +1075,11 @@
 
         }
 
+
+        /* =====================================================
+           TABLET
+           ===================================================== */
+
         @media (max-width: 850px) {
 
             .producto-principal {
@@ -916,13 +1088,18 @@
 
             }
 
-            .imagen-principal {
+            .carrusel-slide {
 
                 min-height: 380px;
 
             }
 
         }
+
+
+        /* =====================================================
+           MÓVIL
+           ===================================================== */
 
         @media (max-width: 700px) {
 
@@ -992,9 +1169,31 @@
 
             }
 
-            .imagen-principal {
+            .carrusel-slide {
 
                 min-height: 300px;
+
+            }
+
+            .carrusel-flecha {
+
+                width: 36px;
+
+                height: 36px;
+
+                font-size: 20px;
+
+            }
+
+            .carrusel-anterior {
+
+                left: 8px;
+
+            }
+
+            .carrusel-siguiente {
+
+                right: 8px;
 
             }
 
@@ -1053,6 +1252,11 @@
 
         }
 
+
+        /* =====================================================
+           MÓVILES PEQUEÑOS
+           ===================================================== */
+
         @media (max-width: 380px) {
 
             .header-container {
@@ -1080,7 +1284,7 @@
 
             }
 
-            .imagen-principal {
+            .carrusel-slide {
 
                 min-height: 250px;
 
@@ -1173,16 +1377,133 @@
 
     <section class="producto-principal">
 
+
+        <!-- =================================================
+             GALERÍA / CARRUSEL
+             ================================================= -->
+
         <div class="galeria">
 
-            <div class="imagen-principal">
+            <div
+                class="carrusel"
+                id="carruselProducto"
+            >
 
-                <img
-                    src="img/delta.png"
-                    alt="Cable de Poder Delta SATA Macho a 2 SATA Hembra"
+                <div
+                    class="carrusel-contenedor"
+                    id="carruselContenedor"
                 >
 
+
+                    <!-- IMAGEN 1 -->
+
+                    <div class="carrusel-slide">
+
+                        <img
+                            src="img/delta.png"
+                            alt="Cable de Poder Delta SATA - Imagen 1"
+                            draggable="false"
+                        >
+
+                    </div>
+
+
+                    <!-- IMAGEN 2 -->
+
+                    <div class="carrusel-slide">
+
+                        <img
+                            src="img/delta2.png"
+                            alt="Cable de Poder Delta SATA - Imagen 2"
+                            draggable="false"
+                        >
+
+                    </div>
+
+
+                    <!-- IMAGEN 3 -->
+
+                    <div class="carrusel-slide">
+
+                        <img
+                            src="img/delta3.png"
+                            alt="Cable de Poder Delta SATA - Imagen 3"
+                            draggable="false"
+                        >
+
+                    </div>
+
+
+                    <!-- IMAGEN 4 -->
+
+                    <div class="carrusel-slide">
+
+                        <img
+                            src="img/delta4.png"
+                            alt="Cable de Poder Delta SATA - Imagen 4"
+                            draggable="false"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- FLECHA ANTERIOR -->
+
+                <button
+                    type="button"
+                    class="carrusel-flecha carrusel-anterior"
+                    id="carruselAnterior"
+                    aria-label="Imagen anterior"
+                >
+
+                    ‹
+
+                </button>
+
+
+                <!-- FLECHA SIGUIENTE -->
+
+                <button
+                    type="button"
+                    class="carrusel-flecha carrusel-siguiente"
+                    id="carruselSiguiente"
+                    aria-label="Imagen siguiente"
+                >
+
+                    ›
+
+                </button>
+
+
+                <!-- INDICADORES -->
+
+                <div
+                    class="carrusel-indicadores"
+                    id="carruselIndicadores"
+                >
+
+                    <span
+                        class="carrusel-indicador activo"
+                    ></span>
+
+                    <span
+                        class="carrusel-indicador"
+                    ></span>
+
+                    <span
+                        class="carrusel-indicador"
+                    ></span>
+
+                    <span
+                        class="carrusel-indicador"
+                    ></span>
+
+                </div>
+
             </div>
+
 
             <div class="imagen-secundaria">
 
@@ -1250,10 +1571,6 @@
             </div>
 
 
-            <!-- =================================================
-                 MEDIOS DE PAGO
-                 ================================================= -->
-
             <div class="medios-pago">
 
                 <span class="medios-pago-titulo">
@@ -1262,8 +1579,6 @@
 
                 </span>
 
-
-                <!-- VISA -->
 
                 <div class="pago-circulo pago-visa">
 
@@ -1275,8 +1590,6 @@
                 </div>
 
 
-                <!-- MASTERCARD -->
-
                 <div class="pago-circulo pago-mastercard">
 
                     <img
@@ -1287,8 +1600,6 @@
                 </div>
 
 
-                <!-- DISCOVER -->
-
                 <div class="pago-circulo pago-discover">
 
                     <img
@@ -1298,8 +1609,6 @@
 
                 </div>
 
-
-                <!-- DINERS -->
 
                 <div class="pago-circulo pago-diners">
 
@@ -1686,17 +1995,9 @@ function actualizarProducto() {
         PRECIO_UNITARIO * cantidad;
 
 
-    /*
-     * Mostrar precio total.
-     */
-
     precioProducto.textContent =
         "US$ " + precioTotal;
 
-
-    /*
-     * Crear URL para comprar.html.
-     */
 
     const urlCompra =
         "comprar.html?cantidad=" +
@@ -1704,10 +2005,6 @@ function actualizarProducto() {
         "&precio=" +
         encodeURIComponent(precioTotal);
 
-
-    /*
-     * Actualizar botón Comprar ahora.
-     */
 
     botonComprar.href = urlCompra;
 
@@ -1759,14 +2056,264 @@ document.getElementById(
 
 /*
  * =====================================================
+ * CARRUSEL DE PRODUCTO
+ * =====================================================
+ */
+
+const carruselContenedor =
+    document.getElementById(
+        "carruselContenedor"
+    );
+
+const carruselAnterior =
+    document.getElementById(
+        "carruselAnterior"
+    );
+
+const carruselSiguiente =
+    document.getElementById(
+        "carruselSiguiente"
+    );
+
+const indicadores =
+    document.querySelectorAll(
+        ".carrusel-indicador"
+    );
+
+
+let imagenActual = 0;
+
+const totalImagenes =
+    document.querySelectorAll(
+        ".carrusel-slide"
+    ).length;
+
+
+/*
+ * =====================================================
+ * MOSTRAR IMAGEN
+ * =====================================================
+ */
+
+function mostrarImagen(indice) {
+
+    if (indice < 0) {
+
+        indice =
+            totalImagenes - 1;
+
+    }
+
+    if (indice >= totalImagenes) {
+
+        indice = 0;
+
+    }
+
+
+    imagenActual = indice;
+
+
+    carruselContenedor.scrollTo({
+
+        left:
+            carruselContenedor.clientWidth *
+            imagenActual,
+
+        behavior: "smooth"
+
+    });
+
+
+    indicadores.forEach(
+        function(indicador, index) {
+
+            indicador.classList.toggle(
+                "activo",
+                index === imagenActual
+            );
+
+        }
+    );
+
+}
+
+
+/*
+ * =====================================================
+ * BOTÓN ANTERIOR
+ * =====================================================
+ */
+
+carruselAnterior.addEventListener(
+    "click",
+    function() {
+
+        mostrarImagen(
+            imagenActual - 1
+        );
+
+    }
+);
+
+
+/*
+ * =====================================================
+ * BOTÓN SIGUIENTE
+ * =====================================================
+ */
+
+carruselSiguiente.addEventListener(
+    "click",
+    function() {
+
+        mostrarImagen(
+            imagenActual + 1
+        );
+
+    }
+);
+
+
+/*
+ * =====================================================
+ * DETECTAR DESLIZAMIENTO
+ * =====================================================
+ *
+ * Cuando el usuario desliza con el dedo,
+ * detectamos automáticamente qué imagen
+ * está visible.
+ */
+
+carruselContenedor.addEventListener(
+    "scroll",
+    function() {
+
+        const posicion =
+            carruselContenedor.scrollLeft;
+
+        const ancho =
+            carruselContenedor.clientWidth;
+
+
+        if (ancho <= 0) {
+
+            return;
+
+        }
+
+
+        const nuevaImagen =
+            Math.round(
+                posicion / ancho
+            );
+
+
+        if (
+            nuevaImagen !==
+            imagenActual
+        ) {
+
+            imagenActual =
+                Math.max(
+                    0,
+                    Math.min(
+                        nuevaImagen,
+                        totalImagenes - 1
+                    )
+                );
+
+
+            indicadores.forEach(
+                function(
+                    indicador,
+                    index
+                ) {
+
+                    indicador.classList.toggle(
+                        "activo",
+                        index === imagenActual
+                    );
+
+                }
+            );
+
+        }
+
+    }
+);
+
+
+/*
+ * =====================================================
+ * INDICADORES CLICKEABLES
+ * =====================================================
+ */
+
+indicadores.forEach(
+    function(indicador, index) {
+
+        indicador.addEventListener(
+            "click",
+            function() {
+
+                mostrarImagen(index);
+
+            }
+        );
+
+    }
+);
+
+
+/*
+ * =====================================================
+ * TECLADO EN PC
+ * =====================================================
+ */
+
+document.addEventListener(
+    "keydown",
+    function(evento) {
+
+        if (
+            evento.key === "ArrowLeft"
+        ) {
+
+            mostrarImagen(
+                imagenActual - 1
+            );
+
+        }
+
+
+        if (
+            evento.key === "ArrowRight"
+        ) {
+
+            mostrarImagen(
+                imagenActual + 1
+            );
+
+        }
+
+    }
+);
+
+
+/*
+ * =====================================================
  * INICIAR PÁGINA
  * =====================================================
  */
 
 actualizarProducto();
 
+mostrarImagen(0);
+
 </script>
 
 </body>
 
 </html>
+```
