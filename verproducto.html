@@ -1,1098 +1,1125 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-    <title>
-        Cable Delta SATA | ZENTROXEC
-    </title>
+<title>
+    Cable Delta SATA | ZENTROXEC
+</title>
 
-    <meta
-        name="description"
-        content="Cable de poder Delta SATA macho a 2 SATA hembra. Consulta características y detalles del producto en ZENTROXEC."
-    >
+<meta
+    name="description"
+    content="Cable de poder Delta SATA macho a 2 SATA hembra. Consulta características y detalles del producto en ZENTROXEC."
+>
 
-    <style>
+<style>
 
-        :root {
+:root {
 
-            --negro: #050505;
-            --negro-card: #101010;
-            --negro-suave: #151515;
-            --blanco: #ffffff;
-            --gris: #999999;
-            --gris-claro: #cccccc;
-            --borde: #252525;
-            --rojo: #e50914;
-            --rojo-hover: #b80710;
-            --verde: #00a650;
-            --azul: #3483fa;
+    --negro: #050505;
+    --negro-card: #101010;
+    --negro-suave: #151515;
+    --blanco: #ffffff;
+    --gris: #999999;
+    --gris-claro: #cccccc;
+    --borde: #252525;
+    --rojo: #e50914;
+    --rojo-hover: #b80710;
+    --verde: #00a650;
+    --azul: #3483fa;
 
-        }
+}
 
-        * {
+* {
 
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 
-        }
+}
 
-        html {
+html {
 
-            scroll-behavior: smooth;
+    scroll-behavior: smooth;
 
-        }
+}
 
-        body {
+body {
 
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-            background: var(--negro);
-            color: var(--blanco);
-            line-height: 1.6;
+    background: var(--negro);
+    color: var(--blanco);
+    line-height: 1.6;
 
-        }
+}
 
-        header {
+header {
 
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
 
-            background:
-                rgba(5, 5, 5, 0.97);
+    background:
+        rgba(5, 5, 5, 0.97);
 
-            border-bottom:
-                1px solid #222222;
+    border-bottom:
+        1px solid #222222;
 
-            backdrop-filter:
-                blur(10px);
+    backdrop-filter:
+        blur(10px);
 
-        }
+}
 
-        .header-container {
+.header-container {
 
-            width: 100%;
-            max-width: 1250px;
-            min-height: 76px;
+    width: 100%;
+    max-width: 1250px;
+    min-height: 76px;
 
-            margin: 0 auto;
-            padding: 0 25px;
+    margin: 0 auto;
+    padding: 0 25px;
 
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-            gap: 30px;
+    gap: 30px;
 
-        }
+}
 
-        .logo {
+.logo {
 
-            flex-shrink: 0;
+    flex-shrink: 0;
 
-            color: var(--blanco);
+    color: var(--blanco);
 
-            font-size: 27px;
-            font-weight: 900;
+    font-size: 27px;
+    font-weight: 900;
 
-            letter-spacing: 1px;
+    letter-spacing: 1px;
 
-            text-decoration: none;
+    text-decoration: none;
 
-        }
+}
 
-        .logo span {
+.logo span {
 
-            color: var(--rojo);
+    color: var(--rojo);
 
-        }
+}
 
-        nav {
+nav {
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-            gap: 30px;
+    gap: 30px;
 
-        }
+}
 
-        nav a {
+nav a {
 
-            color: #dddddd;
+    color: #dddddd;
 
-            text-decoration: none;
+    text-decoration: none;
 
-            font-size: 13px;
-            font-weight: 800;
+    font-size: 13px;
+    font-weight: 800;
 
-            letter-spacing: 0.3px;
+    letter-spacing: 0.3px;
 
-            transition:
-                color 0.2s ease;
+    transition:
+        color 0.2s ease;
 
-        }
+}
 
-        nav a:hover {
+nav a:hover {
 
-            color: var(--rojo);
+    color: var(--rojo);
 
-        }
+}
 
-        .producto-page {
+.producto-page {
 
-            width: 100%;
-            max-width: 1100px;
+    width: 100%;
+    max-width: 1100px;
 
-            margin: 0 auto;
+    margin: 0 auto;
 
-            padding:
-                45px 25px 80px;
+    padding:
+        45px 25px 80px;
 
-        }
+}
 
-        .volver {
+.volver {
 
-            display: inline-flex;
+    display: inline-flex;
 
-            align-items: center;
+    align-items: center;
 
-            gap: 8px;
+    gap: 8px;
 
-            color: #bbbbbb;
+    color: #bbbbbb;
 
-            text-decoration: none;
+    text-decoration: none;
 
-            font-size: 14px;
-            font-weight: 700;
+    font-size: 14px;
+    font-weight: 700;
 
-            margin-bottom: 30px;
+    margin-bottom: 30px;
 
-            transition:
-                color 0.2s ease;
+    transition:
+        color 0.2s ease;
 
-        }
+}
 
-        .volver:hover {
+.volver:hover {
 
-            color: var(--rojo);
+    color: var(--rojo);
 
-        }
+}
 
-        .producto-principal {
+.producto-principal {
 
-            display: grid;
+    display: grid;
 
-            grid-template-columns:
-                minmax(0, 1fr)
-                minmax(0, 1fr);
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
 
-            gap: 45px;
+    gap: 45px;
 
-            background:
-                var(--negro-card);
+    background:
+        var(--negro-card);
 
-            border:
-                1px solid var(--borde);
+    border:
+        1px solid var(--borde);
 
-            border-radius: 16px;
+    border-radius: 16px;
 
-            padding: 25px;
+    padding: 25px;
 
-        }
+}
 
-        .galeria {
+.galeria {
 
-            width: 100%;
+    width: 100%;
 
-        }
+}
 
-        .imagen-principal {
+.imagen-principal {
 
-            width: 100%;
+    width: 100%;
 
-            min-height: 430px;
+    min-height: 430px;
 
-            background: #ffffff;
+    background: #ffffff;
 
-            border-radius: 12px;
+    border-radius: 12px;
 
-            overflow: hidden;
+    overflow: hidden;
 
-            display: flex;
+    display: flex;
 
-            align-items: center;
-            justify-content: center;
+    align-items: center;
+    justify-content: center;
 
-            border:
-                1px solid #dddddd;
+    border:
+        1px solid #dddddd;
 
-        }
+}
 
-        .imagen-principal img {
+.imagen-principal img {
 
-            width: 100%;
-            height: 100%;
+    width: 100%;
+    height: 100%;
 
-            max-height: 500px;
+    max-height: 500px;
 
-            object-fit: contain;
+    object-fit: contain;
 
-            display: block;
+    display: block;
 
-        }
+}
 
-        .imagen-secundaria {
+.imagen-secundaria {
 
-            width: 100%;
+    width: 100%;
 
-            margin-top: 15px;
+    margin-top: 15px;
 
-            background: #ffffff;
+    background: #ffffff;
 
-            border-radius: 12px;
+    border-radius: 12px;
 
-            overflow: hidden;
+    overflow: hidden;
 
-        }
+}
 
-        .imagen-secundaria img {
+.imagen-secundaria img {
 
-            width: 100%;
-            height: auto;
+    width: 100%;
+    height: auto;
 
-            display: block;
+    display: block;
 
-        }
+}
 
-        .producto-info {
+.producto-info {
 
-            padding:
-                5px 5px 10px;
+    padding:
+        5px 5px 10px;
 
-        }
+}
 
-        .producto-titulo {
+.producto-titulo {
 
-            font-size: 31px;
+    font-size: 31px;
 
-            line-height: 1.2;
+    line-height: 1.2;
 
-            font-weight: 800;
+    font-weight: 800;
 
-            margin-bottom: 15px;
+    margin-bottom: 15px;
 
-        }
+}
 
-        .valoracion {
+.valoracion {
 
-            display: flex;
+    display: flex;
 
-            align-items: center;
+    align-items: center;
 
-            gap: 8px;
+    gap: 8px;
 
-            margin-bottom: 22px;
+    margin-bottom: 22px;
 
-        }
+}
 
-        .estrella {
+.estrella {
 
-            color: #3483fa;
+    color: #3483fa;
 
-            font-size: 23px;
+    font-size: 23px;
 
-        }
+}
 
-        .valoracion strong {
+.valoracion strong {
 
-            font-size: 17px;
+    font-size: 17px;
 
-        }
+}
 
-        .ventas {
+.ventas {
 
-            color: #888888;
+    color: #888888;
 
-            font-size: 15px;
+    font-size: 15px;
 
-        }
+}
 
-        .stock {
+.stock {
 
-            display: inline-block;
+    display: inline-block;
 
-            padding:
-                7px 11px;
+    padding:
+        7px 11px;
 
-            background:
-                rgba(229, 9, 20, 0.12);
+    background:
+        rgba(229, 9, 20, 0.12);
 
-            border:
-                1px solid
-                rgba(229, 9, 20, 0.3);
+    border:
+        1px solid
+        rgba(229, 9, 20, 0.3);
 
-            color: #ff4b55;
+    color: #ff4b55;
 
-            border-radius: 6px;
+    border-radius: 6px;
 
-            font-size: 12px;
-            font-weight: 800;
+    font-size: 12px;
+    font-weight: 800;
 
-            margin-bottom: 18px;
+    margin-bottom: 18px;
 
-        }
+}
 
-        .precio {
+.precio {
 
-            font-size: 45px;
+    font-size: 45px;
 
-            line-height: 1;
+    line-height: 1;
 
-            font-weight: 900;
+    font-weight: 900;
 
-            margin-bottom: 22px;
+    margin-bottom: 22px;
 
-        }
+}
 
-        .precio-decimal {
+.precio-decimal {
 
-            font-size: 25px;
+    font-size: 25px;
 
-            vertical-align: top;
+    vertical-align: top;
 
-            position: relative;
+    position: relative;
 
-            top: 3px;
+    top: 3px;
 
-        }
+}
 
-        .descuento {
+.descuento {
 
-            display: inline-block;
+    display: inline-block;
 
-            background:
-                rgba(52, 131, 250, 0.12);
+    background:
+        rgba(52, 131, 250, 0.12);
 
-            color: #5c9cff;
+    color: #5c9cff;
 
-            padding:
-                8px 12px;
+    padding:
+        8px 12px;
 
-            border-radius: 5px;
+    border-radius: 5px;
 
-            font-size: 13px;
-            font-weight: 800;
+    font-size: 13px;
+    font-weight: 800;
 
-            margin-bottom: 18px;
+    margin-bottom: 18px;
 
-        }
+}
 
-        /* =====================================================
-           MEDIOS DE PAGO
-           ===================================================== */
 
-        .medios-pago {
+/* =====================================================
+   MEDIOS DE PAGO
+   ===================================================== */
 
-            display: flex;
+.medios-pago {
 
-            align-items: center;
+    display: flex;
 
-            gap: 3px;
+    align-items: center;
 
-            margin-bottom: 22px;
+    gap: 0;
 
-            flex-wrap: nowrap;
+    margin-bottom: 22px;
 
-        }
+    flex-wrap: nowrap;
 
-        .medios-pago-titulo {
+}
 
-            color: #888888;
+.medios-pago-titulo {
 
-            font-size: 12px;
-            font-weight: 700;
+    color: #888888;
 
-            white-space: nowrap;
+    font-size: 12px;
+    font-weight: 700;
 
-            margin-right: 3px;
+    white-space: nowrap;
 
-        }
+    margin-right: 8px;
 
-        .pago-circulo {
+}
 
-            width: 37px;
-            height: 37px;
 
-            min-width: 37px;
+/* =====================================================
+   CÍRCULOS DE LAS TARJETAS
 
-            border-radius: 50%;
+   Los círculos se superponen aproximadamente
+   un 50% uno sobre otro.
+   ===================================================== */
 
-            background: #ffffff;
+.pago-circulo {
 
-            border:
-                1px solid #dddddd;
+    width: 42px;
+    height: 42px;
 
-            display: flex;
+    min-width: 42px;
 
-            align-items: center;
-            justify-content: center;
+    border-radius: 50%;
 
-            text-align: center;
+    background: #ffffff;
 
-            overflow: hidden;
+    border:
+        1px solid #dddddd;
 
-            position: relative;
+    display: flex;
 
-        }
+    align-items: center;
+    justify-content: center;
 
-        .pago-circulo img {
+    overflow: hidden;
 
-            width: 72%;
+    position: relative;
 
-            height: 72%;
+}
 
-            object-fit: contain;
 
-            display: block;
+/* Cada círculo se coloca encima del anterior */
 
-        }
+.pago-circulo + .pago-circulo {
 
-        .pago-visa img {
+    margin-left: -21px;
 
-            width: 76%;
+}
 
-            height: 76%;
 
-        }
+/* =====================================================
+   IMÁGENES DE LAS TARJETAS
 
-        .pago-mastercard img {
+   Cambia únicamente los archivos si deseas
+   utilizar otros nombres.
+   ===================================================== */
 
-            width: 78%;
+.pago-circulo img {
 
-            height: 78%;
+    width: 100%;
+    height: 100%;
 
-        }
+    object-fit: cover;
 
-        .pago-discover img {
+    display: block;
 
-            width: 82%;
+}
 
-            height: 82%;
 
-        }
+/* =====================================================
+   ORDEN DE LAS TARJETAS
 
-        .pago-diners img {
+   El último círculo queda por encima.
+   ===================================================== */
 
-            width: 80%;
+.pago-visa {
 
-            height: 80%;
+    z-index: 1;
 
-        }
+}
 
-        .cantidad {
+.pago-mastercard {
 
-            width: 100%;
+    z-index: 2;
 
-            display: flex;
+}
 
-            align-items: center;
+.pago-discover {
 
-            justify-content: space-between;
+    z-index: 3;
 
-            background: #151515;
+}
 
-            border:
-                1px solid #252525;
+.pago-diners {
 
-            border-radius: 8px;
+    z-index: 4;
 
-            min-height: 50px;
+}
 
-            padding: 0 15px;
 
-            margin-bottom: 10px;
+.cantidad {
 
-        }
+    width: 100%;
 
-        .cantidad label {
+    display: flex;
 
-            color: #ffffff;
+    align-items: center;
 
-            font-size: 15px;
-            font-weight: 700;
+    justify-content: space-between;
 
-        }
+    background: #151515;
 
-        .cantidad select {
+    border:
+        1px solid #252525;
 
-            background: #101010;
+    border-radius: 8px;
 
-            color: #ffffff;
+    min-height: 50px;
 
-            border:
-                1px solid #333333;
+    padding: 0 15px;
 
-            border-radius: 6px;
+    margin-bottom: 10px;
 
-            min-width: 70px;
+}
 
-            height: 38px;
+.cantidad label {
 
-            padding: 0 10px;
+    color: #ffffff;
 
-            font-size: 14px;
-            font-weight: 700;
+    font-size: 15px;
+    font-weight: 700;
 
-            cursor: pointer;
+}
 
-            outline: none;
+.cantidad select {
 
-        }
+    background: #101010;
 
-        .cantidad select:focus {
+    color: #ffffff;
 
-            border-color:
-                var(--rojo);
+    border:
+        1px solid #333333;
 
-        }
+    border-radius: 6px;
 
-        .botones {
+    min-width: 70px;
 
-            display: flex;
+    height: 38px;
 
-            flex-direction: column;
+    padding: 0 10px;
 
-            gap: 10px;
+    font-size: 14px;
+    font-weight: 700;
 
-        }
+    cursor: pointer;
 
-        .btn {
+    outline: none;
 
-            width: 100%;
+}
 
-            min-height: 50px;
+.cantidad select:focus {
 
-            border-radius: 8px;
+    border-color:
+        var(--rojo);
 
-            display: flex;
+}
 
-            align-items: center;
-            justify-content: center;
+.botones {
 
-            text-decoration: none;
+    display: flex;
 
-            font-size: 14px;
-            font-weight: 900;
+    flex-direction: column;
 
-            cursor: pointer;
+    gap: 10px;
 
-            transition:
-                background 0.2s ease,
-                border-color 0.2s ease,
-                color 0.2s ease;
+}
 
-        }
+.btn {
 
-        .btn-comprar {
+    width: 100%;
 
-            background: var(--rojo);
+    min-height: 50px;
 
-            color: #ffffff;
+    border-radius: 8px;
 
-            border:
-                1px solid var(--rojo);
+    display: flex;
 
-        }
+    align-items: center;
+    justify-content: center;
 
-        .btn-comprar:hover {
+    text-decoration: none;
 
-            background:
-                var(--rojo-hover);
+    font-size: 14px;
+    font-weight: 900;
 
-            border-color:
-                var(--rojo-hover);
+    cursor: pointer;
 
-        }
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
 
-        .btn-carrito {
+}
 
-            background:
-                rgba(52, 131, 250, 0.12);
+.btn-comprar {
 
-            color: #5c9cff;
+    background: var(--rojo);
 
-            border:
-                1px solid
-                rgba(52, 131, 250, 0.35);
+    color: #ffffff;
 
-            gap: 9px;
+    border:
+        1px solid var(--rojo);
 
-        }
+}
 
-        .btn-carrito:hover {
+.btn-comprar:hover {
 
-            background:
-                rgba(52, 131, 250, 0.20);
+    background:
+        var(--rojo-hover);
 
-            border-color:
-                #3483fa;
+    border-color:
+        var(--rojo-hover);
 
-            color: #ffffff;
+}
 
-        }
+.btn-carrito {
 
-        .icono-carrito {
+    background:
+        rgba(52, 131, 250, 0.12);
 
-            font-size: 18px;
+    color: #5c9cff;
 
-            line-height: 1;
+    border:
+        1px solid
+        rgba(52, 131, 250, 0.35);
 
-        }
+    gap: 9px;
 
-        .btn-whatsapp {
+}
 
-            background: #151515;
+.btn-carrito:hover {
 
-            color: #bbbbbb;
+    background:
+        rgba(52, 131, 250, 0.20);
 
-            border:
-                1px solid #333333;
+    border-color:
+        #3483fa;
 
-        }
+    color: #ffffff;
 
-        .btn-whatsapp:hover {
+}
 
-            background: #1c1c1c;
+.icono-carrito {
 
-            color: #ffffff;
+    font-size: 18px;
 
-            border-color:
-                #555555;
+    line-height: 1;
 
-        }
+}
 
-        .vendedor {
+.btn-whatsapp {
 
-            margin-top: 25px;
+    background: #151515;
 
-            padding-top: 20px;
+    color: #bbbbbb;
 
-            border-top:
-                1px solid var(--borde);
+    border:
+        1px solid #333333;
 
-        }
+}
 
-        .vendedor-principal {
+.btn-whatsapp:hover {
 
-            font-size: 16px;
+    background: #1c1c1c;
 
-            margin-bottom: 5px;
+    color: #ffffff;
 
-        }
+    border-color:
+        #555555;
 
-        .vendedor-principal strong {
+}
 
-            color: #5c9cff;
+.vendedor {
 
-        }
+    margin-top: 25px;
 
-        .mercadolider {
+    padding-top: 20px;
 
-            color: #888888;
+    border-top:
+        1px solid var(--borde);
 
-            font-size: 13px;
+}
 
-        }
+.vendedor-principal {
 
-        .mercadolider strong {
+    font-size: 16px;
 
-            color: #dddddd;
+    margin-bottom: 5px;
 
-        }
+}
 
-        .seguridad {
+.vendedor-principal strong {
 
-            margin-top: 20px;
+    color: #5c9cff;
 
-            padding-top: 20px;
+}
 
-            border-top:
-                1px solid var(--borde);
+.mercadolider {
 
-        }
+    color: #888888;
 
-        .seguridad-item {
+    font-size: 13px;
 
-            display: flex;
+}
 
-            align-items: flex-start;
+.mercadolider strong {
 
-            gap: 12px;
+    color: #dddddd;
 
-            margin-bottom: 18px;
+}
 
-        }
+.seguridad {
 
-        .seguridad-icono {
+    margin-top: 20px;
 
-            font-size: 24px;
+    padding-top: 20px;
 
-            min-width: 30px;
+    border-top:
+        1px solid var(--borde);
 
-        }
+}
 
-        .seguridad-texto {
+.seguridad-item {
 
-            color: #999999;
+    display: flex;
 
-            font-size: 13px;
+    align-items: flex-start;
 
-            line-height: 1.5;
+    gap: 12px;
 
-        }
+    margin-bottom: 18px;
 
-        .seguridad-texto strong {
+}
 
-            color: #ffffff;
+.seguridad-icono {
 
-        }
+    font-size: 24px;
 
-        .detalles {
+    min-width: 30px;
 
-            margin-top: 35px;
+}
 
-            background:
-                var(--negro-card);
+.seguridad-texto {
 
-            border:
-                1px solid var(--borde);
+    color: #999999;
 
-            border-radius: 16px;
+    font-size: 13px;
 
-            padding: 35px;
+    line-height: 1.5;
 
-        }
+}
 
-        .detalles-titulo {
+.seguridad-texto strong {
 
-            font-size: 27px;
+    color: #ffffff;
 
-            margin-bottom: 30px;
+}
 
-        }
+.detalles {
 
-        .detalle-bloque {
+    margin-top: 35px;
 
-            padding:
-                25px 0;
+    background:
+        var(--negro-card);
 
-            border-bottom:
-                1px solid var(--borde);
+    border:
+        1px solid var(--borde);
 
-        }
+    border-radius: 16px;
 
-        .detalle-bloque:first-of-type {
+    padding: 35px;
 
-            padding-top: 0;
+}
 
-        }
+.detalles-titulo {
 
-        .detalle-bloque:last-child {
+    font-size: 27px;
 
-            border-bottom: none;
+    margin-bottom: 30px;
 
-            padding-bottom: 0;
+}
 
-        }
+.detalle-bloque {
 
-        .detalle-bloque h3 {
+    padding:
+        25px 0;
 
-            font-size: 19px;
+    border-bottom:
+        1px solid var(--borde);
 
-            margin-bottom: 15px;
+}
 
-        }
+.detalle-bloque:first-of-type {
 
-        .detalle-bloque h3 span {
+    padding-top: 0;
 
-            color: var(--rojo);
+}
 
-            margin-right: 8px;
+.detalle-bloque:last-child {
 
-        }
+    border-bottom: none;
 
-        .detalle-bloque ul {
+    padding-bottom: 0;
 
-            padding-left: 20px;
+}
 
-        }
+.detalle-bloque h3 {
 
-        .detalle-bloque li {
+    font-size: 19px;
 
-            color: #999999;
+    margin-bottom: 15px;
 
-            font-size: 14px;
+}
 
-            margin-bottom: 9px;
+.detalle-bloque h3 span {
 
-        }
+    color: var(--rojo);
 
-        .detalle-bloque p {
+    margin-right: 8px;
 
-            color: #999999;
+}
 
-            font-size: 14px;
+.detalle-bloque ul {
 
-            line-height: 1.8;
+    padding-left: 20px;
 
-        }
+}
 
-        footer {
+.detalle-bloque li {
 
-            padding:
-                30px 20px;
+    color: #999999;
 
-            text-align: center;
+    font-size: 14px;
 
-            background:
-                #050505;
+    margin-bottom: 9px;
 
-            border-top:
-                1px solid #1c1c1c;
+}
 
-        }
+.detalle-bloque p {
 
-        footer p {
+    color: #999999;
 
-            color: #666666;
+    font-size: 14px;
 
-            font-size: 12px;
+    line-height: 1.8;
 
-        }
+}
 
-        footer strong {
+footer {
 
-            color: #ffffff;
+    padding:
+        30px 20px;
 
-        }
+    text-align: center;
 
-        @media (max-width: 850px) {
+    background:
+        #050505;
 
-            .producto-principal {
+    border-top:
+        1px solid #1c1c1c;
 
-                grid-template-columns: 1fr;
+}
 
-            }
+footer p {
 
-            .imagen-principal {
+    color: #666666;
 
-                min-height: 380px;
+    font-size: 12px;
 
-            }
+}
 
-        }
+footer strong {
 
-        @media (max-width: 700px) {
+    color: #ffffff;
 
-            header {
+}
 
-                position: relative;
+@media (max-width: 850px) {
 
-            }
+    .producto-principal {
 
-            .header-container {
+        grid-template-columns: 1fr;
 
-                min-height: auto;
+    }
 
-                padding:
-                    25px 20px 20px;
+    .imagen-principal {
 
-                flex-direction: column;
+        min-height: 380px;
 
-                gap: 18px;
+    }
 
-            }
+}
 
-            .logo {
+@media (max-width: 700px) {
 
-                font-size: 27px;
+    header {
 
-                text-align: center;
+        position: relative;
 
-            }
+    }
 
-            nav {
+    .header-container {
 
-                width: 100%;
+        min-height: auto;
 
-                display: flex;
+        padding:
+            25px 20px 20px;
 
-                align-items: center;
+        flex-direction: column;
 
-                justify-content: space-between;
+        gap: 18px;
 
-                gap: 8px;
+    }
 
-            }
+    .logo {
 
-            nav a {
+        font-size: 27px;
 
-                font-size: 10px;
+        text-align: center;
 
-                padding: 5px 3px;
+    }
 
-            }
+    nav {
 
-            .producto-page {
+        width: 100%;
 
-                padding:
-                    25px 15px 60px;
+        display: flex;
 
-            }
+        align-items: center;
 
-            .producto-principal {
+        justify-content: space-between;
 
-                padding: 15px;
+        gap: 8px;
 
-                gap: 25px;
+    }
 
-                border-radius: 12px;
+    nav a {
 
-            }
+        font-size: 10px;
 
-            .imagen-principal {
+        padding: 5px 3px;
 
-                min-height: 300px;
+    }
 
-            }
+    .producto-page {
 
-            .producto-titulo {
+        padding:
+            25px 15px 60px;
 
-                font-size: 25px;
+    }
 
-            }
+    .producto-principal {
 
-            .precio {
+        padding: 15px;
 
-                font-size: 40px;
+        gap: 25px;
 
-            }
+        border-radius: 12px;
 
-            .medios-pago {
+    }
 
-                gap: 2px;
+    .imagen-principal {
 
-            }
+        min-height: 300px;
 
-            .medios-pago-titulo {
+    }
 
-                font-size: 11px;
+    .producto-titulo {
 
-            }
+        font-size: 25px;
 
-            .pago-circulo {
+    }
 
-                width: 34px;
-                height: 34px;
+    .precio {
 
-                min-width: 34px;
+        font-size: 40px;
 
-            }
+    }
 
-            .pago-visa img {
+    .medios-pago {
 
-                width: 76%;
-                height: 76%;
+        gap: 0;
 
-            }
+    }
 
-            .detalles {
+    .medios-pago-titulo {
 
-                padding: 25px 20px;
+        font-size: 11px;
 
-                border-radius: 12px;
+    }
 
-            }
+    .pago-circulo {
 
-            .detalles-titulo {
+        width: 38px;
+        height: 38px;
 
-                font-size: 24px;
+        min-width: 38px;
 
-            }
+    }
 
-        }
+    .pago-circulo + .pago-circulo {
 
-        @media (max-width: 380px) {
+        margin-left: -19px;
 
-            .header-container {
+    }
 
-                padding:
-                    22px 14px 18px;
+    .detalles {
 
-            }
+        padding: 25px 20px;
 
-            .logo {
+        border-radius: 12px;
 
-                font-size: 24px;
+    }
 
-            }
+    .detalles-titulo {
 
-            nav {
+        font-size: 24px;
 
-                gap: 4px;
+    }
 
-            }
+}
 
-            nav a {
+@media (max-width: 380px) {
 
-                font-size: 9px;
+    .header-container {
 
-            }
+        padding:
+            22px 14px 18px;
 
-            .imagen-principal {
+    }
 
-                min-height: 250px;
+    .logo {
 
-            }
+        font-size: 24px;
 
-            .producto-titulo {
+    }
 
-                font-size: 22px;
+    nav {
 
-            }
+        gap: 4px;
 
-            .pago-circulo {
+    }
 
-                width: 31px;
-                height: 31px;
+    nav a {
 
-                min-width: 31px;
+        font-size: 9px;
 
-            }
+    }
 
-            .medios-pago {
+    .imagen-principal {
 
-                gap: 1px;
+        min-height: 250px;
 
-            }
+    }
 
-        }
+    .producto-titulo {
 
-    </style>
+        font-size: 22px;
+
+    }
+
+    .pago-circulo {
+
+        width: 34px;
+        height: 34px;
+
+        min-width: 34px;
+
+    }
+
+    .pago-circulo + .pago-circulo {
+
+        margin-left: -17px;
+
+    }
+
+    .medios-pago {
+
+        gap: 0;
+
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -1136,7 +1163,6 @@
 </header>
 
 
-
 <main class="producto-page">
 
     <a
@@ -1147,7 +1173,6 @@
         ← Volver a productos
 
     </a>
-
 
 
     <section class="producto-principal">
@@ -1175,7 +1200,6 @@
         </div>
 
 
-
         <div class="producto-info">
 
             <h1 class="producto-titulo">
@@ -1183,7 +1207,6 @@
                 Cable de Poder Delta SATA Macho a 2x SATA Hembra
 
             </h1>
-
 
 
             <div class="valoracion">
@@ -1207,13 +1230,11 @@
             </div>
 
 
-
             <div class="stock">
 
                 🔥 ÚLTIMAS 5 UNIDADES
 
             </div>
-
 
 
             <div
@@ -1226,13 +1247,11 @@
             </div>
 
 
-
             <div class="descuento">
 
                 20% OFF Diners
 
             </div>
-
 
 
             <div class="medios-pago">
@@ -1243,44 +1262,55 @@
 
                 </span>
 
+
+                <!-- VISA -->
+
                 <div class="pago-circulo pago-visa">
 
                     <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg"
+                        src="visa.jpg"
                         alt="Visa"
                     >
 
                 </div>
 
+
+                <!-- MASTERCARD -->
+
                 <div class="pago-circulo pago-mastercard">
 
                     <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
+                        src="mastercard.jpg"
                         alt="Mastercard"
                     >
 
                 </div>
 
+
+                <!-- DISCOVER -->
+
                 <div class="pago-circulo pago-discover">
 
                     <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Discover_Card_logo.svg"
+                        src="discover.jpg"
                         alt="Discover"
                     >
 
                 </div>
 
+
+                <!-- DINERS -->
+
                 <div class="pago-circulo pago-diners">
 
                     <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Diners_Club_Logo3.svg"
+                        src="diner.jpg"
                         alt="Diners Club"
                     >
 
                 </div>
 
             </div>
-
 
 
             <div class="cantidad">
@@ -1319,7 +1349,6 @@
             </div>
 
 
-
             <div class="botones">
 
                 <a
@@ -1331,7 +1360,6 @@
                     COMPRAR AHORA
 
                 </a>
-
 
 
                 <button
@@ -1353,7 +1381,6 @@
                 </button>
 
 
-
                 <a
                     id="whatsappProducto"
                     class="btn btn-whatsapp"
@@ -1366,7 +1393,6 @@
                 </a>
 
             </div>
-
 
 
             <div class="vendedor">
@@ -1390,7 +1416,6 @@
             </div>
 
 
-
             <div class="seguridad">
 
                 <div class="seguridad-item">
@@ -1412,7 +1437,6 @@
                     </div>
 
                 </div>
-
 
 
                 <div class="seguridad-item">
@@ -1440,7 +1464,6 @@
     </section>
 
 
-
     <section class="detalles">
 
         <h2 class="detalles-titulo">
@@ -1448,7 +1471,6 @@
             Detalles del producto
 
         </h2>
-
 
 
         <div class="detalle-bloque">
@@ -1490,7 +1512,6 @@
         </div>
 
 
-
         <div class="detalle-bloque">
 
             <h3>
@@ -1524,7 +1545,6 @@
             </ul>
 
         </div>
-
 
 
         <div class="detalle-bloque">
@@ -1566,7 +1586,6 @@
         </div>
 
 
-
         <div class="detalle-bloque">
 
             <h3>
@@ -1604,7 +1623,6 @@
 </main>
 
 
-
 <footer>
 
     <p>
@@ -1622,163 +1640,120 @@
 </footer>
 
 
-
 <script>
 
-    /*
-     * =====================================================
-     * CONFIGURACIÓN DEL PRODUCTO
-     * =====================================================
-     */
+/*
+ * =====================================================
+ * CONFIGURACIÓN DEL PRODUCTO
+ * =====================================================
+ */
 
-    const PRECIO_UNITARIO = 10;
-
-
-
-    /*
-     * =====================================================
-     * ELEMENTOS
-     * =====================================================
-     */
-
-    const botonComprar =
-        document.getElementById("botonComprar");
-
-    const selectorCantidad =
-        document.getElementById("cantidadProducto");
-
-    const precioProducto =
-        document.getElementById("precioProducto");
+const PRECIO_UNITARIO = 10;
 
 
+/*
+ * =====================================================
+ * ELEMENTOS
+ * =====================================================
+ */
 
-    /*
-     * =====================================================
-     * ACTUALIZAR PRODUCTO
-     * =====================================================
-     *
-     * El botón COMPRAR AHORA SIEMPRE lleva a comprar.html.
-     *
-     * Ejemplos:
-     *
-     * Cantidad 1:
-     * comprar.html?cantidad=1&precio=10
-     *
-     * Cantidad 2:
-     * comprar.html?cantidad=2&precio=20
-     *
-     * Cantidad 3:
-     * comprar.html?cantidad=3&precio=30
-     *
-     * Cantidad 4:
-     * comprar.html?cantidad=4&precio=40
-     *
-     */
+const botonComprar =
+    document.getElementById("botonComprar");
 
-    function actualizarProducto() {
+const selectorCantidad =
+    document.getElementById("cantidadProducto");
 
-        const cantidad =
-            parseInt(
-                selectorCantidad.value,
-                10
-            );
+const precioProducto =
+    document.getElementById("precioProducto");
 
 
+/*
+ * =====================================================
+ * ACTUALIZAR PRODUCTO
+ * =====================================================
+ */
 
-        const precioTotal =
-            PRECIO_UNITARIO * cantidad;
+function actualizarProducto() {
 
-
-
-        /*
-         * Mostrar precio total.
-         */
-
-        precioProducto.textContent =
-            "US$ " + precioTotal;
-
-
-
-        /*
-         * Crear URL para comprar.html.
-         */
-
-        const urlCompra =
-            "comprar.html?cantidad=" +
-            encodeURIComponent(cantidad) +
-            "&precio=" +
-            encodeURIComponent(precioTotal);
-
-
-
-        /*
-         * Actualizar botón Comprar ahora.
-         */
-
-        botonComprar.href = urlCompra;
-
-    }
-
-
-
-    /*
-     * =====================================================
-     * AGREGAR AL CARRITO
-     * =====================================================
-     */
-
-    function agregarAlCarrito() {
-
-        const cantidad =
-            selectorCantidad.value;
-
-        alert(
-            "Producto agregado al carrito. Cantidad: " +
-            cantidad
+    const cantidad =
+        parseInt(
+            selectorCantidad.value,
+            10
         );
 
-    }
+
+    const precioTotal =
+        PRECIO_UNITARIO * cantidad;
 
 
-
-    /*
-     * =====================================================
-     * WHATSAPP
-     * =====================================================
-     */
-
-    const WHATSAPP =
-        "593960648763";
+    precioProducto.textContent =
+        "US$ " + precioTotal;
 
 
-
-    const mensajeWhatsApp =
-        "Hola ZENTROXEC, quiero consultar la disponibilidad del Cable Delta macho a 2 SATA hembra.";
-
-
-
-    const enlaceWhatsApp =
-        `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensajeWhatsApp)}`;
+    const urlCompra =
+        "comprar.html?cantidad=" +
+        encodeURIComponent(cantidad) +
+        "&precio=" +
+        encodeURIComponent(precioTotal);
 
 
+    botonComprar.href = urlCompra;
 
-    document.getElementById(
-        "whatsappProducto"
-    ).href =
-        enlaceWhatsApp;
+}
 
 
+/*
+ * =====================================================
+ * AGREGAR AL CARRITO
+ * =====================================================
+ */
 
-    /*
-     * =====================================================
-     * INICIAR PÁGINA
-     * =====================================================
-     */
+function agregarAlCarrito() {
 
-    actualizarProducto();
+    const cantidad =
+        selectorCantidad.value;
+
+    alert(
+        "Producto agregado al carrito. Cantidad: " +
+        cantidad
+    );
+
+}
+
+
+/*
+ * =====================================================
+ * WHATSAPP
+ * =====================================================
+ */
+
+const WHATSAPP =
+    "593960648763";
+
+
+const mensajeWhatsApp =
+    "Hola ZENTROXEC, quiero consultar la disponibilidad del Cable Delta macho a 2 SATA hembra.";
+
+
+const enlaceWhatsApp =
+    `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensajeWhatsApp)}`;
+
+
+document.getElementById(
+    "whatsappProducto"
+).href =
+    enlaceWhatsApp;
+
+
+/*
+ * =====================================================
+ * INICIAR PÁGINA
+ * =====================================================
+ */
+
+actualizarProducto();
 
 </script>
 
 </body>
 </html>
-```
